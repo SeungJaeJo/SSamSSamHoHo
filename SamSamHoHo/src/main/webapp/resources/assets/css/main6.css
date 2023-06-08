@@ -1,0 +1,68 @@
+@charset "UTF-8";
+.plz{    display: flex;
+    flex-direction: row;}
+.main_link{overflow:hidden;padding:16px 0;    background-color: whitesmoke;width: 580px;     margin-left: 90px;
+
+}
+.main_link li{float:left;width:25%}
+.main_link li {display:block;overflow:hidden;height:79px;font-size:12px;color:rgba(0,0,0,0.87);text-align:center; cursor: pointer;}
+.main_link li span{display:inline-block;width:48px;height:48px;margin:0 auto;}
+.main_link li p{height:20px;padding-top:7px;}
+
+.main_link_items .ico_01{background:url('https://i.ibb.co/bQxz0Ct/ico-s.png') no-repeat; background-size:48px auto}
+.main_link_items .ico_02{background:url('https://i.ibb.co/G5QyfGn/ico-hotel.png') no-repeat; background-size:48px auto}
+.main_link_items .ico_03{background:url('https://i.ibb.co/9tYL6vG/ico-119.png') no-repeat; background-size:48px auto}
+.main_link_items .ico_04{background:url('https://i.ibb.co/jRktKwz/ico-mm.png') no-repeat; background-size:48px auto}
+  
+  
+  
+  li{
+    list-style-type: none;
+  }
+  
+
+  .main_link li p:focus {
+    border-bottom: 20px solid slateblue;
+    cursor: pointer;
+  }
+
+  .info{   
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 14px;
+    margin-top: 20px;
+
+  }
+  .info .date{
+    float: left;
+    color: #999;
+    font-size: 11px;
+    margin-right: 60px;
+    margin-left: 30px;
+  }
+  #news-issue-count{
+    margin-right: 2px;
+    color: #0b579b;
+    font-size: 11px;
+  }
+  .right-sector{
+    margin-left: 160px;
+    width:  420px;
+  }
+  .graph-status{
+    height: 325px;
+    padding: 35px 0 0;
+  }
+
+  .title h2{
+    margin-top: 2px;
+    margin-left: -200px;
+
+  }
+
+  .title2 h2{
+    margin-top: 2px;
+    margin-left: 150px;
+
+  }
