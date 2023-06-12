@@ -213,7 +213,7 @@
 													</li>
 													<li><input id="favorite_type1_4"
 														class="form_check_input" type="checkbox" value="">
-														<label class="form_label" for="favorite_type1_4">시사</label>
+														<label class="form_label" for="favorite_type1_4">국제</label>
 													</li>
 
 												</ul>
