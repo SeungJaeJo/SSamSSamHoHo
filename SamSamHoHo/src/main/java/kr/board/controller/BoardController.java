@@ -27,7 +27,7 @@ public class BoardController {
 
 	@RequestMapping("/boardMain.do")
 	public String main() {
-		return "board/main";
+		return "board/test";
 	}
 
 }
