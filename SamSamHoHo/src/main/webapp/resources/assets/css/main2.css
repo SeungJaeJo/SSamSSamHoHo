@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .w100p {
     width: 100%
 }
@@ -3065,13 +3064,12 @@ input[type=checkbox],input[type=radio] {
 }
 
 .list_item {
-    padding: 16px 20px
+    padding: 10px 10px
 }
 
 .card_list .list_item .description {
     word-wrap: break-word;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
     display: -webkit-box;
     height: 44px;
     margin-top: 10px;
@@ -3079,6 +3077,10 @@ input[type=checkbox],input[type=radio] {
     text-overflow: ellipsis;
     white-space: normal
 }
+
+.short{
+}
+
 
 .list_item .description {
     display: block;
@@ -3092,8 +3094,7 @@ input[type=checkbox],input[type=radio] {
     -ms-flex-align: start;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    align-items: flex-start;
-    justify-content: space-between
+
 }
 
 .list_item>.flex_area .btn_subscribe {
@@ -8708,17 +8709,17 @@ div[class*=multi_product_auto].show {
     }
 
     .col_lg3 {
-        width: 24.99%
+        width: 29%
     }
 
     .col_lg4 {
-        width: 33.3233333333%
     }
 
     .col_lg4,.col_lg5 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
-        flex: 0 0 auto
+        flex: 0 0 auto;
+        margin-bottom: 35px;
     }
 
     .col_lg5 {
@@ -8743,15 +8744,19 @@ div[class*=multi_product_auto].show {
         width: 66.6566666667%
     }
 
-    .col_lg8,.col_lg9 {
+    .col_lg8,.col_lg9,.col_9915 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto
     }
 
     .col_lg9 {
-        width: 74.99%
+        width: 35%
     }
+    .col_lg9915 {
+        width: 30%
+    }
+
 
     .col_lg10 {
         width: 83.3233333333%
@@ -9898,7 +9903,10 @@ div[class*=multi_product_auto].show {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-flow: column;
-        flex-flow: column
+        flex-flow: column;
+        height: 300px;
+        border-radius: 10%;
+        border:  1px solid rgba(0,0,0,.1);
     }
 
     .card_list .list_item .meta {

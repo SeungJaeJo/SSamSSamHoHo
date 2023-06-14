@@ -26,6 +26,8 @@
 <link rel="stylesheet" href="resources/assets/css/main5.css">
 <link rel="stylesheet" href="resources/assets/css/main6.css">
 <link rel="stylesheet" href="resources/assets/css/main7.css">
+<link rel="stylesheet" href="resources/assets/css/main8.css">
+<link rel="stylesheet" href="resources/assets/css/main9.css">
 
 
 <style>
@@ -154,683 +156,484 @@
 
 		</header>
 
-		<style>
-@media ( min-width : 1024px) {
-	.myfeed_subscribe_news .card_image {
-		width: 205px;
-	}
-}
-</style>
-		<main role="main" id="container">
-			<section class="contents">
-				<header id="sticky" class="section_header_wrap m_unsticky">
-					<h1 class="section_title">내 구독</h1>
-				</header>
+		    <style>
+            @media (min-width: 1024px) {
+                .myfeed_subscribe_news .card_image {
+                    width: 205px;
+                }
+            }
+        </style>
+        <style>
 
-				<section class="myfeed_top_wrap">
+        </style>
+        <main role="main" id="container">
+            <section class="contents">
 
-					<div class="myfeed_box todayluck color_set1">
-						<strong class="title">키워드 설정 해보자잇~^^</strong>
-						<p class="description">
-							<br> 본인에게 맞는 키워드를 설정해보자잇 ~^^.
-						</p>
-						<div class="button_wrap">
-							<button type="button" id="unse_subscribe"
-								class="btn_subscribe btn_s">시작하기</button>
-						</div>
-						<button type="button" class="btn_toggle">
-							<i class="ico_arrow"></i><span class="visually_hidden">더보기</span>
-						</button>
-					</div>
-				</section>
-
-				<div class="row nologin">
-					<div class="col_lg3">
-						<section class="myfeed_local_news">
-							<header class="title_wrap">
-								<strong class="title">카테고리 설정</strong>
-							</header>
-							<div class="full_popup hide" id="japlus-left-choice-area">
-								<!--show/hide-->
-								<div class="layer_popup filter_area japlus-bottom-fixed-menu">
-									<div class="layer_body">
-										<form class="form">
-											<div class="input_group input_favorite">
-												<strong class="title lg_hidden"></strong>
-												<ul>
-
-													<li><input id="favorite_type1_1"
-														class="form_check_input" type="checkbox" value="">
-														<label class="form_label" for="favorite_type1_1">정치</label>
-													</li>
-													<li><input id="favorite_type1_2"
-														class="form_check_input" type="checkbox" value="">
-														<label class="form_label" for="favorite_type1_2">사회</label>
-													</li>
-													<li><input id="favorite_type1_3"
-														class="form_check_input" type="checkbox" value="">
-														<label class="form_label" for="favorite_type1_3">경제</label>
-													</li>
-													<li><input id="favorite_type1_4"
-														class="form_check_input" type="checkbox" value="">
-														<label class="form_label" for="favorite_type1_4">국제</label>
-													</li>
-
-												</ul>
-											</div>
-
-											<div class="btn_area">
-												<button type="button"
-													class="left_apply btn_form btn_black btn_wide">적용</button>
-											</div>
-										</form>
-									</div>
-									<button type="button" class="btn_close">
-										<i class="ico_close"></i>
-									</button>
-								</div>
-							</div>
-
-							<header class="title_wrap">
-								<strong class="title"></strong>
-							</header>
-							<div class="subscribe_box2">
-
-								<!--차트가 그려질 부분-->
-								<div class="right-sector">
+                <section class="myfeed_top_wrap">
 
 
-									<div class="graph-status">
+                </section>
 
+                <div class="row nologin">
+                    <div class="col_lg3">
+                        <section class="myfeed_local_news">
+                            <header class="title_wrap">
+                                <strong class="title">실시간 뉴스</strong>
+                            </header>
+                            <div class="subscribe_box2">
+                                <div class="rolling_box">
+                                    <ul id="rolling_box">
+                                        <li class="card_sliding" id="first">
+                                            <a href=""></a>
+                                        </li>
+                                        <li class="" id="second">
+                                            <a href=""></a>
+                                        </li>
+                                        <li class="" id="third">
+                                            <a href=""></a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+
+
+                            <header class="title_wrap">
+                                <strong class="title">언론사 별 뉴스</strong>
+                            </header>
+                            <div class="wrap2">
+                                <div class="tab_menu">
+                                    <ul class="list">
+                                        <li class="is_on">
+                                            <span href="#tab1" class="ico_1">&nbsp;</span>
+                                            <a class="btn2">조선일보</a>
+                                        </li>
+                                        <li>
+                                            <span href="#tab2" class="ico_2">&nbsp;</span>
+                                            <a class="btn2">중앙일보</a>
+                                        </li>
+                                        <li>
+                                            <span href="#tab3" class="ico_3">&nbsp;</span>
+                                            <a class="btn2">동아일보</a>
+                                        </li>
+                                        <li>
+                                            <span href="#tab4" class="ico_4">&nbsp;</span>
+                                            <a class="btn2">경향신문</a>
+                                        </li>
+                                        <li>
+                                            <span href="#tab5" class="ico_5">&nbsp;</span>
+                                            <a class="btn2">한겨례</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="cont_area">
+                                        <div id="tab1" class="cont" style="display:block;">
+                                            <div class="list_item">
+                                                <div class="flex_area">
+                                                    <span href="#tab1" class="ico_1"
+                                                        style="width: 55px; height: 55px;">&nbsp;</span>
+                                                    <span style="font-weight: bold;">조선일보</span>
+                                                </div>
+                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
+                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                        튼다</a></p>
+                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                    튼다</a></p>
 
 
 
-										<div class="title">
-											<h2>오늘의 뉴스 현황</h2>
-											<div class="info">
-												<p class="date">2023년 06월 08일 (목)</p>
-												<p class="total">
-													<b id="news-issue-count">2,501</b>건
-												</p>
-											</div>
-											<div style="width: 250px; height: 200px;">
+                                            </div>
 
 
-												<canvas id="myChart"></canvas>
-
-											</div>
-											<script type="text/javascript">
-												var context = document
-														.getElementById(
-																'myChart')
-														.getContext('2d');
-												var myChart = new Chart(
-														context,
-														{
-															type : 'bar', // 차트의 형태
-															data : { // 차트에 들어갈 데이터
-																labels : [
-																//x 축
-																'정치', '경제',
-																		'사회',
-																		'문화' ],
-																datasets : [
-																		{ //데이터
-
-																			fill : false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-																			data : [
-																					21,
-																					19,
-																					25,
-																					20 //x축 label에 대응되는 데이터 값
-																			],
-																			backgroundColor : [
-																					//색상
-																					'rgba(255, 99, 132, 0.2)',
-																					'rgba(54, 162, 235, 0.2)',
-																					'rgba(255, 206, 86, 0.2)',
-																					'rgba(75, 192, 192, 0.2)',
-																					'rgba(153, 102, 255, 0.2)',
-																					'rgba(255, 159, 64, 0.2)' ],
-																			borderColor : [
-																					//경계선 색상
-																					'rgba(255, 99, 132, 1)',
-																					'rgba(54, 162, 235, 1)',
-																					'rgba(255, 206, 86, 1)',
-																					'rgba(75, 192, 192, 1)',
-																					'rgba(153, 102, 255, 1)',
-																					'rgba(255, 159, 64, 1)' ],
-																			borderWidth : 1
-																		//경계선 굵기
-																		},
-
-																]
-															},
-															options : {
-																legend : {
-																	display : false
-																},
-																scales : {
-																	yAxes : [ {
-																		ticks : {
-																			beginAtZero : true
-																		}
-																	} ]
-																}
-															}
-														});
-											</script>
+                                        </div>
+                                        <div id="tab2" class="cont">
+                                            <div class="list_item">
+                                                <div class="flex_area">
+                                                    <span href="#tab1" class="ico_2"
+                                                        style="width: 55px; height: 55px;">&nbsp;</span>
+                                                    <span style="font-weight: bold;">중앙일보</span>
+                                                </div>
+                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
+                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                        튼다</a></p>
+                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                    튼다</a></p>
 
 
 
-
-										</div>
-
-									</div>
-								</div>
-							</div>
-
-						</section>
-
-					</div>
-					<div class="col_lg9">
-						<section class="myfeed_popular_subscribe">
-							<header class="title_wrap">
-								<strong class="title"><a href="">오늘의 뉴스 요약</a></strong>
-							</header>
-							<div class="swiper-container">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<ul class="row card_list">
-											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">Think English</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">여러분이 보는 뉴스, 이제 영어로 만나보세요!</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>20086명 구독중
-													</p>
-												</div>
-											</li>
-											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">아이랑GO</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">이번 주말 뭘할까 고민하는 부모를 위한 비법뉴스</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>6349명 구독중
-													</p>
-												</div>
-											</li>
-											<li class="col_lg4 color_set0">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">백성호의 현문우답</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">지지고 볶는 우리의 일상이 최고의 선방이요, 수도원입니다. 일상의 교실에서
-															길어올린 너와 나의 지혜를 나눕니다.</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>5937명 구독중
-													</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="swiper-slide">
-										<ul class="row card_list">
-											<li class="col_lg4 color_set0">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">백성호 기자</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href=""> 종교전문기자</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>2385명 구독중
-													</p>
-												</div>
-											</li>
-											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">폴인인사이트</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">성장의 경험을 나눕니다. 폴인인사이트</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>1700명 구독중
-													</p>
-												</div>
-											</li>
-											<li class="col_lg4 color_set2">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">나는 고발한다. J’Accuse…!ㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㅇㄴㅁ</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">중앙일보는 세대 갈등이 첨예하던 2021년, 2030세대가 기성세대를 향해
-															던지는 도발적인 문제 제기 칼럼 시리즈 ‘나는 저격한다’로 온라인 공론장에서 큰 화제를 모은 바
-															있습니다. 당시의 문제의식은 그대로 유치한 채 필진과 대상, 주제를 확장한 ‘나는 고발한다’를 새롭게
-															시작합니다. 매주 월~금요일 독자 여러분을 찾아갑니다.</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>1562명 구독중
-													</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<div class="swiper-slide">
-										<ul class="row card_list">
-											<li class="col_lg4 color_set0">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">백성호 기자</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href=""> 종교전문기자</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>2385명 구독중
-													</p>
-												</div>
-											</li>
-											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">폴인인사이트</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">성장의 경험을 나눕니다. 폴인인사이트</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>1700명 구독중
-													</p>
-												</div>
-											</li>
-											<li class="col_lg4 color_set2">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">나는 고발한다. J’Accuse…!ㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㄴㅁㅇㅇㄴㅁ</a>
-														</h2>
-														<button type="button" class="btn_subscribe" onclick="">구독</button>
-													</div>
-													<p class="description">
-														<a href="">중앙일보는 세대 갈등이 첨예하던 2021년, 2030세대가 기성세대를 향해
-															던지는 도발적인 문제 제기 칼럼 시리즈 ‘나는 저격한다’로 온라인 공론장에서 큰 화제를 모은 바
-															있습니다. 당시의 문제의식은 그대로 유치한 채 필진과 대상, 주제를 확장한 ‘나는 고발한다’를 새롭게
-															시작합니다. 매주 월~금요일 독자 여러분을 찾아갑니다.</a>
-													</p>
-													<p class="subscribe_count">
-														<i class="ico_check"></i>1562명 구독중
-													</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="swiper-pagination pagination_bullet"></div>
-							</div>
-						</section>
-
-					</div>
-				</div>
+                                            </div>
+                                        </div>
+                                        <div id="tab3" class="cont">
+                                            <div class="list_item">
+                                                <div class="flex_area">
+                                                    <span href="#tab1" class="ico_3"
+                                                        style="width: 55px; height: 55px; ">&nbsp;</span>
+                                                    <span style="font-weight: bold;">동아일보</span>
+                                                </div>
+                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
+                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                        튼다</a></p>
+                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                    튼다</a></p>
 
 
 
-				<section class="chain_wrap myfeed_editor_recommend">
-					<header class="title_wrap">
-						<strong class="title">오늘의 키워드</strong>
-					</header>
-					<div class="plz">
+                                            </div>
+                                        </div>
+                                        <div id="tab4" class="cont">
+                                            <div class="list_item">
+                                                <div class="flex_area">
+                                                    <span href="#tab1" class="ico_4"
+                                                        style="width: 55px; height: 55px;">&nbsp;</span>
+                                                    <span style="font-weight: bold;">경향신문</span>
+                                                </div>
+                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
+                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                        튼다</a></p>
+                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                    튼다</a></p>
 
 
 
-						<div class="main_link">
-							<ul class="main_link_items">
-								<li><span class="ico_01">&nbsp;</span>
-									<p>정치</p></li>
-								<li><span class="ico_02">&nbsp;</span>
-									<p>경제</p></li>
-								<li><span class="ico_03">&nbsp;</span>
-									<p>사회</p></li>
-								<li><span class="ico_04">&nbsp;</span>
-									<p>문화</p></li>
-							</ul>
-							<section class="myfeed_top_wrap2">
-								<div class="myfeed_box todayluck color_set1">
+                                            </div>
+                                        </div>
+                                        <div id="tab5" class="cont">
+                                            <div class="list_item">
+                                                <div class="flex_area">
+                                                    <span href="#tab1" class="ico_5"
+                                                        style="width: 55px; height: 55px;">&nbsp;</span>
+                                                    <span style="font-weight: bold;">한겨례</span>
+                                                </div>
+                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
+                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                        튼다</a></p>
+                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
+                                                                    튼다</a></p>
 
-									<div class="tab-pane active" id="category-keyword-all">
-										<svg width="700" height="300">
-                                        <g
-												transform="translate(260,155)">
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-118,-37)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">미국</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-41,10)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-99,31)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">경기</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(54,29)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">중국</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-198,-71)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">일본</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-28,-17)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">부산</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(-14,81)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">더불어민주당</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(23,-8)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">국회</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(28,-71)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">유럽</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(77,-11)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">검찰</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(171,-10)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">영국</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(188,-42)rotate(0)scale(0.9)"
-												style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">민주당</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(191,34)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">삼성전자</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(103,-90)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">뉴욕</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-21,26)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">울산</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(163,-79)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">자원</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(109,13)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">경기도</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(63,104)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">국민의힘</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-155,38)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(81,59)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">인천</text>
-											<text class="category-keyword-text 전체_PS"
-												text-anchor="middle"
-												transform="translate(-44,-69)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">윤석열</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(213,-69)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대구</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-101,-1)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">아시아</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-132,-82)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대한민국</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(109,41)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">독일</text>
-											<text class="category-keyword-text 전체_PS"
-												text-anchor="middle"
-												transform="translate(162,59)rotate(0)scale(0.9)"
-												style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">이재명</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(124,-11)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">프랑스</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(5,98)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">애플</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(141,76)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">삼성</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(19,48)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">우크라이나</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-101,56)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">충남</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-175,-33)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">인도</text>
-											<text class="category-keyword-text 전체_PS"
-												text-anchor="middle"
-												transform="translate(163,9)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">송영길</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(-35,103)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">유튜브</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-202,40)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">대전</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(13,-37)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북한</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(104,81)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">경남</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(54,-53)rotate(0)scale(0.9)"
-												style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">후쿠시마</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-45,-90)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">제주</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-44,55)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">수도권</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(-38,40)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">서울시</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(-90,-22)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">네이버</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(-157,9)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">한국거래소</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(212,49)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">현대</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(128,-75)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">광주</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(11,26)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">신사</text>
-											<text class="category-keyword-text 전체_PS"
-												text-anchor="middle"
-												transform="translate(62,118)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">윤관석</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-174,77)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">천안</text>
-											<text class="category-keyword-text 전체_LC"
-												text-anchor="middle"
-												transform="translate(-73,-38)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">한반도</text>
-											<text class="category-keyword-text 전체_OG"
-												text-anchor="middle"
-												transform="translate(-130,75)rotate(0)scale(0.9)"
-												style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">행정안전부</text>
-                                        </g>
-                                    </svg>
-									</div>
-								</div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
 
 
 
-							</section>
-						</div>
-						<div class="title2">
-							<h2>오늘의 키워드 순위</h2>
+                        </section>
 
-							<div class="subscribe_box3">
-								<div class="rolling_box">
-									<ul id="rolling_box">
-										<li class="card_sliding" id="first">
-											<p></p>
-										</li>
-										<li class="" id="second">
-											<p></p>
-										</li>
-										<li class="" id="third">
-											<p></p>
-										</li>
-									</ul>
-								</div>
+                    </div>
+                    <div class="col_lg9">
+                        <section class="myfeed_popular_subscribe">
+                            <header class="title_wrap">
+                                <strong class="title"><a href="">정치</a></strong>
+                            </header>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <ul class="row card_list">
+                                            <li class="col_lg4 color_set1">
+                                                <div class="list_item">
+                                                    <div class="flex_area">
+                                                        <h2 class="headline">
+                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+                                                        </h2>
+                                                    </div>
 
-							</div>
+                                                    <p class="description short">
+                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
+                                                    </p>
+                                                       
+                                                      
+
+                                                </div>
+                                            </li>
+                                       
+                                          
+                                        </ul>
+                                    </div>
+                                    <header class="title_wrap">
+                                        <strong class="title"><a href="">문화</a></strong>
+                                    </header>
+                              
+                                    <div class="swiper-slide">
+                                        <ul class="row card_list">
+                                            <li class="col_lg4 color_set1">
+                                                <div class="list_item">
+                                                    <div class="flex_area">
+                                                        <h2 class="headline">
+                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+                                                        </h2>
+                                                    </div>
+
+                                                    <p class="description short">
+                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
+                                                    </p>
+                                                       
+                                                      
+
+                                                </div>
+                                            </li>
+                                            
+                                        
+                                         
+                                        </ul>
+                                    </div>
+       
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="col_lg9">
+                        <section class="myfeed_popular_subscribe">
+                            <header class="title_wrap">
+                                <strong class="title"><a href="">경제</a></strong>
+                            </header>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <ul class="row card_list">
+                                            <li class="col_lg4 color_set1">
+                                                <div class="list_item">
+                                                    <div class="flex_area">
+                                                        <h2 class="headline">
+                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+                                                        </h2>
+                                                    </div>
+
+                                                    <p class="description short">
+                                                        <a href="" class="gogo">식약처는 지난달 건강기능식품의 온라인 광고를 점검해 허위·과대광고 185건을 무더기 적발하였으며 건강기능식품이라고 광고하는 제품을 살 땐 겉면에 식약처가 인증한 ‘건강기능식품’이란 문구와 ‘우수제조기준(GMP) 인증 마크’가 있는지 확인해야 한다.</a>
+                                                    </p>
+                                                       
+                                                      
+
+                                                </div>
+                                            </li>
+                                       
+                                         
+                                      
+                                        </ul>
+                                       
+                                    </div>
+                                    <header class="title_wrap">
+                                        <strong class="title"><a href="">세계</a></strong>
+                                    </header>
+                                    <div class="swiper-slide">
+                                        <ul class="row card_list">
+                                            <li class="col_lg4 color_set1">
+                                                <div class="list_item">
+                                                    <div class="flex_area">
+                                                        <h2 class="headline">
+                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+                                                        </h2>
+                                                    </div>
+
+                                                    <p class="description short">
+                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
+                                                    </p>
+                                                       
+                                                      
+
+                                                </div>
+                                            </li>
+                                            
+                                        
+                                         
+                                        </ul>
+                                    </div>
+       
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
 
 
-						</div>
-					</div>
-
-				</section>
 
 
 
+        </main>
+        <script>
+            const full = document.getElementsByClassName('.gogo');
+            full.addEventListener('click', homzzang )
 
-			</section>
+            function homzzang() {
 
-		</main>
-		<div id="footer" class="footer footer22">
-			<div class="footer_wrap">
-				<div class="logo lg_hidden">
-					<a href="https://www.joongang.co.kr" data-evnt-ctg="area:중앙|내 구독"
-						data-evnt-act="move:A40 푸터-사이트맵" data-evnt-lbl="footer logo"><span
-						class="visually_hidden">The JoongAng</span></a>
-				</div>
+            document.getElementsByClassName(".gogo").style.cssText = '-webkit-line-clamp:0';
 
-
-			</div>
-			<footer>
-
-				<div class="footer_info">
-					<div class="footer_wrap">
-
-						<div class="logo sm_hidden md_hidden">
-							<a href="https://www.joongang.co.kr"><span
-								class="visually_hidden">중앙일보</span></a>
-						</div>
-						<div class="corp">
-							<p class="address">
-								<span>주소 : 광주광역시 북구 북구맨 64-86 (우) 0573</span> <span>전화 :
-									062-262-6486</span> <span>등록번호 : 광주 북 1818</span> <span>등록일자 :
-									1996.01.16</span> <span>발행인 : 조승재</span> <span>편집인 : 조승재</span> <a
-									href="https://www.joongang.co.kr/sitemap/index"
-									class="sm_hidden md_hidden">전체 서비스</a>
-							</p>
-							<p class="address">
-								<span>사업자명 : <a href="https://www.joongang.co.kr">삼삼뉴스㈜</a></span>
-								<span>사업자등록번호 : 960-11-615524</span> <span>대표자명 : 윤선지</span> <em>통신판매업신고번호
-									: 1996-광주북구-0116</em>
-							</p>
-							<p class="info sm_hidden md_hidden">
-								삼삼뉴스의 모든 콘텐트(기사)는 저작권법의 보호를 받은바, 무단 전재, 복사, 배포 등을 금합니다.[<a
-									href="https://bbs.joongang.co.kr/customercenter/faq?boardSeq=1481">저작권
-									정책 및 콘텐트 문의</a>]
-							</p>
-							<p class="copyright">
-								<strong>Copyright by SamSamNews Co., Ltd. All Rights
-									Reserved</strong>
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-		</div>
+            }
+            
 
 
+        </script>
+
+
+
+        <script>
+            const tabList = document.querySelectorAll('.tab_menu .list li');
+            const contents = document.querySelectorAll('.tab_menu .cont_area .cont')
+            let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+
+            for (var i = 0; i < tabList.length; i++) {
+                tabList[i].querySelector('.ico_' + (i + 1)).addEventListener('click', function (e) {
+                    e.preventDefault();
+                    for (var j = 0; j < tabList.length; j++) {
+                        // 나머지 버튼 클래스 제거
+                        tabList[j].classList.remove('is_on');
+
+                        // 나머지 컨텐츠 display:none 처리
+                        contents[j].style.display = 'none';
+                    }
+
+                    // 버튼 관련 이벤트
+                    this.parentNode.classList.add('is_on');
+
+                    // 버튼 클릭시 컨텐츠 전환
+                    activeCont = this.getAttribute('href');
+                    document.querySelector(activeCont).style.display = 'block';
+                });
+            }
+        </script>
+
+
+
+
+
+        <script>
+
+            let rollingData = [
+                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
+                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
+                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
+                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
+                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다"
+
+            ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
+
+            let timer = 3000 // 롤링되는 주기 입니다 (1000 => 1초)
+
+            let first = document.getElementById('first'),
+                second = document.getElementById('second'),
+                third = document.getElementById('third')
+            let move = 2
+            let dataCnt = 1
+            let listCnt = 1
+
+            //위 선언은 따로 완전히 수정하지 않는 한 조정할 필요는 없습니다.
+
+            first.children[0].innerHTML = rollingData[0]
+
+            setInterval(() => {
+                if (move == 2) {
+                    first.classList.remove('card_sliding')
+                    first.classList.add('card_sliding_after')
+
+                    second.classList.remove('card_sliding_after')
+                    second.classList.add('card_sliding')
+
+                    third.classList.remove('card_sliding_after')
+                    third.classList.remove('card_sliding')
+
+                    move = 0
+                } else if (move == 1) {
+                    first.classList.remove('card_sliding_after')
+                    first.classList.add('card_sliding')
+
+                    second.classList.remove('card_sliding_after')
+                    second.classList.remove('card_sliding')
+
+                    third.classList.remove('card_sliding')
+                    third.classList.add('card_sliding_after')
+
+                    move = 2
+                } else if (move == 0) {
+                    first.classList.remove('card_sliding_after')
+                    first.classList.remove('card_sliding')
+
+                    second.classList.remove('card_sliding')
+                    second.classList.add('card_sliding_after')
+
+                    third.classList.remove('card_sliding_after')
+                    third.classList.add('card_sliding')
+
+                    move = 1
+                }
+
+                if (dataCnt < (rollingData.length - 1)) {
+                    document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
+                    dataCnt++
+                } else if (dataCnt == rollingData.length - 1) {
+                    document.getElementById('rolling_box').children[listCnt].children[0].innerHTML = rollingData[dataCnt]
+                    dataCnt = 0
+                }
+
+                if (listCnt < 2) {
+                    listCnt++
+                } else if (listCnt == 2) {
+                    listCnt = 0
+                }
+
+                console.log(listCnt)
+            }, timer);
+
+        </script>
+        <div id="footer" class="footer footer22">
+            <div class="footer_wrap">
+                <div class="logo lg_hidden"><a href="https://www.joongang.co.kr" data-evnt-ctg="area:중앙|내 구독"
+                        data-evnt-act="move:A40 푸터-사이트맵" data-evnt-lbl="footer logo"><span class="visually_hidden">The
+                            JoongAng</span></a></div>
+
+
+            </div>
+            <footer>
+
+                <div class="footer_info">
+                    <div class="footer_wrap">
+
+                        <div class="logo sm_hidden md_hidden"><a href="https://www.joongang.co.kr"><span
+                                    class="visually_hidden">중앙일보</span></a></div>
+                        <div class="corp">
+                            <p class="address">
+                                <span>주소 : 광주광역시 북구 북구맨 64-86 (우) 0573</span>
+                                <span>전화 : 062-262-6486</span>
+                                <span>등록번호 : 광주 북 1818</span>
+                                <span>등록일자 : 1996.01.16</span>
+                                <span>발행인 : 조승재</span>
+                                <span>편집인 : 조승재</span>
+                                <a href="https://www.joongang.co.kr/sitemap/index" class="sm_hidden md_hidden">전체
+                                    서비스</a>
+                            </p>
+                            <p class="address">
+                                <span>사업자명 : <a href="https://www.joongang.co.kr">삼삼뉴스㈜</a></span>
+                                <span>사업자등록번호 : 960-11-615524</span>
+                                <span>대표자명 : 윤선지</span>
+                                <em>통신판매업신고번호 : 1996-광주북구-0116</em>
+                            </p>
+                            <p class="info sm_hidden md_hidden">삼삼뉴스의 모든 콘텐트(기사)는 저작권법의 보호를 받은바, 무단 전재, 복사, 배포
+                                등을 금합니다.[<a href="https://bbs.joongang.co.kr/customercenter/faq?boardSeq=1481">저작권 정책 및
+                                    콘텐트 문의</a>]</p>
+                            <p class="copyright"><strong>Copyright by SamSamNews Co., Ltd. All Rights
+                                    Reserved</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
 
 
 
@@ -841,6 +644,9 @@
 
 
 		<script src="resources/assets/js/main.js"></script>
+
+
 </body>
 
 </html>
+
