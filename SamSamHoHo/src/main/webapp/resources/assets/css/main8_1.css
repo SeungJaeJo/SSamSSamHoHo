@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.wrap3{padding:1px; letter-spacing:-0.5px;}
+.tab_menu2{position:relative;}
+.tab_menu2 .list2{overflow:hidden; margin-left: 45px;}
+.tab_menu2 .list2 li{float:left;     margin-left: 50px;}
+.tab_menu2 .list2 li.is_on2 .btn2{font-weight:bold; color:green;}
+.tab_menu2 .list2 .btn2{font-size:14px;}
+.tab_menu2 .cont_area2{margin-top:10px;}
+.tab_menu2 .cont_area2 .cont2{display:none; background:#555; color:#080808; text-align:center;     height: 100%;
+    min-height: 192px;
+    border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+    background-color: white;
+    width: 528px;
+    }
+
+
+
+.ico1{background:url('https://i.ibb.co/n6T8n7y/political.png') no-repeat; background-size:50px auto}
+.ico2{background:url('https://i.ibb.co/BPZJy47/curture.png') no-repeat; background-size:50px auto}
+.ico3{background:url('https://i.ibb.co/wK1p6Hp/global.png') no-repeat; background-size:50px auto}
+.ico4{background:url('https://i.ibb.co/rdDqfFL/economy.png') no-repeat; background-size:50px auto}
+.ico5{background:url('https://mimgnews.pstatic.net/image/upload/office_logo/028/2018/08/01/logo_028_56_20180801163801.png') no-repeat; background-size:48px auto}
+
+
+.tab_menu2 li span{display:inline-block;width:50px;height:50px;margin:0 auto;   ;
+    border-radius: 10px 10px;}
+.tab_menu2 li {display:block;overflow:hidden;height:79px;font-size:12px;color:rgba(0,0,0,0.87);text-align:center; cursor: pointer;}
+
+.btn2{
+    align-items: center;
+    background-repeat: no-repeat;
+    color: #111;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 13px;
+    justify-content: center;
+    letter-spacing: -.5px;
+    line-height: 20px;
+    padding:2px 5px 2px 5px;
+    text-align: center;
+    white-space: nowrap;
+    width: auto
+}
