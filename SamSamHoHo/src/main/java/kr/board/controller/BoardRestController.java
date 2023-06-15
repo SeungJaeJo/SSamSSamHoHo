@@ -52,10 +52,10 @@ public class BoardRestController {
 //		return news;
 //	}
 	
-	// 게시글 전체보기 /boardList.do
 	@GetMapping("/Pnews")
-	public List<News> pressNews(){
-		List<News> list = boardMapper.pressNews();
+	public List<News> pressNews(@RequestParam("press")String press){
+		List<News> list = boardMapper.pressNews(press);
+		System.out.println(press);
 		return list;
 	}
 	

@@ -223,36 +223,40 @@
 									  
 									  	  $(document).ready(function(){
 									  		  // HTML이 다 로딩되고 작동하는 함수
-									  		  PList();
 									  		
+									  	var press = "조선일보";
+									  	$(".btn_cate").on('click',function(e){
+								  		  if(e.target.id === 'whtjs'){
+								  			  press = "조선일보";
+								  		  }else if(e.target.id === 'wnddkd'){
+								  			  press = "중앙일보";
+								  		  }else if(e.target.id === 'ehddk'){
+								  			  press = "동아일보";
+								  		  }else if(e.target.id === 'rudgid'){
+								  			  press = "경향신문";
+								  		  }else{
+								  			  press = "한겨레";
+								  		  }
+								  			  console.log(press)
+									  		  PList(press);
+									  	})
+									  	PList(press)
+									  	
 									  	  });
-									  	  var press = '조선일보';
-									  	  $(".btn_cate").on('click', function(e){
-									  		  if(e.target.id === 'whtjs'){
-									  			  press = '조선일보';
-									  		  }else if(e.target.id === 'wnddkd'){
-									  			  press = '중앙일보';
-									  		  }else if(e.target.id === 'ehddk'){
-									  			  press = '동아일보';
-									  		  }else if(e.target.id === 'rudgid'){
-									  			  press = '경향신문';
-									  		  }else{
-									  			  press = '한겨레';
-									  		  }
-									  			  console.log(press)
-									  		 	
-									  	  });
-											  	
-										  function PList(){
+										  function PList(press){
 											  
 											  $.ajax({
 												  url : "board/Pnews",
+												  data : {
+													  press : press
+												  },
 												  type : "get",
 												  dataType : "json",
 												  success : makeP,
 												  error : function(){ alert("error"); }
 											  });
 										  }
+											  	
 										                        
 										  function makeP(data){ 
 											  console.log(data);

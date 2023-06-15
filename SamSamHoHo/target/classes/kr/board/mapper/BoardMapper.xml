@@ -34,7 +34,7 @@
 	</select>
 	
 	<select id="pressNews" resultType="kr.board.entity.News">
-		select * from tbl_news where press = '조선일보' order by date limit 5
+		select * from tbl_news where press = #{press} order by date limit 5
 	</select>
 
 </mapper>

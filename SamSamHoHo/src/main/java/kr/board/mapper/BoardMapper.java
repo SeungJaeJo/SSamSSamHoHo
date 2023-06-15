@@ -29,7 +29,7 @@ public interface BoardMapper {
 
 	public List<News> Qnews();
 
-	public List<News> pressNews();
+	public List<News> pressNews(String press);
 
 
 	
