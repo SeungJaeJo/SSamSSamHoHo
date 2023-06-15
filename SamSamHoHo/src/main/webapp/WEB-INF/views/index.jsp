@@ -403,8 +403,7 @@
 							  	
 						  });
 						  
-						 
-						  $("#view1").html(listHtml);
+						  	$(".view").html(listHtml);
 							
 					
 					  }
@@ -423,7 +422,7 @@
 									<div class='swiper-slide'>
 										<ul class='row card_list'>
 											<li class='col_lg4 color_set1'>
-												<div class='list_item' id="view1">
+												<div class='list_item view' >
 													<ul class="row card_list">
 														<li class='col_lg4 color_set1'>
 															<div class='list_item'>
@@ -442,7 +441,7 @@
 									<div class="swiper-slide">
 										<ul class="row card_list">
 											<li class="col_lg4 color_set1">
-												<div class='list_item' id="view3">
+												<div class='list_item view'>
 													
 
 												</div>
@@ -467,7 +466,7 @@
 									<div class="swiper-slide">
 										<ul class="row card_list">
 											<li class="col_lg4 color_set1">
-												<div class='list_item' id="view2">
+												<div class='list_item view'>
 													
 
 												</div>
@@ -484,7 +483,7 @@
 									<div class="swiper-slide">
 										<ul class="row card_list">
 											<li class="col_lg4 color_set1">
-												<div class='list_item' id="view4">
+												<div class='list_item view'>
 													
 
 												</div>
