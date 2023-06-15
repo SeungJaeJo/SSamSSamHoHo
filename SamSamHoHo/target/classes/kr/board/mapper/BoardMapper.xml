@@ -26,7 +26,7 @@
 	</update>
 	
 	<select id="newsList" resultType="kr.board.entity.News">
-		select * from tbl_news order by date desc limit 1
+		select * from tbl_news where category = #{category} order by date limit 1
 	</select>
 
 	<select id="Qnews" resultType="kr.board.entity.News">

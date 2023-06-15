@@ -25,7 +25,7 @@ public interface BoardMapper {
 	public void boardCount(int idx);
 	
 	// test 뉴스 기사 
-	public List<News> newsList();
+	public List<News> newsList(String category);
 
 	public List<News> Qnews();
 

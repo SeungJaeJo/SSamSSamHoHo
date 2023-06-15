@@ -356,8 +356,63 @@
 
 
 						</section>
-
+						
 					</div>
+					
+					
+					<script type="text/javascript">
+  
+				  	  var csrfHeaderName = "${_csrf.headerName}";
+				  	  var csrfTokenValue = "${_csrf.token}";
+				  
+				  	  $(document).ready(function(){
+				  		  // HTML이 다 로딩되고 작동하는 함수
+				  		  var category = ["정치", "경제", "사회", "국제"];
+				  		  for(var i = 0; i < 4; i++){
+				  		  		loadList(category[i]);
+				  		  }
+				  		  
+				  	  });
+				  
+					  function loadList(category){
+						
+						  $.ajax({
+							  url : "board/all",
+							  data : {
+								  category : category
+							  },
+							  type : "get",
+							  dataType : "json",
+							  success : makeView,
+							  error : function(){ alert("error"); }
+						  });
+					  }
+					                        
+					  function makeView(data){ 
+						  console.log(data);
+						  var listHtml = "";
+						 
+						  $.each(data, function(index, obj){
+							  	listHtml += "<div class='flex_area'>";
+							  	listHtml += "<h2 class='headline'>";
+								listHtml += "<a href=''>"+obj.title+"</a>";
+								listHtml += "</h2>"
+								listHtml += "</div>";
+								listHtml += "<p class='description short'>";
+								listHtml += "<a href='' class='gogo'>"+obj.summ_content+"</a></p>";
+							  	
+						  });
+						  
+						 
+						  $("#view1").html(listHtml);
+							
+					
+					  }
+				  </script>
+
+					
+					
+					
 					<div class="col_lg9">
 						<section class="myfeed_popular_subscribe">
 							<header class="title_wrap">
@@ -368,55 +423,12 @@
 									<div class='swiper-slide'>
 										<ul class='row card_list'>
 											<li class='col_lg4 color_set1'>
-												<div class='list_item' id="view">
+												<div class='list_item' id="view1">
 													<ul class="row card_list">
 														<li class='col_lg4 color_set1'>
-															<div class='list_item'  id="view">
+															<div class='list_item'>
 
-																<script type="text/javascript">
-  
-									  	  var csrfHeaderName = "${_csrf.headerName}";
-									  	  var csrfTokenValue = "${_csrf.token}";
-									  
-									  	  $(document).ready(function(){
-									  		  // HTML이 다 로딩되고 작동하는 함수
-									  		  loadList();
-									  	  });
-									  
-										  function loadList(){
-											
-											  $.ajax({
-												  url : "board/all",
-												  type : "get",
-												  dataType : "json",
-												  success : makeView,
-												  error : function(){ alert("error"); }
-											  });
-										  }
-										                        
-										  function makeView(data){ 
-											  console.log(data);
-											  var listHtml = "";
-											 
-											  $.each(data, function(index, obj){
-												  	listHtml += "<div class='flex_area'>";
-												  	listHtml += "<h2 class='headline'>";
-													listHtml += "<a href=''>"+obj.title+"</a>";
-													listHtml += "</h2>"
-												listHtml += "</div>"
-													listHtml += "<p class='description short'>";
-													listHtml += "<a href='' class='gogo'>"+obj.summ_content+"</a></p>";
-												  	
-											  });
-												  
-											  
-											  
-											  $("#view").html(listHtml);
-										
-										  }
-									  </script>
-
-
+																
 															</div> 
 
 														</li>
@@ -424,28 +436,14 @@
 										</ul>
 									</div>
 									<header class="title_wrap">
-										<strong class="title"><a href="">문화</a></strong>
+										<strong class="title"><a href="">사회</a></strong>
 									</header>
 
 									<div class="swiper-slide">
 										<ul class="row card_list">
 											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-														</h2>
-													</div>
-
-													<p class="description short">
-														<a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국
-															대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함
-															한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는
-															"추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담
-															연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
-													</p>
-
-
+												<div class='list_item' id="view3">
+													
 
 												</div>
 											</li>
@@ -469,20 +467,8 @@
 									<div class="swiper-slide">
 										<ul class="row card_list">
 											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-														</h2>
-													</div>
-
-													<p class="description short">
-														<a href="" class="gogo">식약처는 지난달 건강기능식품의 온라인 광고를 점검해
-															허위·과대광고 185건을 무더기 적발하였으며 건강기능식품이라고 광고하는 제품을 살 땐 겉면에 식약처가
-															인증한 ‘건강기능식품’이란 문구와 ‘우수제조기준(GMP) 인증 마크’가 있는지 확인해야 한다.</a>
-													</p>
-
-
+												<div class='list_item' id="view2">
+													
 
 												</div>
 											</li>
@@ -493,27 +479,13 @@
 
 									</div>
 									<header class="title_wrap">
-										<strong class="title"><a href="">세계</a></strong>
+										<strong class="title"><a href="">국제</a></strong>
 									</header>
 									<div class="swiper-slide">
 										<ul class="row card_list">
 											<li class="col_lg4 color_set1">
-												<div class="list_item">
-													<div class="flex_area">
-														<h2 class="headline">
-															<a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-														</h2>
-													</div>
-
-													<p class="description short">
-														<a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국
-															대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함
-															한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는
-															"추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담
-															연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
-													</p>
-
-
+												<div class='list_item' id="view4">
+													
 
 												</div>
 											</li>

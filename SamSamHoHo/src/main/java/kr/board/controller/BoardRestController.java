@@ -38,8 +38,8 @@ public class BoardRestController {
 	
 	// 게시글 전체보기 /boardList.do
 	@GetMapping("/all")
-	public List<News> newsList(){
-		List<News> list = boardMapper.newsList();
+	public List<News> newsList(@RequestParam("category")String category){
+		List<News> list = boardMapper.newsList(category);
 		return list;
 	}
 	
