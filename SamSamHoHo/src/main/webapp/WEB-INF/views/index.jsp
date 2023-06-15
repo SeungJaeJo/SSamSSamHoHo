@@ -408,11 +408,20 @@
 								listHtml += "</div>";
 								listHtml += "<p class='description short'>";
 								listHtml += "<a href='' class='gogo'>"+obj.summ_content+"</a></p>";
-							  	
+								  	
 						  });
+						  console.log(data[0].category);
+						  if(data[0].category == "정치"){
+						  	$("#view1").html(listHtml);
+						  }else if(data[0].category == "경제"){
+						  	$("#view3").html(listHtml);
+						  }else if(data[0].category == "사회"){
+						  	$("#view2").html(listHtml);
+						  }else if(data[0].category == "국제"){
+						  	$("#view4").html(listHtml);
+						  } 
 						  
-						  	$(".view").html(listHtml);
-							
+						 
 					
 					  }
 				  </script>
@@ -427,7 +436,7 @@
 									<div class='swiper-slide'>
 										<ul class='row card_list'>
 											<li class='col_lg4 color_set1'>
-												<div class='list_item view' >
+												<div class='list_item view' id="view1">
 													<ul class="row card_list">
 														<li class='col_lg4 color_set1'>
 															<div class='list_item'>
@@ -446,7 +455,7 @@
                                     <div class="swiper-slide"> 
                                         <ul class="row card_list">
                                             <li class="col_lg4 color_set1">
-                                                <div class="list_item view">
+                                                <div class="list_item view" id="view3">
                                                 
                                                 </div>
                                             </li>
@@ -471,7 +480,7 @@
                                     <div class="swiper-slide">
                                         <ul class="row card_list">
                                             <li class="col_lg4 color_set1">
-                                                <div class="list_item view">
+                                                <div class="list_item view" id="view2">
                                                    
 
                                                 </div>
@@ -488,7 +497,7 @@
                                     <div class="swiper-slide">
                                         <ul class="row card_list">
                                             <li class="col_lg4 color_set1">
-                                                <div class="list_item view">
+                                                <div class="list_item view" id="view4">
                                                     
                                                       
 
