@@ -27,7 +27,7 @@
 		  // BoardController에서 게시글 전체목록을 가져오는 기능
 		  // JavaScript에서 객체 표현법 {key:value} -> json
 		  $.ajax({
-			  url : "board/all",
+			  url : "board/Qnews",
 			  type : "get",
 			  dataType : "json",
 			  success : makeView,
@@ -39,175 +39,30 @@
 		  console.log(data);
 		  var listHtml = "<table class='table table-bordered'>";
 		  listHtml += "<tr>";
-		  listHtml += "<td>번호</td>";
 		  listHtml += "<td>제목</td>";
-		  listHtml += "<td>작성자</td>";
-		  listHtml += "<td>작성일</td>";
-		  listHtml += "<td>조회수</td>";
 		  listHtml += "</tr>";
-		  
+		  var list ;
 		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
 		  $.each(data, function(index, obj){
 			  listHtml += "<tr>";
-			  listHtml += "<td>" + (index + 1) + "</td>`";
-			  listHtml += "<td id='t"+obj.idx+"'><a href='javascript:goContent("+obj.idx+")'>" + obj.title + "</a></td>";
-			  listHtml += "<td>" + obj.writer + "</td>";
-			  listHtml += "<td>" + obj.indate + "</td>";
-			  listHtml += "<td>" + obj.count + "</td>";
+			  listHtml += "<td><a >" + obj.title + "</a></td>";
 			  listHtml += "</tr>";
 			  
-			  // 상세 게시글 보여주기
-			  listHtml += "<tr id='c"+obj.idx+"' style='display:none;'><td>내용</td><td colspan='4'><textarea id='ta"+obj.idx+"' rows='7' class='form-control' readonly>";
-			  /* listHtml += obj.content */ 
-			  listHtml += "</textarea>";
-			  
-			  // 수정 삭제 버튼 추가
-			  if("${mvo.memID}" == obj.memID){
-				  listHtml += "<br>";
-				  listHtml += "<span id='ub"+obj.idx+"'>"; // table 영역 내 div 비추
-				  listHtml += "<button class='btn btn-sm btn-success' onclick='goUpdateForm("+obj.idx+")'>수정</button></span> &nbsp;";
-				  listHtml += "<button class='btn btn-sm btn-warning' onclick='goDelete("+obj.idx+")' id='boardDelete'>삭제</button>";
-			  } else {
-				  listHtml += "<br>";
-				  listHtml += "<span id='ub"+obj.idx+"'>"; // table 영역 내 div 비추
-				  listHtml += "<button disabled class='btn btn-sm btn-success' onclick='goUpdateForm("+obj.idx+")'>수정</button></span> &nbsp;";
-				  listHtml += "<button disabled class='btn btn-sm btn-warning' onclick='goDelete("+obj.idx+")' id='boardDelete'>삭제</button>";
-				  
-			  }
-				  
 			  listHtml += "</td></tr>";
 			  
-			  
+				
+		  console.log(obj.title);
 		  });
 		  
-		  // 글쓰기 버튼 추가
-		  if(${not empty mvo}){
-		  listHtml += "<tr><td colspan='5'>";
-		  listHtml += "<button class='btn btn-primary btn-sm' onclick='goForm()'>"
-		  listHtml += "글쓰기</button></td></tr>"
-		  }
+		
 		  listHtml += "</table>";
-		  
 		  $("#view").html(listHtml);
-		  goList();
+	
 		  
 		  
 	  }
 	                           
-      // 글쓰기 버튼 눌렀을 때 글 작성 부분 보여주는 함수
-      function goForm(){
-    	  $("#view").css("display", "none");
-    	  $("#wform").css("display", "block");
-      }
-      
-      // 리스트 다시 보여주기
-      function goList(){
-    	  $("#view").css("display", "block");
-    	  $("#wform").css("display", "none");
-      }
-      
-      // 게시글 입력 기능
-      function goInsert(){
-    	  // 제목, 내용, 작성자를 DB에 입력
-    	  var fData = $('#frm').serialize();
-    	  console.log(fData);
-		  
-    	  $.ajax({
-    		 url :  "board/new",
-    		 type : "post",
-    		 data : fData,
-    		 beforeSend : function(xhr){
-    			 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-    		 },
-    		 success : loadList,
-    		 error : function(){alert("error");}
-    		 
-    		 });
-    	  
-    	  $("#fclear").trigger("click");
-    	  }
-     
-      // 게시글 상세보기 기능
-       function goContent(idx){
-    	  if($("#c"+idx).css("display") == "none"){
-    		  
-    		  $.ajax({
-    			  url : "board/"+idx,
-    			  type : "get",
-    			  dataType : "json",
-    			  success : function(data){
-    				  $("#ta"+idx).val(data.content);
-    			  },
-    			  error : function(){alert("error");}
-    		  })
-    		  
-    		  
-	    	  $("#c"+idx).css("display", "table-row");
-	    	  $("#ta"+idx).attr("readonly", true);
-    	  }else{
-	    	  $("#c"+idx).css("display", "none");
-	    	  
-	    	  $.ajax({
-	    		  url : "board/count/"+idx,
-	    		  type : "put",
-	    		  beforeSend : function(xhr){
-	     			 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-	     		  },
-	    		  success : loadList,
-	    		  error : function(){alert("error");}
-	    	  })
-    	  }
-      }
-      
-      // 게시글 삭제하기
-      function goDelete(idx){
-    	  // 문제
-    	  // boardDelete.do로 요청을 해서 idx가 일치하는 게시물을 삭제
-    	  $.ajax({
-    		  url : "board/"+idx,
-    		  type : "delete",
-    		  beforeSend : function(xhr){
-     			 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-     		  },
-    		  success : loadList,
-    		  error : function(){alert("error");}
-    	  })
-      }
-      
-      // 게시글 수정화면 만들기
-      function goUpdateForm(idx){
-    	  $("#ta"+idx).attr("readonly", false);
-    	  
-    	  // 제목 input 태그로 변경하기
-    	  var title = $("#t"+idx).text();
-    	  var newInput = "<input id='nt"+idx+"' type='text' class='form-control' value='"+title+"'>";
-    	  $('#t'+idx).html(newInput);
-    	  
-    	  // 수정하기 기능이 있는 버튼으로 변경
-    	  var newButton = "<button class='btn btn-sm btn-primary' onclick='goUpdate("+idx+")'>수정하기</button>";
-    	  $('#ub'+idx).html(newButton);
-      }
-      
-      // 게시글 수정 기능
-      function goUpdate(idx){
-    	  // 제목에 입력한 글자와, 내용에 입력한 글자를 가져와서 수정
-    	  var title = $('#nt'+idx).val();
-    	  var content = $('#ta'+idx).val();
-    	  /* console.log(title); */
-    	  $.ajax({
-	    	  // boardUpdate.do로 요청해서 게시글 수정하기
-    		  url : "board/update",
-    		  type : "put", // put방식은 json 명시 안하면 인식 못해서 꼭 명시
-    		  contentType : "application/json;charset=utf-8",
-    		  beforeSend : function(xhr){
-     			 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-     		  },
-	    	  // 힌트. title과 content만 보내면 안되고 idx도 보내야한다 json
-    		  data : JSON.stringify({"idx":idx, "title":title, "content":content}),
-    		  success : loadList,
-    		  error : function(){alert("error");}
-    	  })
-      }
+    
   
   
   </script>

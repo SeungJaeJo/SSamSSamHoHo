@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.Board;
+import kr.board.entity.News;
 
 @Mapper
 public interface BoardMapper {
@@ -22,6 +23,17 @@ public interface BoardMapper {
 	
 	@Update("update board set count = count + 1 where idx = #{idx}")
 	public void boardCount(int idx);
+	
+	// test 뉴스 기사 
+	public List<News> newsList();
+
+	public List<News> Qnews();
+
+	public List<News> pressNews();
+
+
+	
+
 
 
 }

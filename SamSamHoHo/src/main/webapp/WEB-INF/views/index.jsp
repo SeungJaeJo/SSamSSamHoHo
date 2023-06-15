@@ -113,16 +113,11 @@
 				<div class="header_right_area">
 					<nav class="header_nav">
 						<ul class="nav sm_hidden md_hidden">
-							<li class="nav_item"><a
-								href="">뉴스룸</a></li>
-							<li class="nav_item"><a
-								href="">정치</a></li>
-							<li class="nav_item"><a
-								href="">경제</a></li>
-							<li class="nav_item"><a
-								href="">사회</a></li>
-							<li class="nav_item"><a
-								href="">국제</a></li>
+							<li class="nav_item"><a href="">뉴스룸</a></li>
+							<li class="nav_item"><a href="">정치</a></li>
+							<li class="nav_item"><a href="">경제</a></li>
+							<li class="nav_item"><a href="">사회</a></li>
+							<li class="nav_item"><a href="boardMain.do">국제</a></li>
 
 						</ul>
 
@@ -156,78 +151,59 @@
 
 		</header>
 
-		    <style>
-            @media (min-width: 1024px) {
-                .myfeed_subscribe_news .card_image {
-                    width: 205px;
-                }
-            }
-        </style>
-        <style>
+		<style>
+@media ( min-width : 1024px) {
+	.myfeed_subscribe_news .card_image {
+		width: 205px;
+	}
+}
+</style>
+		<style>
+</style>
+		<main role="main" id="container">
+			<section class="contents">
 
-        </style>
-        <main role="main" id="container">
-            <section class="contents">
+				<section class="myfeed_top_wrap"></section>
 
-                <section class="myfeed_top_wrap">
+				<div class="row nologin">
+					<div class="col_lg3">
+						<section class="myfeed_local_news">
+							<header class="title_wrap">
+								<strong class="title">실시간 뉴스</strong>
+							</header>
+							<div class="subscribe_box2">
+								<div class="rolling_box">
+									<ul id="rolling_box">
 
-
-                </section>
-
-                <div class="row nologin">
-                    <div class="col_lg3">
-                        <section class="myfeed_local_news">
-                            <header class="title_wrap">
-                                <strong class="title">실시간 뉴스</strong>
-                            </header>
-                            <div class="subscribe_box2">
-                                <div class="rolling_box">
-                                    <ul id="rolling_box">
-                                        <li class="card_sliding" id="first">
-                                            <a href=""></a>
-                                        </li>
-                                        <li class="" id="second">
-                                            <a href=""></a>
-                                        </li>
-                                        <li class="" id="third">
-                                            <a href=""></a>
-                                        </li>
-                                    </ul>
-                                </div>
+										<li class="card_sliding" id="first"><a href=""></a></li>
+										<li class="" id="second"><a href=""></a></li>
+										<li class="" id="third"><a href=""></a></li>
+									</ul>
+								</div>
 
 
-                            </div>
+							</div>
 
 
-                            <header class="title_wrap">
-                                <strong class="title">언론사 별 뉴스</strong>
-                            </header>
-                            <div class="wrap2">
-                                <div class="tab_menu">
-                                    <ul class="list">
-                                        <li class="is_on">
-                                            <span href="#tab1" class="ico_1">&nbsp;</span>
-                                            <a class="btn2">조선일보</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab2" class="ico_2">&nbsp;</span>
-                                            <a class="btn2">중앙일보</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab3" class="ico_3">&nbsp;</span>
-                                            <a class="btn2">동아일보</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab4" class="ico_4">&nbsp;</span>
-                                            <a class="btn2">경향신문</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab5" class="ico_5">&nbsp;</span>
-                                            <a class="btn2">한겨례</a>
-                                        </li>
-                                    </ul>
+							<header class="title_wrap">
+								<strong class="title">언론사 별 뉴스</strong>
+							</header>
+							<div class="wrap2">
+								<div class="tab_menu">
+									<ul class="list">
+										<li class="is_on"><span href="#tab1" class="ico_1 btn_cate" id="whtjs">&nbsp;</span>
+											<a class="btn2">조선일보</a></li>
+										<li><span href="#tab2" class="ico_2 btn_cate" id="wnddkd">&nbsp;</span> <a
+											class="btn2">중앙일보</a></li>
+										<li><span href="#tab3" class="ico_3 btn_cate" id="ehddk">&nbsp;</span> <a
+											class="btn2" id="ehddk">동아일보</a></li>
+										<li><span href="#tab4" class="ico_4 btn_cate" id="rudgid">&nbsp;</span> <a
+											class="btn2" id="rudgid">경향신문</a></li>
+										<li><span href="#tab5" class="ico_5 btn_cate" id="gks">&nbsp;</span> <a
+											class="btn2" id="gks">한겨례</a></li>
+									</ul>
 
-                                    <div class="cont_area">
+									<div class="cont_area">
                                         <div id="tab1" class="cont" style="display:block;">
                                             <div class="list_item">
                                                 <div class="flex_area">
@@ -235,256 +211,325 @@
                                                         style="width: 55px; height: 55px;">&nbsp;</span>
                                                     <span style="font-weight: bold;">조선일보</span>
                                                 </div>
-                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
-                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                        튼다</a></p>
-                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                    튼다</a></p>
+										
+											
+												<div class="Pnews">
+											
+												
+												<script type="text/javascript">
+  
+									  	  var csrfHeaderName = "${_csrf.headerName}";
+									  	  var csrfTokenValue = "${_csrf.token}";
+									  
+									  	  $(document).ready(function(){
+									  		  // HTML이 다 로딩되고 작동하는 함수
+									  		  PList();
+									  		
+									  	  });
+									  	  var press = '조선일보';
+									  	  $(".btn_cate").on('click', function(e){
+									  		  if(e.target.id === 'whtjs'){
+									  			  press = '조선일보';
+									  		  }else if(e.target.id === 'wnddkd'){
+									  			  press = '중앙일보';
+									  		  }else if(e.target.id === 'ehddk'){
+									  			  press = '동아일보';
+									  		  }else if(e.target.id === 'rudgid'){
+									  			  press = '경향신문';
+									  		  }else{
+									  			  press = '한겨레';
+									  		  }
+									  			  console.log(press)
+									  		 	
+									  	  });
+											  	
+										  function PList(){
+											  
+											  $.ajax({
+												  url : "board/Pnews",
+												  type : "get",
+												  dataType : "json",
+												  success : makeP,
+												  error : function(){ alert("error"); }
+											  });
+										  }
+										                        
+										  function makeP(data){ 
+											  console.log(data);
+											  var listHtml = "";
+											
+											  $.each(data, function(index, obj){
+											
+												  	listHtml += "<p class='description short'>";
+													listHtml += "<a href=''>"+obj.title+"</a>";
+													listHtml += "</p>"
+												  	
+											  });
+											  
+											  $(".Pnews").html(listHtml);
+											  
+											 	/* $("#press_name").text(press); */
+											  /* $("#cng_icon").attr('class','ico_2'); */
+											  
+										
+										  }
+									  </script>
+												
+											</div>
 
 
-
-                                            </div>
-
-
-                                        </div>
-                                        <div id="tab2" class="cont">
-                                            <div class="list_item">
-                                                <div class="flex_area">
-                                                    <span href="#tab1" class="ico_2"
-                                                        style="width: 55px; height: 55px;">&nbsp;</span>
-                                                    <span style="font-weight: bold;">중앙일보</span>
-                                                </div>
-                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
-                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                        튼다</a></p>
-                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                    튼다</a></p>
+											</div>
 
 
-
-                                            </div>
-                                        </div>
-                                        <div id="tab3" class="cont">
-                                            <div class="list_item">
-                                                <div class="flex_area">
-                                                    <span href="#tab1" class="ico_3"
-                                                        style="width: 55px; height: 55px; ">&nbsp;</span>
-                                                    <span style="font-weight: bold;">동아일보</span>
-                                                </div>
-                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
-                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                        튼다</a></p>
-                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                    튼다</a></p>
+										</div> 
+										 <div id="tab2" class="cont">
+											<div class="list_item">
+												<div class="flex_area">
+													<span href="#tab1" class="ico_2"
+														style="width: 55px; height: 55px;">&nbsp;</span> <span
+														style="font-weight: bold;">중앙일보</span>
+												</div>
+												
+												
+												<div class="Pnews">
+												
+											
+											</div>
 
 
+											</div>
+										</div>
+										<div id="tab3" class="cont">
+											<div class="list_item">
+												<div class="flex_area">
+													<span href="#tab1" class="ico_3"
+														style="width: 55px; height: 55px;">&nbsp;</span> <span
+														style="font-weight: bold;">동아일보</span>
+												</div>
+											<div class="Pnews">
+											
+											</div>
 
-                                            </div>
-                                        </div>
-                                        <div id="tab4" class="cont">
-                                            <div class="list_item">
-                                                <div class="flex_area">
-                                                    <span href="#tab1" class="ico_4"
-                                                        style="width: 55px; height: 55px;">&nbsp;</span>
-                                                    <span style="font-weight: bold;">경향신문</span>
-                                                </div>
-                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
-                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                        튼다</a></p>
-                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                    튼다</a></p>
-
-
-
-                                            </div>
-                                        </div>
-                                        <div id="tab5" class="cont">
-                                            <div class="list_item">
-                                                <div class="flex_area">
-                                                    <span href="#tab1" class="ico_5"
-                                                        style="width: 55px; height: 55px;">&nbsp;</span>
-                                                    <span style="font-weight: bold;">한겨례</span>
-                                                </div>
-                                                <p class="description short"><a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a></p>
-                                                <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                        튼다</a></p>
-                                                        <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                            튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                튼다</a></p>                   <p class="description short"><a href="">'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통
-                                                                    튼다</a></p>
+											</div>
+										</div>
+										<div id="tab4" class="cont">
+											<div class="list_item">
+												<div class="flex_area">
+													<span href="#tab1" class="ico_4"
+														style="width: 55px; height: 55px;">&nbsp;</span> <span
+														style="font-weight: bold;">경향신문</span>
+												</div>
+												
+												<div class="Pnews">
+											
+											</div>
 
 
+											</div>
+										</div>
+										<div id="tab5" class="cont">
+											<div class="list_item">
+												<div class="flex_area">
+													<span href="#tab1" class="ico_5"
+														style="width: 55px; height: 55px;">&nbsp;</span> <span
+														style="font-weight: bold;">한겨례</span>
+												</div>
+												
+												<div class="Pnews">
+											
+											</div>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-
-
-
-
-
-                        </section>
-
-                    </div>
-                    <div class="col_lg9">
-                        <section class="myfeed_popular_subscribe">
-                            <header class="title_wrap">
-                                <strong class="title"><a href="">정치</a></strong>
-                            </header>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <p class="description short">
-                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
-                                                    </p>
-                                                       
-                                                      
-
-                                                </div>
-                                            </li>
-                                       
-                                          
-                                        </ul>
-                                    </div>
-                                    <header class="title_wrap">
-                                        <strong class="title"><a href="">문화</a></strong>
-                                    </header>
-                              
-                                    <div class="swiper-slide">
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <p class="description short">
-                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
-                                                    </p>
-                                                       
-                                                      
-
-                                                </div>
-                                            </li>
-                                            
-                                        
-                                         
-                                        </ul>
-                                    </div>
-       
-                                </div>
-                            </div>
-                        </section>
-
-                    </div>
-                    <div class="col_lg9">
-                        <section class="myfeed_popular_subscribe">
-                            <header class="title_wrap">
-                                <strong class="title"><a href="">경제</a></strong>
-                            </header>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <p class="description short">
-                                                        <a href="" class="gogo">식약처는 지난달 건강기능식품의 온라인 광고를 점검해 허위·과대광고 185건을 무더기 적발하였으며 건강기능식품이라고 광고하는 제품을 살 땐 겉면에 식약처가 인증한 ‘건강기능식품’이란 문구와 ‘우수제조기준(GMP) 인증 마크’가 있는지 확인해야 한다.</a>
-                                                    </p>
-                                                       
-                                                      
-
-                                                </div>
-                                            </li>
-                                       
-                                         
-                                      
-                                        </ul>
-                                       
-                                    </div>
-                                    <header class="title_wrap">
-                                        <strong class="title"><a href="">세계</a></strong>
-                                    </header>
-                                    <div class="swiper-slide">
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <p class="description short">
-                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
-                                                    </p>
-                                                       
-                                                      
-
-                                                </div>
-                                            </li>
-                                            
-                                        
-                                         
-                                        </ul>
-                                    </div>
-       
-                                </div>
-                            </div>
-                        </section>
-
-                    </div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
 
 
 
 
-        </main>
-        <script>
-            const full = document.getElementsByClassName('.gogo');
-            full.addEventListener('click', homzzang )
 
-            function homzzang() {
+						</section>
 
-            document.getElementsByClassName(".gogo").style.cssText = '-webkit-line-clamp:0';
+					</div>
+					<div class="col_lg9">
+						<section class="myfeed_popular_subscribe">
+							<header class="title_wrap">
+								<strong class="title"><a href="">정치</a></strong>
+							</header>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class='swiper-slide'>
+										<ul class='row card_list'>
+											<li class='col_lg4 color_set1'>
+												<div class='list_item' id="view">
+													<ul class="row card_list">
+														<li class='col_lg4 color_set1'>
+															<div class='list_item'  id="view">
 
-            }
-            
+																<script type="text/javascript">
+  
+									  	  var csrfHeaderName = "${_csrf.headerName}";
+									  	  var csrfTokenValue = "${_csrf.token}";
+									  
+									  	  $(document).ready(function(){
+									  		  // HTML이 다 로딩되고 작동하는 함수
+									  		  loadList();
+									  	  });
+									  
+										  function loadList(){
+											
+											  $.ajax({
+												  url : "board/all",
+												  type : "get",
+												  dataType : "json",
+												  success : makeView,
+												  error : function(){ alert("error"); }
+											  });
+										  }
+										                        
+										  function makeView(data){ 
+											  console.log(data);
+											  var listHtml = "";
+											 
+											  $.each(data, function(index, obj){
+												  	listHtml += "<div class='flex_area'>";
+												  	listHtml += "<h2 class='headline'>";
+													listHtml += "<a href=''>"+obj.title+"</a>";
+													listHtml += "</h2>"
+												listHtml += "</div>"
+													listHtml += "<p class='description short'>";
+													listHtml += "<a href='' class='gogo'>"+obj.summ_content+"</a></p>";
+												  	
+											  });
+												  
+											  
+											  
+											  $("#view").html(listHtml);
+										
+										  }
+									  </script>
 
 
-        </script>
+															</div> 
+
+														</li>
+												</div>
+										</ul>
+									</div>
+									<header class="title_wrap">
+										<strong class="title"><a href="">문화</a></strong>
+									</header>
+
+									<div class="swiper-slide">
+										<ul class="row card_list">
+											<li class="col_lg4 color_set1">
+												<div class="list_item">
+													<div class="flex_area">
+														<h2 class="headline">
+															<a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+														</h2>
+													</div>
+
+													<p class="description short">
+														<a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국
+															대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함
+															한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는
+															"추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담
+															연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
+													</p>
 
 
 
-        <script>
+												</div>
+											</li>
+
+
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+
+					</div>
+					<div class="col_lg9">
+						<section class="myfeed_popular_subscribe">
+							<header class="title_wrap">
+								<strong class="title"><a href="">경제</a></strong>
+							</header>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<ul class="row card_list">
+											<li class="col_lg4 color_set1">
+												<div class="list_item">
+													<div class="flex_area">
+														<h2 class="headline">
+															<a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+														</h2>
+													</div>
+
+													<p class="description short">
+														<a href="" class="gogo">식약처는 지난달 건강기능식품의 온라인 광고를 점검해
+															허위·과대광고 185건을 무더기 적발하였으며 건강기능식품이라고 광고하는 제품을 살 땐 겉면에 식약처가
+															인증한 ‘건강기능식품’이란 문구와 ‘우수제조기준(GMP) 인증 마크’가 있는지 확인해야 한다.</a>
+													</p>
+
+
+
+												</div>
+											</li>
+
+
+
+										</ul>
+
+									</div>
+									<header class="title_wrap">
+										<strong class="title"><a href="">세계</a></strong>
+									</header>
+									<div class="swiper-slide">
+										<ul class="row card_list">
+											<li class="col_lg4 color_set1">
+												<div class="list_item">
+													<div class="flex_area">
+														<h2 class="headline">
+															<a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
+														</h2>
+													</div>
+
+													<p class="description short">
+														<a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국
+															대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함
+															한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는
+															"추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담
+															연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
+													</p>
+
+
+
+												</div>
+											</li>
+
+
+
+										</ul>
+									</div>
+
+								</div>
+							</div>
+						</section>
+
+					</div>
+					</div>
+		</main>
+
+
+
+		<script>
             const tabList = document.querySelectorAll('.tab_menu .list li');
             const contents = document.querySelectorAll('.tab_menu .cont_area .cont')
             let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
@@ -513,17 +558,49 @@
 
 
 
-
-        <script>
-
-            let rollingData = [
-                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
-                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
-                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
-                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다",
-                "'지휘부 쑥대밭' 해경·소방청 잔혹사 1년…악몽 딛고 숨통 튼다"
-
-            ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
+		<script>
+        $(document).ready(function(){
+    		  // HTML이 다 로딩되고 작동하는 함수
+    		  QList();
+    	  });
+    
+        function QList(){
+  		  // BoardController에서 게시글 전체목록을 가져오는 기능
+  		  // JavaScript에서 객체 표현법 {key:value} -> json
+  		  $.ajax({
+  			  url : "board/Qnews",
+  			  type : "get",
+  			  dataType : "json",
+  			  success : makeQ,
+  			  error : function(){ alert("error"); }
+  		  });
+  	  }
+  	                           //           0              1         2
+  	  function makeQ(data){ // data = [{title="하하"}, {     }, {     }]
+  		  console.log(data);
+  		var name = ["first","second","third"]; 
+  	  	var title = [];
+  		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
+  		   $.each(data, function(index, obj){
+  			  
+  			   title += obj.title+":";
+  		  });
+  			   	 
+  			 title = title.split(":");
+  			 
+  			   	 for(var i = 0; i < 6; i++){
+		  			 $("#"+name[i]+"").html(title[i]);
+  			   		 
+  			   	 }
+  			 
+  			 
+  		 
+  		   
+  	  }
+		  
+	        let rollingData = [
+ 			   		 
+	        ]    // 롤링할 데이터를 넣으면 됩니다 갯수 제한 없어요
 
             let timer = 3000 // 롤링되는 주기 입니다 (1000 => 1초)
 
@@ -534,6 +611,7 @@
             let dataCnt = 1
             let listCnt = 1
 
+            
             //위 선언은 따로 완전히 수정하지 않는 한 조정할 필요는 없습니다.
 
             first.children[0].innerHTML = rollingData[0]
@@ -592,48 +670,52 @@
             }, timer);
 
         </script>
-        <div id="footer" class="footer footer22">
-            <div class="footer_wrap">
-                <div class="logo lg_hidden"><a href="https://www.joongang.co.kr" data-evnt-ctg="area:중앙|내 구독"
-                        data-evnt-act="move:A40 푸터-사이트맵" data-evnt-lbl="footer logo"><span class="visually_hidden">The
-                            JoongAng</span></a></div>
+		<div id="footer" class="footer footer22">
+			<div class="footer_wrap">
+				<div class="logo lg_hidden">
+					<a href="https://www.joongang.co.kr" data-evnt-ctg="area:중앙|내 구독"
+						data-evnt-act="move:A40 푸터-사이트맵" data-evnt-lbl="footer logo"><span
+						class="visually_hidden">The JoongAng</span></a>
+				</div>
 
 
-            </div>
-            <footer>
+			</div>
+			<footer>
 
-                <div class="footer_info">
-                    <div class="footer_wrap">
+				<div class="footer_info">
+					<div class="footer_wrap">
 
-                        <div class="logo sm_hidden md_hidden"><a href="https://www.joongang.co.kr"><span
-                                    class="visually_hidden">중앙일보</span></a></div>
-                        <div class="corp">
-                            <p class="address">
-                                <span>주소 : 광주광역시 북구 북구맨 64-86 (우) 0573</span>
-                                <span>전화 : 062-262-6486</span>
-                                <span>등록번호 : 광주 북 1818</span>
-                                <span>등록일자 : 1996.01.16</span>
-                                <span>발행인 : 조승재</span>
-                                <span>편집인 : 조승재</span>
-                                <a href="https://www.joongang.co.kr/sitemap/index" class="sm_hidden md_hidden">전체
-                                    서비스</a>
-                            </p>
-                            <p class="address">
-                                <span>사업자명 : <a href="https://www.joongang.co.kr">삼삼뉴스㈜</a></span>
-                                <span>사업자등록번호 : 960-11-615524</span>
-                                <span>대표자명 : 윤선지</span>
-                                <em>통신판매업신고번호 : 1996-광주북구-0116</em>
-                            </p>
-                            <p class="info sm_hidden md_hidden">삼삼뉴스의 모든 콘텐트(기사)는 저작권법의 보호를 받은바, 무단 전재, 복사, 배포
-                                등을 금합니다.[<a href="https://bbs.joongang.co.kr/customercenter/faq?boardSeq=1481">저작권 정책 및
-                                    콘텐트 문의</a>]</p>
-                            <p class="copyright"><strong>Copyright by SamSamNews Co., Ltd. All Rights
-                                    Reserved</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+						<div class="logo sm_hidden md_hidden">
+							<a href="https://www.joongang.co.kr"><span
+								class="visually_hidden">중앙일보</span></a>
+						</div>
+						<div class="corp">
+							<p class="address">
+								<span>주소 : 광주광역시 북구 북구맨 64-86 (우) 0573</span> <span>전화 :
+									062-262-6486</span> <span>등록번호 : 광주 북 1818</span> <span>등록일자 :
+									1996.01.16</span> <span>발행인 : 조승재</span> <span>편집인 : 조승재</span> <a
+									href="https://www.joongang.co.kr/sitemap/index"
+									class="sm_hidden md_hidden">전체 서비스</a>
+							</p>
+							<p class="address">
+								<span>사업자명 : <a href="https://www.joongang.co.kr">삼삼뉴스㈜</a></span>
+								<span>사업자등록번호 : 960-11-615524</span> <span>대표자명 : 윤선지</span> <em>통신판매업신고번호
+									: 1996-광주북구-0116</em>
+							</p>
+							<p class="info sm_hidden md_hidden">
+								삼삼뉴스의 모든 콘텐트(기사)는 저작권법의 보호를 받은바, 무단 전재, 복사, 배포 등을 금합니다.[<a
+									href="https://bbs.joongang.co.kr/customercenter/faq?boardSeq=1481">저작권
+									정책 및 콘텐트 문의</a>]
+							</p>
+							<p class="copyright">
+								<strong>Copyright by SamSamNews Co., Ltd. All Rights
+									Reserved</strong>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
 
 
 
@@ -644,8 +726,6 @@
 
 
 		<script src="resources/assets/js/main.js"></script>
-
-
 </body>
 
 </html>

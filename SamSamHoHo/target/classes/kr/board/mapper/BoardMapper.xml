@@ -24,7 +24,18 @@
 		set title = #{title}, content = #{content}
 		where idx = #{idx}
 	</update>
+	
+	<select id="newsList" resultType="kr.board.entity.News">
+		select * from tbl_news order by date desc limit 1
+	</select>
 
+	<select id="Qnews" resultType="kr.board.entity.News">
+		select * from tbl_news order by date desc limit 5
+	</select>
+	
+	<select id="pressNews" resultType="kr.board.entity.News">
+		select * from tbl_news where press = '조선일보' order by date limit 5
+	</select>
 
 </mapper>
 
