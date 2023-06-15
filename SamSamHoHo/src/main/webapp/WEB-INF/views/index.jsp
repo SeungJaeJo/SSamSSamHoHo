@@ -117,13 +117,7 @@
 				<div class="header_right_area">
 					<nav class="header_nav">
 						<ul class="nav sm_hidden md_hidden">
-<<<<<<< HEAD
-							<li class="nav_item"><a href="">뉴스룸</a></li>
-							<li class="nav_item"><a href="">정치</a></li>
-							<li class="nav_item"><a href="">경제</a></li>
-							<li class="nav_item"><a href="">사회</a></li>
-							<li class="nav_item"><a href="boardMain.do">국제</a></li>
-=======
+
 							<li class="nav_item"><a
 								href="">정치</a></li>
 							<li class="nav_item"><a
@@ -132,7 +126,6 @@
 								href="">경제</a></li>
 							<li class="nav_item"><a
 								href="">국제</a></li>
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
 
 						</ul>
 
@@ -424,10 +417,6 @@
 					  }
 				  </script>
 
-<<<<<<< HEAD
-					
-					
-					
 					<div class="col_lg9">
 						<section class="myfeed_popular_subscribe">
 							<header class="title_wrap">
@@ -442,76 +431,30 @@
 													<ul class="row card_list">
 														<li class='col_lg4 color_set1'>
 															<div class='list_item'>
-=======
-                    </div>
-                    <div class="col_lg9">
-                        <section class="myfeed_popular_subscribe">
-                            <header class="title_wrap">
-                                <strong class="title"><a href="">정치</a></strong>
-                            </header>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><!-- 정치 부분 -->
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
 
 																
 															</div> 
 
-<<<<<<< HEAD
 														</li>
 												</div>
 										</ul>
 									</div>
 									<header class="title_wrap">
-										<strong class="title"><a href="">사회</a></strong>
-									</header>
-=======
+                                        <strong class="title"><a href="">문화</a></strong>
+                                    </header>
+                              
+                                    <div class="swiper-slide"> 
+                                        <ul class="row card_list">
+                                            <li class="col_lg4 color_set1">
+                                                <div class="list_item view">
+                                                
                                                 </div>
                                             </li>
                                        
                                           
                                         </ul>
                                     </div><!-- 정치 부분 DIV 끝-->
-                                    <header class="title_wrap">
-                                        <strong class="title"><a href="">경제</a></strong>
-                                    </header>
-                              
-                                    <div class="swiper-slide"> <!-- 문화 부분 div-->
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
-
-									<div class="swiper-slide">
-										<ul class="row card_list">
-											<li class="col_lg4 color_set1">
-												<div class='list_item view'>
-													
-
-<<<<<<< HEAD
-												</div>
-											</li>
-=======
-                                                </div>
-                                            </li>
-                                            
-                                        
-                                         
-                                        </ul>
-                                    </div> <!-- 문화 부분 div 끝-->
+                                 
        
                                 </div><!-- swiper-wrapper 끝 -->
                             </div><!--swiper-container 끝 -->
@@ -528,18 +471,8 @@
                                     <div class="swiper-slide">
                                         <ul class="row card_list">
                                             <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <p class="description short">
-                                                        <a href="" class="gogo">식약처는 지난달 건강기능식품의 온라인 광고를 점검해 허위·과대광고 185건을 무더기 적발하였으며 건강기능식품이라고 광고하는 제품을 살 땐 겉면에 식약처가 인증한 ‘건강기능식품’이란 문구와 ‘우수제조기준(GMP) 인증 마크’가 있는지 확인해야 한다.</a>
-                                                    </p>
-                                                       
-                                                      
+                                                <div class="list_item view">
+                                                   
 
                                                 </div>
                                             </li>
@@ -555,17 +488,8 @@
                                     <div class="swiper-slide">
                                         <ul class="row card_list">
                                             <li class="col_lg4 color_set1">
-                                                <div class="list_item">
-                                                    <div class="flex_area">
-                                                        <h2 class="headline">
-                                                            <a href="">국내 첫 ‘생성형 AI 투자’ ETF 나온다</a>
-                                                        </h2>
-                                                    </div>
-
-                                                    <p class="description short">
-                                                        <a href="" class="gogo">2020년 1월 한국 대사로 부임한 싱하이밍 주한 중국 대사는 이탈리아, 호주,싱가포르 등에도 한국과 비슷한 국장급 대사를 보내고 있다싱 대사는 대사를 포함 한국에서 4차례, 북한에서 2차례 근무했고, 북한 사리원농대에서 유학해 한국어가 유창하다여권에서는 "추방까진 아니더라도 유사한 일이 반복되지 않도록 싱 대사를 비롯해 고위 중국 외교관에 대해 정부 면담 연기·거부 등의 비공식 조치가 필요하다”는 주장도 제기된다</a>
-                                                    </p>
-                                                       
+                                                <div class="list_item view">
+                                                    
                                                       
 
                                                 </div>
@@ -1409,34 +1333,6 @@
                                     </div>
                                 </div>
                             </div>
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
-
-
-
-										</ul>
-									</div>
-								</div>
-							</div>
-						</section>
-
-					</div>
-					<div class="col_lg9">
-						<section class="myfeed_popular_subscribe">
-							<header class="title_wrap">
-								<strong class="title"><a href="">경제</a></strong>
-							</header>
-							<div class="swiper-container">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<ul class="row card_list">
-											<li class="col_lg4 color_set1">
-												<div class='list_item view'>
-													
-
-<<<<<<< HEAD
-												</div>
-											</li>
-=======
 
                         </section>
 
@@ -1595,40 +1491,7 @@ new Chart(document.getElementById("myChart2"), {
         </main>
 
 
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
-
-
-
-										</ul>
-
-									</div>
-									<header class="title_wrap">
-										<strong class="title"><a href="">국제</a></strong>
-									</header>
-									<div class="swiper-slide">
-										<ul class="row card_list">
-											<li class="col_lg4 color_set1">
-												<div class='list_item view'>
-													
-
-												</div>
-											</li>
-
-
-
-										</ul>
-									</div>
-
-								</div>
-							</div>
-						</section>
-
-					</div>
-					</div>
-		</main>
-
-
-
+	
 		<script>
             const tabList = document.querySelectorAll('.tab_menu .list li');
             const contents = document.querySelectorAll('.tab_menu .cont_area .cont')
