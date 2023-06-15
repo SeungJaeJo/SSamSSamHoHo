@@ -118,13 +118,11 @@
 					<nav class="header_nav">
 						<ul class="nav sm_hidden md_hidden">
 							<li class="nav_item"><a
-								href="">기사분석</a></li>
-							<li class="nav_item"><a
 								href="">정치</a></li>
 							<li class="nav_item"><a
-								href="">경제</a></li>
-							<li class="nav_item"><a
 								href="">사회</a></li>
+							<li class="nav_item"><a
+								href="">경제</a></li>
 							<li class="nav_item"><a
 								href="">국제</a></li>
 
@@ -371,7 +369,7 @@
                                         </ul>
                                     </div><!-- 정치 부분 DIV 끝-->
                                     <header class="title_wrap">
-                                        <strong class="title"><a href="">문화</a></strong>
+                                        <strong class="title"><a href="">경제</a></strong>
                                     </header>
                               
                                     <div class="swiper-slide"> <!-- 문화 부분 div-->
@@ -406,7 +404,7 @@
                     <div class="col_lg9">
                         <section class="myfeed_popular_subscribe">
                             <header class="title_wrap">
-                                <strong class="title"><a href="">경제</a></strong>
+                                <strong class="title"><a href="">사회</a></strong>
                             </header>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
@@ -435,7 +433,7 @@
                                        
                                     </div>
                                     <header class="title_wrap">
-                                        <strong class="title"><a href="">세계</a></strong>
+                                        <strong class="title"><a href="">국제</a></strong>
                                     </header>
                                     <div class="swiper-slide">
                                         <ul class="row card_list">
@@ -484,28 +482,32 @@
                             <div class="wrap3">
                                 <div class="tab_menu2">
                                     <ul class="list2">
-                                        <li class="is_on2">
-                                            <span href="#tab1" class="ico1">&nbsp;</span>
-                                            <a class="btn2">정치</a>
+                                         <li class="is_on2">
+                                            <span href="#tab_1" class="ico1">&nbsp;</span>
+                                            <a class="btn3">전체</a>
                                         </li>
                                         <li>
-                                            <span href="#tab2" class="ico2">&nbsp;</span>
-                                            <a class="btn2">문화</a>
+                                            <span href="#tab_2" class="ico2">&nbsp;</span>
+                                            <a class="btn3">정치</a>
                                         </li>
                                         <li>
-                                            <span href="#tab3" class="ico3">&nbsp;</span>
-                                            <a class="btn2">국제</a>
+                                            <span href="#tab_3" class="ico3">&nbsp;</span>
+                                            <a class="btn3">사회</a>
                                         </li>
                                         <li>
-                                            <span href="#tab4" class="ico4">&nbsp;</span>
-                                            <a class="btn2">경제</a>
+                                            <span href="#tab_4" class="ico4">&nbsp;</span>
+                                            <a class="btn3">경제</a>
+                                        </li>
+                                        <li>
+                                            <span href="#tab_5" class="ico5">&nbsp;</span>
+                                            <a class="btn3">국제</a>
                                         </li>
                                      
                                     </ul>
 
                                     <div class="cont_area2">
-                                        <div id="tab1" class="cont2" style="display:block;">
-                                                <svg href="#tab1" width="700" height="300">
+                                        <div id="tab_1" class="cont2" style="display:block;">
+                                                <svg href="#tab_1" width="700" height="300">
                                                     <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                             text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
                                                             style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text
@@ -665,8 +667,8 @@
 
 
                                         </div>
-                                        <div id="tab2" class="cont2">
-                                            <svg href="#tab1" width="700" height="300">
+                                        <div id="tab_2" class="cont2">
+                                            <svg href="#tab_1" width="700" height="300">
                                                 <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                         text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">승재국</text><text
@@ -820,8 +822,8 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <div id="tab3" class="cont2">
-                                            <svg href="#tab1" width="700" height="300">
+                                        <div id="tab_3" class="cont2">
+                                            <svg href="#tab_1" width="700" height="300">
                                                 <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                         text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">승재굿</text><text
@@ -975,8 +977,8 @@
                                                 </g>
                                             </svg>
                                         </div>
-                                        <div id="tab4" class="cont2">
-                                            <svg href="#tab1" width="700" height="300">
+                                        <div id="tab_4" class="cont2">
+                                            <svg href="#tab_1" width="700" height="300">
                                                 <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                         text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">승재굳</text><text
@@ -1130,6 +1132,162 @@
                                                 </g>
                                             </svg>
                                         </div>
+                                       <div id="tab_5" class="cont2">
+                                            <svg href="#tab_1" width="700" height="300">
+                                                <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
+                                                        text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">승재굳</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-41,10)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-99,31)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">경기</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(54,29)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">중국</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-198,-71)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">일본</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-28,-17)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">부산</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(-14,81)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">더불어민주당</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(23,-8)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">국회</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(28,-71)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">유럽</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(77,-11)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">검찰</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(171,-10)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">영국</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(188,-42)rotate(0)scale(0.9)"
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">민주당</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(191,34)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">삼성전자</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(103,-90)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">뉴욕</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-21,26)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">울산</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(163,-79)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">자원</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(109,13)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">경기도</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(63,104)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">국민의힘</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-155,38)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(81,59)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">인천</text><text
+                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
+                                                        transform="translate(-44,-69)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">윤석열</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(213,-69)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대구</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-101,-1)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">아시아</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-132,-82)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대한민국</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(109,41)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">독일</text><text
+                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
+                                                        transform="translate(162,59)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">이재명</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(124,-11)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">프랑스</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(5,98)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">애플</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(141,76)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">삼성</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(19,48)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">우크라이나</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-101,56)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">충남</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-175,-33)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">인도</text><text
+                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
+                                                        transform="translate(163,9)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">송영길</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(-35,103)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">유튜브</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-202,40)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">대전</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(13,-37)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북한</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(104,81)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">경남</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(54,-53)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">후쿠시마</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-45,-90)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">제주</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-44,55)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">수도권</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(-38,40)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">서울시</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(-90,-22)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">네이버</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(-157,9)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">한국거래소</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(212,49)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">현대</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(128,-75)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">광주</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(11,26)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">신사</text><text
+                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
+                                                        transform="translate(62,118)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">윤관석</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-174,77)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">천안</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-73,-38)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">한반도</text><text
+                                                        class="category-keyword-text 전체_OG" text-anchor="middle"
+                                                        transform="translate(-130,75)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">행정안전부</text>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        
                                     
                                     </div>
                                 </div>
@@ -1178,7 +1336,7 @@
                                             data: { // 차트에 들어갈 데이터
                                                 labels: [
                                                     //x 축
-                                                    '정치', '경제', '사회', '문화'
+                                                    '정치', '사회', '경제', '국제'
                                                 ],
                                                 datasets: [
                                                     { //데이터
@@ -1327,7 +1485,35 @@ new Chart(document.getElementById("myChart2"), {
         </script>
         
         
-      
+      <script>
+    const tabList2 = document.querySelectorAll('.tab_menu2 .list2 li');
+    const contents2 = document.querySelectorAll('.tab_menu2 .cont_area2 .cont2')
+    let activeCont2 = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+    
+
+    for (var i = 0; i < tabList2.length; i++) {
+        tabList2[i].querySelector('.ico' + (i + 1)).addEventListener('click', function (e) {
+            e.preventDefault();
+            for (var j = 0; j < tabList2.length; j++) {
+                // 나머지 버튼 클래스 제거
+                tabList2[j].classList.remove('is_on2');
+
+                // 나머지 컨텐츠 display:none 처리
+                contents2[j].style.display = 'none';
+            }
+
+            // 버튼 관련 이벤트
+            this.parentNode.classList.add('is_on2');
+
+            // 버튼 클릭시 컨텐츠 전환
+            activeCont2 = this.getAttribute('href');
+            document.querySelector(activeCont2).style.display = 'block';
+            console.log(tabList2)
+            console.log(contents2)
+
+        });
+    }
+</script>
 
 
 
