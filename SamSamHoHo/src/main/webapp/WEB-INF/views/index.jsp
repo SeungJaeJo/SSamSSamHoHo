@@ -448,7 +448,7 @@
 										</ul>
 									</div>
 									<header class="title_wrap">
-                                        <strong class="title"><a href="">문화</a></strong>
+                                        <strong class="title"><a href="">경제</a></strong>
                                     </header>
                               
                                     <div class="swiper-slide"> 
