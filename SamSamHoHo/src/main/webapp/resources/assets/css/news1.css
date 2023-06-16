@@ -11189,11 +11189,21 @@ html[data-useragent*='Trident'] .ofpr_thumb {
         line-height: 38px;
         letter-spacing: -2px
     }
+        .as_mp_layout:not(.n_news_sports) .media_end_head_headline2 {
+        font-size:28px;
+        line-height: 38px;
+        letter-spacing: -2px
+    }
 }
 
 @media (min-width: 1024px) {
     .as_mp_layoutn.n_news_sports .media_end_head_headline {
         font-size:30px;
+        line-height: 38px;
+        letter-spacing: -2px
+    }
+        .as_mp_layoutn.n_news_sports .media_end_head_headline2 {
+        font-size:28px;
         line-height: 38px;
         letter-spacing: -2px
     }

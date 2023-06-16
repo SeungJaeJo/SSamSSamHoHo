@@ -19,6 +19,8 @@
   	<link rel="stylesheet" href="resources/assets/css/newsroom1.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom2.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom3.css">
+<link rel="stylesheet" href="resources/assets/css/modal.css">
+
 	  	
 	
 </head>
@@ -101,7 +103,7 @@
                                             class="media_end_head_info_datestamp_time _ARTICLE_DATE_TIME"
                                             >2023.06.14. 오전 9:44</span>
                                     </div>
-                                    <a href="" target="" class="media_end_head_origin_link">기사원문</a>
+                                    <button target="" class="media_end_head_origin_link">기사원문</button>
                                 </div>
                                 <div class="media_end_head_journalist">
                                     <a href="" class="media_end_head_journalist_box">
@@ -659,6 +661,96 @@
             
             </div>
         </div>
+        
+                <style>
+
+    ::-webkit-scrollbar { width: 3px; } /* 스크롤 바 */
+
+    ::-webkit-scrollbar-track { background-color:#fff; } /* 스크롤 바 밑의 배경 */
+
+    ::-webkit-scrollbar-thumb { background: #ddd; border-radius: 10px; } /* 실질적 스크롤 바 */
+
+    ::-webkit-scrollbar-thumb:hover { background: #404040; } /* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+
+    ::-webkit-scrollbar-thumb:active { background: #808080; } /* 실질적 스크롤 바를 클릭할 때 */
+
+    ::-webkit-scrollbar-button { display: none; } /* 스크롤 바 상 하단 버튼 */
+        </style>
+        
+	<div class="modal-wrapper">
+		<div class="modal">
+			<div class="content" id="zz">
+
+                <div class="media_end_head_top">
+                    <a href="" class="media_end_head_top_logo">
+                        <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"
+                            class="media_end_head_top_logo_img light_type">
+
+                    </a>
+
+                </div>
+                    <div class="media_end_head_title">
+                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인 가능해진다</span></h3>
+                    </div>
+                 <div id="contents" class="newsct_body">
+                    <div id="newsct_article" class="newsct_article _article_body">
+                        <div id="dic_area" class="go_trans _article_content"
+                            style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
+                            앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
+                            앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
+                        </div>
+                    </div>
+                   
+
+ 
+              
+
+                </div>
+
+			
+				<div class="center_star">
+
+
+						<button class="btn_sub" type="submit" style="text-align: center;">등록하기
+						</button>
+
+				</div>
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
         <div id="footer" class="footer footer22">
 
             <footer>
@@ -701,6 +793,48 @@
       
 
     </div>
+    
+  <script>
+
+
+
+
+   
+   
+   
+   
+     $( document ).ready(function() {
+       $('.media_end_head_origin_link').on('click', function() {
+           $('.modal-wrapper').toggleClass('open');
+           $('.ct_wrap').toggleClass('blur-it');
+                           console.log("호호헤");
+   
+           return true;
+       });
+     });
+   
+   
+     
+     $( document ).ready(function() {
+       $('.btn_sub').on('click', function() {
+           $('.modal-wrapper').toggleClass('open');
+           $('.ct_wrap').toggleClass('blur-it');
+                   console.log("헤헤");
+   
+           return false;
+       });
+     });
+     
+     
+
+
+
+     
+     
+     
+
+   </script>
+   
 
 
 

@@ -1534,7 +1534,7 @@
 	          									pr.pop();
 	                                           	console.log(pr);
 	          									new Chart(document.getElementById("myChart2"), {
-                                                    "type": "doughnut",
+                                                    "type": "pie",
                                                     "data": {
                                                         "labels": pr,
                                                         "datasets": [{
@@ -1548,9 +1548,13 @@
                                                              "rgb(0, 205, 0)"
 
                                                             ]
+                                                            
                                                         }]
                                                     }
+                                                 
+                                                    
                                                 });
+	          									
 	                                           	 
 	                                           	 
                                            	 
