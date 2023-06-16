@@ -69,8 +69,8 @@
 	z-index: 10 !important;
 }
 
-.rolling_box ul li p {
-	font-size: 30px;
+.rolling_box ul li a {
+	font-size: 28px;
 	line-height: 40px;
 	font-weight: bold;
 }
@@ -110,7 +110,7 @@
 
 		<header id="header" class="header">
 			<div class="uh">
-				<a href="" class="logo"> <img width="100" height="30"
+				<a href = "${contextPath}" class="logo"> <img width="100" height="30"
 					src="resources/images/logo.png">
 				</a>
 
@@ -119,13 +119,13 @@
 						<ul class="nav sm_hidden md_hidden">
 
 							<li class="nav_item"><a
-								href="">정치</a></li>
+								href="${contextPath}/newsListForm.do">정치</a></li>
 							<li class="nav_item"><a
-								href="">사회</a></li>
+								href="${contextPath}/newsListForm.do">사회</a></li>
 							<li class="nav_item"><a
-								href="">경제</a></li>
+								href="${contextPath}/newsListForm.do">경제</a></li>
 							<li class="nav_item"><a
-								href="">국제</a></li>
+								href="${contextPath}/newsListForm.do">국제</a></li>
 
 						</ul>
 
@@ -183,9 +183,9 @@
 								<div class="rolling_box">
 									<ul id="rolling_box">
 
-										<li class="card_sliding" id="first"><a href=""></a></li>
-										<li class="" id="second"><a href=""></a></li>
-										<li class="" id="third"><a href=""></a></li>
+										<li class="card_sliding" id="first"><a href='' ></a></li>
+										<li class="" id="second"><a href=''></a></li>
+										<li class="" id="third"><a href=''></a></li>
 									</ul>
 								</div>
 
@@ -272,7 +272,7 @@
 											  $.each(data, function(index, obj){
 											
 												  	listHtml += "<p class='description short'>";
-													listHtml += "<a href=''>"+obj.title+"</a>";
+													listHtml += "<a href='${contextPath}/newsdetailForm.do' >"+obj.title+"</a>";
 													listHtml += "</p>"
 												  	
 											  });
@@ -402,11 +402,11 @@
 						  $.each(data, function(index, obj){
 							  	listHtml += "<div class='flex_area'>";
 							  	listHtml += "<h2 class='headline'>";
-								listHtml += "<a href=''>"+obj.title+"</a>";
+								listHtml += "<a href='${contextPath}/newsdetailForm.do'>"+obj.title+"</a>";
 								listHtml += "</h2>"
 								listHtml += "</div>";
 								listHtml += "<p class='description short'>";
-								listHtml += "<a href='' class='gogo'>"+obj.summ_content+"</a></p>";
+								listHtml += "<a href='${contextPath}/newsdetailForm.do' class='gogo'>"+obj.summ_content+"</a></p>";
 								  	
 						  });
 						  console.log(data[0].category);
@@ -725,13 +725,13 @@
                                             <svg href="#tab_1" width="700" height="300">
                                                 <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                         text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">승재국</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-41,10)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">우크라이나</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-99,31)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">경기</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">미국</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(54,29)rotate(0)scale(0.9)"
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">중국</text><text
@@ -740,139 +740,139 @@
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">일본</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-28,-17)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">부산</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">트럼프</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-14,81)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">더불어민주당</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">AI</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(23,-8)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">국회</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">한국</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(28,-71)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">유럽</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">벨라루스</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(77,-11)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">검찰</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">로이터</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(171,-10)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">영국</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">EU</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(188,-42)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">민주당</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">나토</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(191,34)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">삼성전자</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">유럽</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(103,-90)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">뉴욕</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">북한</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-21,26)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">울산</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">이란</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(163,-79)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">자원</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">비틀즈</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(109,13)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">경기도</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">기시다</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(63,104)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">국민의힘</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">그리스</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-155,38)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">루카센코</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(81,59)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">인천</text><text
-                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
-                                                        transform="translate(-44,-69)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">윤석열</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(213,-69)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대구</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-101,-1)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">아시아</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-132,-82)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대한민국</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(109,41)rotate(0)scale(0.9)"
                                                         style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">독일</text><text
                                                         class="category-keyword-text 전체_PS" text-anchor="middle"
+                                                        transform="translate(-44,-69)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">NYT</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(213,-69)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">스톰</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-101,-1)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">간토</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-132,-82)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">이탈리아</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(109,41)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">네타냐후</text><text
+                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
                                                         transform="translate(162,59)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">이재명</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">캄보디아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(124,-11)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">프랑스</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북아프리카</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(5,98)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">애플</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">대만</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(141,76)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">삼성</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">매카시</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(19,48)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">우크라이나</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">도쿄</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-101,56)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">충남</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">베이징</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-175,-33)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">인도</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">구글</text><text
                                                         class="category-keyword-text 전체_PS" text-anchor="middle"
                                                         transform="translate(163,9)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">송영길</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">홍콩</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-35,103)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">유튜브</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">마이애미</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-202,40)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">대전</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">엔비디아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(13,-37)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북한</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">중동</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(104,81)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">경남</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">BBC</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(54,-53)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">후쿠시마</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">해리슨</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-45,-90)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">제주</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">케네디</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-44,55)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">수도권</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">루소</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-38,40)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">서울시</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">윌리엄스</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-90,-22)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">네이버</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">리비아</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-157,9)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">한국거래소</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">NDAA</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(212,49)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">현대</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">시시</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(128,-75)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">광주</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">플로리다</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(11,26)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">신사</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">그리스도</text><text
                                                         class="category-keyword-text 전체_PS" text-anchor="middle"
                                                         transform="translate(62,118)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">윤관석</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">이스라엘</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-174,77)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">천안</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">시베리아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-73,-38)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">한반도</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">나이지리아</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-130,75)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">행정안전부</text>
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">요미우리</text>
                                                 </g>
                                             </svg>
                                         </div>
@@ -1187,16 +1187,16 @@
                                             </svg>
                                         </div>
                                        <div id="tab_5" class="cont2">
-                                            <svg href="#tab_1" width="700" height="300">
+                    <svg href="#tab_1" width="700" height="300">
                                                 <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                         text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">승재굳</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-41,10)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">우크라이나</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-99,31)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">경기</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">미국</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(54,29)rotate(0)scale(0.9)"
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">중국</text><text
@@ -1205,139 +1205,139 @@
                                                         style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">일본</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-28,-17)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">부산</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">트럼프</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-14,81)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">더불어민주당</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">AI</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(23,-8)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">국회</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">한국</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(28,-71)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">유럽</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">벨라루스</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(77,-11)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">검찰</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">로이터</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(171,-10)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">영국</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">EU</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(188,-42)rotate(0)scale(0.9)"
-                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">민주당</text><text
+                                                        style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">나토</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(191,34)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">삼성전자</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">유럽</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(103,-90)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">뉴욕</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">북한</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-21,26)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">울산</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">이란</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(163,-79)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">자원</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">비틀즈</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(109,13)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">경기도</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">기시다</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(63,104)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">국민의힘</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">그리스</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-155,38)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">루카센코</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(81,59)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">인천</text><text
-                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
-                                                        transform="translate(-44,-69)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">윤석열</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(213,-69)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대구</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-101,-1)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">아시아</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-132,-82)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대한민국</text><text
-                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(109,41)rotate(0)scale(0.9)"
                                                         style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">독일</text><text
                                                         class="category-keyword-text 전체_PS" text-anchor="middle"
+                                                        transform="translate(-44,-69)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">NYT</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(213,-69)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">스톰</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-101,-1)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">간토</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(-132,-82)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">이탈리아</text><text
+                                                        class="category-keyword-text 전체_LC" text-anchor="middle"
+                                                        transform="translate(109,41)rotate(0)scale(0.9)"
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">네타냐후</text><text
+                                                        class="category-keyword-text 전체_PS" text-anchor="middle"
                                                         transform="translate(162,59)rotate(0)scale(0.9)"
-                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">이재명</text><text
+                                                        style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">캄보디아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(124,-11)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">프랑스</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북아프리카</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(5,98)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">애플</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">대만</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(141,76)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">삼성</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">매카시</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(19,48)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">우크라이나</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">도쿄</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-101,56)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">충남</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">베이징</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
                                                         transform="translate(-175,-33)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">인도</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">구글</text><text
                                                         class="category-keyword-text 전체_PS" text-anchor="middle"
                                                         transform="translate(163,9)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">송영길</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">홍콩</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
                                                         transform="translate(-35,103)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">유튜브</text><text
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">마이애미</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-202,40)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">대전</text><text
+                                                        transform="translate(-222,40)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">엔비디아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(13,-37)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북한</text><text
+                                                        transform="translate(23,-57)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">중동</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(104,81)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">경남</text><text
+                                                        transform="translate(94,81)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">BBC</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(54,-53)rotate(0)scale(0.9)"
-                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">후쿠시마</text><text
+                                                        transform="translate(54,-123)rotate(0)scale(0.9)"
+                                                        style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">해리슨</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-45,-90)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">제주</text><text
+                                                        transform="translate(-155,-50)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">케네디</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-44,55)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">수도권</text><text
+                                                        transform="translate(-44,65)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">루소</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                        transform="translate(-38,40)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">서울시</text><text
+                                                        transform="translate(-38,42)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">윌리엄스</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                        transform="translate(-90,-22)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">네이버</text><text
+                                                        transform="translate(-90,-12)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">리비아</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                        transform="translate(-157,9)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">한국거래소</text><text
+                                                        transform="translate(-150,9)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">NDAA</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                        transform="translate(212,49)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">현대</text><text
+                                                        transform="translate(202,49)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">시시</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(128,-75)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">광주</text><text
+                                                        transform="translate(158,-75)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">플로리다</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(11,26)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">신사</text><text
+                                                        transform="translate(11,46)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">그리스도</text><text
                                                         class="category-keyword-text 전체_PS" text-anchor="middle"
                                                         transform="translate(62,118)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">윤관석</text><text
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">이스라엘</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-174,77)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">천안</text><text
+                                                        transform="translate(-124,77)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">시베리아</text><text
                                                         class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                        transform="translate(-73,-38)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">한반도</text><text
+                                                        transform="translate(-63,-38)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">나이지리아</text><text
                                                         class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                        transform="translate(-130,75)rotate(0)scale(0.9)"
-                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">행정안전부</text>
+                                                        transform="translate(-120,75)rotate(0)scale(0.9)"
+                                                        style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">요미우리</text>
                                                 </g>
                                             </svg>
                                         </div>
