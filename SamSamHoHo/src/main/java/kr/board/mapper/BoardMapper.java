@@ -1,12 +1,15 @@
 package kr.board.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
+import kr.board.entity.BarsCount;
 import kr.board.entity.Board;
 import kr.board.entity.News;
+import kr.board.entity.NewsCount;
 
 @Mapper
 public interface BoardMapper {
@@ -30,6 +33,11 @@ public interface BoardMapper {
 	public List<News> Qnews();
 
 	public List<News> pressNews(String press);
+
+	public List<NewsCount> countPress();
+
+	public List<BarsCount> countBar();
+
 
 
 	
