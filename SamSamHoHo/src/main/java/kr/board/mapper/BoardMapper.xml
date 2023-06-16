@@ -36,7 +36,17 @@
 	<select id="pressNews" resultType="kr.board.entity.News">
 		select * from tbl_news where press = #{press} order by date limit 5
 	</select>
-
+	
+	<select id="countPress" resultType="kr.board.entity.NewsCount">
+		select press, count(*) as count from tbl_news group by press
+	</select>
+	
+	<select id="countBar" resultType="kr.board.entity.BarsCount">
+		SELECT date, category, COUNT(*) AS count, (SELECT COUNT(*) FROM tbl_news WHERE date = (SELECT MAX(date) FROM tbl_news))	AS total_count from tbl_news where date = (select max(date) from tbl_news) group by category, date
+	</select>
+	
+	
+	
 </mapper>
 
 

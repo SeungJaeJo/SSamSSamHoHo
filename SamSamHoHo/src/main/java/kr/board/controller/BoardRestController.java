@@ -2,8 +2,11 @@ package kr.board.controller;
 
 import java.io.Console;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import kr.board.entity.BarsCount;
 import kr.board.entity.Board;
 import kr.board.entity.News;
+import kr.board.entity.NewsCount;
 import kr.board.mapper.BoardMapper;
 
 // 비동기통신 전용 controller >> 페이지이동x, 객체반환 only
@@ -51,6 +56,22 @@ public class BoardRestController {
 //		System.out.println(news);
 //		return news;
 //	}
+	
+	
+	@GetMapping("/CntPress")
+	public List<NewsCount> presscnt(){
+		List<NewsCount> list = boardMapper.countPress();
+		return list;
+	}
+	
+	@GetMapping("/BarPress")
+	public List<BarsCount> barcnt(){
+		List<BarsCount> list = boardMapper.countBar();
+		return list;
+	}
+	
+	
+	
 	
 	@GetMapping("/Pnews")
 	public List<News> pressNews(@RequestParam("press")String press){

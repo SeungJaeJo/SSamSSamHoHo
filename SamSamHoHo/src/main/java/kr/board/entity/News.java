@@ -22,5 +22,4 @@ public class News {
 	private String summ_content; // 조회수
 	private String keyword; // 조회수
 	private String url; // 조회수
-	
 }

@@ -245,7 +245,6 @@
 								  		  }else{
 								  			  press = "한겨레";
 								  		  }
-								  			  console.log(press)
 									  		  PList(press);
 									  	})
 									  	PList(press)
@@ -1359,11 +1358,8 @@
                         
                         
         
-                                    <div class="info">
-                                        <p class="date">
-                                            2023년 06월 08일 (목)
-                                        </p>
-                                        <p class="total"><b id="news-issue-count">2,501</b>건</p>
+                                    <div class="info" id="barView">
+                                       
                                     </div>
                                     <div style="width: 300px; height: 300px;">
     
@@ -1373,24 +1369,61 @@
                                     </div>
                          </div>
                                     <script type="text/javascript">
+                                    
+                                    
+                                    
+                                    BarList();
+                                    function BarList(){
+                                   
+                                    	$.ajax({
+              							  url : "board/BarPress",
+              							  type : "get",
+              							  dataType : "json",
+              							  success : makeBar,
+              							  error : function(){ alert("error"); }
+              						  });
+                                    	
+                                    	
+                                    } 
+                                   
+                                    function makeBar(data){
+                                    	 var num_cnt2 = [];
+                                         var cate_cnt = [];
+                                    	 var date;
+                                       	 var total;
+      								 for(var i = 0; i < data.length; i++){
+      									 num_cnt2 += data[i].count+",";
+      									cate_cnt += data[i].category+","; 
+      									date = data[0].date;
+      									total = data[0].total_count;
+      								 }
+      								 	
+      									var nu2 = num_cnt2.split(",");
+      									var pr2 = cate_cnt.split(",");
+      									pr2.pop(); 
+                                       	console.log(pr2);
+                                       	console.log(date);
+      									
+                                       	listHtml = "";
+                                       	listHtml += "<p class='date'>"+date+"</p>";
+                                       	listHtml += "<p class='total'><b id='news-issue-count'>"+total+"</b>건</p>";
+                                        
+                                    	$("#barView").html(listHtml);
+                                   	 
+                                   	
                                         var context = document
                                             .getElementById('myChart')
                                             .getContext('2d');
                                         var myChart = new Chart(context, {
                                             type: 'bar', // 차트의 형태
                                             data: { // 차트에 들어갈 데이터
-                                                labels: [
-                                                    //x 축
-                                                    '정치', '사회', '경제', '국제'
-                                                ],
+                                                labels: pr2,
                                                 datasets: [
                                                     { //데이터
                                                         labels : '정치',
             
                                                         fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                                                        data: [
-                                                            300, 200, 250, 350 //x축 label에 대응되는 데이터 값
-                                                        ],
+                                                        data: nu2,
                                                         backgroundColor: [
                                                             //색상
                                                             'rgba(255, 99, 132, 0.2)',
@@ -1430,6 +1463,9 @@
                                                 }
                                             }
                                         });
+                                    }
+                                    
+                                    
                                     </script>
 
 
@@ -1463,14 +1499,42 @@
                                             </div>
                                  </div>
                                             <script type="text/javascript">
-
-new Chart(document.getElementById("myChart2"), {
+                                            cntList();
+                                            function cntList(){
+                                           
+                                            	$.ajax({
+                      							  url : "board/CntPress",
+                      							  type : "get",
+                      							  dataType : "json",
+                      							  success : makeChart,
+                      							  error : function(){ alert("error"); }
+                      						  });
+                                            	
+                                            	
+                                            } 
+                                           
+                                            function makeChart(data){
+                                            	 var num_cnt = [];
+                                                 var press_cnt= [];
+                                            	
+	                                           	
+	          								 for(var i = 0; i < data.length; i++){
+	          									 num_cnt += data[i].count+",";
+	          									 press_cnt += data[i].press+","; 
+	          									
+	          								 }
+	          								 	
+	          									var nu = num_cnt.split(",");
+	          									var pr = press_cnt.split(",");
+	          									pr.pop();
+	                                           	console.log(pr);
+	          									new Chart(document.getElementById("myChart2"), {
                                                     "type": "doughnut",
                                                     "data": {
-                                                        "labels": ["조선일보", "중앙", "동아","한겨례","경향"],
+                                                        "labels": pr,
                                                         "datasets": [{
                                                             "label": "My First Dataset",
-                                                            "data": [300,50,100,200,60],
+                                                            "data": nu,
                                                             "backgroundColor": [
                                                                 "rgb(255, 99, 132)",
                                                                 "rgb(54, 162, 235)",
@@ -1482,6 +1546,14 @@ new Chart(document.getElementById("myChart2"), {
                                                         }]
                                                     }
                                                 });
+	                                           	 
+	                                           	 
+                                           	 
+                                           	
+                                            }
+												
+												
+												  
                                             
                                             </script>
         
