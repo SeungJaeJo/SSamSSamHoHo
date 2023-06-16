@@ -34,14 +34,14 @@
                 <div class="header_right_area">
                     <nav class="header_nav">
                         <ul class="nav sm_hidden md_hidden">
+							<li class="nav_item"><a 
+								 id="wjdcl" class="nav_btn">정치</a></li>
+							<li class="nav_item"><a 
+								 id="tkghl" class="nav_btn">사회</a></li>
 							<li class="nav_item"><a
-								href="${contextPath}/newsListForm.do">정치</a></li>
+								 id="rudwp" class="nav_btn">경제</a></li>
 							<li class="nav_item"><a
-								href="${contextPath}/newsListForm.do">사회</a></li>
-							<li class="nav_item"><a
-								href="${contextPath}/newsListForm.do">경제</a></li>
-							<li class="nav_item"><a
-								href="${contextPath}/newsListForm.do">국제</a></li>
+								 id="rnrwp" class="nav_btn">국제</a></li>
 
                         </ul>
                     </nav>
@@ -68,6 +68,27 @@
         <main role="main" id="container">
             <section class="contents">
                 <header id="sticky" class="section_header_wrap m_unsticky">
+                		<script type="text/javascript">
+                			/* make_cate();
+                			function make_cate(){
+                				 var category = "정치";
+								  	$("li.nav_btn").on('click',function(e){
+							  		  if(e.target.id === "wjdcl"){
+							  			 console.log('떠라');
+							  			category = "정치";
+							  		  }else if(e.target.id === "tkghl"){
+							  			category = "사회";
+							  		  }else if(e.target.id === "rydwp"){
+							  			category = "경제";
+							  		  }else{
+							  			category = "국제";
+							  		  }
+								  	}
+								  	
+								  	
+                			} */
+                		
+                		</script>
                     <strong class="section_title">정치</strong>
                 </header>
                 <div class="row">
@@ -82,26 +103,75 @@
                             </div>
 
                         </header>
-                        <ul class="story_list">
-                            <li class="card"  >
+                        <ul class="story_list" id="cateList">
+                           
+
+                               
+                                    
+                                    	
+                                    		<script type="text/javascript">
+  
+										  	  var csrfHeaderName = "${_csrf.headerName}";
+										  	  var csrfTokenValue = "${_csrf.token}";
+										  
+										  	 $(document).ready(function(){
+										  		  // HTML이 다 로딩되고 작동하는 함수
+										  		
+										  	var category = "정치";
+										  	$(".nav_btn").on('click',function(e){
+									  		  if(e.target.id === 'wjdcl'){
+									  			  console.log('Ejfk');
+									  			category = "정치";
+									  		  }else if(e.target.id === 'tkghl'){
+									  			category = "사회";
+									  		  }else if(e.target.id === 'rudwp'){
+									  			category = "경제";
+									  		  }else {
+									  			category = "국제";
+									  		  }
+									  			JList(category);
+										  	})
+										  	JList(category);
+										  	
+										  	  });
+										  
+											  function JList(category){
+												  
+												  $.ajax({
+													  url : "board/cateNews",
+													  data : {
+														category : category  
+													  },
+													  type : "get",
+													  dataType : "json",
+													  success : makeJ,
+													  error : function(){ alert("error"); }
+												  });
+											  }
+												  	
+											                        
+											  function makeJ(data){ 
+												  console.log(data);
+												  var listHtml = "";
+												  $.each(data, function(index, obj){
+													    listHtml += " <li class='card'>";
+													    listHtml += " <div class='card_body'>";
+													  	listHtml += "<h2 class='headline'>";
+													  	listHtml += "<a href=''>"+obj.title+"</a></h2>";
+													  	listHtml += "<p class='description sm_hidden'>"+obj.summ_content+"</p>";
+													  	listHtml += "<div class='meta'>";
+														listHtml += "<p class='source'>"+obj.press+"</p>";
+														listHtml += "<p class='date'>"+obj.date+"</p>"; 
+														listHtml += "</div></li>";
+													  
+													  });
+													  $("#cateList").html(listHtml);
+												
+											  }
+										  </script>
+										
                              
-                                <div class="card_body">
-                                    <h2 class="headline">
-                                        <a href="">
-                                            [속보] '돈봉투 의혹' 윤관석·이성만 체포안...국회가 부결시켰다
-                                        </a>
-                                    </h2>
-                                    <p class="description sm_hidden">
-                                        2021년 더불어민주당 전당대회 '돈봉투 의혹'으로 구속영장이 청구된 무소속 윤관석·이성만 의원에 대한
-                                        체포동의안이 부결됐다.&nbsp; &nbsp; 12일 열린 국회 본회의에서 윤 의원과 이 의
-                                    </p>
-                                    <div class="meta">
-                                        <p class="source">중앙일보</p>
-                                        <p class="date">2023.06.12</p>
-                                    </div>
-                                </div>
-                            </li>
-                            
+                         
                            
                         </ul>
 
