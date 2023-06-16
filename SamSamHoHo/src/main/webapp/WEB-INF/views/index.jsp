@@ -560,15 +560,19 @@
                                                     <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
                                                             text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
                                                             style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text
+                                                            
                                                             class="category-keyword-text 전체_LC" text-anchor="middle"
                                                             transform="translate(-41,10)rotate(0)scale(0.9)"
                                                             style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text
+                                                            
                                                             class="category-keyword-text 전체_LC" text-anchor="middle"
                                                             transform="translate(-99,31)rotate(0)scale(0.9)"
                                                             style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">경기</text><text
+
                                                             class="category-keyword-text 전체_LC" text-anchor="middle"
                                                             transform="translate(54,29)rotate(0)scale(0.9)"
                                                             style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">중국</text><text
+
                                                             class="category-keyword-text 전체_LC" text-anchor="middle"
                                                             transform="translate(-198,-71)rotate(0)scale(0.9)"
                                                             style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">일본</text><text
@@ -704,6 +708,7 @@
                                                             class="category-keyword-text 전체_LC" text-anchor="middle"
                                                             transform="translate(-73,-38)rotate(0)scale(0.9)"
                                                             style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">한반도</text><text
+                                                           
                                                             class="category-keyword-text 전체_OG" text-anchor="middle"
                                                             transform="translate(-130,75)rotate(0)scale(0.9)"
                                                             style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">행정안전부</text>
@@ -1453,8 +1458,8 @@
                                                     yAxes: [
                                                         {
                                                             gridLines: {
-                            display: false,
-                        },
+									                            display: false,
+									                        },
                                                             ticks: {
                                                                 beginAtZero: true
                                                             }
