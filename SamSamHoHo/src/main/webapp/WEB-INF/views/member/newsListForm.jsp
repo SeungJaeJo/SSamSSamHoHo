@@ -68,27 +68,6 @@
         <main role="main" id="container">
             <section class="contents">
                 <header id="sticky" class="section_header_wrap m_unsticky">
-                		<script type="text/javascript">
-                			/* make_cate();
-                			function make_cate(){
-                				 var category = "정치";
-								  	$("li.nav_btn").on('click',function(e){
-							  		  if(e.target.id === "wjdcl"){
-							  			 console.log('떠라');
-							  			category = "정치";
-							  		  }else if(e.target.id === "tkghl"){
-							  			category = "사회";
-							  		  }else if(e.target.id === "rydwp"){
-							  			category = "경제";
-							  		  }else{
-							  			category = "국제";
-							  		  }
-								  	}
-								  	
-								  	
-                			} */
-                		
-                		</script>
                     <strong class="section_title">정치</strong>
                 </header>
                 <div class="row">
@@ -118,9 +97,11 @@
 										  		  // HTML이 다 로딩되고 작동하는 함수
 										  		
 										  	var category = "정치";
-										  	$(".nav_btn").on('click',function(e){
+										    var start = 1;
+										    var end = 10;
+										    
+										  	 $(".nav_btn").on('click',function(e){
 									  		  if(e.target.id === 'wjdcl'){
-									  			  console.log('Ejfk');
 									  			category = "정치";
 									  		  }else if(e.target.id === 'tkghl'){
 									  			category = "사회";
@@ -129,19 +110,35 @@
 									  		  }else {
 									  			category = "국제";
 									  		  }
-									  			JList(category);
-										  	})
-										  	JList(category);
+									  		  
+									  		  $(this).attr('href','#');
+									  			start = 1;
+									  			end = 10;
+									  			JList(start, end, category);
+										  	});   
+										  	$(".page_link").on('click', function(e){
+										    	if(e.target.id === 'second_page'){
+										    		start = 11;
+										    		end = 20;
+										    		$(this).attr('href','#');
+										    		/* $(".pagination_type02>ul>li:nth-child(3)").attr('class','');
+										    		$(".pagination_type02>ul>li:nth-child(4)").attr('class','active'); */
+										    	}
+										    	JList(start, end, category);
+										    });
+										  	JList(start, end, category);
 										  	
 										  	  });
 										  
-											  function JList(category){
+											  function JList(start, end, category){
 												  
 												  $.ajax({
-													  url : "board/cateNews",
+													  url : "board/testPaging",
 													  data : {
-														category : category  
-													  },
+														  param1 : start,
+														  param2 : end,
+														  param3 : category
+													  }, 
 													  type : "get",
 													  dataType : "json",
 													  success : makeJ,
@@ -174,6 +171,44 @@
                          
                            
                         </ul>
+                        <script>
+                        
+                        var category = "정치";
+                   	 	$(".nav_btn").on('click',function(e){
+					  		  if(e.target.id === 'wjdcl'){
+					  			category = "정치";
+					  		  }else if(e.target.id === 'tkghl'){
+					  			category = "사회";
+					  		  }else if(e.target.id === 'rudwp'){
+					  			category = "경제";
+					  		  }else {
+					  			category = "국제";
+					  		  }
+					  		  cntCt(category);
+					  		 
+						  	}); 
+                   	 	cntCt(category);
+                        function cntCt(category){
+							  $.ajax({
+								  url : "board/cntCt",
+								  data : {
+									  category : category
+								  },						  
+								  type : "get",
+								  dataType : "json",
+								  success : makePaging,
+								  error : function(){ alert("error"); }
+							  });
+						  }
+                        
+                        function makePaging(data){
+                        	console.log(data);
+                        	var endPage = Math.ceil(data/10);
+                        	console.log(endPage);
+                        	
+                        
+                        }
+                        </script>
 
                         <nav class="pagination_type02" aria-label="pagination">
                             <ul>
@@ -186,24 +221,24 @@
                                         aria-label="이전 페이지"><i class="ico_arrow_left" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="active">
-                                    <a href=""
-                                        class="page_link">1</a>
+                                    <a 
+                                        class="page_link" id="first_page">1</a>
                                 </li>
                                 <li>
-                                    <a href=""
-                                        class="page_link">2</a>
+                                    <a 
+                                        class="page_link" id="second_page">2</a>
                                 </li>
                                 <li>
-                                    <a href=""
-                                        class="page_link">3</a>
+                                    <a 
+                                        class="page_link" id="third_page">3</a>
                                 </li>
                                 <li>
-                                    <a href=""
-                                        class="page_link">4</a>
+                                    <a 
+                                        class="page_link" id="fourth_page">4</a>
                                 </li>
                                 <li>
-                                    <a href=""
-                                        class="page_link">5</a>
+                                    <a 
+                                        class="page_link" id="fifth_page">5</a>
                                 </li>
                                 <li class="page_next">
                                     <a href=""

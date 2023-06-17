@@ -64,19 +64,29 @@ public class BoardRestController {
 	}
 	
 	// 카테고리별 상세페이지
-	@GetMapping("/cateNews")
-	public List<News> cateNews(@RequestParam("category")String category){
-		List<News> list = boardMapper.cateNews(category);
-		return list;
+	/*
+	 * @GetMapping("/cateNews") public List<News>
+	 * cateNews(@RequestParam("category")String category){ List<News> list =
+	 * boardMapper.cateNews(category); return list; }
+	 */
+	
+	@GetMapping("/cntCt")
+	public int cntCt(@RequestParam("category")String category) {
+		int cntCt = boardMapper.countCate(category);
+		return cntCt;
 	}
 	
-	// test paging
+	
+	
+	// 카테고리별 상세 + 페이징
 	@GetMapping("testPaging")
-	public List<News> testNews(Paging vo){
-		List<News> list = boardMapper.testCateNews(vo);
+	public List<News> testPaging(@RequestParam("param1")int param1, 
+			@RequestParam("param2")int param2,
+			@RequestParam("param3")String param3){
+		
+		List<News> list = boardMapper.testCateNews(param1, param2, param3);
 		return list;
 	}
-	
 	
 	// 메인화면 언론사별 기사 5개
 	@GetMapping("/Pnews")

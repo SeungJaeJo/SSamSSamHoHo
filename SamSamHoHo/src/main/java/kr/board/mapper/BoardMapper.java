@@ -46,10 +46,11 @@ public interface BoardMapper {
 	// 카테고리 페이지에 들어갈 뉴스리스트
 	public List<News> cateNews(String category);
 
-	// test Paging
-	public List<News> testCateNews(Paging vo);
+	
 
+	public List<News> testCateNews(int param1, int param2, String param3);
 
+	public int countCate(String category);
 
 	
 

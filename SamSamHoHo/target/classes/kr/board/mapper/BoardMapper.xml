@@ -50,7 +50,11 @@
 	</select>
 	
 	<select id="testCateNews" resultType="kr.board.entity.News">
-		<![CDATA[ SELECT * FROM ( SELECT *, ROW_NUMBER() OVER (ORDER BY date DESC) AS rownum FROM tbl_news WHERE category = '정치') AS subquery where rownum between #{start} and #{end} ]]>
+		SELECT * FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY date) AS rownum FROM tbl_news WHERE category = #{param3} AND date = ( SELECT MAX(date) FROM tbl_news WHERE category = #{param3})) AS subquery where rownum between #{param1} and #{param2} 
+	</select>
+	
+	<select id="countCate" resultType="int">
+		SELECT count(*) FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY date) AS rownum FROM tbl_news WHERE category = #{category} AND date = ( SELECT MAX(date) FROM tbl_news WHERE category = #{category})) AS subquery
 	</select>
 	
 </mapper>
