@@ -2,8 +2,11 @@ package kr.board.controller;
 
 import java.io.Console;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import kr.board.entity.BarsCount;
 import kr.board.entity.Board;
 import kr.board.entity.News;
+import kr.board.entity.NewsCount;
+import kr.board.entity.Paging;
 import kr.board.mapper.BoardMapper;
 
 // 비동기통신 전용 controller >> 페이지이동x, 객체반환 only
@@ -36,22 +42,43 @@ public class BoardRestController {
 	//	return list;
 	//}
 	
-	// 게시글 전체보기 /boardList.do
+	// 메인화면 카테고리별 최신기사 1개
 	@GetMapping("/all")
 	public List<News> newsList(@RequestParam("category")String category){
 		List<News> list = boardMapper.newsList(category);
 		return list;
 	}
 	
-//	// news.do
-//	@GetMapping("/news.do")
-//	public List<News> news(String press) {
-//		List<News> news = boardMapper.pressNews(press);
-//		
-//		System.out.println(news);
-//		return news;
-//	}
+	// 메인하단부 언론사별 개수
+	@GetMapping("/CntPress")
+	public List<NewsCount> presscnt(){
+		List<NewsCount> list = boardMapper.countPress();
+		return list;
+	}
 	
+	// 메인하단부 카테고리별 개수
+	@GetMapping("/BarPress")
+	public List<BarsCount> barcnt(){
+		List<BarsCount> list = boardMapper.countBar();
+		return list;
+	}
+	
+	// 카테고리별 상세페이지
+	@GetMapping("/cateNews")
+	public List<News> cateNews(@RequestParam("category")String category){
+		List<News> list = boardMapper.cateNews(category);
+		return list;
+	}
+	
+	// test paging
+	@GetMapping("testPaging")
+	public List<News> testNews(Paging vo){
+		List<News> list = boardMapper.testCateNews(vo);
+		return list;
+	}
+	
+	
+	// 메인화면 언론사별 기사 5개
 	@GetMapping("/Pnews")
 	public List<News> pressNews(@RequestParam("press")String press){
 		List<News> list = boardMapper.pressNews(press);
@@ -59,11 +86,21 @@ public class BoardRestController {
 		return list;
 	}
 	
+	// 메인화면 최신뉴스 3개
 	@GetMapping("/Qnews")
 	public List<News> Qnews(){
 		List<News> list = boardMapper.Qnews();
 		return list;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	// 게시글 등록하기
