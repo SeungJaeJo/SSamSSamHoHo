@@ -1425,7 +1425,7 @@
                                                 labels: pr2,
                                                 datasets: [
                                                     { //데이터
-                                                        labels : '정치',
+                                                         labels : '정치', 
             
                                                         fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                                                         data: nu2,
