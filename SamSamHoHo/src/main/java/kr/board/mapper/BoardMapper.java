@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.BarsCount;
 import kr.board.entity.Board;
+import kr.board.entity.Keywords;
 import kr.board.entity.News;
 import kr.board.entity.NewsCount;
 import kr.board.entity.Paging;
@@ -45,12 +46,18 @@ public interface BoardMapper {
 
 	// 카테고리 페이지에 들어갈 뉴스리스트
 	public List<News> cateNews(String category);
-
 	
-
+	// 페이징 시도중
 	public List<News> testCateNews(int param1, int param2, String param3);
 
+	// 페이징에 필요한 카테고리 개수
 	public int countCate(String category);
+
+	// 오늘의 키워드 열개
+	public List<Keywords> keyword_ten(String category);
+
+	// 키워드 관련 기사 다섯개
+	public List<News> keyNews(String keyword);
 
 	
 

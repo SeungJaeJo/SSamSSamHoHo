@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import kr.board.entity.BarsCount;
 import kr.board.entity.Board;
+import kr.board.entity.Keywords;
 import kr.board.entity.News;
 import kr.board.entity.NewsCount;
 import kr.board.entity.Paging;
@@ -63,17 +64,26 @@ public class BoardRestController {
 		return list;
 	}
 	
-	// 카테고리별 상세페이지
-	/*
-	 * @GetMapping("/cateNews") public List<News>
-	 * cateNews(@RequestParam("category")String category){ List<News> list =
-	 * boardMapper.cateNews(category); return list; }
-	 */
 	
+	// 카테고리별 오늘의 뉴스 몇개인지세서 페이징에 쓸예정
 	@GetMapping("/cntCt")
 	public int cntCt(@RequestParam("category")String category) {
 		int cntCt = boardMapper.countCate(category);
 		return cntCt;
+	}
+	
+	// 오늘의 키워드 열개
+	@GetMapping("/keyword")
+	public List<Keywords> keyword_ten(@RequestParam("category")String category) {
+		List<Keywords> list = boardMapper.keyword_ten(category);
+		return list;
+	}
+	
+	// 오늘의 키워드랑 관련된 키워드 다섯개
+	@GetMapping("/keyNews")
+	public List<News> keyNews(@RequestParam("keyword")String keyword){
+		List<News> list = boardMapper.keyNews(keyword);
+		return list;
 	}
 	
 	

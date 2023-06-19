@@ -114,18 +114,23 @@
 									  		  $(this).attr('href','#');
 									  			start = 1;
 									  			end = 10;
+									  			 
 									  			JList(start, end, category);
 										  	});   
-										  	$(".page_link").on('click', function(e){
-										    	if(e.target.id === 'second_page'){
-										    		start = 11;
-										    		end = 20;
-										    		$(this).attr('href','#');
-										    		/* $(".pagination_type02>ul>li:nth-child(3)").attr('class','');
-										    		$(".pagination_type02>ul>li:nth-child(4)").attr('class','active'); */
-										    	}
-										    	JList(start, end, category);
-										    });
+										  	 
+										   	$(".page_link").on('click', function(e){
+										   		for(var a = 1; a < 6; a++){
+											    	if(e.target.id === "num1"){
+											    		$(this).attr('href','#');
+											    	}else if(e.target.id != "num1"){
+											    		start += 10;
+											    		end += 10;
+											    	/* 	$("#num"+a-1+"").attr('class','');
+											    		$("#num"+a+"").attr('class','active');  */
+											    	}
+											    	JList(start, end, category);
+										   		}
+										    }); 
 										  	JList(start, end, category);
 										  	
 										  	  });
@@ -203,9 +208,20 @@
                         
                         function makePaging(data){
                         	console.log(data);
-                        	var endPage = Math.ceil(data/10);
-                        	console.log(endPage);
+                        	var totalPage = Math.ceil(data/10);
+                        	var perPage = 5;
                         	
+	                        var listHtml = "";
+	                     
+                       		for (var i = 1; i < 6; i++){
+	                        	listHtml += "<li>";
+	                        	listHtml += "<a class='page_link' id='num"+i+"'>"+i+"</a>";
+	                        	listHtml += "</li>";
+                        	 
+                        	}
+                        	$("#view_page_cnt").html(listHtml);
+                        	$("#view_page_cnt>li:nth-child(1)").attr('class','active');
+                        
                         
                         }
                         </script>
@@ -213,14 +229,15 @@
                         <nav class="pagination_type02" aria-label="pagination">
                             <ul>
                                 <li class="page_first">
-                                    <a href="#" class="page_link" role="button" aria-disabled="true"
+                                    <a  class="page_link" role="button" 
                                         aria-label="처음 페이지">처음</a>
                                 </li>
-                                <li class="page_prev">
+                                <li class="page_prev" >
                                     <a href="#" class="page_link" role="button" aria-disabled="true"
                                         aria-label="이전 페이지"><i class="ico_arrow_left" aria-hidden="true"></i></a>
                                 </li>
-                                <li class="active">
+                                <li id="view_page_cnt">
+                                <!-- <li class="active">
                                     <a 
                                         class="page_link" id="first_page">1</a>
                                 </li>
@@ -239,14 +256,15 @@
                                 <li>
                                     <a 
                                         class="page_link" id="fifth_page">5</a>
+                                </li> -->
                                 </li>
                                 <li class="page_next">
-                                    <a href=""
-                                        class="page_link"><i
+                                    <a
+                                        class="page_link btn_next" role="button"><i
                                             class="ico_arrow_right"></i></a>
                                 </li>
                                 <li class="page_last">
-                                    <a href=""
+                                    <a 
                                         class="page_link">마지막</a>
                                 </li>
                             </ul>
@@ -257,158 +275,120 @@
                             <header class="title_wrap">
                                 <strong class="title">주요 키워드</strong>
                             </header>
-                            <ul class="tag_nav">
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        1. 중국
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                      >
-                                        2. 후쿠시마오염수
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        3. 사설
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        4. 필향만리
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link" href=""
-                                      >
-                                        5. sk
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                      >
-                                        6. 우병우
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        7. 김명호
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        8. 술술읽는삼국지
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        9. 최준호
-                                    </a>
-                                </li>
-                                <li class="nav_item">
-                                    <a class="nav_link"
-                                        href=""
-                                       >
-                                        10. 김종호
-                                    </a>
-                                </li>
+                            <ul class="tag_nav" id="keyList">
+                            	<script type="text/javascript">
+									makeKey(category);
+									$(".nav_btn").on('click',function(e){
+								  		  if(e.target.id === 'wjdcl'){
+								  			category = "정치";
+								  		  }else if(e.target.id === 'tkghl'){
+								  			category = "사회";
+								  		  }else if(e.target.id === 'rudwp'){
+								  			category = "경제";
+								  		  }else {
+								  			category = "국제";
+								  		  }
+								  		  makeKey(category);
+								  		 
+									  	}); 
+									function makeKey(category){
+										
+										 $.ajax({
+											  url : "board/keyword",
+											  data : {
+												  category : category
+											  },
+											  type : "get",
+											  dataType : "json",
+											  success : makeKList,
+											  error : function(){ alert("error"); }
+										  });
+										
+										
+										
+									}	
+									function makeKList(data){
+										
+											var listHtml = "";
+										$.each(data, function(index, obj){
+													
+											listHtml += "<li class='nav_item'>";
+											listHtml += "<a class='nav_link' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+											listHtml += "</li>";
+										})
+										$("#keyList").html(listHtml);
+										
+										console.log(data[0].keyword);
+										
+										var keyword = "민주당";
+										function makeKNews(keyword){
+											
+											$.ajax({
+												  url : "board/keyNews",
+												  data : {
+													  keyword : keyword
+												  },
+												  type : "get",
+												  dataType : "json",
+												  success : makeKNewsList,
+												  error : function(){ alert("error"); }
+											  });
+											
+										}
+	                            	    function makeKNewsList(data){
+	                            	    	
+	                            	    	var listHtml = "";
+											$.each(data, function(index, obj){
+												listHtml += "<li class='card'>";
+												listHtml += "<h4 class='headline'>";
+												listHtml += "<a>"+obj.title+"</a></h4>";
+												listHtml += "<div class='meta'>";
+												listHtml += "<p class='date'>"+obj.date+"</p>";
+												listHtml += "</div></div></li>";
+											})
+											$("#viewkeyList").html(listHtml);
+	                            	    	
+	                            	    	
+	                            	    	
+	                            	    	
+	                            	    }
+	                            	
+	                            	
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+									}
+                            	
+									
+									
+									
+                            	</script>
+                            	
+                              
                             </ul>
                         </section>
                         <section class="chain_wrap">
                             <header class="title_wrap">
                                 <strong class="title">키워드 관련 기사</strong>
                             </header>
-                            <ul class="card_right_list">
-                                <li class="card">
-
-                                    <div class="card_body">
-                                        <h2 class="headline">
-                                            <a href=""
-                                              >
-                                                우유와 대장암, 뭔 관계길래…통계는 죄다 “우유 안먹은 탓”
-                                            </a>
-          
-                                        </h2>
-                                        <div class="meta">
-                                            <p class="date">2023.06.11 15:39</p>
+                            <ul class="card_right_list" id="viewkeyList">
+                            	
+                            	<script type="text/javascript">
+									
+                            	
+                            	</script>
                          
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                 
-                                    <div class="card_body">
-                                        <h2 class="headline">
-                                            <a href=""
-                                               >
-                                                95세 판사 "그만 두시라"는 동료와 소송전…美법원 종신직 논란
-                                            </a>
-                                        </h2>
-                                        <div class="meta">
-                                            <p class="date">2023.06.12 05:00</p>
                                 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                   
-                                    <div class="card_body">
-                                        <h2 class="headline">
-                                            <a href=""
-                                              >
-                                                손님들 벌벌…'하얏트호텔 3박4일 난동' 조폭 10명 영장청구
-                                            </a>
-                                        </h2>
-                                        <div class="meta">
-                                            <p class="date">2023.06.11 22:05</p>
-                                 
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                  
-                                    <div class="card_body">
-                                        <h2 class="headline">
-                                            <a href="">
-                                                "남태현 마약, 나 때림" 폭로 서민재 "평생 반성" 재차 사과
-                                            </a>
-                                        </h2>
-                                        <div class="meta">
-                                            <p class="date">2023.06.12 08:57</p>
-                          
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="card">
-                                  
-                                    <div class="card_body">
-                                        <h2 class="headline">
-                                            <a href=""
-                                             >
-                                                "양도세 8억 내랍니다"…31년 산 집 팔다 '딱 23일 3주택' 法판단은
-                                            </a>
-                                        </h2>
-                                        <div class="meta">
-                                            <p class="date">2023.06.12 07:52</p>
-                                    
-                                        </div>
-                                    </div>
-                                </li>
+                                
+                             
                             </ul>
                         </section>
                     </div>

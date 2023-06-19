@@ -57,6 +57,16 @@
 		SELECT count(*) FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY date) AS rownum FROM tbl_news WHERE category = #{category} AND date = ( SELECT MAX(date) FROM tbl_news WHERE category = #{category})) AS subquery
 	</select>
 	
+	<select id="keyword_ten" resultType="kr.board.entity.Keywords">
+		select * from tbl_keywords where category = #{category} and date = (select max(date) from tbl_keywords where category = #{category}) limit 10
+	</select>
+	
+	<select id="keyNews" resultType="kr.board.entity.News">
+		SELECT * FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%') AND date = (SELECT MAX(date) FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%')) limit 5
+	</select>
+	 
+	
+	
 </mapper>
 
 
