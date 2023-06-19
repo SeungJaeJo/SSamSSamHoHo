@@ -176,24 +176,41 @@
 											                        
 											                        
 										                       		for (var i = data.startPage; i <= data.endPage; i++){
-											                        	listHtml += "<li>";
-											                        	listHtml += "<a class='page_link' id='num"+i+"' role='button'>"+i+"</a>";
-											                        	listHtml += "</li>";
+										                       			if(i == data.startPage){
+												                        	listHtml += "<li class='active'>";
+												                        	listHtml += "<a class='page_link' id='num"+i+"' role='button'>"+i+"</a>";
+												                        	listHtml += "</li>";
+										                       			}else{
+										                       				listHtml += "<li>";
+												                        	listHtml += "<a class='page_link' id='num"+i+"' role='button'>"+i+"</a>";
+												                        	listHtml += "</li>";
+										                       			}
 											                        	
-										                        	 
-										                        	}
-										                       		
-										                       		
-										                       		
-										                       		
-										                       		console.log(data.nowPage);
+										                       		}
 										                        	$("#view_page_cnt").html(listHtml);
-										                        	$("#view_page_cnt>li:nth-child(1)").attr('class','active');
+										                        	
+										                       		
+										                       	 const cateList = document.querySelectorAll('#view_page_cnt>li');
+																	console.log(cateList[0]);
+														            for (var i = 0; i < cateList.length; i++) {
+														            	cateList[i].addEventListener('click', function (e) {
+														                    e.preventDefault();
+														                    console.log("?????")
+														                    for (var j = 0; j < cateList.length; j++) {
+														                        // 나머지 버튼 클래스 제거
+														                        cateList[j].classList.remove('active');
+
+														                        // 나머지 컨텐츠 display:none 처리
+														                    }
+
+														                    // 버튼 관련 이벤트
+														                    this.classList.add('active');
+														                    this
+														                });
+														            }
+																
+										                       		console.log(data.nowPage);
 																	
-										                        	// test
-										                        	
-										                        	
-										                        	
 										                        	
 										                        	 
 										                        	 var start = data.start;
@@ -373,59 +390,7 @@
                          
                            
                         </ul>
-                       <!--  <script>
-                        
-                        var category = "정치";
-                   	 	$(".nav_btn").on('click',function(e){
-					  		  if(e.target.id === 'wjdcl'){
-					  			category = "정치";
-					  		  }else if(e.target.id === 'tkghl'){
-					  			category = "사회";
-					  		  }else if(e.target.id === 'rudwp'){
-					  			category = "경제";
-					  		  }else {
-					  			category = "국제";
-					  		  }
-					  		  cntCt(category);
-					  		  
-							 
-					  		 
-						  	}); 
-                   	 	cntCt(category);
-                        function cntCt(category){
-							  $.ajax({
-								  url : "board/cntCt",
-								  data : {
-									  category : category
-								  },						  
-								  type : "get",
-								  dataType : "json",
-								  success : makePaging,
-								  error : function(){ alert("error"); }
-							  });
-						  }
-                        
-                        function makePaging(data){
-                        	console.log(data);
-                        	var totalPage = Math.ceil(data/10);
-                        	var perPage = 5;
-                        	
-	                        var listHtml = "";
-	                     
-                       		for (var i = 1; i < 6; i++){
-	                        	listHtml += "<li>";
-	                        	listHtml += "<a class='page_link' id='num"+i+"'>"+i+"</a>";
-	                        	listHtml += "</li>";
-                        	 
-                        	}
-                        	$("#view_page_cnt").html(listHtml);
-                        	$("#view_page_cnt>li:nth-child(1)").attr('class','active');
-                        	 $("#num2").on('click', function(){
-							  		console.log('slkjelkflkj'); 
-							  	 });
-                        
-                        }
-                        </script> -->
+                      
 
                         <nav class="pagination_type02" aria-label="pagination">
                             <ul>
@@ -477,138 +442,7 @@
                                 <strong class="title">주요 키워드</strong>
                             </header>
                             <ul class="tag_nav" id="keyList">
-                         <!--    	<script type="text/javascript">
-									makeKey(category);
-									$(".nav_btn").on('click',function(e){
-								  		  if(e.target.id === 'wjdcl'){
-								  			category = "정치";
-								  		  }else if(e.target.id === 'tkghl'){
-								  			category = "사회";
-								  		  }else if(e.target.id === 'rudwp'){
-								  			category = "경제";
-								  		  }else {
-								  			category = "국제";
-								  		  }
-								  		  makeKey(category);
-								  		 
-									  	}); 
-									function makeKey(category){
-										
-										 $.ajax({
-											  url : "board/keyword",
-											  data : {
-												  category : category
-											  },
-											  type : "get",
-											  dataType : "json",
-											  success : makeKList,
-											  error : function(){ alert("error"); }
-										  });
-										
-										
-										
-									}	
-									function makeKList(data){
-										
-											var listHtml = "";
-										$.each(data, function(index, obj){
-											console.log(index)
-											
-											if(index==0){
-												listHtml += "<li class='nav_item is_on2'>";
-												listHtml += "<a class='nav_link i"+(index+1)+"' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
-												listHtml += "</li>";
-												
-											}else{
-												listHtml += "<li class='nav_item'>";
-												listHtml += "<a class='nav_link i"+(index+1)+"' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
-												listHtml += "</li>";
-											}
-													
-											
-										})
-										$("#keyList").html(listHtml);
-										
-										  const tabList = document.querySelectorAll('.tag_nav li');
-								            let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
-
-								            for (var i = 0; i < tabList.length; i++) {
-								                tabList[i].querySelector('.i' + (i + 1)).addEventListener('click', function (e) {
-								                    e.preventDefault();
-								                    console.log("?????")
-								                    for (var j = 0; j < tabList.length; j++) {
-								                        // 나머지 버튼 클래스 제거
-								                        tabList[j].classList.remove('is_on2');
-
-								                        // 나머지 컨텐츠 display:none 처리
-								                    }
-
-								                    // 버튼 관련 이벤트
-								                    this.parentNode.classList.add('is_on2');
-
-								                    // 버튼 클릭시 컨텐츠 전환
-								                    activeCont = this.getAttribute('href');
-								                });
-								            }
-										
-										
-										var keyword = data[0].keyword;
-										
-										
-										$(".nav_link").on('click', function(e){
-											for(var k = 0; k < 11; k++){
-												
-												if(e.target.id=='key'+(k+1)+''){
-													keyword = data[k].keyword;
-												}
-												makeKNews(keyword);
-											}
-										});
-										
-										
-										
-										makeKNews(keyword);
-										function makeKNews(keyword){
-											
-											$.ajax({
-												  url : "board/keyNews",
-												  data : {
-													  keyword : keyword
-												  },
-												  type : "get",
-												  dataType : "json",
-												  success : makeKNewsList,
-												  error : function(){ alert("error"); }
-											  });
-											
-										}
-	                            	    function makeKNewsList(data){
-	                            	    	
-	                            	    	var listHtml = "";
-											$.each(data, function(index, obj){
-												listHtml += "<li class='card'>";
-												listHtml += "<h4 class='headline'>";
-												listHtml += "<a>"+obj.title+"</a></h4>";
-												listHtml += "<div class='meta'>";
-												listHtml += "<p class='date'>"+obj.date+"</p>";
-												listHtml += "</div></div></li>";
-											})
-											$("#viewkeyList").html(listHtml);
-	                            	    	
-	                            	    	
-	                            	    	
-	                            	    	
-	                            	    }
-	                            	
-	                            	
-										
-									}
-                            	
-									
-									
-									
-                            	</script> -->
-                            	
+                       
                               
                             </ul>
                             
