@@ -34,13 +34,13 @@
                 <div class="header_right_area">
                     <nav class="header_nav">
                         <ul class="nav sm_hidden md_hidden">
-							<li class="nav_item"><a 
+							<li class="nav_item"><a href="#"
 								 id="wjdcl" class="nav_btn">정치</a></li>
-							<li class="nav_item"><a 
+							<li class="nav_item"><a href="#"
 								 id="tkghl" class="nav_btn">사회</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a href="#"
 								 id="rudwp" class="nav_btn">경제</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a href="#"
 								 id="rnrwp" class="nav_btn">국제</a></li>
 
                         </ul>
@@ -313,14 +313,28 @@
 										$.each(data, function(index, obj){
 													
 											listHtml += "<li class='nav_item'>";
-											listHtml += "<a class='nav_link' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+											listHtml += "<a class='nav_link' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
 											listHtml += "</li>";
 										})
 										$("#keyList").html(listHtml);
 										
-										console.log(data[0].keyword);
 										
-										var keyword = "민주당";
+										var keyword = data[0].keyword;
+										
+										
+										$(".nav_link").on('click', function(e){
+											for(var k = 0; k < 11; k++){
+												
+												if(e.target.id=='key'+(k+1)+''){
+													keyword = data[k].keyword;
+												}
+												makeKNews(keyword);
+											}
+										});
+										
+										
+										
+										makeKNews(keyword);
 										function makeKNews(keyword){
 											
 											$.ajax({
