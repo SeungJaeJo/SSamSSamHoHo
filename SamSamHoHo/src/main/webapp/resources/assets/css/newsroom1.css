@@ -1014,6 +1014,10 @@ textarea:focus {
     width: 12px
 }
 
+.tag_nav li.is_on2 a{font-weight:bold; color:#f6330a; text-decoration: none;}
+
+
+
 .btn_user .ico_arrow_bold_down {
     height: 12px;
     margin-left: 4px;
