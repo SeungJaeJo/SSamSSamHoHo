@@ -97,8 +97,7 @@
 										  		  // HTML이 다 로딩되고 작동하는 함수
 										  		
 										  	var category = "정치";
-										    var start = 1;
-										    var end = 10;
+										   
 										    
 										  	 $(".nav_btn").on('click',function(e){
 									  		  if(e.target.id === 'wjdcl'){
@@ -166,62 +165,94 @@
 																	data.end = data.nowPage * data.cntPerPage;
 																	data.start = data.end - data.cntPerPage + 1;
 																	
-																	var prev = data.startPage > 1;
-																	var next = data.endPage < data.lastPage;
 																	
-										                        	console.log(data);
+																	var s = data.startPage;
+																	var e = data.endPage;
+																	tt(s, e);
+										                        	function tt(s, e){
+										                        		
+										                        		
+										                        		
+													                        var listHtml = "";
+													                      
+												                       		for (var i = data.startPage; i <= data.endPage; i++){
+												                       			if(i == data.startPage){
+														                        	listHtml += "<li class='active'>";
+														                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
+														                        	listHtml += "</li>";
+												                       			}else{
+												                       				listHtml += "<li>";
+														                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
+														                        	listHtml += "</li>";
+												                       			}
+													                        	
+												                       		}
+												                        	$("#view_page_cnt").html(listHtml);
+										                        		
+										                        	};
 										                        	
-										                        	
-											                        var listHtml = "";
-											                        
-											                        
-										                       		for (var i = data.startPage; i <= data.endPage; i++){
-										                       			if(i == data.startPage){
-												                        	listHtml += "<li class='active'>";
-												                        	listHtml += "<a class='page_link' id='num"+i+"' role='button'>"+i+"</a>";
-												                        	listHtml += "</li>";
-										                       			}else{
-										                       				listHtml += "<li>";
-												                        	listHtml += "<a class='page_link' id='num"+i+"' role='button'>"+i+"</a>";
-												                        	listHtml += "</li>";
-										                       			}
-											                        	
-										                       		}
-										                        	$("#view_page_cnt").html(listHtml);
-										                        	
+
+											                        $(".btn_next").on('click', function(){
+																		if(data.endPage < data.lastPage){
+																			data.nowPage = data.endPage+1;
+																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
+																			
+																			if (data.lastPage < data.endPage) {
+																				data.endPage = data.lastPage;
+																			}
+																			
+																			data.startPage = data.endPage - data.cntPage + 1;
+																			if (data.startPage < 1) {
+																				data.startPage = 1;
+																			}
+																			
+																		}
+																			tt(s, e);
+																	});	
+																 	
+																			
+																			
+																			
+																			
 										                       		
-										                       	 const cateList = document.querySelectorAll('#view_page_cnt>li');
-																	console.log(cateList[0]);
-														            for (var i = 0; i < cateList.length; i++) {
-														            	cateList[i].addEventListener('click', function (e) {
+										                       	  const cateL = document.querySelectorAll('#view_page_cnt>li');
+										                       	 let activeCate = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+														            for (var i = 0; i < cateL.length; i++) {
+														            	cateL[i].addEventListener('click', function (e) {
 														                    e.preventDefault();
-														                    console.log("?????")
-														                    for (var j = 0; j < cateList.length; j++) {
+														                    for (var j = 0; j < cateL.length; j++) {
 														                        // 나머지 버튼 클래스 제거
-														                        cateList[j].classList.remove('active');
+														                        cateL[j].classList.remove('active');
 
 														                        // 나머지 컨텐츠 display:none 처리
 														                    }
 
 														                    // 버튼 관련 이벤트
+														                    
 														                    this.classList.add('active');
-														                    this
+														                    activeCate = this.getAttribute('href');
 														                });
 														            }
-																
-										                       		console.log(data.nowPage);
+														         
+														           
+																	$(".page_link").on('click', function(e){
+																		for(var k = data.startPage; k <= data.endPage; k++){
+																			
+																			if(e.target.id=='num'+(k)+''){
+																				data.nowPage = k;
+																				data.end = data.nowPage * data.cntPerPage;
+																				data.start = data.end - data.cntPerPage + 1;
+																			}
+																				
+																		}
 																	
-										                        	
-										                        	 
-										                        	 var start = data.start;
-										                        	 var end = data.end;
-															  // 다른 ajax;
-										                        	 $.ajax({
-															  
+ 																		
+																	console.log(data.nowPage);
+																	$.ajax({
 																		  url : "board/testPaging",
 																		  data : {
-																			  param1 : start,
-																			  param2 : end,
+																			  param1 : data.start,
+																			  param2 : data.end,
 																			  param3 : category
 																		  }, 
 																		  type : "get",
@@ -229,15 +260,24 @@
 																		  success :makeJ, 
 																		  error : function(){ alert("error"); }
 																	  });
-															  
-															  
-															  
-															  
-															  
-															  
-															  
-															  
-															  },
+																	});
+																	$.ajax({
+																		  
+																		  url : "board/testPaging",
+																		  data : {
+																			  param1 : data.start,
+																			  param2 : data.end,
+																			  param3 : category
+																		  }, 
+																		  type : "get",
+																		  dataType : "json",
+																		  success :makeJ, 
+																		  error : function(){ alert("error"); }
+																	  });
+																	
+																		
+																	
+															  }, // 페이징
 															  error : function(){ alert("error"); }
 														  });
 														  
@@ -253,8 +293,8 @@
 											  function makeJ(data){ 
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
-													    listHtml += " <li class='card'>";
-													    listHtml += " <div class='card_body'>";
+													    listHtml += "<li class='card'>";
+													    listHtml += "<div class='card_body'>";
 													  	listHtml += "<h2 class='headline'>";
 													  	listHtml += "<a href=''>"+obj.title+"</a></h2>";
 													  	listHtml += "<p class='description sm_hidden'>"+obj.summ_content+"</p>";
@@ -264,6 +304,7 @@
 														listHtml += "</div></li>";
 													  
 													  });
+						                       
 													  $("#cateList").html(listHtml);
 													  
 												  
