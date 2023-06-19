@@ -67,6 +67,5 @@ listCnt++
 listCnt = 0
 }
 
-console.log(listCnt)
 }, timer);
 

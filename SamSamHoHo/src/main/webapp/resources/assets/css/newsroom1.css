@@ -980,7 +980,7 @@ textarea:focus {
     color: #666;
     font-size: 14px;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 35px;
     margin: 0 8px;
     position: relative
 }
@@ -991,8 +991,8 @@ textarea:focus {
     display: block;
     height: 12px;
     position: absolute;
-    right: -8px;
-    top: 6px;
+    right: -10px;
+    top: 12px;
     width: 1px
 }
 
@@ -1013,6 +1013,10 @@ textarea:focus {
     height: 12px;
     width: 12px
 }
+
+.tag_nav li.is_on2 a{font-weight:bold; color:#f6330a; text-decoration: none;}
+
+
 
 .btn_user .ico_arrow_bold_down {
     height: 12px;

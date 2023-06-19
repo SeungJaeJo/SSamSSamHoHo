@@ -311,12 +311,44 @@
 										
 											var listHtml = "";
 										$.each(data, function(index, obj){
+											console.log(index)
+											
+											if(index==0){
+												listHtml += "<li class='nav_item is_on2'>";
+												listHtml += "<a class='nav_link i"+(index+1)+"' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+												listHtml += "</li>";
+												
+											}else{
+												listHtml += "<li class='nav_item'>";
+												listHtml += "<a class='nav_link i"+(index+1)+"' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+												listHtml += "</li>";
+											}
 													
-											listHtml += "<li class='nav_item'>";
-											listHtml += "<a class='nav_link' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
-											listHtml += "</li>";
+											
 										})
 										$("#keyList").html(listHtml);
+										
+										  const tabList = document.querySelectorAll('.tag_nav li');
+								            let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+
+								            for (var i = 0; i < tabList.length; i++) {
+								                tabList[i].querySelector('.i' + (i + 1)).addEventListener('click', function (e) {
+								                    e.preventDefault();
+								                    console.log("?????")
+								                    for (var j = 0; j < tabList.length; j++) {
+								                        // 나머지 버튼 클래스 제거
+								                        tabList[j].classList.remove('is_on2');
+
+								                        // 나머지 컨텐츠 display:none 처리
+								                    }
+
+								                    // 버튼 관련 이벤트
+								                    this.parentNode.classList.add('is_on2');
+
+								                    // 버튼 클릭시 컨텐츠 전환
+								                    activeCont = this.getAttribute('href');
+								                });
+								            }
 										
 										
 										var keyword = data[0].keyword;
@@ -388,6 +420,7 @@
                             	
                               
                             </ul>
+                            
                         </section>
                         <section class="chain_wrap">
                             <header class="title_wrap">
@@ -409,6 +442,10 @@
                 </div>
             </section>
         </main>
+        
+          <script>
+          
+        </script>
         <div id="footer" class="footer footer22">
 
             <footer>
