@@ -118,13 +118,13 @@
 					<nav class="header_nav">
 						<ul class="nav sm_hidden md_hidden">
 
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">정치</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">사회</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">경제</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">국제</a></li>
 
 						</ul>
@@ -138,11 +138,6 @@
 						<button type="button" class="btn_search" onclick=""
 							aria-label="검색">
 							<i class="ico_search"></i>
-							<script type="text/javascript">
-								function makeInput(){
-									
-								}
-							</script>
 						</button>
 						<button type="button" class="btn_navbar" onclick="">
 							<i class="ico_ham"></i>
@@ -385,7 +380,7 @@
 				  		  }
 				  		  
 				  	  });
-				  
+				  		  
 					  function loadList(category){
 						
 						  $.ajax({
