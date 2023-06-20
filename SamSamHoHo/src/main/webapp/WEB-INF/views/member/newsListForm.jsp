@@ -19,8 +19,7 @@
   	<link rel="stylesheet" href="resources/assets/css/newsroom1.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom2.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom3.css">
-  	
-  	
+
 </head>
 
 <body style="transform: none;">
@@ -481,6 +480,8 @@
                 </div>
             </footer>
         </div>
+        
+        
 
      
 
