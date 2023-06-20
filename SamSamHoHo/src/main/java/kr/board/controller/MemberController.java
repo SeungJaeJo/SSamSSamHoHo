@@ -56,6 +56,7 @@ public class MemberController {
 		 
 		return "member/testSearch";
 	}
+
 	
 	
 	// 로그인 기능

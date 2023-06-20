@@ -73,12 +73,7 @@ public class BoardRestController {
 		return cntCt;
 	}
 	
-	// 검색했을때 쓸 페이징 개수~
-	@GetMapping("/searchCt")
-	public int searchCt(@RequestParam("query")String query) {
-		int searchCt = boardMapper.searchCt(query);
-		return searchCt;
-	}
+	
 	
 	// 오늘의 키워드 열개
 	@GetMapping("/keyword")

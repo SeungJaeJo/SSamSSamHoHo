@@ -31,6 +31,8 @@
   .container55{
     background: white;
     padding: 1%;
+    overflow:hidden;
+    height : 300px;
   }
   .item33{
     margin: 3% 0px;

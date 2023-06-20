@@ -62,7 +62,7 @@
 	</select>
 	
 	<select id="keyNews" resultType="kr.board.entity.News">
-		SELECT * FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%') AND date = (SELECT MAX(date) FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%')) limit 5
+		SELECT * FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%') AND date = (SELECT MAX(date) FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%')) limit 5 
 	</select>
 	 
 	<select id="keywords_fifty" resultType="kr.board.entity.Keywords">

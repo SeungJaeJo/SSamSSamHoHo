@@ -1031,7 +1031,6 @@
 																console.log(data[0].category)
 																// 순위별 RGB 값을 정의
 																var colors = [
-<<<<<<< HEAD
 																  { rank: 1, rgb: 'rgb(255, 99, 72)', fsize:40 },    // blue
 																  { rank: 2, rgb: 'rgb(255, 99, 72)', fsize:39 },    
 																  { rank: 3, rgb: 'rgb(255, 99, 72)', fsize:38 },    
@@ -1068,45 +1067,7 @@
 																  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
 																  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
 																  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
-=======
-																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
-																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
-																  
-																  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
-																  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
-																  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
-																  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
-																  
-																  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
-																  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
-																  
-																  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
-																  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
-																  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
-																  
-																  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  
-																  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  
-																  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
-																  
+
 																];
 																
 																
