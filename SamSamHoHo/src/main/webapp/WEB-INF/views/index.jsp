@@ -142,8 +142,8 @@
 						</button>
 	
 					</div>
-					                    <div class="Ngnb_search _search_content is_hidden">
-                        <form action="" class="search_form"
+					                 <div class="Ngnb_search _search_content is_hidden">
+                                         <form action="testSearch.do" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
@@ -161,45 +161,42 @@
                                     <div class="sggt_fixer">
                                         <div class="container55">
 
-                                            <div class="item33">
-                                                <span class="icon">A</span>
-                                                <span class="itemsname">Apple</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">O</span>
-                                                <span class="itemsname">Orange</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">M</span>
-                                                <span class="itemsname">Mandarin</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">S</span>
-                                                <span class="itemsname">Strawberry</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">W</span>
-                                                <span class="itemsname">Watermelon</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">G</span>
-                                                <span class="itemsname">Grape</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">P</span>
-                                                <span class="itemsname">Pear</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">C</span>
-                                                <span class="itemsname">Cherry</span>
-                                            </div>
+                                                  <script type="text/javascript">
+	                                        	
+ 											$(document).ready(function(){
+									  			
+									  			makeKSearch();
+										  	});   
+										  	
+											  
+											  function makeKSearch(){
+												  $.ajax({
+													  url : "board/keySearch",
+													  type : "get",
+													  dataType : "json",
+													  success : makeKSList,
+													  error : function(data){
+														  alert('error'); }
+													  });
+	                                        
+											  };
+											  
+											  function makeKSList(data){
+												  
+												  var listHtml = "";
+												  $.each(data, function(index, obj){
+													
+													  listHtml += "<div class='item33'>";
+													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
+													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
+													  listHtml += "</div>";
+													  
+												  });
+												  $(".container55").html(listHtml);
+											  };
+	                                        
+	                                        
+	                                        </script>
                                         </div>
                                       
                                     </div>
