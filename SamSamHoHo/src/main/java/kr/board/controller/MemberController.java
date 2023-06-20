@@ -40,6 +40,12 @@ public class MemberController {
 		return "member/loginForm";
 	}
 	
+	@GetMapping("/newsdetailForm.do")
+	public String newsdetailForm() {
+		return "member/newsdetailForm";
+		
+	}
+	
 	// 로그인 기능
 	@PostMapping("/login.do")
 	public String login(Member m, HttpSession session, RedirectAttributes rttr) {
@@ -162,10 +168,7 @@ public class MemberController {
 	}
 	
 	// 회원정보수정 페이지 이동/updateForm.do
-	@GetMapping("/updateForm.do")
-	public String updateForm() {
-		return "member/updateForm";
-	}
+
 	
 	// 회원정보 수정 /update.do
 	@PostMapping("/update.do")
@@ -238,10 +241,17 @@ public class MemberController {
 	
 	
 	// 회원 프로필 등록페이지 이동 /imageForm.do
-	@GetMapping("/imageForm.do")
-	public String imageForm() {
+//	@GetMapping("/newsListForm.do")
+//	public String newsListForm1() {
+//		
+//		return "member/newsListForm";
+//	}
+	
+	
+	@GetMapping("/newsListForm.do")
+	public String newsListForm() {
+		return "member/newsListForm";
 		
-		return "member/imageForm";
 	}
 	
 	//회원 프로필 등록 /imageUpdate.do

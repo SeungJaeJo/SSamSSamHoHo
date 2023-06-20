@@ -26,7 +26,7 @@
 	</update>
 	
 	<select id="newsList" resultType="kr.board.entity.News">
-		select * from tbl_news where category = #{category} order by date limit 1
+		select * from tbl_news where category = #{category} order by date desc limit 1
 	</select>
 
 	<select id="Qnews" resultType="kr.board.entity.News">
@@ -34,9 +34,41 @@
 	</select>
 	
 	<select id="pressNews" resultType="kr.board.entity.News">
-		select * from tbl_news where press = #{press} order by date limit 5
+		select * from tbl_news where press = #{press} order by date desc limit 5
 	</select>
-
+	
+	<select id="countPress" resultType="kr.board.entity.NewsCount">
+		select press, count(*) as count from tbl_news group by press
+	</select>
+	
+	<select id="countBar" resultType="kr.board.entity.BarsCount">
+		SELECT date, category, COUNT(*) AS count, (SELECT COUNT(*) FROM tbl_news WHERE date = (SELECT MAX(date) FROM tbl_news))	AS total_count from tbl_news where date = (select max(date) from tbl_news) group by category, date
+	</select>
+	
+	<select id="cateNews" resultType="kr.board.entity.News">
+		SELECT * FROM tbl_news WHERE category = #{category} AND date = (SELECT MAX(date) FROM tbl_news WHERE category = #{category})
+	</select>
+	
+	<select id="testCateNews" resultType="kr.board.entity.News">
+		SELECT * FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY date) AS rownum FROM tbl_news WHERE category = #{param3} AND date = ( SELECT MAX(date) FROM tbl_news WHERE category = #{param3})) AS subquery where rownum between #{param1} and #{param2} 
+	</select>
+	
+	<select id="countCate" resultType="int">
+		SELECT count(*) FROM (SELECT *,ROW_NUMBER() OVER (ORDER BY date) AS rownum FROM tbl_news WHERE category = #{category} AND date = ( SELECT MAX(date) FROM tbl_news WHERE category = #{category})) AS subquery
+	</select>
+	
+	<select id="keyword_ten" resultType="kr.board.entity.Keywords">
+		select * from tbl_keywords where category = #{category} and date = (select max(date) from tbl_keywords where category = #{category}) limit 10
+	</select>
+	
+	<select id="keyNews" resultType="kr.board.entity.News">
+		SELECT * FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%') AND date = (SELECT MAX(date) FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%')) limit 5
+	</select>
+	 
+	<select id="keywords_fifty" resultType="kr.board.entity.Keywords">
+		select * from tbl_keywords where category = #{category} and date = (select max(date) from tbl_keywords where category = #{category}) limit 30
+	</select>
+	
 </mapper>
 
 
