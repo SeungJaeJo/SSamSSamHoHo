@@ -988,7 +988,6 @@
 																console.log(data[0].category)
 																// 순위별 RGB 값을 정의
 																var colors = [
-<<<<<<< HEAD
 																  { rank: 1, rgb: 'rgb(255, 99, 72)', fsize:40 },    // blue
 																  { rank: 2, rgb: 'rgb(255, 99, 72)', fsize:39 },    
 																  { rank: 3, rgb: 'rgb(255, 99, 72)', fsize:38 },    
@@ -1025,7 +1024,6 @@
 																  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
 																  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
 																  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
-=======
 																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
 																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
 																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
@@ -1062,7 +1060,6 @@
 																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
 																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
 																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
->>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
 																  
 																];
 																

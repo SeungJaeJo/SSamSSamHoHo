@@ -3082,7 +3082,8 @@ input[type=checkbox],input[type=radio] {
     margin-top: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal
+    white-space: normal;
+      -webkit-line-clamp: 5;
 }
 
 .short{
