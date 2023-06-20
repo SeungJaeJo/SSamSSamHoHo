@@ -204,6 +204,22 @@ a.btn {
  overflow-y: scroll;
 
 }
+#zz3.content3 {
+    position: sticky;
+	top:0;
+  padding: 10%;
+  border: 3px solid rgba(0,0,0,.1);
+  background: #fff;
+  border-bottom-right-radius: 2%;
+  border-bottom-left-radius: 2%;
+  
+  border-top-right-radius: 2%;
+  border-top-left-radius: 2%;
+ height: 750px;
+ overflow-x: hidden;
+ overflow-y: scroll;
+
+}
 .btn_sub{
    
   width: 200px;
