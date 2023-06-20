@@ -20,7 +20,10 @@
 <link rel="stylesheet" href="resources/assets/css/newsroom2.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom3.css">
 <link rel="stylesheet" href="resources/assets/css/modal.css">
+<link rel="stylesheet" href="resources/assets/css/chat.css">
 
+  	<link rel="stylesheet" href="resources/assets/css/sidemenu1.css">
+  	<link rel="stylesheet" href="resources/assets/css/sidemenu2.css">
 	  	
 	
 </head>
@@ -92,6 +95,15 @@
                                 </a>
 
                             </div>
+                                                        <div class="sticky_menu default" style="top: 168px;">
+                                <button type="button" class="btn_bookmark">
+                                    <i class="ico_bookmark"></i>
+                                    <span class="sm_hidden">AI 비서이다 ^^</span>
+                                </button>
+                              
+                
+                            
+                            </div>
                             <div class="media_end_head_title">
                                 <h2 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
                                         가능해진다</span></h2>
@@ -103,7 +115,6 @@
                                             class="media_end_head_info_datestamp_time _ARTICLE_DATE_TIME"
                                             >2023.06.14. 오전 9:44</span>
                                     </div>
-                                    <button target="" class="media_end_head_origin_link">기사원문</button>
                                 </div>
                                 <div class="media_end_head_journalist">
                                     <a href="" class="media_end_head_journalist_box">
@@ -677,80 +688,126 @@
     ::-webkit-scrollbar-button { display: none; } /* 스크롤 바 상 하단 버튼 */
         </style>
         
-	<div class="modal-wrapper">
-		<div class="modal">
-			<div class="content" id="zz">
+   <div class="modal-wrapper">
+            <div class="modal">
+                <div class="content" id="zz">
+                    <div class="chat_wrap">
+                        <div class="chat">
+                            <ul>
+                                <!-- 동적 생성 -->
+                            </ul>
+                        </div>
+                        <div class="input-div">
+                            <textarea placeholder="Press Enter for send message."></textarea>
+                        </div>
 
-                <div class="media_end_head_top">
-                    <a href="" class="media_end_head_top_logo">
-                        <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"
-                            class="media_end_head_top_logo_img light_type">
+                        <!-- format -->
 
-                    </a>
-
-                </div>
-                    <div class="media_end_head_title">
-                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인 가능해진다</span></h3>
-                    </div>
-                 <div id="contents" class="newsct_body">
-                    <div id="newsct_article" class="newsct_article _article_body">
-                        <div id="dic_area" class="go_trans _article_content"
-                            style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                            앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
-                            앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.                 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                            열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                            주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                            서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                            부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
+                        <div class="chat format">
+                            <ul>
+                                <li>
+                                    <div class="sender">
+                                        <span></span>
+                                    </div>
+                                    <div class="message">
+                                        <span></span>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                   
 
- 
-              
+
 
                 </div>
-
-			
-				<div class="center_star">
-
-
-						<button class="btn_sub" type="submit" style="text-align: center;">등록하기
-						</button>
-
-				</div>
+            </div>
+        </div>
 
 
 
+        <div class="modal-wrapper2">
+            <div class="modal2">
+                <div class="content2" id="zz2">
+
+                    <div class="media_end_head_top">
+                        <a href="" class="media_end_head_top_logo">
+                            <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png"
+                                width="" height="32" alt="조선일보" title="조선일보"
+                                class="media_end_head_top_logo_img light_type">
+
+                        </a>
+
+                    </div>
+                    <div class="media_end_head_title">
+                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
+                                가능해진다</span></h3>
+                    </div>
+                    <div id="contents" class="newsct_body">
+                        <div id="newsct_article" class="newsct_article _article_body">
+                            <div id="dic_area" class="go_trans _article_content"
+                                style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
+                                앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에
+                                주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
+                                앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에
+                                주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
+                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
+                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
+                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
+                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
+                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
+                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
+                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
+                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+                    <div class="center_star2">
+
+
+                        <button class="btn_sub2" type="submit" style="text-align: center;">등록하기
+                        </button>
+
+                    </div>
 
 
 
 
 
 
-			</div>
-		</div>
-	</div>
+
+
+
+                </div>
+            </div>
+        </div>
+
         <div id="footer" class="footer footer22">
 
             <footer>
@@ -793,47 +850,321 @@
       
 
     </div>
-    
-  <script>
+      <script>
+        const Chat = (function () {
+            const myName = "user";
+
+            // init 함수
+            function init() {
+                // enter 키 이벤트
+                $(document).on('keydown', 'div.input-div textarea', function (e) {
+                    if (e.keyCode == 13 && !e.shiftKey) {
+                        e.preventDefault();
+                        const message = $(this).val();
+
+                        // 메시지 전송
+                        sendMessage(message);
+                        // 입력창 clear
+                        clearTextarea();
+                    }
+
+
+                });
+            }
+
+            // 메세지 태그 생성
+            function createMessageTag(LR_className, senderName, message) {
+                // 형식 가져오기
+                let chatLi = $('div.chat.format ul li').clone();
+
+                // 값 채우기
+                chatLi.addClass(LR_className);
+                chatLi.find('.sender span').text(senderName);
+                chatLi.find('.message span').text(message);
+
+
+
+                return chatLi;
+            }
+
+            function createMessageTag2(LR_className, senderName, message1) {
+                // 형식 가져오기
+                let chatLi2 = $('div.chat.format ul li').clone();
+                var message1 = '<a href="http://www.naver.com">가보자잇</a>';
+                // 값 채우기
+                chatLi2.addClass(LR_className);
+                chatLi2.find('.sender span').text(senderName);
+                chatLi2.find('.message span').html(message1);
+
+
+
+                return chatLi2;
+            }
+
+            function createMessageTag3(LR_className, senderName, message2) {
+                // 형식 가져오기
+                let chatLi3 = $('div.chat.format ul li').clone();
+                var message2 = '<a href="./newsroom.html">가보자잇</a>';
+
+                // 값 채우기
+                chatLi3.addClass(LR_className);
+                chatLi3.find('.sender span').text(senderName);
+                chatLi3.find('.message span').html(message2);
+
+
+
+                return chatLi3;
+            }
+
+            function createMessageTag4(LR_className, senderName, message3) {
+                // 형식 가져오기
+                let chatLi4 = $('.dlrpehla').clone();
+                var message3 = '<div class="modal-wrapper"><div class="modal"><div class="content" id="zz"> <div class="media_end_head_top">   <a href="" class="media_end_head_top_logo"> <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"       class="media_end_head_top_logo_img light_type"></a></div><div class="media_end_head_title"> <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인 가능해진다</span></h3></div> <div id="contents" class="newsct_body">  <div id="newsct_article" class="newsct_article _article_body"><div id="dic_area" class="go_trans _article_content"\style="-webkit-tap-highlight-color: rgba(0,0,0,0)"> 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 "외국인체류확인서          열람·교부" 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서        주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.</div></div></div><div class="center_star"><button class="btn_sub" type="submit" style="text-align: center;">등록하기</button></div></div></div></div>';
 
 
 
 
-   
-   
-   
-   
-     $( document ).ready(function() {
-       $('.media_end_head_origin_link').on('click', function() {
-           $('.modal-wrapper').toggleClass('open');
-           $('.ct_wrap').toggleClass('blur-it');
-                           console.log("호호헤");
-   
-           return true;
-       });
-     });
-   
-   
-     
-     $( document ).ready(function() {
-       $('.btn_sub').on('click', function() {
-           $('.modal-wrapper').toggleClass('open');
-           $('.ct_wrap').toggleClass('blur-it');
-                   console.log("헤헤");
-   
-           return false;
-       });
-     });
-     
-     
 
 
 
-     
-     
-     
 
-   </script>
+
+
+
+
+
+                // 값 채우기
+                chatLi4.addClass(LR_className);
+                chatLi4.html(message3);
+
+
+
+                return chatLi4;
+            }
+
+
+
+            // 메세지 태그 append
+            function appendMessageTag(LR_className, senderName, message) {
+                const chatLi = createMessageTag(LR_className, senderName, message);
+
+                $('div.chat:not(.format) ul').append(chatLi);
+
+                // 스크롤바 아래 고정
+                $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+            }
+            function appendMessageTag2(LR_className, senderName, message1) {
+                const chatLi2 = createMessageTag2(LR_className, senderName, message1);
+
+                $('div.chat:not(.format) ul').append(chatLi2);
+                console.log("??")
+
+                // 스크롤바 아래 고정
+                $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+            }
+
+
+            function appendMessageTag3(LR_className, senderName, message2) {
+                const chatLi3 = createMessageTag3(LR_className, senderName, message2);
+
+                $('div.chat:not(.format) ul').append(chatLi3);
+                console.log("??")
+
+                // 스크롤바 아래 고정
+                $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+            }
+
+            function appendMessageTag4(LR_className, senderName, message3) {
+                const chatLi4 = createMessageTag4(LR_className, senderName, message3);
+
+                $('div.chat:not(.format) ul').append(chatLi4);
+                console.log("??")
+
+                // 스크롤바 아래 고정
+                $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+            }
+
+
+
+            // 메세지 전송
+            function sendMessage(message) {
+                // 서버에 전송하는 코드로 후에 대체
+                const data = {
+                    "senderName": "user",
+                    "message": message
+                };
+
+                const data2 = {
+                    "senderName": "bot",
+                    "message": '안녕'
+                };
+
+                if (data['message'] === '뉴스') {
+                    data2['message'] = '아라써잇';
+                    resive2(data, data2);
+                } else if (data['message'] === 'ㅎㅇㅎㅇ') {
+                    data2['message'] = '안녕안녕^^';
+                    resive(data, data2);
+                } else if (
+                    data['message'] === '정치보여줘') {
+                    data2['message'] = '아라써잇';
+                    resive3(data, data2);
+                }
+                else if (data['message'] === '원문보여줘') {
+
+                    $(document).ready(function () {
+                        $('.modal-wrapper').toggleClass('open');
+                        $('.ct_wrap').toggleClass('blur-it');
+                        console.log("헤헤");
+
+                        return false;
+                    });
+
+                    setTimeout(function () {
+
+                        $(document).ready(function () {
+
+                            $('.modal-wrapper2').toggleClass('open2');
+                            $('.ct_wrap').toggleClass('blur-it');
+
+                            console.log("ㅋㅋㅋ");
+
+                            return true;
+                            ;
+                        });
+
+
+                    }, 1000);
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+                else {
+                    resive(data, data2);
+                }
+
+                // 통신하는 기능이 없으므로 여기서 receive
+
+            }
+
+            // 메세지 입력박스 내용 지우기
+            function clearTextarea() {
+                $('div.input-div textarea').val('');
+            }
+
+            // 메세지 수신
+            function resive(data, data2) {
+                const LR = (data.senderName != myName) ? "right" : "left";
+                appendMessageTag("left", data.senderName, data.message);
+                appendMessageTag("right", data2.senderName, data2.message);
+
+            }
+            function resive2(data, data2) {
+                const LR = (data.senderName != myName) ? "right" : "left";
+                appendMessageTag("left", data.senderName, data.message);
+                appendMessageTag("right", data2.senderName, data2.message);
+                appendMessageTag2("right", data2.senderName, data2.message);
+
+            }
+            function resive3(data, data2) {
+                const LR = (data.senderName != myName) ? "right" : "left";
+                appendMessageTag("left", data.senderName, data.message);
+                appendMessageTag("right", data2.senderName, data2.message);
+                appendMessageTag3("right", data2.senderName, data2.message);
+
+            } function resive4(data, data2) {
+                const LR = (data.senderName != myName) ? "right" : "left";
+                appendMessageTag("left", data.senderName, data.message);
+                appendMessageTag("right", data2.senderName, data2.message);
+                appendMessageTag4("right", data2.senderName, data2.message);
+
+            }
+
+            return {
+                'init': init
+            };
+
+
+
+
+
+        })();
+
+        $(function () {
+            Chat.init();
+
+        });
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+    <script>
+
+
+
+
+
+
+        $(document).ready(function () {
+            $('.btn_bookmark').on('click', function () {
+                $('.modal-wrapper').toggleClass('open');
+                $('.ct_wrap').toggleClass('blur-it');
+                console.log("호호헤");
+
+                return true;
+            });
+        });
+
+
+
+
+        $(document).ready(function () {
+            $('.btn_sub').on('click', function () {
+                $('.modal-wrapper').toggleClass('open');
+                $('.ct_wrap').toggleClass('blur-it');
+                console.log("헤헤");
+
+                return false;
+            });
+        });
+
+        $(document).ready(function () {
+            $('.btn_sub2').on('click', function () {
+                $('.modal-wrapper2').toggleClass('open2');
+                $('.ct_wrap').toggleClass('blur-it');
+
+                console.log("헤헤");
+
+                return false;
+            });
+        });
+
+
+
+
+
+
+
+
+    </script>
+
    
 
 

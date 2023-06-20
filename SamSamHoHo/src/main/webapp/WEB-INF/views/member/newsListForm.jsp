@@ -19,8 +19,7 @@
   	<link rel="stylesheet" href="resources/assets/css/newsroom1.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom2.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom3.css">
-  	
-  	
+
 </head>
 
 <body style="transform: none;">
@@ -34,13 +33,13 @@
                 <div class="header_right_area">
                     <nav class="header_nav">
                         <ul class="nav sm_hidden md_hidden">
-							<li class="nav_item"><a 
+							<li class="nav_item"><a href="#"
 								 id="wjdcl" class="nav_btn">정치</a></li>
-							<li class="nav_item"><a 
+							<li class="nav_item"><a href="#"
 								 id="tkghl" class="nav_btn">사회</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a href="#"
 								 id="rudwp" class="nav_btn">경제</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a href="#"
 								 id="rnrwp" class="nav_btn">국제</a></li>
 
                         </ul>
@@ -97,67 +96,224 @@
 										  		  // HTML이 다 로딩되고 작동하는 함수
 										  		
 										  	var category = "정치";
-										    var start = 1;
-										    var end = 10;
+										   
 										    
 										  	 $(".nav_btn").on('click',function(e){
 									  		  if(e.target.id === 'wjdcl'){
 									  			category = "정치";
+									  			$(".section_title").text('정치');
 									  		  }else if(e.target.id === 'tkghl'){
 									  			category = "사회";
+									  			$(".section_title").text('사회');
 									  		  }else if(e.target.id === 'rudwp'){
 									  			category = "경제";
+									  			$(".section_title").text('경제');
 									  		  }else {
 									  			category = "국제";
+									  			$(".section_title").text('국제');
 									  		  }
 									  		  
-									  		  $(this).attr('href','#');
-									  			start = 1;
-									  			end = 10;
-									  			 
-									  			JList(start, end, category);
+									  			//JList(start, end, category);
+									  			cntCt(category);
+									  			makeKey(category);
 										  	});   
-										  	 
-										   	$(".page_link").on('click', function(e){
-										   		for(var a = 1; a < 6; a++){
-											    	if(e.target.id === "num1"){
-											    		$(this).attr('href','#');
-											    	}else if(e.target.id != "num1"){
-											    		start += 10;
-											    		end += 10;
-											    	/* 	$("#num"+a-1+"").attr('class','');
-											    		$("#num"+a+"").attr('class','active');  */
-											    	}
-											    	JList(start, end, category);
-										   		}
-										    }); 
-										  	JList(start, end, category);
 										  	
+										  	//JList(start, end, category); 
+										  	cntCt(category);
+										  	makeKey(category);
 										  	  });
-										  
-											  function JList(start, end, category){
-												  
+										  	
+											  
+											  
+											  function cntCt(category){
+											  var ttt;
 												  $.ajax({
-													  url : "board/testPaging",
+													  url : "board/cntCt",
 													  data : {
-														  param1 : start,
-														  param2 : end,
-														  param3 : category
-													  }, 
+														  category : category
+													  },						  
 													  type : "get",
 													  dataType : "json",
-													  success : makeJ,
+													  success : function(data){
+														  ttt = data;
+														  
+														  $.ajax({
+															  url : "board/paging",
+															  type : "get",
+															  dataType : "json",
+															  success : function(data){
+																  console.log(data);
+										                        	data.nowPage = 1;
+										                        	data.cntPage = 5;
+										                        	data.cntPerPage = 10;
+										                        	data.total = ttt;
+										                        	
+										                        	data.lastPage = Math.ceil(data.total / data.cntPerPage);
+										                        	
+																	data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
+																	
+																	if (data.lastPage < data.endPage) {
+																		data.endPage = data.lastPage;
+																	}
+																	
+																	data.startPage = data.endPage - data.cntPage + 1;
+																	if (data.startPage < 1) {
+																		data.startPage = 1;
+																	}
+																	
+																	data.end = data.nowPage * data.cntPerPage;
+																	data.start = data.end - data.cntPerPage + 1;
+																	
+																	
+																	var s = data.startPage;
+																	var e = data.endPage;
+																	tt(s, e);
+																	
+										                        	function tt(s, e){
+										                        		
+												                        var listHtml = "";
+												                      
+											                       		for (var i = data.startPage; i <= data.endPage; i++){
+											                       			if(i == data.startPage){
+													                        	listHtml += "<li class='active'>";
+													                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
+													                        	listHtml += "</li>";
+											                       			}else{
+											                       				listHtml += "<li>";
+													                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
+													                        	listHtml += "</li>";
+											                       			}
+												                        	
+											                       		}
+											                        	$("#view_page_cnt").html(listHtml);
+											                       	  const cateL = document.querySelectorAll('#view_page_cnt>li');
+												                       	 let activeCate = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+												                       	 console.log(cateL);
+																            for (var i = 0; i < cateL.length; i++) {
+																            	cateL[i].addEventListener('click', function (e) {
+																                    e.preventDefault();
+																                    for (var j = 0; j < cateL.length; j++) {
+																                        // 나머지 버튼 클래스 제거
+																                        cateL[j].classList.remove('active');
+
+																                        // 나머지 컨텐츠 display:none 처리
+																                    }
+
+																                    // 버튼 관련 이벤트
+																                    
+																                    this.classList.add('active');
+																                    activeCate = this.getAttribute('href');
+																                });
+																            }
+																         
+									                        		
+										                        	};
+										                        	kkk(st, ed);
+										                        	var st = data.startPage;
+										                        	var ed = data.endPage;
+										                        	function kkk(st, ed){
+										                        		
+											                        	$(".page_link").on('click', function(e){
+																			for(var k = data.startPage; k <= data.endPage; k++){
+																				
+																				if(e.target.id=='num'+(k)+''){
+																					data.nowPage = k;
+																					data.end = data.nowPage * data.cntPerPage;
+																					data.start = data.end - data.cntPerPage + 1;
+																				}
+																					
+																			}
+																			console.log(data.nowPage);
+																			$.ajax({
+																				  url : "board/testPaging",
+																				  data : {
+																					  param1 : data.start,
+																					  param2 : data.end,
+																					  param3 : category
+																				  }, 
+																				  type : "get",
+																				  dataType : "json",
+																				  success :makeJ, 
+																				  error : function(){ alert("error"); }
+																			  });
+																			});
+																			$.ajax({
+																				  
+																				  url : "board/testPaging",
+																				  data : {
+																					  param1 : data.start,
+																					  param2 : data.end,
+																					  param3 : category
+																				  }, 
+																				  type : "get",
+																				  dataType : "json",
+																				  success :makeJ, 
+																				  error : function(){ alert("error"); }
+																			  });
+										                        	}
+
+											                        $(".btn_next").on('click', function(){
+																		if(data.endPage < data.lastPage){
+																			data.nowPage = data.endPage+1;
+																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
+																			
+																			data.startPage = data.endPage - data.cntPage + 1;
+																			if (data.startPage < 1) {
+																				data.startPage = 1;
+																			}
+																			if (data.lastPage < data.endPage) {
+																				data.endPage = data.lastPage;
+																			}
+																			
+																			
+																		}
+																			tt(s, e);
+																			kkk(st, ed);
+																	});	
+																 	
+																			
+																	$(".btn_prev").on('click', function(){
+																		if(data.startPage > 1){
+																			data.nowPage = data.startPage-data.cntPage;
+																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
+																			
+																			data.startPage = data.endPage - data.cntPage + 1;
+																			if (data.startPage < 1) {
+																				data.startPage = 1;
+																			}
+																			if (data.lastPage < data.endPage) {
+																				data.endPage = data.lastPage;
+																			}
+																			
+																			
+																		}
+																		tt(s, e);
+																		kkk(st, ed);
+																	});
+																			
+																			
+										                       		
+										                      	
+																	
+																	
+															  }, // 페이징
+															  error : function(){ alert("error"); }
+														  });
+														  
+													  },
 													  error : function(){ alert("error"); }
 												  });
-											  }
-												  	
-											                        
+												  
+												  
+												  
+													 
+											  };
+											  
 											  function makeJ(data){ 
-												  console.log(data);
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
-													    listHtml += " <li class='card'>";
-													    listHtml += " <div class='card_body'>";
+													    listHtml += "<li class='card'>";
+													    listHtml += "<div class='card_body'>";
 													  	listHtml += "<h2 class='headline'>";
 													  	listHtml += "<a href=''>"+obj.title+"</a></h2>";
 													  	listHtml += "<p class='description sm_hidden'>"+obj.summ_content+"</p>";
@@ -167,96 +323,147 @@
 														listHtml += "</div></li>";
 													  
 													  });
+						                       
 													  $("#cateList").html(listHtml);
+													  
+												  
+											  };
+											
+					                       
+					                        
+					                        function makeKey(category){
 												
-											  }
+												 $.ajax({
+													  url : "board/keyword",
+													  data : {
+														  category : category
+													  },
+													  type : "get",
+													  dataType : "json",
+													  success : makeKList,
+													  error : function(){ alert("error"); }
+												  });
+												
+												
+												
+											}	
+											function makeKList(data){
+												
+													var listHtml = "";
+												$.each(data, function(index, obj){
+													
+													if(index==0){
+														listHtml += "<li class='nav_item is_on2'>";
+														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+														listHtml += "</li>";
+														
+													}else{
+														listHtml += "<li class='nav_item'>";
+														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+														listHtml += "</li>";
+													}
+															
+													
+												})
+												$("#keyList").html(listHtml);
+												
+												  const tabList = document.querySelectorAll('.tag_nav li');
+										            let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+
+										            for (var i = 0; i < tabList.length; i++) {
+										                tabList[i].querySelector('.i' + (i + 1)).addEventListener('click', function (e) {
+										                    e.preventDefault();
+										                    console.log("?????")
+										                    for (var j = 0; j < tabList.length; j++) {
+										                        // 나머지 버튼 클래스 제거
+										                        tabList[j].classList.remove('is_on2');
+
+										                        // 나머지 컨텐츠 display:none 처리
+										                    }
+
+										                    // 버튼 관련 이벤트
+										                    this.parentNode.classList.add('is_on2');
+
+										                    // 버튼 클릭시 컨텐츠 전환
+										                    activeCont = this.getAttribute('href');
+										                });
+										            }
+												
+												
+												var keyword = data[0].keyword;
+												
+												
+												$(".nav_link").on('click', function(e){
+													for(var k = 0; k < 11; k++){
+														
+														if(e.target.id=='key'+(k+1)+''){
+															keyword = data[k].keyword;
+														}
+														makeKNews(keyword);
+													}
+												});
+												
+												
+												
+												makeKNews(keyword);
+												function makeKNews(keyword){
+													
+													$.ajax({
+														  url : "board/keyNews",
+														  data : {
+															  keyword : keyword
+														  },
+														  type : "get",
+														  dataType : "json",
+														  success : makeKNewsList,
+														  error : function(){ alert("error"); }
+													  });
+													
+												}
+			                            	    function makeKNewsList(data){
+			                            	    	
+			                            	    	var listHtml = "";
+													$.each(data, function(index, obj){
+														listHtml += "<li class='card'>";
+														listHtml += "<h4 class='headline'>";
+														listHtml += "<a>"+obj.title+"</a></h4>";
+														listHtml += "<div class='meta'>";
+														listHtml += "<p class='date'>"+obj.date+"</p>";
+														listHtml += "</div></div></li>";
+													})
+													$("#viewkeyList").html(listHtml);
+			                            	    	
+			                            	    	
+			                            	    	
+			                            	    	
+			                            	    }
+			                            	
+			                            	
+												
+											}
+		                            	
+											
+											  
 										  </script>
 										
                              
                          
                            
                         </ul>
-                        <script>
-                        
-                        var category = "정치";
-                   	 	$(".nav_btn").on('click',function(e){
-					  		  if(e.target.id === 'wjdcl'){
-					  			category = "정치";
-					  		  }else if(e.target.id === 'tkghl'){
-					  			category = "사회";
-					  		  }else if(e.target.id === 'rudwp'){
-					  			category = "경제";
-					  		  }else {
-					  			category = "국제";
-					  		  }
-					  		  cntCt(category);
-					  		 
-						  	}); 
-                   	 	cntCt(category);
-                        function cntCt(category){
-							  $.ajax({
-								  url : "board/cntCt",
-								  data : {
-									  category : category
-								  },						  
-								  type : "get",
-								  dataType : "json",
-								  success : makePaging,
-								  error : function(){ alert("error"); }
-							  });
-						  }
-                        
-                        function makePaging(data){
-                        	console.log(data);
-                        	var totalPage = Math.ceil(data/10);
-                        	var perPage = 5;
-                        	
-	                        var listHtml = "";
-	                     
-                       		for (var i = 1; i < 6; i++){
-	                        	listHtml += "<li>";
-	                        	listHtml += "<a class='page_link' id='num"+i+"'>"+i+"</a>";
-	                        	listHtml += "</li>";
-                        	 
-                        	}
-                        	$("#view_page_cnt").html(listHtml);
-                        	$("#view_page_cnt>li:nth-child(1)").attr('class','active');
-                        
-                        
-                        }
-                        </script>
+                      
 
                         <nav class="pagination_type02" aria-label="pagination">
                             <ul>
                                 <li class="page_first">
-                                    <a  class="page_link" role="button" 
+                                    <a  class="page_link btn_first" role="button" 
                                         aria-label="처음 페이지">처음</a>
                                 </li>
                                 <li class="page_prev" >
-                                    <a href="#" class="page_link" role="button" aria-disabled="true"
+                                    <a  class="page_link btn_prev" role="button"
                                         aria-label="이전 페이지"><i class="ico_arrow_left" aria-hidden="true"></i></a>
                                 </li>
                                 <li id="view_page_cnt">
-                                <!-- <li class="active">
-                                    <a 
-                                        class="page_link" id="first_page">1</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="second_page">2</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="third_page">3</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="fourth_page">4</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="fifth_page">5</a>
-                                </li> -->
+                                
                                 </li>
                                 <li class="page_next">
                                     <a
@@ -265,7 +472,7 @@
                                 </li>
                                 <li class="page_last">
                                     <a 
-                                        class="page_link">마지막</a>
+                                        class="page_link btn_last">마지막</a>
                                 </li>
                             </ul>
                         </nav>
@@ -276,104 +483,10 @@
                                 <strong class="title">주요 키워드</strong>
                             </header>
                             <ul class="tag_nav" id="keyList">
-                            	<script type="text/javascript">
-									makeKey(category);
-									$(".nav_btn").on('click',function(e){
-								  		  if(e.target.id === 'wjdcl'){
-								  			category = "정치";
-								  		  }else if(e.target.id === 'tkghl'){
-								  			category = "사회";
-								  		  }else if(e.target.id === 'rudwp'){
-								  			category = "경제";
-								  		  }else {
-								  			category = "국제";
-								  		  }
-								  		  makeKey(category);
-								  		 
-									  	}); 
-									function makeKey(category){
-										
-										 $.ajax({
-											  url : "board/keyword",
-											  data : {
-												  category : category
-											  },
-											  type : "get",
-											  dataType : "json",
-											  success : makeKList,
-											  error : function(){ alert("error"); }
-										  });
-										
-										
-										
-									}	
-									function makeKList(data){
-										
-											var listHtml = "";
-										$.each(data, function(index, obj){
-													
-											listHtml += "<li class='nav_item'>";
-											listHtml += "<a class='nav_link' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
-											listHtml += "</li>";
-										})
-										$("#keyList").html(listHtml);
-										
-										console.log(data[0].keyword);
-										
-										var keyword = "민주당";
-										function makeKNews(keyword){
-											
-											$.ajax({
-												  url : "board/keyNews",
-												  data : {
-													  keyword : keyword
-												  },
-												  type : "get",
-												  dataType : "json",
-												  success : makeKNewsList,
-												  error : function(){ alert("error"); }
-											  });
-											
-										}
-	                            	    function makeKNewsList(data){
-	                            	    	
-	                            	    	var listHtml = "";
-											$.each(data, function(index, obj){
-												listHtml += "<li class='card'>";
-												listHtml += "<h4 class='headline'>";
-												listHtml += "<a>"+obj.title+"</a></h4>";
-												listHtml += "<div class='meta'>";
-												listHtml += "<p class='date'>"+obj.date+"</p>";
-												listHtml += "</div></div></li>";
-											})
-											$("#viewkeyList").html(listHtml);
-	                            	    	
-	                            	    	
-	                            	    	
-	                            	    	
-	                            	    }
-	                            	
-	                            	
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-									}
-                            	
-									
-									
-									
-                            	</script>
-                            	
+                       
                               
                             </ul>
+                            
                         </section>
                         <section class="chain_wrap">
                             <header class="title_wrap">
@@ -395,6 +508,10 @@
                 </div>
             </section>
         </main>
+        
+          <script>
+          
+        </script>
         <div id="footer" class="footer footer22">
 
             <footer>
@@ -430,6 +547,8 @@
                 </div>
             </footer>
         </div>
+        
+        
 
      
 

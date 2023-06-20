@@ -62,8 +62,6 @@ public interface BoardMapper {
 	// 카테고리별 키워드 30개
 	public List<Keywords> keywords_fifty(String category);
 
-	
-
 
 
 }
