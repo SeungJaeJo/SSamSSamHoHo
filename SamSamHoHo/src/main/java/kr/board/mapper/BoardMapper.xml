@@ -65,7 +65,9 @@
 		SELECT * FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%') AND date = (SELECT MAX(date) FROM tbl_news WHERE keyword like CONCAT('%', #{keyword}, '%')) limit 5
 	</select>
 	 
-	
+	<select id="keywords_fifty" resultType="kr.board.entity.Keywords">
+		select * from tbl_keywords where category = #{category} and date = (select max(date) from tbl_keywords where category = #{category}) limit 30
+	</select>
 	
 </mapper>
 

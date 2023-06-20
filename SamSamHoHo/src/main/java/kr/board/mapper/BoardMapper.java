@@ -58,8 +58,9 @@ public interface BoardMapper {
 
 	// 키워드 관련 기사 다섯개
 	public List<News> keyNews(String keyword);
-
 	
+	// 카테고리별 키워드 30개
+	public List<Keywords> keywords_fifty(String category);
 
 
 

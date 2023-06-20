@@ -85,8 +85,21 @@ public class BoardRestController {
 		List<News> list = boardMapper.keyNews(keyword);
 		return list;
 	}
+
+
+	// Test.....
+	@GetMapping("/paging")
+	public  Paging test(Paging vo) {
+		return vo;
+	}
 	
 	
+	// 오늘의 키워드 50개
+		@GetMapping("/keyword_fifty")
+		public List<Keywords> keywords_fifty(@RequestParam("category")String category) {
+			List<Keywords> list = boardMapper.keywords_fifty(category);
+			return list;
+		}
 	
 	// 카테고리별 상세 + 페이징
 	@GetMapping("testPaging")
