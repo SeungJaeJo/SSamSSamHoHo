@@ -973,7 +973,9 @@ textarea:focus {
 .logout {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
+        align-items: center;
+    
 }
 
 .logout li {
