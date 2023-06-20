@@ -168,28 +168,89 @@
 																	var s = data.startPage;
 																	var e = data.endPage;
 																	tt(s, e);
+																	
 										                        	function tt(s, e){
 										                        		
-										                        		
-										                        		
-													                        var listHtml = "";
-													                      
-												                       		for (var i = data.startPage; i <= data.endPage; i++){
-												                       			if(i == data.startPage){
-														                        	listHtml += "<li class='active'>";
-														                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
-														                        	listHtml += "</li>";
-												                       			}else{
-												                       				listHtml += "<li>";
-														                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
-														                        	listHtml += "</li>";
-												                       			}
-													                        	
-												                       		}
-												                        	$("#view_page_cnt").html(listHtml);
-										                        		
+												                        var listHtml = "";
+												                      
+											                       		for (var i = data.startPage; i <= data.endPage; i++){
+											                       			if(i == data.startPage){
+													                        	listHtml += "<li class='active'>";
+													                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
+													                        	listHtml += "</li>";
+											                       			}else{
+											                       				listHtml += "<li>";
+													                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
+													                        	listHtml += "</li>";
+											                       			}
+												                        	
+											                       		}
+											                        	$("#view_page_cnt").html(listHtml);
+											                       	  const cateL = document.querySelectorAll('#view_page_cnt>li');
+												                       	 let activeCate = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+												                       	 console.log(cateL);
+																            for (var i = 0; i < cateL.length; i++) {
+																            	cateL[i].addEventListener('click', function (e) {
+																                    e.preventDefault();
+																                    for (var j = 0; j < cateL.length; j++) {
+																                        // 나머지 버튼 클래스 제거
+																                        cateL[j].classList.remove('active');
+
+																                        // 나머지 컨텐츠 display:none 처리
+																                    }
+
+																                    // 버튼 관련 이벤트
+																                    
+																                    this.classList.add('active');
+																                    activeCate = this.getAttribute('href');
+																                });
+																            }
+																         
+									                        		
 										                        	};
-										                        	
+										                        	kkk(st, ed);
+										                        	var st = data.startPage;
+										                        	var ed = data.endPage;
+										                        	function kkk(st, ed){
+										                        		
+											                        	$(".page_link").on('click', function(e){
+																			for(var k = data.startPage; k <= data.endPage; k++){
+																				
+																				if(e.target.id=='num'+(k)+''){
+																					data.nowPage = k;
+																					data.end = data.nowPage * data.cntPerPage;
+																					data.start = data.end - data.cntPerPage + 1;
+																				}
+																					
+																			}
+																			console.log(data.nowPage);
+																			$.ajax({
+																				  url : "board/testPaging",
+																				  data : {
+																					  param1 : data.start,
+																					  param2 : data.end,
+																					  param3 : category
+																				  }, 
+																				  type : "get",
+																				  dataType : "json",
+																				  success :makeJ, 
+																				  error : function(){ alert("error"); }
+																			  });
+																			});
+																			$.ajax({
+																				  
+																				  url : "board/testPaging",
+																				  data : {
+																					  param1 : data.start,
+																					  param2 : data.end,
+																					  param3 : category
+																				  }, 
+																				  type : "get",
+																				  dataType : "json",
+																				  success :makeJ, 
+																				  error : function(){ alert("error"); }
+																			  });
+										                        	}
 
 											                        $(".btn_next").on('click', function(){
 																		if(data.endPage < data.lastPage){
@@ -207,74 +268,33 @@
 																			
 																		}
 																			tt(s, e);
+																			kkk(st, ed);
 																	});	
 																 	
 																			
-																	
+																	$(".btn_prev").on('click', function(){
+																		if(data.startPage > 1){
+																			data.nowPage = data.startPage-data.cntPage;
+																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
+																			
+																			data.startPage = data.endPage - data.cntPage + 1;
+																			if (data.startPage < 1) {
+																				data.startPage = 1;
+																			}
+																			if (data.lastPage < data.endPage) {
+																				data.endPage = data.lastPage;
+																			}
+																			
+																			
+																		}
+																		tt(s, e);
+																		kkk(st, ed);
+																	});
 																			
 																			
 										                       		
-										                       	  const cateL = document.querySelectorAll('#view_page_cnt>li');
-										                       	 let activeCate = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
-														            for (var i = 0; i < cateL.length; i++) {
-														            	cateL[i].addEventListener('click', function (e) {
-														                    e.preventDefault();
-														                    for (var j = 0; j < cateL.length; j++) {
-														                        // 나머지 버튼 클래스 제거
-														                        cateL[j].classList.remove('active');
-
-														                        // 나머지 컨텐츠 display:none 처리
-														                    }
-
-														                    // 버튼 관련 이벤트
-														                    
-														                    this.classList.add('active');
-														                    activeCate = this.getAttribute('href');
-														                });
-														            }
-														         
-														           
-																	$(".page_link").on('click', function(e){
-																		for(var k = data.startPage; k <= data.endPage; k++){
-																			
-																			if(e.target.id=='num'+(k)+''){
-																				data.nowPage = k;
-																				data.end = data.nowPage * data.cntPerPage;
-																				data.start = data.end - data.cntPerPage + 1;
-																			}
-																				
-																		}
+										                      	
 																	
- 																		
-																	console.log(data.nowPage);
-																	$.ajax({
-																		  url : "board/testPaging",
-																		  data : {
-																			  param1 : data.start,
-																			  param2 : data.end,
-																			  param3 : category
-																		  }, 
-																		  type : "get",
-																		  dataType : "json",
-																		  success :makeJ, 
-																		  error : function(){ alert("error"); }
-																	  });
-																	});
-																	$.ajax({
-																		  
-																		  url : "board/testPaging",
-																		  data : {
-																			  param1 : data.start,
-																			  param2 : data.end,
-																			  param3 : category
-																		  }, 
-																		  type : "get",
-																		  dataType : "json",
-																		  success :makeJ, 
-																		  error : function(){ alert("error"); }
-																	  });
-																	
-																		
 																	
 															  }, // 페이징
 															  error : function(){ alert("error"); }
@@ -334,12 +354,12 @@
 													
 													if(index==0){
 														listHtml += "<li class='nav_item is_on2'>";
-														listHtml += "<a class='nav_link i"+(index+1)+"' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
 														listHtml += "</li>";
 														
 													}else{
 														listHtml += "<li class='nav_item'>";
-														listHtml += "<a class='nav_link i"+(index+1)+"' href='#' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
 														listHtml += "</li>";
 													}
 															
@@ -435,34 +455,15 @@
                         <nav class="pagination_type02" aria-label="pagination">
                             <ul>
                                 <li class="page_first">
-                                    <a  class="page_link" role="button" 
+                                    <a  class="page_link btn_first" role="button" 
                                         aria-label="처음 페이지">처음</a>
                                 </li>
                                 <li class="page_prev" >
-                                    <a href="#" class="page_link" role="button"
+                                    <a  class="page_link btn_prev" role="button"
                                         aria-label="이전 페이지"><i class="ico_arrow_left" aria-hidden="true"></i></a>
                                 </li>
                                 <li id="view_page_cnt">
-                                <!-- <li class="active">
-                                    <a 
-                                        class="page_link" id="first_page">1</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="second_page">2</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="third_page">3</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="fourth_page">4</a>
-                                </li>
-                                <li>
-                                    <a 
-                                        class="page_link" id="fifth_page">5</a>
-                                </li> -->
+                                
                                 </li>
                                 <li class="page_next">
                                     <a
@@ -471,7 +472,7 @@
                                 </li>
                                 <li class="page_last">
                                     <a 
-                                        class="page_link">마지막</a>
+                                        class="page_link btn_last">마지막</a>
                                 </li>
                             </ul>
                         </nav>
