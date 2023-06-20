@@ -14,15 +14,15 @@ import lombok.ToString;
 @ToString
 public class Member {
 	
-	private int memIdx;
-	private String memID;
-	private String memPassword;
-	private String memName;
-	private int memAge;
-	private String memGender;
-	private String memEmail;
-	private String memProfile;
+	//private int memIdx;
+	private String mem_id;
+	private String mem_pw;
+	//private String mem_preference;
+	//private int memAge;
+	//private String memGender;
+	//private String memEmail;
+	//private String memProfile;
 	// 회원의 권한을 저장할 필드
-	private List<Auth> authList;
+	//private List<Auth> authList;
 	
 }

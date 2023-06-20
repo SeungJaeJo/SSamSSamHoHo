@@ -12,22 +12,22 @@ import kr.board.entity.Member;
 @Mapper
 public interface MemberMapper {
 
-	Member registerCheck(String memID);
+	public Member registerCheck(String memID);
 
-	int join(Member m);
+	public int join(Member m);
 
-	Member login(Member m);
+	public Member login(Member m);
 
-	int update(Member m);
+	public int update(Member m);
 
 	Member getMember(String memID);
 
 	void profileUpdate(Member vo);
 
-	void authInsert(Auth saveVO);
+	//void authInsert(Auth saveVO);
 
 
-	void authDelete(String memID);
+	//void authDelete(String memID);
 
 }
 

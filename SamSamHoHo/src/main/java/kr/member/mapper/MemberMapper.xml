@@ -8,33 +8,28 @@
    
    
    <insert id="join" parameterType="kr.board.entity.Member">
-      insert into member(memIdx,memID, memPassword, memName, memAge, 
-      memGender, memEmail, memProfile)
-      values((select IFNULL(MAX(memIdx)+1, 1) from member mem),
-      #{memID}, #{memPassword}, #{memName}, #{memAge}, 
-      #{memGender}, #{memEmail}, #{memProfile})
+      insert into member(mem_id, mem_pw)
+      values(#{mem_id},#{mem_pw})
    </insert>
    
    
-   <select id="login" parameterType="kr.board.entity.Member" resultMap="memberMap">
-      select * from member mem LEFT OUTER JOIN auth auth on 
-      mem.memID = auth.memID where mem.memID = #{memID}
+   <select id="login" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
+      select * from member where mem_id=#{mem_id} and mem_pw=#{mem_pw}
    </select>
    
-   <update id="update" parameterType="kr.board.entity.Member">
+   <!-- <update id="update" parameterType="kr.board.entity.Member">
       update member set memPassword = #{memPassword}, memName = #{memName},
       memAge = #{memAge}, memGender = #{memGender}, memEmail = #{memEmail}
       where memID = #{memID}
-   </update>
-   
-   
-   <delete id="authDelete">
+   </update> -->
+ 
+  <!--  <delete id="authDelete">
    	  delete from auth where memID = #{memID}
-   </delete>
+   </delete> -->
    
    
    
-   <resultMap type="kr.board.entity.Member" id="memberMap">
+   <!-- <resultMap type="kr.board.entity.Member" id="memberMap">
       <id property="memIdx" column="memIdx" />
       <result property="memID" column="memID" />
       <result property="memPassword" column="memPassword" />
@@ -50,7 +45,7 @@
       <id property="no" column="no" />
       <result property="memID" column="memID" />
       <result property="auth" column="auth" />
-   </resultMap>
+   </resultMap> -->
    
    <select id="getMember" parameterType="kr.board.entity.Member" resultMap="memberMap">
       select * from member mem LEFT OUTER JOIN auth auth on 
@@ -66,9 +61,9 @@
       where memID = #{memID}
    </update>
    
-   <insert id="authInsert" parameterType="kr.board.entity.Auth">
+   <!-- <insert id="authInsert" parameterType="kr.board.entity.Auth">
       insert into auth(memID, auth) values(#{memID}, #{auth})
-   </insert>
+   </insert> -->
    
    
    

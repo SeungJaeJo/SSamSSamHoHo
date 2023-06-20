@@ -16,9 +16,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="resources/assets/css/login.css">
     <link rel="stylesheet" href="resources/assets/css/login2.css">
-
+	<script type="text/javascript">
+  
+     $(document).ready(function(){
+        if(${not empty msgType}){
+           if(${msgType eq "실패 메세지"}){
+              $("#messageType").attr("class", "modal-content panel-warning");
+           }
+           $("#myMessage").modal("show");
+        }
+     });
+   
+  
+  </script>
 </head>
-
 <body>
 
 
@@ -39,24 +50,18 @@
                 </header>
 
 
-
-
-
-
-
-                <form class="form" id="emailForm" name="" method="">
-                    <input type="hidden" name="" value="">
-                    <input type="hidden" name="" value="">
+                <form class="form" action="${contextPath}/login.do" method="post">
+               
                     <div class="input_group">
-                        <input class="form_control" type="email" name="" id="txtEmail" value=""
-                            placeholder="아이디를 입력하세요" title="이메일" tabindex="1">
+                        <input class="form_control" type="text" name="mem_id" id="mem_id"
+                            placeholder="아이디를 입력하세요" tabindex="1">
                         <button type="button" class="btn btn_x">
                             <i class="ico_x"></i><span class="visually_hidden">취소버튼</span>
                         </button>
                     </div>
                     <div class="input_group">
-                        <input class="form_control" type="password" name="" id="txtPasswd"
-                            placeholder="비밀번호를 입력하세요" title="비밀번호" maxlength="20" tabindex="2">
+                        <input class="form_control" type="password" name="mem_pw" id="mem_pw"
+                            placeholder="비밀번호를 입력하세요" maxlength="20" tabindex="2">
                         <button type="button" class="btn btn_eye">
                             <i class="ico_eye"></i><span class="visually_hidden">패스워드 확인</span>
                         </button>
@@ -69,12 +74,10 @@
                         </a>
                     </div>
                     <div class="btn_group mt28">
-                        <button type="submit" class="btn btn_black" onclick="" tabindex="4">
-                            로그인</button>
+                        <input type="submit" class="btn btn_black" value="로그인" tabindex="4">
+                            </input>
                     </div>
                 </form>
-
-
 
 
 
