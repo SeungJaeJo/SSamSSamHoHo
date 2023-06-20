@@ -67,9 +67,18 @@
 				$('#zz2 .media_end_head_info_datestamp_bunch span').text(data[0].date)
 				// 원문 기자
 				$('#zz2 .media_end_head_journalist em').text(data[0].reporter)
-				// 원문 내용
-				$('#zz2 #contents #newsct_article #dic_area').text(data[0].content)
+				// 원문 내용+
+				let arr = data[0].content.split("\n");
+				
+				for(let i=0;i<arr.length;i++){
+					let p_tag = $('<p><br>');
+					p_tag.text(arr[i]);
+					$('#zz2 #contents #newsct_article #dic_area').append(p_tag)
+					$('#zz2 #contents #newsct_article #dic_area').append("<br>")
+				}
+				
 				 
+				console.log(data[0].content.split("\n"))
 				 
 				 // 언론사에 따라 다른 로고 띄우기
 				var pressName = data[0].press
@@ -94,6 +103,9 @@
 				
 				for(let i = 0; i<5; i++){
 					$('#contents > div.media_end_linked > ul > li:nth-child('+(i+1)+') > a').text(keys[0][i])
+					$('.keyword_'+(i+1)).text(keys[0][i])
+					//#zz3 > div.media_end_head_title > div.typing > ul > li:nth-child(5)
+					//#zz3 > div.media_end_head_title > div.typing > ul > li.on
 				}
 				
 				// 같은 언론사 기사 받아오기 위해서 데이터 보내기
@@ -512,17 +524,31 @@
 
                     </div>
                     <div class="media_end_head_title">
-                        <h3 id="title_area" class="media_end_head_headline"><span>제목 자리</span></h3>
+                        <div class="typing-txt"> 
+								  <ul>
+								    <li>이 기사의 주요 키워드 입니다^</li>
+								    <li class="keyword_1">1. 우하하 </li>
+								    <li class="keyword_2">2. 우하하하</li>
+								    <li class="keyword_3">3. 아하하하 </li>
+								    <li class="keyword_4">4. 헤헤헤헤</li>
+							        <li class="keyword_5">5. 헤헤헤헤</li>
+								</ul>
+								
+								</div> 
+								<div class="typing">
+								   <ul>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+							         <li></li>
+								     
+								  </ul>
+								</div> 
+								        
                     </div>
-                    <div id="contents" class="newsct_body">
-                        <div id="newsct_article" class="newsct_article _article_body">
-                            <div id="dic_area" class="go_trans _article_content"
-                                style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                                <p class="typing-txt">해당 뉴스의 키워드 입니다.</p>
-                                                                <p class="typing"></p>
-                            </div>
-                        </div>
-                    </div>
+                
 
                     <div class="center_star2">
                         <button class="btn_sub33" type="submit" style="text-align: center;">종료하기
@@ -557,10 +583,9 @@
 	                        	<em class="media_end_head_journalist_name" id = "reporter">기자 이름</em>
 	                        </a>
                     </div>
-                 <div id="contents" class="newsct_body">
+                 <div id="contents" class="newsct_body" style="word-break: break-all;">
                     <div id="newsct_article" class="newsct_article _article_body">
                         <div id="dic_area" class="go_trans _article_content" style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-             				뉴스 전문 자리
                         </div>
                     </div>
                 </div>
@@ -569,7 +594,7 @@
                     <div class="center_star2">
 
 
-                        <button class="btn_sub2" type="submit" style="text-align: center;">등록하기
+                        <button class="btn_sub2" type="submit" style="text-align: center;">종료하기
                         </button>
 
                     </div>
@@ -773,12 +798,33 @@
                 } else if (data['message'] === 'ㅎㅇㅎㅇ') {
                     data2['message'] = '안녕안녕^^';
                     resive(data, data2);
-                } else if (
+                } else if (data['message'] === '몇살이고 ㅋ') {
+                    data2['message'] = '2023년생이얌 ^^';
+                    resive(data, data2);
+                } 
+                else if (data['message'] === '오늘날씨어때') {
+                    data2['message'] = '나는 좋아  ^^';
+                    resive(data, data2);
+                } 
+                else if (data['message'] === '오늘날씨어때') {
+                    data2['message'] = '나는 좋아  ^^';
+                    resive(data, data2);
+                } 
+                else if (
                     data['message'] === '정치보여줘') {
                     data2['message'] = '아라써잇';
                     resive3(data, data2);
                 }
-                else if (data['message'] === '원문보여줘') {
+                else if (data['message'] === '원문보여줘'||
+                		data['message'] ==='원문'||
+                		data['message'] ==='본문'||
+                		data['message'] ==='긴거'||
+                		data['message'] ==='원문 보여줘'||
+                		data['message'] ==='원문보여저'||
+                		data['message'] ==='원문 보여저'||
+                		data['message'] ==='원문보여주세요'||
+                		data['message'] ==='원문주삼'||
+                		data['message'] ==='원문 주삼') {
 
                     $(document).ready(function () {
                         $('.modal-wrapper').toggleClass('open');
@@ -787,12 +833,55 @@
 
                         return false;
                     });
+                    
+
+
+                    
+                    
+
+                    
 
                     setTimeout(function () {
 
                         $(document).ready(function () {
 
                             $('.modal-wrapper2').toggleClass('open2');
+                            $('.ct_wrap').toggleClass('blur-it');
+
+                            console.log("ㅋㅋㅋ");
+
+                            return true;
+                            ;
+                        });
+
+
+                    }, 1000);
+
+
+
+                }else if (data['message'] === '키워드보여줘'||
+                		data['message'] ==='키워드 보여줘'||data['message'] ==='키워드'||data['message'] ==='키워드보여주세요'||data['message'] ==='키워드줘') {
+
+                    $(document).ready(function () {
+                        $('.modal-wrapper').toggleClass('open');
+                        $('.ct_wrap').toggleClass('blur-it');
+                        console.log("헤헤");
+
+                        return false;
+                    });
+                    
+
+
+                    
+                    
+
+                    
+
+                    setTimeout(function () {
+
+                        $(document).ready(function () {
+
+                            $('.modal-wrapper3').toggleClass('open');
                             $('.ct_wrap').toggleClass('blur-it');
 
                             console.log("ㅋㅋㅋ");
@@ -881,6 +970,68 @@
 
 
     </script>
+  
+<script type="text/javascript">
+
+		
+		var typingBool = false; 
+		var typingIdx=0; 
+		var liIndex = 0;
+		var liLength = $(".typing-txt>ul>li").length;
+		
+		// 타이핑될 텍스트를 가져온다 
+		var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+		typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+		if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+		    typingBool=true; 
+		    var tyInt = setInterval(typing,100); // 반복동작 
+		} 
+		
+
+
+		     
+		function typing(){
+			
+
+            setTimeout(function () {
+      		  $(".typing ul li").removeClass("on");
+   		   $(".typing ul li").eq(liIndex).addClass("on");
+   		  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+   		     $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+   		     typingIdx++; 
+   		   } else{ if(liIndex<liLength-1){
+   		     //다음문장으로  가기위해 인덱스를 1증가
+   		       liIndex++; 
+   		     //다음문장을 타이핑하기위한 셋팅
+   		        typingIdx=0;
+   		        typingBool = false; 
+   		        typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+   		       
+   		     //다음문장 타이핑전 1초 쉰다
+   		         clearInterval(tyInt);
+   		          //타이핑종료
+   		     
+   		         setTimeout(function(){
+   		           //1초후에 다시 타이핑 반복 시작
+   		           tyInt = setInterval(typing,100);
+   		         },1000);
+   		        } else if(liIndex==liLength-1){
+   		          
+   		         //마지막 문장까지 써지면 반복종료
+   		           clearInterval(tyInt);
+   		        }
+   		    } 
+              
+
+            }, 5000);
+			
+			
+
+		}  
+
+
+</script>
+
 
 
     <script>
@@ -995,6 +1146,30 @@ $(document).ready(function () {
         $('.ct_wrap').toggleClass('blur-it');
 
         console.log("dadad");
+
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+    $('.btn_sub22').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("이얍");
+
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+    $('.btn_sub33').on('click', function () {
+        $('.modal-wrapper3').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("제발");
 
         return false;
     });
