@@ -59,8 +59,6 @@ public interface BoardMapper {
 	// 키워드 관련 기사 다섯개
 	public List<News> keyNews(String keyword);
 
-	
-
 
 
 }

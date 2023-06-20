@@ -118,13 +118,13 @@
 					<nav class="header_nav">
 						<ul class="nav sm_hidden md_hidden">
 
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">정치</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">사회</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">경제</a></li>
-							<li class="nav_item"><a
+							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">국제</a></li>
 
 						</ul>
@@ -378,7 +378,7 @@
 				  		  }
 				  		  
 				  	  });
-				  
+				  		  
 					  function loadList(category){
 						
 						  $.ajax({
@@ -1403,9 +1403,10 @@
       								 	
       									var nu2 = num_cnt2.split(",");
       									var pr2 = cate_cnt.split(",");
-      									pr2.pop(); 
+      									pr2.pop();
+      									nu2.pop();
                                        	console.log(pr2);
-                                       	console.log(date);
+                                       	console.log(nu2);
       									
                                        	listHtml = "";
                                        	listHtml += "<p class='date'>"+date+"</p>";
@@ -1416,14 +1417,14 @@
                                    	
                                         var context = document
                                             .getElementById('myChart')
-                                            .getContext('2d');
+                                            .getContext('2d'); 
                                         var myChart = new Chart(context, {
                                             type: 'bar', // 차트의 형태
                                             data: { // 차트에 들어갈 데이터
                                                 labels: pr2,
                                                 datasets: [
                                                     { //데이터
-                                                         labels : '정치', 
+                                                         labels : '경제', 
             
                                                         fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                                                         data: nu2,
@@ -1432,7 +1433,8 @@
                                                             'rgba(255, 99, 132, 0.2)',
                                                             'rgba(54, 162, 235, 0.2)',
                                                             'rgba(255, 206, 86, 0.2)',
-                                                            'rgba(75, 192, 192, 0.2)',
+                                                            'rgba(75, 192, 192, 0.2)', 
+                                                           
    
                                                         ],
                                                         borderColor: [
@@ -1440,7 +1442,8 @@
                                                             'rgba(255, 99, 132, 1)',
                                                             'rgba(54, 162, 235, 1)',
                                                             'rgba(255, 206, 86, 1)',
-                                                            'rgba(75, 192, 192, 1)',
+                                                            'rgba(75, 192, 192, 1)', 
+                                                            
   
                                                         ],
                                                         borderWidth: 1 //경계선 굵기
@@ -1449,6 +1452,7 @@
                                                 ]
                                             },
                                             options: {
+                                            	
                                                 legend: {
                                                     display: false
                                                 },
