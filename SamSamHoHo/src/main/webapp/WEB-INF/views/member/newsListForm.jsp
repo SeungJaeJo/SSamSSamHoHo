@@ -197,21 +197,21 @@
 																			data.nowPage = data.endPage+1;
 																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
 																			
-																			if (data.lastPage < data.endPage) {
-																				data.endPage = data.lastPage;
-																			}
-																			
 																			data.startPage = data.endPage - data.cntPage + 1;
 																			if (data.startPage < 1) {
 																				data.startPage = 1;
 																			}
+																			if (data.lastPage < data.endPage) {
+																				data.endPage = data.lastPage;
+																			}
+																			
 																			
 																		}
 																			tt(s, e);
 																	});	
 																 	
 																			
-																			
+																	
 																			
 																			
 										                       		
@@ -440,7 +440,7 @@
                                         aria-label="처음 페이지">처음</a>
                                 </li>
                                 <li class="page_prev" >
-                                    <a href="#" class="page_link" role="button" aria-disabled="true"
+                                    <a href="#" class="page_link" role="button"
                                         aria-label="이전 페이지"><i class="ico_arrow_left" aria-hidden="true"></i></a>
                                 </li>
                                 <li id="view_page_cnt">
