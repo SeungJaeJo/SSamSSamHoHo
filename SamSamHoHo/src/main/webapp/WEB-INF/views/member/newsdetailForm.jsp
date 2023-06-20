@@ -26,6 +26,7 @@
   	<link rel="stylesheet" href="resources/assets/css/sidemenu2.css">
 	  	  <link rel="stylesheet" href="resources/assets/css/search1.css">
 	  	
+		  	  <link rel="stylesheet" href="resources/assets/css/loading.css">
 	
 </head>
 <body class="n_news fs2 as_mp_layout">
@@ -168,6 +169,11 @@
                 
                             
                             </div>
+                            	    <div id="loading" class="is_hidden">
+									        <span></span>   <!--1. span은 하나의 원이다. -->
+									        <span></span>
+									        <span></span>
+									    </div>
                             <div class="media_end_head_title">
                                 <h2 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
                                         가능해진다</span></h2>
@@ -277,35 +283,21 @@
                                 </h3>
                                 <ul class="media_end_linked_list">
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061310312563527?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;4132d520a8bdab60&quot;}}">"싱하이밍,
-                                            1박 1000만원 울릉도서 접대 받아"</a></li>
+                                        
+                                           class="media_end_linked_item_inner" 
+                                         >싱하이밍</a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061310315169765?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;42ad620364fb76dd&quot;}}">'데뷔
-                                            14년차' 30대 여배우 음주운전…면허 취소 수준</a></li>
+                                           class="media_end_linked_item_inner" >데뷔
+                                          </a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061307441515621?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;b2bf479712b705c9&quot;}}">'대전판
-                                            돌려차기 사건' 20대 女…"윗입술 15방 꿰매고 머리에 멍"</a></li>
+                                      class="media_end_linked_item_inner">대전판
+                                         </a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061309015507212?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;0fff095be75e1305&quot;}}">"비행기
-                                            못 뜨게 해"…국토부 직원 딸 채용 탈락에 항공사 '발칵'</a></li>
+                                            class="media_end_linked_item_inner">"비행기
+                                          </a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061308071506755?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;055763df73807101&quot;}}">[단독]예산
-                                            빠듯한데…장관 취임 1년 만에 해외 출장비 '3억'</a></li>
+                                          class="media_end_linked_item_inner" >예산
+                                           </a></li>
                                 </ul>
                             </div>
                             
@@ -755,14 +747,16 @@
    <div class="modal-wrapper">
             <div class="modal">
                 <div class="content" id="zz">
+               
                     <div class="chat_wrap">
+                
                         <div class="chat">
                             <ul>
                                 <!-- 동적 생성 -->
                             </ul>
                         </div>
                         <div class="input-div">
-                            <textarea placeholder="Press Enter for send message."></textarea>
+                            <textarea placeholder="명령어를 입력해보세요 .^^ ex) 원문보여줘 ,이 뉴스의 키워드 보여줘, 홈화면으로 돌아가줘. ^^ "></textarea>
                         </div>
 
                         <!-- format -->
@@ -779,6 +773,8 @@
                                 </li>
                             </ul>
                         </div>
+                        <button class="btn_sub22" type="submit" style="text-align: center;">종료하기
+                        </button>
                     </div>
 
 
@@ -786,6 +782,58 @@
                 </div>
             </div>
         </div>
+        
+           <div class="modal-wrapper3">
+            <div class="modal3">
+                <div class="content3" id="zz3">
+               
+                     <div class="media_end_head_top">
+                        <a href="" class="media_end_head_top_logo">
+                            <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png"
+                                width="" height="32" alt="조선일보" title="조선일보"
+                                class="media_end_head_top_logo_img light_type">
+
+                        </a>
+
+                    </div>
+                    <div class="media_end_head_title">
+                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
+                                가능해진다</span></h3>
+                    </div>
+                    <div id="contents" class="newsct_body">
+                        <div id="newsct_article" class="newsct_article _article_body">
+                            <div id="dic_area" class="go_trans _article_content"
+                                style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
+                                <p class="typing-txt">해당 뉴스의 키워드 입니다.</p>
+                                                                <p class="typing"></p>
+                                                                
+                                
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+
+                    <div class="center_star2">
+
+
+                        <button class="btn_sub33" type="submit" style="text-align: center;">종료하기
+                        </button>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        
+
 
 
 
@@ -855,7 +903,7 @@
                     <div class="center_star2">
 
 
-                        <button class="btn_sub2" type="submit" style="text-align: center;">등록하기
+                        <button class="btn_sub2" type="submit" style="text-align: center;">종료하기
                         </button>
 
                     </div>
@@ -1083,12 +1131,54 @@
 
                         return false;
                     });
+                    
+
+
+                    
+                    
+
+                    
 
                     setTimeout(function () {
 
                         $(document).ready(function () {
 
                             $('.modal-wrapper2').toggleClass('open2');
+                            $('.ct_wrap').toggleClass('blur-it');
+
+                            console.log("ㅋㅋㅋ");
+
+                            return true;
+                            ;
+                        });
+
+
+                    }, 1000);
+
+
+
+                }else if (data['message'] === '키워드보여줘') {
+
+                    $(document).ready(function () {
+                        $('.modal-wrapper').toggleClass('open');
+                        $('.ct_wrap').toggleClass('blur-it');
+                        console.log("헤헤");
+
+                        return false;
+                    });
+                    
+
+
+                    
+                    
+
+                    
+
+                    setTimeout(function () {
+
+                        $(document).ready(function () {
+
+                            $('.modal-wrapper3').toggleClass('open');
                             $('.ct_wrap').toggleClass('blur-it');
 
                             console.log("ㅋㅋㅋ");
@@ -1177,6 +1267,36 @@
 
 
     </script>
+    <script type="text/javascript">
+    
+    var typingBool = false; 
+    var typingIdx=0; 
+
+    // 타이핑될 텍스트를 가져온다 
+    var typingTxt = $(".typing-txt").text(); 
+
+    typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+
+    if(typingBool==false){ 
+      // 타이핑이 진행되지 않았다면 
+       typingBool=true;     
+       var tyInt = setInterval(typing,100); // 반복동작 
+    } 
+         
+    function typing(){ 
+      if(typingIdx<typingTxt.length){ 
+        // 타이핑될 텍스트 길이만큼 반복 
+        $(".typing").append(typingTxt[typingIdx]);
+        // 한글자씩 이어준다. 
+        typingIdx++; 
+       } else{ 
+         //끝나면 반복종료 
+        clearInterval(tyInt); 
+       } 
+    }  
+    </script>
+
+
 
 
     <script>
@@ -1209,16 +1329,6 @@
             });
         });
 
-        $(document).ready(function () {
-            $('.btn_sub2').on('click', function () {
-                $('.modal-wrapper2').toggleClass('open2');
-                $('.ct_wrap').toggleClass('blur-it');
-
-                console.log("헤헤");
-
-                return false;
-            });
-        });
 
 
 
@@ -1236,30 +1346,7 @@
 
 
 
-   
 
-
-
-            $(document).ready(function () {
-                $('.btn_sub').on('click', function () {
-                    $('.modal-wrapper').toggleClass('open');
-                    $('.ct_wrap').toggleClass('blur-it');
-                    console.log("헤헤");
-
-                    return false;
-                });
-            });
-
-            $(document).ready(function () {
-                $('.btn_sub2').on('click', function () {
-                    $('.modal-wrapper2').toggleClass('open2');
-                    $('.ct_wrap').toggleClass('blur-it');
-
-                    console.log("헤헤");
-
-                    return false;
-                });
-            });
 
 
             $(document).ready(function () {
@@ -1303,6 +1390,56 @@
 
         </script>
 
+<script>
+
+
+
+
+$(document).ready(function () {
+    $('.btn_sub').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+        console.log("wwww");
+
+        return false;
+    });
+});
+
+$(document).ready(function () {
+    $('.btn_sub2').on('click', function () {
+        $('.modal-wrapper2').toggleClass('open2');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("dadad");
+
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+    $('.btn_sub22').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("이얍");
+
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+    $('.btn_sub33').on('click', function () {
+        $('.modal-wrapper3').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("제발");
+
+        return false;
+    });
+});
+</script>
    
 
 

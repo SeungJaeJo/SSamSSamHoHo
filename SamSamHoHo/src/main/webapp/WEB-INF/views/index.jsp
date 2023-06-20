@@ -664,165 +664,13 @@
                                         </li>
                                      
                                     </ul>
-																	
+																
 									
                                     <div class="cont_area2">
                                         <div id="tab_1" class="cont2" style="display:block;">
                                                 <svg href="#tab_1" width="700" height="300">                              
                                                 	<g transform= "translate(260,155)" id="keywordlist1">
-	                                       
-                                                
-                                                    <!-- <g transform="translate(260,155)"><text class="category-keyword-text 전체_LC"
-                                                            text-anchor="middle" transform="translate(-118,-37)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text                        
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-41,10)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">한국</text><text        
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-99,31)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">경기</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(54,29)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">중국</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-198,-71)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">일본</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-28,-17)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">부산</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(-14,81)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">더불어민주당</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(23,-8)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">국회</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(28,-71)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">유럽</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(77,-11)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">검찰</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(171,-10)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);">영국</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(188,-42)rotate(0)scale(0.9)"
-                                                            style="font-size: 28px; font-weight: bold; fill: rgb(15, 88, 255);">민주당</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(191,34)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">삼성전자</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(103,-90)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">뉴욕</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-21,26)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">울산</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(163,-79)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">자원</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(109,13)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">경기도</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(63,104)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(15, 88, 255);">국민의힘</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-155,38)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">러시아</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(81,59)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">인천</text><text
-                                                            class="category-keyword-text 전체_PS" text-anchor="middle"
-                                                            transform="translate(-44,-69)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">윤석열</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(213,-69)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대구</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-101,-1)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">아시아</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-132,-82)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">대한민국</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(109,41)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(35, 196, 174);">독일</text><text
-                                                            class="category-keyword-text 전체_PS" text-anchor="middle"
-                                                            transform="translate(162,59)rotate(0)scale(0.9)"
-                                                            style="font-size: 22px; font-weight: bold; fill: rgb(247, 142, 0);">이재명</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(124,-11)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">프랑스</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(5,98)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">애플</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(141,76)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">삼성</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(19,48)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">우크라이나</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-101,56)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">충남</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-175,-33)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">인도</text><text
-                                                            class="category-keyword-text 전체_PS" text-anchor="middle"
-                                                            transform="translate(163,9)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(247, 142, 0);">송영길</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(-35,103)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(15, 88, 255);">유튜브</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-202,40)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">대전</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(13,-37)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">북한</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(104,81)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">경남</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(54,-53)rotate(0)scale(0.9)"
-                                                            style="font-size: 16px; font-weight: normal; fill: rgb(35, 196, 174);">후쿠시마</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-45,-90)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">제주</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-44,55)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">수도권</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(-38,40)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">서울시</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(-90,-22)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">네이버</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(-157,9)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">한국거래소</text><text
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(212,49)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">현대</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(128,-75)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">광주</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(11,26)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">신사</text><text
-                                                            class="category-keyword-text 전체_PS" text-anchor="middle"
-                                                            transform="translate(62,118)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(247, 142, 0);">윤관석</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-174,77)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">천안</text><text
-                                                            class="category-keyword-text 전체_LC" text-anchor="middle"
-                                                            transform="translate(-73,-38)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(35, 196, 174);">한반도</text><text
-                                                           
-                                                            class="category-keyword-text 전체_OG" text-anchor="middle"
-                                                            transform="translate(-130,75)rotate(0)scale(0.9)"
-                                                            style="font-size: 12px; font-weight: normal; fill: rgb(15, 88, 255);">행정안전부</text>-->
+	                                       				
                                                     </g>
                                                 </svg>
 
@@ -1139,7 +987,7 @@
         
                  	<script type="text/javascript">                                                		
 															//makeKey(category);
-															
+																
 																var liElement = $('.list2 li');
 																liElement.click(function(e) {
   																var idValue = $(this).find('.btn3').attr('id');
@@ -1183,6 +1031,44 @@
 																console.log(data[0].category)
 																// 순위별 RGB 값을 정의
 																var colors = [
+<<<<<<< HEAD
+																  { rank: 1, rgb: 'rgb(255, 99, 72)', fsize:40 },    // blue
+																  { rank: 2, rgb: 'rgb(255, 99, 72)', fsize:39 },    
+																  { rank: 3, rgb: 'rgb(255, 99, 72)', fsize:38 },    
+																  { rank: 4, rgb: 'rgb(255, 99, 72)', fsize:37 },
+																  
+																  { rank: 5, rgb: 'rgb(83, 82, 237)', fsize:36 },    // red
+																  { rank: 6, rgb: 'rgb(83, 82, 237)', fsize:35 },    
+																  { rank: 7, rgb: 'rgb(83, 82, 237)', fsize:34 },   
+																  { rank: 8, rgb: 'rgb(83, 82, 237)', fsize:33 },
+																  
+																  { rank: 9, rgb: 'rgb(120, 224, 143)', fsize:32 },   // em
+																  { rank: 10, rgb: 'rgb(120, 224, 143)', fsize:31 },   
+																  { rank: 11, rgb: 'rgb(120, 224, 143)', fsize:30 },   
+																  { rank: 12, rgb: 'rgb(120, 224, 143)', fsize:29 },
+																  
+																  { rank: 13, rgb: 'rgb(255, 165, 2)', fsize:28 },   // y
+																  { rank: 14, rgb: 'rgb(255, 165, 2)', fsize:27 },   
+																  { rank: 15, rgb: 'rgb(255, 165, 2)', fsize:26 },   
+																  { rank: 16, rgb: 'rgb(255, 165, 2)', fsize:25 },   
+																  { rank: 17, rgb: 'rgb(247, 142, 0)', fsize:24 },
+																  
+																  { rank: 18, rgb: 'rgb(123, 237, 159)', fsize:23 },   // 에메랄드
+																  { rank: 19, rgb: 'rgb(123, 237, 159)', fsize:22 },   // 에메랄드
+																  { rank: 20, rgb: 'rgb(123, 237, 159)', fsize:21 },   // 에메랄드
+																  { rank: 21, rgb: 'rgb(123, 237, 159)', fsize:20 },   // 에메랄드
+																  
+																  { rank: 22, rgb: 'rgb(30, 144, 255)', fsize:19 },   // 에메랄드
+																  { rank: 23, rgb: 'rgb(30, 144, 255)', fsize:18 },   // 에메랄드
+																  { rank: 24, rgb: 'rgb(30, 144, 255)', fsize:17 },   // 에메랄드
+																  { rank: 25, rgb: 'rgb(30, 144, 255)', fsize:16 },   // 에메랄드
+																  
+																  { rank: 26, rgb: 'rgb(116, 125, 140)', fsize:15 },   // 보라색
+																  { rank: 27, rgb: 'rgb(116, 125, 140)', fsize:14 },   // 보라색
+																  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
+																  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
+																  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
+=======
 																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
 																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
 																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
@@ -1219,8 +1105,10 @@
 																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
 																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
 																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
+>>>>>>> branch 'master' of https://github.com/SeungJaeJo/SSamSSamHoHo.git
 																  
 																];
+																
 																
 																// 정렬된 데이터에 순위과 RGB 값을 할당
 																var rank = 1;
@@ -1232,56 +1120,42 @@
 																  }
 																  currentData.rank = rank;
 																  currentData.rgb = colors[rank - 1].rgb;
-																  prevValue = currentData.value;
+																  currentData.fsize = colors[rank - 1].fsize;
+																  prevValue = currentData.count;
 																}
-																
-																/* var rgb = '(35, 196, 174)'
-																var red = 'rgb(255, 0, 0)';
-																var orange = 'rgb(255,50,0)';
-																var yellow = 'rgb(255,255,0)';
-																var green = 'rgb(0,255,0)';
-																var blue = 'rgb(0,0,255)';
-																var navy = 'rgb(0,5,255)';
-																var purple = 'rgb(100,0,255)';
-																var cnt = 0;
-																for (var i = 0; i < data.length; i++){
-																	if(data[i].rank === 1){
-																		 
-																	}
-																} */
 																
 																var listHtml = "";
 																if(data[0].category === "전체"){
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-118,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].count+10)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].count+10)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text>";	
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-99,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].count+10)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].count+10)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-20,-40)rotate(0)scale(0.9)' style='font-size: "+(data[4].count+10)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].count+10)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].count+10)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].count+10)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].count+10)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].count+10)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(90,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].count+10)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,40)rotate(0)scale(0.9)' style='font-size: "+(data[11].count+10)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-60)rotate(0)scale(0.9)' style='font-size: "+(data[12].count+10)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].count+10)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].count+10)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,50)rotate(0)scale(0.9)' style='font-size: "+(data[15].count+10)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(81,59)rotate(0)scale(0.9)' style='font-size: "+(data[16].count+10)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].count+10)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(200,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].count+10)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].count+10)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-132,-82)rotate(0)scale(0.9)' style='font-size: "+(data[20].count+10)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].count+10)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].count+10)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-25)rotate(0)scale(0.9)' style='font-size: "+(data[23].count+10)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(5,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].count+10)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(141,76)rotate(0)scale(0.9)' style='font-size: "+(data[25].count+10)+"px; font-weight: bold; fill: "+data[25].rgb+";'>"+data[25].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(19,48)rotate(0)scale(0.9)' style='font-size: "+(data[26].count+10)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[26].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,80)rotate(0)scale(0.9)' style='font-size: "+(data[27].count+10)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[27].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-175,-33)rotate(0)scale(0.9)' style='font-size: "+(data[28].count+10)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[28].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-35,103)rotate(0)scale(0.9)' style='font-size: "+(data[29].count+10)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[29].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-60)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text>";	
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-119,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-20,-40)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(8,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,60)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-60)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,80)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(75,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-74,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(200,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-110,-30)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-150,-100)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-35)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text>";
+																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text>";
+																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(141,76)rotate(0)scale(0.9)' style='font-size: "+(data[25].fsize)+"px; font-weight: bold; fill: "+data[25].rgb+";'>"+data[25].keyword+"</text>";
+																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(19,48)rotate(0)scale(0.9)' style='font-size: "+(data[26].fsize)+"px; font-weight: bold; fill: "+data[26].rgb+";'>"+data[26].keyword+"</text>";
+																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,80)rotate(0)scale(0.9)' style='font-size: "+(data[27].fsize)+"px; font-weight: bold; fill: "+data[27].rgb+";'>"+data[27].keyword+"</text>";
+																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-175,-33)rotate(0)scale(0.9)' style='font-size: "+(data[28].fsize)+"px; font-weight: bold; fill: "+data[28].rgb+";'>"+data[28].keyword+"</text>";
+																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-35,103)rotate(0)scale(0.9)' style='font-size: "+(data[29].fsize)+"px; font-weight: bold; fill: "+data[29].rgb+";'>"+data[29].keyword+"</text>";
 																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-202,40)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[30].keyword+"</text>";
 																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(13,-37)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[31].keyword+"</text>";
 																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(104,81)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[32].keyword+"</text>";
@@ -1300,36 +1174,36 @@
 																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,75)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[45].keyword+"</text>";
 																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(163,9)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[46].keyword+"</text>";													
 																}else{
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-118,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].count+20)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].count+20)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text>";	
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-99,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].count+20)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].count+20)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-28,-30)rotate(0)scale(0.9)' style='font-size: "+(data[4].count+20)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].count+20)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].count+20)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].count+20)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].count+20)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].count+20)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(103,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].count+20)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,40)rotate(0)scale(0.9)' style='font-size: "+(data[11].count+20)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(180,-79)rotate(0)scale(0.9)' style='font-size: "+(data[12].count+20)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].count+20)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].count+20)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,50)rotate(0)scale(0.9)' style='font-size: "+(data[15].count+20)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(81,59)rotate(0)scale(0.9)' style='font-size: "+(data[16].count+20)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].count+20)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(185,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].count+20)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].count+20)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-132,-82)rotate(0)scale(0.9)' style='font-size: "+(data[20].count+20)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].count+20)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].count+20)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-25)rotate(0)scale(0.9)' style='font-size: "+(data[23].count+20)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(5,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].count+20)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(141,76)rotate(0)scale(0.9)' style='font-size: "+(data[25].count+20)+"px; font-weight: bold; fill: "+data[25].rgb+";'>"+data[25].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(19,48)rotate(0)scale(0.9)' style='font-size: "+(data[26].count+20)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[26].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,80)rotate(0)scale(0.9)' style='font-size: "+(data[27].count+20)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[27].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-175,-33)rotate(0)scale(0.9)' style='font-size: "+(data[28].count+20)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[28].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-35,103)rotate(0)scale(0.9)' style='font-size: "+(data[29].count+20)+"px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[29].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-118,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text>";	
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-99,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-28,-30)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(103,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,40)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(180,-79)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,50)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(81,59)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(130,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-132,-82)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-25)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text>";
+																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(5,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text>";
+																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(141,76)rotate(0)scale(0.9)' style='font-size: "+(data[25].fsize)+"px; font-weight: bold; fill: "+data[25].rgb+";'>"+data[25].keyword+"</text>";
+																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(19,48)rotate(0)scale(0.9)' style='font-size: "+(data[26].fsize)+"px; font-weight: bold; fill: "+data[26].rgb+";'>"+data[26].keyword+"</text>";
+																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,80)rotate(0)scale(0.9)' style='font-size: "+(data[27].fsize)+"px; font-weight: bold; fill: "+data[27].rgb+";'>"+data[27].keyword+"</text>";
+																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-175,-33)rotate(0)scale(0.9)' style='font-size: "+(data[28].fsize)+"px; font-weight: bold; fill: "+data[28].rgb+";'>"+data[28].keyword+"</text>";
+																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-35,103)rotate(0)scale(0.9)' style='font-size: "+(data[29].fsize)+"px; font-weight: bold; fill: "+data[29].rgb+";'>"+data[29].keyword+"</text>";
 																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-202,40)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[30].keyword+"</text>";
 																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(13,-37)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[31].keyword+"</text>";
 																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(104,81)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[32].keyword+"</text>";
@@ -1361,7 +1235,7 @@
 																	$("#keywordlist5").html(listHtml);
 																}
 																
-																//console.log(data[1].keyword);
+																
 															}									
 	                            						</script>
 
@@ -1612,7 +1486,7 @@
             }
         }
 
-
+        makeKey("전체");
         </script>
 		<div id="footer" class="footer footer22">
 			<div class="footer_wrap">
