@@ -62,7 +62,10 @@ public interface BoardMapper {
 	// 카테고리별 키워드 30개
 	public List<Keywords> keywords_fifty(String category);
 
-
+	// 뉴스 상세 페이지
+	public List<News> getNewsFull(int idx);
+	// 뉴스 상세 페이지 내 기사 목록
+	public List<News> getPressList(News newsdata);
 
 }
 

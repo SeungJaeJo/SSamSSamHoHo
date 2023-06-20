@@ -95,7 +95,23 @@ a.btn {
   transition: all 0.25s ease-in-out;
 }
 
+.modal-wrapper3 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 5%; 
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
 .modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+
+}
+.modal-wrapper3.open {
   opacity: 1;
   visibility: visible;
 
@@ -112,8 +128,24 @@ a.btn {
   opacity: 0;
   transition: all 0.5s ease-in-out;
 }
+.modal3 {
+  width: 1000px;
+  height: 800px;
+  display: block;
+  margin: 50% 0 0 -500px;
+  position: relative;
+  top: 25%; 
+  left: 50%;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
 
 .modal-wrapper.open .modal {
+  margin-top: -165px;
+  opacity: 1;
+}
+
+.modal-wrapper3.open .modal3 {
   margin-top: -165px;
   opacity: 1;
 }
@@ -142,7 +174,23 @@ a.btn {
 
 #zz.content {
     position: sticky;
-	top:0;
+   top:0;
+  padding: 10%;
+  border: 3px solid rgba(0,0,0,.1);
+  background: #fff;
+  border-bottom-right-radius: 2%;
+  border-bottom-left-radius: 2%;
+  
+  border-top-right-radius: 2%;
+  border-top-left-radius: 2%;
+ height: 750px;
+ overflow-x: hidden;
+ overflow-y: scroll;
+
+}
+#zz3.content3 {
+    position: sticky;
+   top:0;
   padding: 10%;
   border: 3px solid rgba(0,0,0,.1);
   background: #fff;
@@ -348,6 +396,33 @@ border:none;
     
 
 }
+
+.btn_sub33{
+ 
+width: 200px;
+padding: 18px 0;
+margin-top: 25px;
+background-color:#e2525c;
+color: #fff;
+border:none;
+  border-radius:5px;
+    
+
+}
+
+.btn_sub22{
+ 
+width: 200px;
+padding: 18px 0;
+margin-top: 25px;
+background-color:#e2525c;
+color: #fff;
+border:none;
+  border-radius:5px;
+    margin-left: 600px;
+
+}
+
 
 .good-job2 {
 text-align: center;
