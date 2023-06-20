@@ -83,15 +83,16 @@
 				 // 언론사에 따라 다른 로고 띄우기
 				var pressName = data[0].press
 				if(pressName=="중앙일보") {
-					$("#pressName > img").attr("src", "resources/images/joongang.png")
+					// $("#pressName > img").attr("src", "resources/images/joongang.png")
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/025/2021/08/24/logo_025_6_20210824123340.png")
 				}else if(pressName=="동아일보"){
-					$("#pressName > img").attr("src", "resources/images/donga.jpg")
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/020/2019/01/22/logo_020_6_20190122142722.png")
 				}else if(pressName=="한겨레"){
-					$("#pressName > img").attr("src", "resources/images/han.jpg")
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/028/2020/09/15/logo_028_6_20200915190845.png")
 				}else if(pressName=="조선일보"){
-					$("#pressName > img").attr("src", "resources/images/chosun.png")
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png")
 				}else if(pressName=="경향신문"){
-					$("#pressName > img").attr("src", "resources/images/kh.png")
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/032/2020/09/15/logo_032_6_20200915155035.png")
 				}
 				 
 				 
@@ -998,6 +999,15 @@
 
     <script>
 
+    $(document).ready(function () {
+        $('.media_end_head_origin_link').on('click', function () {
+            $('.modal-wrapper2').toggleClass('open2');
+            $('.ct_wrap').toggleClass('blur-it');
+            console.log("호호헤");
+
+            return true;
+        });
+    });
 
 
 
