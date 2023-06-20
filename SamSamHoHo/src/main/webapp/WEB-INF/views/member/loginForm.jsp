@@ -44,18 +44,19 @@
 
 
 
-                <form class="form" id="emailForm" name="" method="">
+                <form class="form" id="emailForm" name="" method="post" action="${contextPath}/login.do">
                     <input type="hidden" name="" value="">
                     <input type="hidden" name="" value="">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     <div class="input_group">
-                        <input class="form_control" type="email" name="" id="txtEmail" value=""
+                        <input class="form_control" type="text" name="mem_id" id="mem_id" value=""
                             placeholder="아이디를 입력하세요" title="이메일" tabindex="1">
                         <button type="button" class="btn btn_x">
                             <i class="ico_x"></i><span class="visually_hidden">취소버튼</span>
                         </button>
                     </div>
                     <div class="input_group">
-                        <input class="form_control" type="password" name="" id="txtPasswd"
+                        <input class="form_control" type="password" name="mem_pw" id="mem_pw"
                             placeholder="비밀번호를 입력하세요" title="비밀번호" maxlength="20" tabindex="2">
                         <button type="button" class="btn btn_eye">
                             <i class="ico_eye"></i><span class="visually_hidden">패스워드 확인</span>

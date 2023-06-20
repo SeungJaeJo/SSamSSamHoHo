@@ -127,7 +127,7 @@
 								href="${contextPath}/newsListForm.do">경제</a></li>
 							<li class="nav_item"><a 
 								href="${contextPath}/newsListForm.do">국제</a></li>
-
+							
 						</ul>
 
 					</nav>
