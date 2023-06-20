@@ -470,6 +470,7 @@
 							  	listHtml += "<div class='flex_area'>";
 							  	listHtml += "<h2 class='headline'>";
 								listHtml += "<a href='${contextPath}/newsdetailForm.do'>"+obj.title+"</a>";
+								listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a>;
 								listHtml += "</h2>"
 								listHtml += "</div>";
 								listHtml += "<p class='description short'>";
