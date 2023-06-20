@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -72,6 +73,8 @@ public class BoardRestController {
 		return cntCt;
 	}
 	
+	
+	
 	// 오늘의 키워드 열개
 	@GetMapping("/keyword")
 	public List<Keywords> keyword_ten(@RequestParam("category")String category) {
@@ -94,12 +97,31 @@ public class BoardRestController {
 	}
 	
 	
+	 
+	 
+	 
+	// 검색에 쓸 키워드목록
+	@GetMapping("/keySearch")
+	public List<Keywords> keySearch(){
+		List<Keywords> list = boardMapper.keySearch();
+		return list;
+	}
+	
+	// 검색해서 보여줄 리스트
+	@GetMapping("/search")
+	public List<News> search(@RequestParam("query")String query) {
+		List<News> list = boardMapper.search(query);
+		return list;
+	}
+	
+	
+	
 	// 오늘의 키워드 50개
-		@GetMapping("/keyword_fifty")
-		public List<Keywords> keywords_fifty(@RequestParam("category")String category) {
-			List<Keywords> list = boardMapper.keywords_fifty(category);
-			return list;
-		}
+	@GetMapping("/keyword_fifty")
+	public List<Keywords> keywords_fifty(@RequestParam("category")String category) {
+		List<Keywords> list = boardMapper.keywords_fifty(category);
+		return list;
+	}
 	
 	// 카테고리별 상세 + 페이징
 	@GetMapping("testPaging")

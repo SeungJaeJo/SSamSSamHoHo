@@ -143,14 +143,14 @@
 	
 					</div>
 					                    <div class="Ngnb_search _search_content is_hidden">
-                        <form action="" class="search_form"
+                        <form action="testSearch.do" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
                                     <div class="u_itw">
                                         <input name="query" title="검색어 입력" class="u_it _search_input"
                                             placeholder="뉴스 검색" maxlength="255" autocomplete="off"  onkeyup="filter()" type="text" id="u_it">
-                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick=""><span
+                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick="" ><span
                                                 class="u_vc">뉴스검색</span></button>
                                     </div>
                                 </div>
@@ -160,46 +160,51 @@
                                 <div class="u_sggt_wrap2 _search_history">
                                     <div class="sggt_fixer">
                                         <div class="container55">
+                                        
+                                        	<script type="text/javascript">
+                                         	
+	                                        $(document).ready(function(){
+									  			
+	                                        	
+	                                        	
+									  			makeKSearch();
+									  			
+									  		
+									  			})
+										  
+											  
+											  function makeKSearch(){
+												  $.ajax({
+													  url : "board/keySearch",
+													  type : "get",
+													  dataType : "json",
+													  success : makeKSList,
+													  error : function(data){
+														  alert('error'); }
+													  });
+	                                        
+											  };
+											  
+											  function makeKSList(data){
+												  
+												  var listHtml = "";
+												  $.each(data, function(index, obj){
+													
+													  listHtml += "<div class='item33'>";
+													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
+													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
+													  listHtml += "</div>";
+													  
+												  });
+												  $(".container55").html(listHtml);
+											  };
+	                                        
+                                        		
+                                        	
+                                        	
+                                        	</script>
 
-                                            <div class="item33">
-                                                <span class="icon">A</span>
-                                                <span class="itemsname">Apple</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">O</span>
-                                                <span class="itemsname">Orange</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">M</span>
-                                                <span class="itemsname">Mandarin</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">S</span>
-                                                <span class="itemsname">Strawberry</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">W</span>
-                                                <span class="itemsname">Watermelon</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">G</span>
-                                                <span class="itemsname">Grape</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">P</span>
-                                                <span class="itemsname">Pear</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">C</span>
-                                                <span class="itemsname">Cherry</span>
-                                            </div>
+                                        
                                         </div>
                                       
                                     </div>
@@ -780,10 +785,36 @@
                                                 ]
                                             },
                                             options: {
-                                            	
-                                                legend: {
-                                                    display: false
-                                                },
+                                    			responsive: false,
+                                    			tooltips: {
+                                    				enabled: false
+                                    			},
+                                    			hover: {
+                                    				animationDuration: 0
+                                    			},
+                                    			animation: {
+                                    				duration: 1,
+                                    				onComplete: function () {
+                                    					var chartInstance = this.chart,
+                                    						ctx = chartInstance.ctx;
+                                    					ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                                    					ctx.fillStyle = 'purple';
+                                    					ctx.textAlign = 'center';
+                                    					ctx.textBaseline = 'bottom';
+
+                                    					this.data.datasets.forEach(function (dataset, i) {
+                                    						var meta = chartInstance.controller.getDatasetMeta(i);
+                                    						meta.data.forEach(function (bar, index) {
+                                    							var data = dataset.data[index];							
+                                    							ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                    						});
+                                    					});
+                                    				},
+                                    				
+                                    			},
+                                    				legend : {
+                                    					display: false
+                                    				},
                                                 scales: {
                                                     yAxes: [
                                                         {
@@ -1024,43 +1055,7 @@
 																  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
 																  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
 																  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
-																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
-																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
-																  
-																  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
-																  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
-																  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
-																  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
-																  
-																  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
-																  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
-																  
-																  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
-																  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
-																  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
-																  
-																  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  
-																  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  
-																  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  
+
 																];
 																
 																

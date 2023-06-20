@@ -32,19 +32,7 @@
                     <img width="100" height="26" src="resources/images/logo.png">
                 </a>
                 <div class="header_right_area">
-                    <nav class="header_nav">
-                        <ul class="nav sm_hidden md_hidden">
-							<li class="nav_item"><a href="#"
-								 id="wjdcl" class="nav_btn">정치</a></li>
-							<li class="nav_item"><a href="#"
-								 id="tkghl" class="nav_btn">사회</a></li>
-							<li class="nav_item"><a href="#"
-								 id="rudwp" class="nav_btn">경제</a></li>
-							<li class="nav_item"><a href="#"
-								 id="rnrwp" class="nav_btn">국제</a></li>
-
-                        </ul>
-                    </nav>
+                    
                     <ul class="logout sm_hidden">
                         <li><a href="">로그인</a>
                         </li>
@@ -76,7 +64,7 @@
                                         
 	                                        <script type="text/javascript">
 	                                        	
- 											$(document).ready(function(){
+$(document).ready(function(){
 									  			
 									  			makeKSearch();
 										  	});   
@@ -111,45 +99,7 @@
 	                                        
 	                                        </script>
 
-                                            <!-- <div class="item33">
-                                                <span class="icon">A</span>
-                                                <span class="itemsname">Apple</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">O</span>
-                                                <span class="itemsname">Orange</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">M</span>
-                                                <span class="itemsname">Mandarin</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">S</span>
-                                                <span class="itemsname">Strawberry</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">W</span>
-                                                <span class="itemsname">Watermelon</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">G</span>
-                                                <span class="itemsname">Grape</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">P</span>
-                                                <span class="itemsname">Pear</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">C</span>
-                                                <span class="itemsname">Cherry</span>
-                                            </div> -->
+                                         
                                         </div>
                                       
                                     </div>
@@ -171,7 +121,7 @@
         <main role="main" id="container">
             <section class="contents">
                 <header id="sticky" class="section_header_wrap m_unsticky">
-                    <strong class="section_title">정치</strong>
+                    <strong class="section_title">${query}</strong>
                 </header>
                 <div class="row">
                     <section class="chain_wrap col_lg9">
@@ -192,235 +142,44 @@
                                     
                                     	
                                     		<script type="text/javascript">
+                                    		
+                                    	
+                                    			var query = `${query}` ;
+                                    			console.log(query);
   
 										  	  var csrfHeaderName = "${_csrf.headerName}";
 										  	  var csrfTokenValue = "${_csrf.token}";
 										  
 										  	 $(document).ready(function(){
-										  		  // HTML이 다 로딩되고 작동하는 함수
-										  		
-										  	var category = "정치";
-										   
-										    
-										  	 $(".nav_btn").on('click',function(e){
-									  		  if(e.target.id === 'wjdcl'){
-									  			category = "정치";
-									  			$(".section_title").text('정치');
-									  		  }else if(e.target.id === 'tkghl'){
-									  			category = "사회";
-									  			$(".section_title").text('사회');
-									  		  }else if(e.target.id === 'rudwp'){
-									  			category = "경제";
-									  			$(".section_title").text('경제');
-									  		  }else {
-									  			category = "국제";
-									  			$(".section_title").text('국제');
-									  		  }
-									  		  
-									  			//JList(start, end, category);
-									  			cntCt(category);
-									  			makeKey(category);
+										  	
+									  			iii(query);
 										  	});   
 										  	
-										  	//JList(start, end, category); 
-										  	cntCt(category);
-										  	makeKey(category);
-										  	  });
-										  	
+										
 											  
-											  
-											  function cntCt(category){
-											  var ttt;
+											  function iii(query){
 												  $.ajax({
-													  url : "board/cntCt",
+													  url : "board/search",
 													  data : {
-														  category : category
+														  query : query
 													  },						  
 													  type : "get",
 													  dataType : "json",
-													  success : function(data){
-														  ttt = data;
+													  success :  makeiii,
+													  error : function(data){
+														  alert('error');}
+													  
 														  
-														  $.ajax({
-															  url : "board/paging",
-															  type : "get",
-															  dataType : "json",
-															  success : function(data){
-																  console.log(data);
-										                        	data.nowPage = 1;
-										                        	data.cntPage = 5;
-										                        	data.cntPerPage = 10;
-										                        	data.total = ttt;
-										                        	
-										                        	data.lastPage = Math.ceil(data.total / data.cntPerPage);
-										                        	
-																	data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
-																	
-																	if (data.lastPage < data.endPage) {
-																		data.endPage = data.lastPage;
-																	}
-																	
-																	data.startPage = data.endPage - data.cntPage + 1;
-																	if (data.startPage < 1) {
-																		data.startPage = 1;
-																	}
-																	
-																	data.end = data.nowPage * data.cntPerPage;
-																	data.start = data.end - data.cntPerPage + 1;
-																	
-																	
-																	var s = data.startPage;
-																	var e = data.endPage;
-																	tt(s, e);
-																	
-										                        	function tt(s, e){
-										                        		
-												                        var listHtml = "";
-												                      
-											                       		for (var i = data.startPage; i <= data.endPage; i++){
-											                       			if(i == data.startPage){
-													                        	listHtml += "<li class='active'>";
-													                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
-													                        	listHtml += "</li>";
-											                       			}else{
-											                       				listHtml += "<li>";
-													                        	listHtml += "<a class='page_link' href='#'id='num"+i+"' role='button'>"+i+"</a>";
-													                        	listHtml += "</li>";
-											                       			}
-												                        	
-											                       		}
-											                        	$("#view_page_cnt").html(listHtml);
-											                       	  const cateL = document.querySelectorAll('#view_page_cnt>li');
-												                       	 let activeCate = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
-												                       	 console.log(cateL);
-																            for (var i = 0; i < cateL.length; i++) {
-																            	cateL[i].addEventListener('click', function (e) {
-																                    e.preventDefault();
-																                    for (var j = 0; j < cateL.length; j++) {
-																                        // 나머지 버튼 클래스 제거
-																                        cateL[j].classList.remove('active');
-
-																                        // 나머지 컨텐츠 display:none 처리
-																                    }
-
-																                    // 버튼 관련 이벤트
-																                    
-																                    this.classList.add('active');
-																                    activeCate = this.getAttribute('href');
-																                });
-																            }
-																         
-									                        		
-										                        	};
-										                        	kkk(st, ed);
-										                        	var st = data.startPage;
-										                        	var ed = data.endPage;
-										                        	function kkk(st, ed){
-										                        		
-											                        	$(".page_link").on('click', function(e){
-																			for(var k = data.startPage; k <= data.endPage; k++){
-																				
-																				if(e.target.id=='num'+(k)+''){
-																					data.nowPage = k;
-																					data.end = data.nowPage * data.cntPerPage;
-																					data.start = data.end - data.cntPerPage + 1;
-																				}
-																					
-																			}
-																			console.log(data.nowPage);
-																			$.ajax({
-																				  url : "board/testPaging",
-																				  data : {
-																					  param1 : data.start,
-																					  param2 : data.end,
-																					  param3 : category
-																				  }, 
-																				  type : "get",
-																				  dataType : "json",
-																				  success :makeJ, 
-																				  error : function(){ alert("error"); }
-																			  });
-																			});
-																			$.ajax({
-																				  
-																				  url : "board/testPaging",
-																				  data : {
-																					  param1 : data.start,
-																					  param2 : data.end,
-																					  param3 : category
-																				  }, 
-																				  type : "get",
-																				  dataType : "json",
-																				  success :makeJ, 
-																				  error : function(){ alert("error"); }
-																			  });
-										                        	}
-
-											                        $(".btn_next").on('click', function(){
-																		if(data.endPage < data.lastPage){
-																			data.nowPage = data.endPage+1;
-																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
-																			
-																			data.startPage = data.endPage - data.cntPage + 1;
-																			if (data.startPage < 1) {
-																				data.startPage = 1;
-																			}
-																			if (data.lastPage < data.endPage) {
-																				data.endPage = data.lastPage;
-																			}
-																			
-																			
-																		}
-																			tt(s, e);
-																			kkk(st, ed);
-																	});	
-																 	
-																			
-																	$(".btn_prev").on('click', function(){
-																		if(data.startPage > 1){
-																			data.nowPage = data.startPage-data.cntPage;
-																			data.endPage = Math.ceil(data.nowPage / data.cntPage) * data.cntPage;
-																			
-																			data.startPage = data.endPage - data.cntPage + 1;
-																			if (data.startPage < 1) {
-																				data.startPage = 1;
-																			}
-																			if (data.lastPage < data.endPage) {
-																				data.endPage = data.lastPage;
-																			}
-																			
-																			
-																		}
-																		tt(s, e);
-																		kkk(st, ed);
-																	});
-																			
-																			
-										                       		
-										                      	
-																	
-																	
-															  }, // 페이징
-															  error : function(){ alert("error"); }
-														  });
-														  
-													  },
-													  error : function(){ alert("error"); }
-												  });
-												  
-												  
-												  
-													 
-											  };
-											  
-											  function makeJ(data){ 
+														
+											  	});
+											  }
+											  function makeiii(data){ 
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
 													    listHtml += "<li class='card'>";
 													    listHtml += "<div class='card_body'>";
 													  	listHtml += "<h2 class='headline'>";
-													  	//listHtml += "<a href=''>"+obj.title+"</a></h2>";
-													  	listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a></h2>";
+													  	listHtml += "<a href=''>"+obj.title+"</a></h2>";
 													  	listHtml += "<p class='description sm_hidden'>"+obj.summ_content+"</p>";
 													  	listHtml += "<div class='meta'>";
 														listHtml += "<p class='source'>"+obj.press+"</p>";
@@ -436,7 +195,7 @@
 											
 					                       
 					                        
-					                        function makeKey(category){
+					                    /*     function makeKey(category){
 												
 												 $.ajax({
 													  url : "board/keyword",
@@ -545,7 +304,7 @@
 			                            	
 			                            	
 												
-											}
+											} */
 		                            	
 											
 											  
@@ -582,34 +341,7 @@
                             </ul>
                         </nav>
                     </section>
-                    <div class="col_lg3">
-                        <section class="search_tag_wrap">
-                            <header class="title_wrap">
-                                <strong class="title">주요 키워드</strong>
-                            </header>
-                            <ul class="tag_nav" id="keyList">
-                       
-                              
-                            </ul>
-                            
-                        </section>
-                        <section class="chain_wrap">
-                            <header class="title_wrap">
-                                <strong class="title">키워드 관련 기사</strong>
-                            </header>
-                            <ul class="card_right_list" id="viewkeyList">
-                            	
-                            	<script type="text/javascript">
-									
-                            	
-                            	</script>
-                         
-                                
-                                
-                             
-                            </ul>
-                        </section>
-                    </div>
+                    
                 </div>
             </section>
         </main>
