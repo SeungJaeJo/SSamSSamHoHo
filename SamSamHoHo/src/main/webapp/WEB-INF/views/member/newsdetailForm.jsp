@@ -67,9 +67,18 @@
 				$('#zz2 .media_end_head_info_datestamp_bunch span').text(data[0].date)
 				// 원문 기자
 				$('#zz2 .media_end_head_journalist em').text(data[0].reporter)
-				// 원문 내용
-				$('#zz2 #contents #newsct_article #dic_area').text(data[0].content)
+				// 원문 내용+
+				let arr = data[0].content.split("\n");
+				
+				for(let i=0;i<arr.length;i++){
+					let p_tag = $('<p><br>');
+					p_tag.text(arr[i]);
+					$('#zz2 #contents #newsct_article #dic_area').append(p_tag)
+					$('#zz2 #contents #newsct_article #dic_area').append("<br>")
+				}
+				
 				 
+				console.log(data[0].content.split("\n"))
 				 
 				 // 언론사에 따라 다른 로고 띄우기
 				var pressName = data[0].press
@@ -94,6 +103,9 @@
 				
 				for(let i = 0; i<5; i++){
 					$('#contents > div.media_end_linked > ul > li:nth-child('+(i+1)+') > a').text(keys[0][i])
+					$('.keyword_'+(i+1)).text(keys[0][i])
+					//#zz3 > div.media_end_head_title > div.typing > ul > li:nth-child(5)
+					//#zz3 > div.media_end_head_title > div.typing > ul > li.on
 				}
 				
 				// 같은 언론사 기사 받아오기 위해서 데이터 보내기
@@ -474,13 +486,14 @@
 
                     </div>
                     <div class="media_end_head_title">
-                        					          <div class="typing-txt"> 
+                        <div class="typing-txt"> 
 								  <ul>
-								    <li>오늘의 키워드 입니다 ^</li>
-								    <li>우하하 </l>
-								    <li>우하하하</li>
-								    <li>아하하하 </l>
-								    <li>헤헤헤헤</li>
+								    <li>이 기사의 주요 키워드 입니다^</li>
+								    <li class="keyword_1">1. 우하하 </li>
+								    <li class="keyword_2">2. 우하하하</li>
+								    <li class="keyword_3">3. 아하하하 </li>
+								    <li class="keyword_4">4. 헤헤헤헤</li>
+							        <li class="keyword_5">5. 헤헤헤헤</li>
 								</ul>
 								
 								</div> 
@@ -491,39 +504,13 @@
 								     <li></li>
 								     <li></li>
 								     <li></li>
+							         <li></li>
+								     
 								  </ul>
 								</div> 
 								        
                     </div>
-                    <div id="contents" class="newsct_body">
-                        <div id="newsct_article" class="newsct_article _article_body">
-                            <div id="dic_area" class="go_trans _article_content"
-                                style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                                
-					          <div class="typing-txt"> 
-								  <ul>
-								    <li>오늘의 키워드 입니다 ^</li>
-								    <li>우하하 </l>
-								    <li>우하하하</li>
-								    <li>아하하하 </l>
-								    <li>헤헤헤헤</li>
-								</ul>
-								
-								</div> 
-								<div class="typing">
-								   <ul>
-								     <li></li>
-								     <li></li>
-								     <li></li>
-								     <li></li>
-								     <li></li>
-								  </ul>
-								</div> 
-								                                                                
-                                
-                            </div>
-                        </div>
-                    </div>
+                
 
                     <div class="center_star2">
                         <button class="btn_sub33" type="submit" style="text-align: center;">종료하기
@@ -558,10 +545,9 @@
 	                        	<em class="media_end_head_journalist_name" id = "reporter">기자 이름</em>
 	                        </a>
                     </div>
-                 <div id="contents" class="newsct_body">
+                 <div id="contents" class="newsct_body" style="word-break: break-all;">
                     <div id="newsct_article" class="newsct_article _article_body">
                         <div id="dic_area" class="go_trans _article_content" style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-             				뉴스 전문 자리
                         </div>
                     </div>
                 </div>
@@ -570,7 +556,7 @@
                     <div class="center_star2">
 
 
-                        <button class="btn_sub2" type="submit" style="text-align: center;">등록하기
+                        <button class="btn_sub2" type="submit" style="text-align: center;">종료하기
                         </button>
 
                     </div>
@@ -774,7 +760,19 @@
                 } else if (data['message'] === 'ㅎㅇㅎㅇ') {
                     data2['message'] = '안녕안녕^^';
                     resive(data, data2);
-                } else if (
+                } else if (data['message'] === '몇살이고 ㅋ') {
+                    data2['message'] = '2023년생이얌 ^^';
+                    resive(data, data2);
+                } 
+                else if (data['message'] === '오늘날씨어때') {
+                    data2['message'] = '나는 좋아  ^^';
+                    resive(data, data2);
+                } 
+                else if (data['message'] === '오늘날씨어때') {
+                    data2['message'] = '나는 좋아  ^^';
+                    resive(data, data2);
+                } 
+                else if (
                     data['message'] === '정치보여줘') {
                     data2['message'] = '아라써잇';
                     resive3(data, data2);
@@ -797,6 +795,13 @@
 
                         return false;
                     });
+                    
+
+
+                    
+                    
+
+                    
 
                     setTimeout(function () {
 
@@ -990,6 +995,7 @@
 </script>
 
 
+
     <script>
 
 
@@ -1102,6 +1108,30 @@ $(document).ready(function () {
         $('.ct_wrap').toggleClass('blur-it');
 
         console.log("dadad");
+
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+    $('.btn_sub22').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("이얍");
+
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+    $('.btn_sub33').on('click', function () {
+        $('.modal-wrapper3').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("제발");
 
         return false;
     });
