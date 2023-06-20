@@ -5110,7 +5110,9 @@ footer {
 .play_duration.ico_lg {
     font-size: 18px
 }
-
+.Pnews{
+	margin-top:24px;
+}
 .play_duration.ico_lg:before {
     height: 32px;
     margin-right: 6px;

@@ -143,14 +143,14 @@
 	
 					</div>
 					                    <div class="Ngnb_search _search_content is_hidden">
-                        <form action="" class="search_form"
+                        <form action="testSearch.do" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
                                     <div class="u_itw">
                                         <input name="query" title="검색어 입력" class="u_it _search_input"
                                             placeholder="뉴스 검색" maxlength="255" autocomplete="off"  onkeyup="filter()" type="text" id="u_it">
-                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick=""><span
+                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick="" ><span
                                                 class="u_vc">뉴스검색</span></button>
                                     </div>
                                 </div>
@@ -160,46 +160,51 @@
                                 <div class="u_sggt_wrap2 _search_history">
                                     <div class="sggt_fixer">
                                         <div class="container55">
+                                        
+                                        	<script type="text/javascript">
+                                         	
+	                                        $(document).ready(function(){
+									  			
+	                                        	
+	                                        	
+									  			makeKSearch();
+									  			
+									  		
+									  			})
+										  
+											  
+											  function makeKSearch(){
+												  $.ajax({
+													  url : "board/keySearch",
+													  type : "get",
+													  dataType : "json",
+													  success : makeKSList,
+													  error : function(data){
+														  alert('error'); }
+													  });
+	                                        
+											  };
+											  
+											  function makeKSList(data){
+												  
+												  var listHtml = "";
+												  $.each(data, function(index, obj){
+													
+													  listHtml += "<div class='item33'>";
+													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
+													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
+													  listHtml += "</div>";
+													  
+												  });
+												  $(".container55").html(listHtml);
+											  };
+	                                        
+                                        		
+                                        	
+                                        	
+                                        	</script>
 
-                                            <div class="item33">
-                                                <span class="icon">A</span>
-                                                <span class="itemsname">Apple</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">O</span>
-                                                <span class="itemsname">Orange</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">M</span>
-                                                <span class="itemsname">Mandarin</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">S</span>
-                                                <span class="itemsname">Strawberry</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">W</span>
-                                                <span class="itemsname">Watermelon</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">G</span>
-                                                <span class="itemsname">Grape</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">P</span>
-                                                <span class="itemsname">Pear</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">C</span>
-                                                <span class="itemsname">Cherry</span>
-                                            </div>
+                                        
                                         </div>
                                       
                                     </div>
@@ -339,7 +344,7 @@
 											  $.each(data, function(index, obj){
 											
 												  	listHtml += "<p class='description short'>";
-													listHtml += "<a href='${contextPath}/newsdetailForm.do' >"+obj.title+"</a>";
+													listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a>";
 													listHtml += "</p>"
 												  	
 											  });
@@ -469,7 +474,7 @@
 						  $.each(data, function(index, obj){
 							  	listHtml += "<div class='flex_area'>";
 							  	listHtml += "<h2 class='headline'>";
-								listHtml += "<a href='${contextPath}/newsdetailForm.do'>"+obj.title+"</a>";
+								listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a>";
 								listHtml += "</h2>"
 								listHtml += "</div>";
 								listHtml += "<p class='description short'>";
@@ -780,10 +785,36 @@
                                                 ]
                                             },
                                             options: {
-                                            	
-                                                legend: {
-                                                    display: false
-                                                },
+                                    			responsive: false,
+                                    			tooltips: {
+                                    				enabled: false
+                                    			},
+                                    			hover: {
+                                    				animationDuration: 0
+                                    			},
+                                    			animation: {
+                                    				duration: 1,
+                                    				onComplete: function () {
+                                    					var chartInstance = this.chart,
+                                    						ctx = chartInstance.ctx;
+                                    					ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                                    					ctx.fillStyle = 'purple';
+                                    					ctx.textAlign = 'center';
+                                    					ctx.textBaseline = 'bottom';
+
+                                    					this.data.datasets.forEach(function (dataset, i) {
+                                    						var meta = chartInstance.controller.getDatasetMeta(i);
+                                    						meta.data.forEach(function (bar, index) {
+                                    							var data = dataset.data[index];							
+                                    							ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                                    						});
+                                    					});
+                                    				},
+                                    				
+                                    			},
+                                    				legend : {
+                                    					display: false
+                                    				},
                                                 scales: {
                                                     yAxes: [
                                                         {

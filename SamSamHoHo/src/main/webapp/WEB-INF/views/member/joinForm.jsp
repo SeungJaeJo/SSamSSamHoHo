@@ -56,7 +56,7 @@ function passwordCheck(){
             <section class="contents">
 
                 <header class="membership_header">
-                    <h2 class="logo"><a href=""><img src="resources/images/logo.png" style="margin-left:9px ;"></a></h2>
+                    <h2 class="logo"><a href="${contextPath}"><img src="resources/images/logo.png" style="margin-left:9px ;"></a></h2>
                     <h1 id="info_header">회원가입</h1>
                     <!-- hide로 숨김 처리 -->
                     <div class="info_m"></div>

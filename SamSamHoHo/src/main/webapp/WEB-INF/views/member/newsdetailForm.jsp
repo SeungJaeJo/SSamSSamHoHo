@@ -2,7 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
   
@@ -17,18 +16,128 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="resources/assets/css/news1.css">
   	<link rel="stylesheet" href="resources/assets/css/newsroom1.css">
-<link rel="stylesheet" href="resources/assets/css/newsroom2.css">
-<link rel="stylesheet" href="resources/assets/css/newsroom3.css">
-<link rel="stylesheet" href="resources/assets/css/modal.css">
-<link rel="stylesheet" href="resources/assets/css/chat.css">
-
-  	<link rel="stylesheet" href="resources/assets/css/sidemenu1.css">
-  	<link rel="stylesheet" href="resources/assets/css/sidemenu2.css">
-	  	  <link rel="stylesheet" href="resources/assets/css/search1.css">
-	  	
-		  	  <link rel="stylesheet" href="resources/assets/css/loading.css">
-	
+	<link rel="stylesheet" href="resources/assets/css/newsroom2.css">
+	<link rel="stylesheet" href="resources/assets/css/newsroom3.css">
+	<link rel="stylesheet" href="resources/assets/css/modal.css">
+	<link rel="stylesheet" href="resources/assets/css/chat.css">
+	<link rel="stylesheet" href="resources/assets/css/sidemenu1.css">
+	<link rel="stylesheet" href="resources/assets/css/sidemenu2.css">
+	<link rel="stylesheet" href="resources/assets/css/search1.css">
+	<link rel="stylesheet" href="resources/assets/css/loading.css">
 </head>
+
+<script type="text/javascript">
+	  	 $(document).ready(function(){
+	  		 
+	  		// url에서 idx값 받아오는 함수
+	 	  	function searchParam(key) {
+	 		  	  return new URLSearchParams(location.search).get(key);
+			};
+	 		  	
+			var newsID = searchParam("idx")
+			console.log("akwdk???",newsID)
+			
+			function getNewsFull(newsID){
+				$.ajax({
+					url : "board/getNewsFull",
+					data : { "idx":newsID }, 
+					type : "get",
+					dataType : "json",
+					success : setNewsFull,
+					error : function(){ alert("error"); }
+				});
+			 }
+			getNewsFull(newsID)
+			 
+			
+			 
+			function setNewsFull(data){
+				console.log("set",data)
+				
+				// 요약기사, 원문 제목
+				$("#title_area span").text(data[0].title)
+				// 요약기사 날짜
+				$('#date').text(data[0].date)
+				// 요약기사 기자
+				$('#reporter').text(data[0].reporter)
+				// 요약기사 내용
+				$('#dic_area').text(data[0].summ_content)
+				
+				// 원문 날짜
+				$('#zz2 .media_end_head_info_datestamp_bunch span').text(data[0].date)
+				// 원문 기자
+				$('#zz2 .media_end_head_journalist em').text(data[0].reporter)
+				// 원문 내용+
+				let arr = data[0].content.split("\n");
+				
+				for(let i=0;i<arr.length;i++){
+					let p_tag = $('<p><br>');
+					p_tag.text(arr[i]);
+					$('#zz2 #contents #newsct_article #dic_area').append(p_tag)
+					$('#zz2 #contents #newsct_article #dic_area').append("<br>")
+				}
+				
+				 
+				console.log(data[0].content.split("\n"))
+				 
+				 // 언론사에 따라 다른 로고 띄우기
+				var pressName = data[0].press
+				if(pressName=="중앙일보") {
+					// $("#pressName > img").attr("src", "resources/images/joongang.png")
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/025/2021/08/24/logo_025_6_20210824123340.png")
+				}else if(pressName=="동아일보"){
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/020/2019/01/22/logo_020_6_20190122142722.png")
+				}else if(pressName=="한겨레"){
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/028/2020/09/15/logo_028_6_20200915190845.png")
+				}else if(pressName=="조선일보"){
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png")
+				}else if(pressName=="경향신문"){
+					$("#pressName > img").attr("src", "https://mimgnews.pstatic.net/image/upload/office_logo/032/2020/09/15/logo_032_6_20200915155035.png")
+				}
+				 
+				 
+				// 언론사 이름 띄우기
+				$('#ct_wrap > div > div.outside_area._OUTSIDE_AREA > div > div > div.ra_head > strong > em').text(pressName)
+				// 키워드 표시하기, a 태그 걸려있는데 갈 곳은 없음
+				var keys = []
+				keys.push(data[0].keyword.split(','))
+				
+				for(let i = 0; i<5; i++){
+					$('#contents > div.media_end_linked > ul > li:nth-child('+(i+1)+') > a').text(keys[0][i])
+					$('.keyword_'+(i+1)).text(keys[0][i])
+					//#zz3 > div.media_end_head_title > div.typing > ul > li:nth-child(5)
+					//#zz3 > div.media_end_head_title > div.typing > ul > li.on
+				}
+				
+				// 같은 언론사 기사 받아오기 위해서 데이터 보내기
+				$.ajax({
+					url : "board/getPressList",
+					data : { "press":pressName ,
+								"date":data[0].date }, 
+					type : "get",
+					dataType : "json",
+					success : getPressList,
+					error : function(){ alert("error"); }
+				});
+			}// setNewsFull 끝
+			
+			// 같은 언론사 같은 날짜 최신 기사 목록 헤드라인
+			function getPressList(data){
+				console.log("getPressList당")
+				for(let i = 0; i<6; i++){
+					// 기사 url
+					$('ul.ranking_list li:nth-child('+(i+1)+') a').attr("href", "${contextPath}/newsdetailForm.do?idx="+data[i].idx)
+					// 기사 제목
+					$('ul.ranking_list li:nth-child('+(i+1)+') div p').text(data[i].title)
+					// 기사 날짜
+					$('ul.ranking_list li:nth-child('+(i+1)+') div div').text(data[i].date)
+				}
+			}
+  		 }); 
+</script>
+
+
+
 <body class="n_news fs2 as_mp_layout">
     <div class="end_container">
       		<header id="header" class="header">
@@ -64,7 +173,7 @@
 				
 					</div>
                     <div class="Ngnb_search _search_content is_hidden">
-                        <form action="" class="search_form"
+                        <form action="testSearch.do" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
@@ -81,8 +190,46 @@
                                 <div class="u_sggt_wrap2 _search_history">
                                     <div class="sggt_fixer">
                                         <div class="container55">
+                                        
+                                        
+	                                        <script type="text/javascript">
+	                                        	
+ 											$(document).ready(function(){
+									  			
+									  			makeKSearch();
+										  	});   
+										  	
+											  
+											  function makeKSearch(){
+												  $.ajax({
+													  url : "board/keySearch",
+													  type : "get",
+													  dataType : "json",
+													  success : makeKSList,
+													  error : function(data){
+														  alert('error'); }
+													  });
+	                                        
+											  };
+											  
+											  function makeKSList(data){
+												  
+												  var listHtml = "";
+												  $.each(data, function(index, obj){
+													
+													  listHtml += "<div class='item33'>";
+													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
+													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
+													  listHtml += "</div>";
+													  
+												  });
+												  $(".container55").html(listHtml);
+											  };
+	                                        
+	                                        
+	                                        </script>
 
-                                            <div class="item33">
+                                            <!-- <div class="item33">
                                                 <span class="icon">A</span>
                                                 <span class="itemsname">Apple</span>
                                             </div>
@@ -120,224 +267,127 @@
                                             <div class="item33">
                                                 <span class="icon">C</span>
                                                 <span class="itemsname">Cherry</span>
-                                            </div>
+                                            </div> -->
                                         </div>
-                                      
                                     </div>
                                 </div>
-
-            
                             </div>
                         </form>
                     </div>
-
-
-
 				</div>
-
 			</div>
-
-
-
-
-
-
 
 		</header>
 
         <div id="ct_wrap" class="ct_wrap">
          
-            <div class="ct_scroll_wrapper">
+			<div class="ct_scroll_wrapper">
               
                 <div class="newsct_wrapper _GRID_TEMPLATE_COLUMN _STICKY_CONTENT">
                     <div id="ct" class="newsct" role="main">
                         <div class="media_end_head go_trans">
                             <div class="media_end_head_top">
-                                <a href="" class="media_end_head_top_logo">
+                                <a href="" class="media_end_head_top_logo" id="pressName">
                                     <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"
                                         class="media_end_head_top_logo_img light_type">
 
                                 </a>
-
                             </div>
-                                                        <div class="sticky_menu default" style="top: 168px;">
-                                <button type="button" class="btn_bookmark">
-                                    <i class="ico_bookmark"></i>
-                                    <span class="sm_hidden">AI 비서이다 ^^</span>
-                                </button>
-                              
-                
                             
-                            </div>
-                            	    <div id="loading" class="is_hidden">
-									        <span></span>   <!--1. span은 하나의 원이다. -->
-									        <span></span>
-									        <span></span>
-									    </div>
+                       <div class="sticky_menu default" style="top: 168px;">
+                           <button type="button" class="btn_bookmark">
+                               <i class="ico_bookmark"></i>
+                               <span class="sm_hidden">AI 비서이다 ^^</span>
+                           </button>
+                       </div>
+                       <div id="loading" class="is_hidden">
+	                       <span></span>   <!--1. span은 하나의 원이다. -->
+	                       <span></span>
+	                       <span></span>
+                	   </div>                     
+                            
                             <div class="media_end_head_title">
-                                <h2 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
-                                        가능해진다</span></h2>
+                                <h2 id="title_area" class="media_end_head_headline"><span>제목자리 </span></h2>
                             </div>
                             <div class="media_end_head_info nv_notrans ">
                                 <div class="media_end_head_info_datestamp">
                                     <div class="media_end_head_info_datestamp_bunch">
-                                        <em class="media_end_head_info_datestamp_term">입력</em><span
-                                            class="media_end_head_info_datestamp_time _ARTICLE_DATE_TIME"
-                                            >2023.06.14. 오전 9:44</span>
+                                        <em class="media_end_head_info_datestamp_term">입력 </em><span
+                                            class="media_end_head_info_datestamp_time _ARTICLE_DATE_TIME"  id = "date"
+                                            >날짜자리</span>
                                     </div>
+                                    <button target="" class="media_end_head_origin_link">기사원문</button>
                                 </div>
                                 <div class="media_end_head_journalist">
                                     <a href="" class="media_end_head_journalist_box">
-                                        <em class="media_end_head_journalist_name">김형민 기자</em>
+                                        <em class="media_end_head_journalist_name"  id = "reporter">기자 이름</em>
                                     </a>
-                                    <div id="_JOURNALIST_LAYER" class="media_end_head_journalist_layer _JOURNALIST_CARD"
-                                        style="display: none;">
-                                        <ul class="media_end_head_journalist_layer_list">
-                                            <li class="media_end_head_journalist_layer_item _SUBSCRIBE_ELE"
-                                                >
-                                                <div
-                                                    class="media_end_head_journalist_layer_div _LIKE_HIDE _LAZY_LOADING_WRAP">
-                                                    <div
-                                                        class="media_end_head_journalist_layer_thumb _LAZY_LOADING_ERROR_HIDE">
-                                                    </div>
-                                                    <div class="media_end_head_journalist_layer_text _reactionModule"
-                                                        id="_cheer_55538_layer" data-sid="JOURNALIST" data-cid="55538"
-                                                        data-ccounttype="period" data-loaded="1" data-facetype="0"
-                                                        style="visibility: visible;">
-                                                        <div class="media_end_head_journalist_layer_title">
-                                                            <em class="media_end_head_journalist_layer_name">김형민 기자</em>
-                                                            <div class="media_end_head_journalist_layer_btns _JOURNALIST_ID"
-                                                                data-journalistid="55538">
-                                                                <button type="button"
-                                                                    class="media_end_head_journalist_btn_subscribe _SUBSCRIBE"
-                                                                    data-channelkey="JOURNALIST_55538"
-                                                                    data-clk="umsubs">구독</button>
-                                                                <button type="button"
-                                                                    class="media_end_head_journalist_btn_subscribe is_on _UNSUBSCRIBE"
-                                                                    data-channelkey="JOURNALIST_55538"
-                                                                    data-type="journalist" data-messagevalue="김형민"
-                                                                    data-clk="umunsubs"
-                                                                    style="display:none;">구독중</button>
-                                                            </div>
-                                                        </div>
-                                                        <dl class="media_end_head_journalist_layer_subscriber _button off"
-                                                            data-type="cheer" data-ishiddenzerocount="true"
-                                                            data-ishiddenlabelaszerocount="true" aria-pressed="false">
-                                                            <div
-                                                                class="media_end_head_journalist_layer_definition_wrap _SUBSCRIBE_COUNT_TEXT_WRAP">
-                                                                <dt>구독자</dt>
-                                                                <dd class="_SUBSCRIBE_COUNT_TEXT" data-maxcount="99999">
-                                                                    1,759</dd>
-                                                            </div>
-                                                            <div
-                                                                class="media_end_head_journalist_layer_definition_wrap">
-                                                                <dt class="_label">응원수</dt>
-                                                                <dd class="_count">1,697</dd>
-                                                            </div>
-                                                        </dl>
-                                                    </div>
-                                                    <a href="https://media.naver.com/journalist/277/55538"
-                                                        class="media_end_head_journalist_layer_link"
-                                                        data-clk="ummore">더보기</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </div>
 
                             </div>
                         </div>
                         <div id="contents" class="newsct_body">
                             <div id="newsct_article" class="newsct_article _article_body">
-                                <div id="dic_area" class="go_trans _article_content"
-                                    style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                                    앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>
-                                 <br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                    열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                    주택을 매입·임차할 때 예상치 못한 권리행사 제한이 발생할 우려가 있었다.<br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                    서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.<br><br>법무부 관계자는 "실생활에 불편을 초래하거나
-                                    부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.<br><br>
+                                <div id="dic_area" class="go_trans _article_content" style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
+                                  	요약 뉴스 자리
                                 </div>
                             </div>
-                            <div class="byline">
-                                <p class="byline_p">
-                                    <span class="byline_s">김형민 기자 khm193@asiae.co.kr</span>
-                                </p>
-                            </div>
-    
-                        
-
-  
 
                      
                             <div class="media_end_linked">
                                 <h3 class="media_end_linked_title">
-                                    <a href="https://www.asiae.co.kr/ " class="media_end_linked_title_inner">
+                                    <a href="https://www.asiae.co.kr/ " class="media_end_linked_title_inner" id="pressName">
                                         <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png"
-                                            width="" height="26" alt="조선일보" title="조선일보"
-                                            class="media_end_linked_title_img light_type">
-
+                                            width="" height="26" class="media_end_linked_title_img light_type">
                                     </a>
-                                    주요뉴스<span class="media_end_linked_title_desc">해당 언론사에서 선정하며 <em>언론사 페이지(아웃링크)</em>로
-                                        이동해 볼 수 있습니다.</span>
+                                    주요키워드 <span class="media_end_linked_title_desc"></span>
                                 </h3>
+                                
                                 <ul class="media_end_linked_list">
                                     <li class="media_end_linked_item"><a
-                                        
-                                           class="media_end_linked_item_inner" 
-                                         >싱하이밍</a></li>
+                                            href="#"
+                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link" data-gdid="277"
+                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;4132d520a8bdab60&quot;}}">
+                                            키워드1</a></li>
                                     <li class="media_end_linked_item"><a
-                                           class="media_end_linked_item_inner" >데뷔
-                                          </a></li>
+                                            href="#"
+                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link" data-gdid="277"
+                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;42ad620364fb76dd&quot;}}">
+                                            키워드2</a></li>
                                     <li class="media_end_linked_item"><a
-                                      class="media_end_linked_item_inner">대전판
-                                         </a></li>
+                                            href="#"
+                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link" data-gdid="277"
+                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;b2bf479712b705c9&quot;}}">
+                                            키워드3</a></li>
                                     <li class="media_end_linked_item"><a
-                                            class="media_end_linked_item_inner">"비행기
-                                          </a></li>
+                                            href="#"
+                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link" data-gdid="277"
+                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;0fff095be75e1305&quot;}}">
+                                            키워드4</a></li>
                                     <li class="media_end_linked_item"><a
-                                          class="media_end_linked_item_inner" >예산
-                                           </a></li>
+                                            href="#"
+                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link" data-gdid="277"
+                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;055763df73807101&quot;}}">
+                                            키워드5</a></li>
                                 </ul>
                             </div>
-                            
-                  
 
                             <div class="ends_addition" id="endAdditionContainer">
-
-
                             
                                 <div id="spiLayer" style="">
                                     
                                 </div>
 
-                              
                             </div>
-                            <div class="_VALID_SERIES" data-component-id=""></div>
-                            <div class="media_end_linked_more">
-                                <div class="media_end_linked_more_inner">
-                                    <a href="https://media.naver.com/press/277" class="media_end_linked_more_link"
-                                        data-clk="phome" data-gdid="277"><em
-                                            class="media_end_linked_more_point">조선일보</em> 언론사홈 바로가기</a>
-                                </div>
-                            </div>
-                      
-
-                        </div>
-                    </div>
-                 
-
-
-
-
-
-
+                           <div class="_VALID_SERIES" data-component-id=""></div>
+              			  </div>
+              		  </div>
                 </div>
-                <div class="outside_area _OUTSIDE_AREA">
+ 			<div class="outside_area _OUTSIDE_AREA">
                     <div class="outside_area_inner _GRID_TEMPLATE_COLUMN_ASIDE _OUTSIDE_AREA_INNER">
                         <div class="rankingnews mobile_hidden">
                             <div class="ra_head">
-                                <strong class="ra_title"><em class="ra_highlight">조선일보</em> 헤드라인</strong>
+                                <strong class="ra_title"><em class="ra_highlight">언론사</em> 헤드라인</strong>
                                 <a href="https://media.naver.com/press/277" class="media_more"
                                       ><span class="blind">더보기</span></a>
                             </div>
@@ -346,69 +396,58 @@
                                     <div class="flick-container">
                                         <div class="flick-panel">
                                             <ul class="ranking_list">
-                                                <li class="rl_item _LAZY_LOADING_WRAP"
-                                                    data-loading-error-allowed="true">
-                                                    <a href="/article/277/0005273417" class="rl_link_end"
-                                                          >
+                                            <!--  -->
+                                                <li class="rl_item _LAZY_LOADING_WRAP" data-loading-error-allowed="true">
+                                                    <a href="/article/277/0005273417" class="rl_link_end">
                                                         <div class="rl_content">
-                                                            <p class="rl_txt">SG사태와 닮은 '5개 종목 하한가'…주식 카페 운영자 "증권사 탓"</p>
-                                                            <div class="rl_time">1시간전</div>
+                                                            <p class="rl_txt">기사1 타이틀</p>
+                                                            <div class="rl_time">기사1 시간</div>
                                                         </div>
                                                     </a>
                                                 </li>
-                                                <li class="rl_item _LAZY_LOADING_WRAP"
-                                                    data-loading-error-allowed="true">
-                                                    <a href="/article/277/0005273498" class="rl_link_end"
-                                                          >
+                                                <li class="rl_item _LAZY_LOADING_WRAP" data-loading-error-allowed="true">
+                                                    <a href="/article/277/0005273498" class="rl_link_end">
                                                         <div class="rl_content">
-                                                            <p class="rl_txt">주담대 변동금리 0.12%P 인상…대출금리 추가상승 조짐</p>
-                                                            <div class="rl_time">24분전</div>
+                                                            <p class="rl_txt">기사2 타이틀</p>
+                                                            <div class="rl_time">기사2 시간</div>
                                                         </div>
                                                         
                                                     </a>
                                                 </li>
-                                                <li class="rl_item _LAZY_LOADING_WRAP"
-                                                    data-loading-error-allowed="true">
-                                                    <a href="/article/277/0005273453" class="rl_link_end"
-                                                          >
+                                                <li class="rl_item _LAZY_LOADING_WRAP" data-loading-error-allowed="true">
+                                                    <a href="/article/277/0005273453" class="rl_link_end">
                                                         <div class="rl_content">
-                                                            <p class="rl_txt">결혼 알고도 '골프→호텔 불륜'…1200만원 위자료</p>
-                                                            <div class="rl_time">1시간전</div>
+                                                            <p class="rl_txt">기사3 타이틀</p>
+                                                            <div class="rl_time">기사3 시간</div>
                                                         </div>
                                                      
                                                     </a>
                                                 </li>
-                                                <li class="rl_item _LAZY_LOADING_WRAP"
-                                                    data-loading-error-allowed="true">
-                                                    <a href="/article/277/0005273457" class="rl_link_end"
-                                                          >
+                                                <li class="rl_item _LAZY_LOADING_WRAP" data-loading-error-allowed="true">
+                                                    <a href="/article/277/0005273457" class="rl_link_end">
                                                         <div class="rl_content">
-                                                            <p class="rl_txt">美시애틀서 한인부부에 '묻지마 총격'…임신부 아내·태어난 아기 참변</p>
-                                                            <div class="rl_time">57분전</div>
+                                                            <p class="rl_txt">기사4 타이틀</p>
+                                                            <div class="rl_time">기사4 시간</div>
                                                         </div>
                                                      
                                                     </a>
                                                 </li>
-                                                <li class="rl_item _LAZY_LOADING_WRAP"
-                                                    data-loading-error-allowed="true">
-                                                    <a href="/article/277/0005273212" class="rl_link_end"
-                                                          >
+                                                <li class="rl_item _LAZY_LOADING_WRAP"  data-loading-error-allowed="true">
+                                                    <a href="/article/277/0005273212" class="rl_link_end">
                                                         <div class="rl_content">
-                                                            <p class="rl_txt">"대체 주차를 어떻게 한거지" 대만 주택가 '옥상주차'</p>
-                                                            <div class="rl_time">17시간전</div>
+                                                            <p class="rl_txt">기사5 타이틀</p>
+                                                            <div class="rl_time">기사5 시간</div>
                                                         </div>
                                                       
                                                     </a>
                                                 </li>
-                                                <li class="rl_item _LAZY_LOADING_WRAP"
-                                                    data-loading-error-allowed="true">
-                                                    <a href="/article/277/0005273435" class="rl_link_end"
-                                                          >
+                                                <li class="rl_item _LAZY_LOADING_WRAP" data-loading-error-allowed="true">
+                                                    <a href="/article/277/0005273435" class="rl_link_end">
                                                         <div class="rl_content">
-                                                            <p class="rl_txt">커피 한 잔에 9시간 카공족…"땅 파서 장사하나" 점주들 분통</p>
-                                                            <div class="rl_time">1시간전</div>
+                                                            <p class="rl_txt">기사6 타이틀</p>
+                                                            <div class="rl_time">기사6 시간</div>
                                                         </div>
-                                                 
+<!--  -->
                                                     </a>
                                                 </li>
                                             </ul>
@@ -417,315 +456,8 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="rankingnews optional_hidden _FLICKING_WRAP _OFFICE_RANKING_ALL _PERSIST_META">
-                            <div class="ra_head">
-                                <strong class="ra_title"><em class="ra_highlight">조선일보</em> 랭킹 뉴스</strong>
-                                <span class="ra_time _AGGREGATION_TEXT_LIST">오전 8시~9시까지 집계한 결과입니다.</span>
-                                <span class="ra_time _AGGREGATION_TEXT_LIST" style="display:none;">오전 6시~9시까지 집계한
-                                    결과입니다.</span>
-                                <a href="https://media.naver.com/press/277/ranking" class="media_more _MORE_URL_LIST"
-                                 ><span class="blind">더보기</span></a>
-                                <a href="https://media.naver.com/press/277/ranking?type=comment"
-                                    class="media_more _MORE_URL_LIST"
-                                    style="display:none;"><span class="blind">더보기</span></a>
-                            </div>
-
-                            <div class="ra_area">
-                                <div class="ra_tab _FLICKING_TAB_WRAP">
-                                    <ul class="ra_tab_list">
-                                        <li class="ra_tab_item _FLICKING_TAB on"
-                                            style="opacity: 1;">
-                                            <a href="#" class="ra_tab_a">많이 본</a>
-                                        </li>
-                                        <li class="ra_tab_item _FLICKING_TAB"
-                                            style="opacity: 1;">
-                                            <a href="#" class="ra_tab_a">댓글 많은</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="flick" style="height:442px;">
-                                    <div class="flick-container _FLICKING"
-                                        style="height: 442px; opacity: 1; overflow: hidden; box-sizing: border-box; touch-action: pan-y; user-select: none; -webkit-user-drag: none; padding: 0px;">
-                                        <div class="eg-flick-container"
-                                            style="position: relative; z-index: 2000; width: 100%; height: 100%; top: 0px; transform: translate(-330px, 0px); will-change: transform;">
-                                            <div class="flick-panel eg-flick-panel"
-                                                style="position: absolute; width: 330px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(100%, 0px); will-change: transform;">
-                                                <ul class="ranking_list _FLICKING_CONTENT" data-index="0"
-                                                    style="margin-top: 0;">
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273345?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">1</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"내 집인데 왜" 층간흡연 자제 부탁한 임산부에 보복</p>
-                                                                <div class="rl_time">11시간전</div>
-                                                            </div>
-                                                          
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273380?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">2</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">900원대 엔화 하락에 보름새 1조원 사재기…엔화예금 폭증</p>
-                                                                <div class="rl_time">3시간전</div>
-                                                            </div>
-                                                          
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273212?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">3</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"대체 주차를 어떻게 한거지" 대만 주택가 '옥상주차'</p>
-                                                                <div class="rl_time">17시간전</div>
-                                                            </div>
-                                                          
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273333?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">4</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"죽을 때 가져갈 것도 아닌데" 90세 할머니 '10억 쾌척'</p>
-                                                                <div class="rl_time">13시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273415?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">5</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"싫으면 뒤로 가세요" 구경만 해도 개인정보 요구하는 샤넬</p>
-                                                                <div class="rl_time">1시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="flick-panel eg-flick-panel"
-                                                style="position: absolute; width: 330px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(200%, 0px); will-change: transform;">
-                                                <ul class="ranking_list _FLICKING_CONTENT" data-index="0"
-                                                    style="margin-top: 0;">
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273305?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">1</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"바가지 안 씌우겠습니다" 소래포구 상인들 엎드려 사죄</p>
-                                                                <div class="rl_time">15시간전</div>
-                                                            </div>
-                                                        
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273345?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">2</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"내 집인데 왜" 층간흡연 자제 부탁한 임산부에 보복</p>
-                                                                <div class="rl_time">11시간전</div>
-                                                            </div>
-                                                           
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273333?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">3</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"죽을 때 가져갈 것도 아닌데" 90세 할머니 '10억 쾌척'</p>
-                                                                <div class="rl_time">13시간전</div>
-                                                            </div>
-                                                            
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273431?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">4</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">[속보]대통령실 "尹, 쉬운수능 지시 아냐…교과과정 외 분야 배제"
-                                                                </p>
-                                                                <div class="rl_time">1시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273435?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">5</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">커피 한 잔에 9시간 카공족…"땅 파서 장사하나" 점주들 분통</p>
-                                                                <div class="rl_time">1시간전</div>
-                                                            </div>
-                                                          
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="flick-panel eg-flick-panel"
-                                                style="position: absolute; width: 330px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(300%, 0px); will-change: transform;">
-                                                <ul class="ranking_list _FLICKING_CONTENT" data-index="0"
-                                                    style="margin-top: 0;">
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273345?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">1</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"내 집인데 왜" 층간흡연 자제 부탁한 임산부에 보복</p>
-                                                                <div class="rl_time">11시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273380?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">2</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">900원대 엔화 하락에 보름새 1조원 사재기…엔화예금 폭증</p>
-                                                                <div class="rl_time">3시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273212?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">3</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"대체 주차를 어떻게 한거지" 대만 주택가 '옥상주차'</p>
-                                                                <div class="rl_time">17시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273333?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">4</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"죽을 때 가져갈 것도 아닌데" 90세 할머니 '10억 쾌척'</p>
-                                                                <div class="rl_time">13시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273415?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">5</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"싫으면 뒤로 가세요" 구경만 해도 개인정보 요구하는 샤넬</p>
-                                                                <div class="rl_time">1시간전</div>
-                                                            </div>
-                                                           
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="flick-panel eg-flick-panel"
-                                                style="position: absolute; width: 330px; height: 100%; box-sizing: border-box; top: 0px; left: 0px; transform: translate(0%, 0px); will-change: transform;">
-                                                <ul class="ranking_list _FLICKING_CONTENT" data-index="0"
-                                                    style="margin-top: 0;">
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273305?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">1</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"바가지 안 씌우겠습니다" 소래포구 상인들 엎드려 사죄</p>
-                                                                <div class="rl_time">15시간전</div>
-                                                            </div>
-                                                          
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273345?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">2</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"내 집인데 왜" 층간흡연 자제 부탁한 임산부에 보복</p>
-                                                                <div class="rl_time">11시간전</div>
-                                                            </div>
-                                                         
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273333?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">3</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">"죽을 때 가져갈 것도 아닌데" 90세 할머니 '10억 쾌척'</p>
-                                                                <div class="rl_time">13시간전</div>
-                                                            </div>
-                                                        
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273431?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">4</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">[속보]대통령실 "尹, 쉬운수능 지시 아냐…교과과정 외 분야 배제"
-                                                                </p>
-                                                                <div class="rl_time">1시간전</div>
-                                                            </div>
-                                                        
-                                                        </a>
-                                                    </li>
-                                                    <li class="rl_item _LAZY_LOADING_WRAP"
-                                                        data-loading-error-allowed="true">
-                                                        <a href="/article/277/0005273435?ntype=RANKING"
-                                                            class="rl_link_end"  >
-                                                            <i class="rl_ranking">5</i>
-                                                            <div class="rl_content">
-                                                                <p class="rl_txt">커피 한 잔에 9시간 카공족…"땅 파서 장사하나" 점주들 분통</p>
-                                                                <div class="rl_time">1시간전</div>
-                                                            </div>
-                                                        
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-        
                     </div>
                 </div>
-            
             </div>
         </div>
         
@@ -747,9 +479,7 @@
    <div class="modal-wrapper">
             <div class="modal">
                 <div class="content" id="zz">
-               
                     <div class="chat_wrap">
-                
                         <div class="chat">
                             <ul>
                                 <!-- 동적 생성 -->
@@ -773,7 +503,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <button class="btn_sub22" type="submit" style="text-align: center;">종료하기
+                         <button class="btn_sub22" type="submit" style="text-align: center;">종료하기
                         </button>
                     </div>
 
@@ -782,122 +512,84 @@
                 </div>
             </div>
         </div>
-        
-           <div class="modal-wrapper3">
+
+<div class="modal-wrapper3">
             <div class="modal3">
                 <div class="content3" id="zz3">
                
                      <div class="media_end_head_top">
-                        <a href="" class="media_end_head_top_logo">
-                            <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png"
-                                width="" height="32" alt="조선일보" title="조선일보"
+                        <a href="" class="media_end_head_top_logo" id = "pressName">
+                            <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"
                                 class="media_end_head_top_logo_img light_type">
-
                         </a>
 
                     </div>
                     <div class="media_end_head_title">
-                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
-                                가능해진다</span></h3>
+                        <div class="typing-txt"> 
+								  <ul>
+								    <li>이 기사의 주요 키워드 입니다^</li>
+								    <li class="keyword_1">1. 우하하 </li>
+								    <li class="keyword_2">2. 우하하하</li>
+								    <li class="keyword_3">3. 아하하하 </li>
+								    <li class="keyword_4">4. 헤헤헤헤</li>
+							        <li class="keyword_5">5. 헤헤헤헤</li>
+								</ul>
+								
+								</div> 
+								<div class="typing">
+								   <ul>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+							         <li></li>
+								     
+								  </ul>
+								</div> 
+								        
                     </div>
-                    <div id="contents" class="newsct_body">
-                        <div id="newsct_article" class="newsct_article _article_body">
-                            <div id="dic_area" class="go_trans _article_content"
-                                style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                                <p class="typing-txt">해당 뉴스의 키워드 입니다.</p>
-                                                                <p class="typing"></p>
-                                                                
-                                
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div>
-
+                
 
                     <div class="center_star2">
-
-
                         <button class="btn_sub33" type="submit" style="text-align: center;">종료하기
                         </button>
-
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>
-        
-
 
 
 
         <div class="modal-wrapper2">
             <div class="modal2">
                 <div class="content2" id="zz2">
+				<!-- 기사원문 -->
+                <div class="media_end_head_top">
+                    <a href="" class="media_end_head_top_logo" id = "pressName">
+                        <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"
+                            class="media_end_head_top_logo_img light_type">
+                    </a>
 
-                    <div class="media_end_head_top">
-                        <a href="" class="media_end_head_top_logo">
-                            <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png"
-                                width="" height="32" alt="조선일보" title="조선일보"
-                                class="media_end_head_top_logo_img light_type">
-
-                        </a>
-
-                    </div>
+                </div>
                     <div class="media_end_head_title">
-                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
-                                가능해진다</span></h3>
+                        <h3 id="title_area" class="media_end_head_headline"><span>제목 자리</span></h3>
                     </div>
-                    <div id="contents" class="newsct_body">
-                        <div id="newsct_article" class="newsct_article _article_body">
-                            <div id="dic_area" class="go_trans _article_content"
-                                style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                                앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에
-                                주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
-                                앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에
-                                주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
-                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
-                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
-                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다. 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게
-                                된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 '외국인체류확인서
-                                열람·교부' 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서
-                                주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는
-                                서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나
-                                부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.
-                            </div>
+                    <div class="media_end_head_info_datestamp_bunch">
+                    	<em class="media_end_head_info_datestamp_term">입력 </em>
+                    		<span class="media_end_head_info_datestamp_time _ARTICLE_DATE_TIME"  id = "date">날짜자리</span>
+                    </div>
+                    <div class="media_end_head_journalist">
+	                    	<a href="" class="media_end_head_journalist_box">
+	                        	<em class="media_end_head_journalist_name" id = "reporter">기자 이름</em>
+	                        </a>
+                    </div>
+                 <div id="contents" class="newsct_body" style="word-break: break-all;">
+                    <div id="newsct_article" class="newsct_article _article_body">
+                        <div id="dic_area" class="go_trans _article_content" style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
                         </div>
-
-
-
-
-
                     </div>
+                </div>
 
 
                     <div class="center_star2">
@@ -907,15 +599,6 @@
                         </button>
 
                     </div>
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -923,7 +606,6 @@
         <div id="footer" class="footer footer22">
 
             <footer>
-              
                 <div class="footer_info">
                     <div class="footer_wrap">
 
@@ -1117,12 +799,33 @@
                 } else if (data['message'] === 'ㅎㅇㅎㅇ') {
                     data2['message'] = '안녕안녕^^';
                     resive(data, data2);
-                } else if (
+                } else if (data['message'] === '몇살이고 ㅋ') {
+                    data2['message'] = '2023년생이얌 ^^';
+                    resive(data, data2);
+                } 
+                else if (data['message'] === '오늘날씨어때') {
+                    data2['message'] = '나는 좋아  ^^';
+                    resive(data, data2);
+                } 
+                else if (data['message'] === '오늘날씨어때') {
+                    data2['message'] = '나는 좋아  ^^';
+                    resive(data, data2);
+                } 
+                else if (
                     data['message'] === '정치보여줘') {
                     data2['message'] = '아라써잇';
                     resive3(data, data2);
                 }
-                else if (data['message'] === '원문보여줘') {
+                else if (data['message'] === '원문보여줘'||
+                		data['message'] ==='원문'||
+                		data['message'] ==='본문'||
+                		data['message'] ==='긴거'||
+                		data['message'] ==='원문 보여줘'||
+                		data['message'] ==='원문보여저'||
+                		data['message'] ==='원문 보여저'||
+                		data['message'] ==='원문보여주세요'||
+                		data['message'] ==='원문주삼'||
+                		data['message'] ==='원문 주삼') {
 
                     $(document).ready(function () {
                         $('.modal-wrapper').toggleClass('open');
@@ -1157,7 +860,8 @@
 
 
 
-                }else if (data['message'] === '키워드보여줘') {
+                }else if (data['message'] === '키워드보여줘'||
+                		data['message'] ==='키워드 보여줘'||data['message'] ==='키워드'||data['message'] ==='키워드보여주세요'||data['message'] ==='키워드줘') {
 
                     $(document).ready(function () {
                         $('.modal-wrapper').toggleClass('open');
@@ -1267,40 +971,81 @@
 
 
     </script>
-    <script type="text/javascript">
-    
-    var typingBool = false; 
-    var typingIdx=0; 
+  
+<script type="text/javascript">
 
-    // 타이핑될 텍스트를 가져온다 
-    var typingTxt = $(".typing-txt").text(); 
+		
+		var typingBool = false; 
+		var typingIdx=0; 
+		var liIndex = 0;
+		var liLength = $(".typing-txt>ul>li").length;
+		
+		// 타이핑될 텍스트를 가져온다 
+		var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+		typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+		if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+		    typingBool=true; 
+		    var tyInt = setInterval(typing,100); // 반복동작 
+		} 
+		
 
-    typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
 
-    if(typingBool==false){ 
-      // 타이핑이 진행되지 않았다면 
-       typingBool=true;     
-       var tyInt = setInterval(typing,100); // 반복동작 
-    } 
-         
-    function typing(){ 
-      if(typingIdx<typingTxt.length){ 
-        // 타이핑될 텍스트 길이만큼 반복 
-        $(".typing").append(typingTxt[typingIdx]);
-        // 한글자씩 이어준다. 
-        typingIdx++; 
-       } else{ 
-         //끝나면 반복종료 
-        clearInterval(tyInt); 
-       } 
-    }  
-    </script>
+		     
+		function typing(){
+			
 
+            setTimeout(function () {
+      		  $(".typing ul li").removeClass("on");
+   		   $(".typing ul li").eq(liIndex).addClass("on");
+   		  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+   		     $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+   		     typingIdx++; 
+   		   } else{ if(liIndex<liLength-1){
+   		     //다음문장으로  가기위해 인덱스를 1증가
+   		       liIndex++; 
+   		     //다음문장을 타이핑하기위한 셋팅
+   		        typingIdx=0;
+   		        typingBool = false; 
+   		        typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+   		       
+   		     //다음문장 타이핑전 1초 쉰다
+   		         clearInterval(tyInt);
+   		          //타이핑종료
+   		     
+   		         setTimeout(function(){
+   		           //1초후에 다시 타이핑 반복 시작
+   		           tyInt = setInterval(typing,100);
+   		         },1000);
+   		        } else if(liIndex==liLength-1){
+   		          
+   		         //마지막 문장까지 써지면 반복종료
+   		           clearInterval(tyInt);
+   		        }
+   		    } 
+              
+
+            }, 5000);
+			
+			
+
+		}  
+
+
+</script>
 
 
 
     <script>
 
+    $(document).ready(function () {
+        $('.media_end_head_origin_link').on('click', function () {
+            $('.modal-wrapper2').toggleClass('open2');
+            $('.ct_wrap').toggleClass('blur-it');
+            console.log("호호헤");
+
+            return true;
+        });
+    });
 
 
 

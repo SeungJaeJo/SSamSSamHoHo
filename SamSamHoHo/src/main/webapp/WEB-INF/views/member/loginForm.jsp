@@ -44,7 +44,7 @@
 
 
                 <header class="membership_header">
-                    <h2 class="logo"><a href="https://www.joongang.co.kr"><img src="resources/images/logo.png" style="margin-left:9px ;"></a></h2>
+                    <h2 class="logo"><a href="${contextPath}"><img src="resources/images/logo.png" style="margin-left:9px ;"></a></h2>
                     <h1 id="info_header">로그인</h1>
                     <div class="info_m"></div>
                 </header>

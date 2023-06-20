@@ -3082,7 +3082,8 @@ input[type=checkbox],input[type=radio] {
     margin-top: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: normal
+    white-space: normal;
+      -webkit-line-clamp: 5;
 }
 
 .short{
@@ -8829,7 +8830,6 @@ div[class*=multi_product_auto].show {
     }
 
     .secondary_header_wrap+.story_list,.title_wrap:not(div)+:not(.col_lg9):not(.tag_wrap):not(.row_mg):not(.tag_nav):not(.tab_content):not(.board_list):not(.live_article_list) {
-        margin-top: 24px
     }
 
     .float_right+.float_left+.float_right {
@@ -9915,7 +9915,7 @@ div[class*=multi_product_auto].show {
         display: flex;
         -ms-flex-flow: column;
         flex-flow: column;
-        height: 300px;
+        height: 322px;
         border-radius: 10%;
         border:  1px solid rgba(0,0,0,.1);
     }
