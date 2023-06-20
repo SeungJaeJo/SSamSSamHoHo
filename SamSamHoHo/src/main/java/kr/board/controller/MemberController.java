@@ -33,8 +33,8 @@ public class MemberController {
 	@Autowired
 	private MemberMapper memberMapper;
 	
-	//@Autowired
-	//private PasswordEncoder pwEncoder;
+	@Autowired
+	private PasswordEncoder pwEncoder;
 	 
 	
 	// 로그인페이지 이동
@@ -141,8 +141,8 @@ public class MemberController {
 			
 			// 비밀번호 암호화 하여 회원가입
 			// 비밀번호를 암호화하여 저장
-			// String encyPw = pwEncoder.encode(m.getMem_pw());
-			// m.setMem_pw(encyPw);
+			 String encyPw = pwEncoder.encode(m.getMem_pw());
+			 m.setMem_pw(encyPw);
 			
 			int cnt = memberMapper.join(m);
 			

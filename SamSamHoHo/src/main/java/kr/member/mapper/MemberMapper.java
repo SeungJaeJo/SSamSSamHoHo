@@ -24,10 +24,10 @@ public interface MemberMapper {
 
 	void profileUpdate(Member vo);
 
-	//void authInsert(Auth saveVO);
+	void authInsert(Auth saveVO);
 
 
-	//void authDelete(String memID);
+	void authDelete(String memID);
 
 }
 

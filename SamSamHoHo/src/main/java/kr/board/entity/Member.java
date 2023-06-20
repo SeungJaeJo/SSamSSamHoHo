@@ -23,6 +23,6 @@ public class Member {
 	//private String memEmail;
 	//private String memProfile;
 	// 회원의 권한을 저장할 필드
-	//private List<Auth> authList;
+	private List<Auth> authList;
 	
 }
