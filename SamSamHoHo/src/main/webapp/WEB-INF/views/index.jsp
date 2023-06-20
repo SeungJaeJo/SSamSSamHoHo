@@ -143,14 +143,14 @@
 	
 					</div>
 					                    <div class="Ngnb_search _search_content is_hidden">
-                        <form action="testSearch.do" class="search_form"
+                        <form action="" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
                                     <div class="u_itw">
                                         <input name="query" title="검색어 입력" class="u_it _search_input"
                                             placeholder="뉴스 검색" maxlength="255" autocomplete="off"  onkeyup="filter()" type="text" id="u_it">
-                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick="" ><span
+                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick=""><span
                                                 class="u_vc">뉴스검색</span></button>
                                     </div>
                                 </div>
@@ -160,51 +160,46 @@
                                 <div class="u_sggt_wrap2 _search_history">
                                     <div class="sggt_fixer">
                                         <div class="container55">
-                                        
-                                        	<script type="text/javascript">
-                                         	
-	                                        $(document).ready(function(){
-									  			
-	                                        	
-	                                        	
-									  			makeKSearch();
-									  			
-									  		
-									  			})
-										  
-											  
-											  function makeKSearch(){
-												  $.ajax({
-													  url : "board/keySearch",
-													  type : "get",
-													  dataType : "json",
-													  success : makeKSList,
-													  error : function(data){
-														  alert('error'); }
-													  });
-	                                        
-											  };
-											  
-											  function makeKSList(data){
-												  
-												  var listHtml = "";
-												  $.each(data, function(index, obj){
-													
-													  listHtml += "<div class='item33'>";
-													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
-													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
-													  listHtml += "</div>";
-													  
-												  });
-												  $(".container55").html(listHtml);
-											  };
-	                                        
-                                        		
-                                        	
-                                        	
-                                        	</script>
 
-                                        
+                                            <div class="item33">
+                                                <span class="icon">A</span>
+                                                <span class="itemsname">Apple</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">O</span>
+                                                <span class="itemsname">Orange</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">M</span>
+                                                <span class="itemsname">Mandarin</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">S</span>
+                                                <span class="itemsname">Strawberry</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">W</span>
+                                                <span class="itemsname">Watermelon</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">G</span>
+                                                <span class="itemsname">Grape</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">P</span>
+                                                <span class="itemsname">Pear</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">C</span>
+                                                <span class="itemsname">Cherry</span>
+                                            </div>
                                         </div>
                                       
                                     </div>
@@ -785,36 +780,10 @@
                                                 ]
                                             },
                                             options: {
-                                    			responsive: false,
-                                    			tooltips: {
-                                    				enabled: false
-                                    			},
-                                    			hover: {
-                                    				animationDuration: 0
-                                    			},
-                                    			animation: {
-                                    				duration: 1,
-                                    				onComplete: function () {
-                                    					var chartInstance = this.chart,
-                                    						ctx = chartInstance.ctx;
-                                    					ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
-                                    					ctx.fillStyle = 'purple';
-                                    					ctx.textAlign = 'center';
-                                    					ctx.textBaseline = 'bottom';
-
-                                    					this.data.datasets.forEach(function (dataset, i) {
-                                    						var meta = chartInstance.controller.getDatasetMeta(i);
-                                    						meta.data.forEach(function (bar, index) {
-                                    							var data = dataset.data[index];							
-                                    							ctx.fillText(data, bar._model.x, bar._model.y - 5);
-                                    						});
-                                    					});
-                                    				},
-                                    				
-                                    			},
-                                    				legend : {
-                                    					display: false
-                                    				},
+                                            	
+                                                legend: {
+                                                    display: false
+                                                },
                                                 scales: {
                                                     yAxes: [
                                                         {
@@ -1055,7 +1024,43 @@
 																  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
 																  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
 																  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
-
+																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
+																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
+																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
+																  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
+																  
+																  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
+																  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
+																  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
+																  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
+																  
+																  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
+																  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
+																  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
+																  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
+																  
+																  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
+																  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
+																  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
+																  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
+																  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
+																  
+																  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+																  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+																  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+																  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+																  
+																  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+																  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+																  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+																  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+																  
+																  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
+																  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
+																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
+																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
+																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
+																  
 																];
 																
 																
@@ -1075,102 +1080,57 @@
 																
 																var listHtml = "";
 																if(data[0].category === "전체"){
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-60)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text>";	
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-119,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-20,-40)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(8,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,60)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-60)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,80)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(75,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-74,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(200,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-110,-30)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-150,-100)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-35)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text>";
-																listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(141,76)rotate(0)scale(0.9)' style='font-size: "+(data[25].fsize)+"px; font-weight: bold; fill: "+data[25].rgb+";'>"+data[25].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(19,48)rotate(0)scale(0.9)' style='font-size: "+(data[26].fsize)+"px; font-weight: bold; fill: "+data[26].rgb+";'>"+data[26].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,80)rotate(0)scale(0.9)' style='font-size: "+(data[27].fsize)+"px; font-weight: bold; fill: "+data[27].rgb+";'>"+data[27].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-175,-33)rotate(0)scale(0.9)' style='font-size: "+(data[28].fsize)+"px; font-weight: bold; fill: "+data[28].rgb+";'>"+data[28].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-35,103)rotate(0)scale(0.9)' style='font-size: "+(data[29].fsize)+"px; font-weight: bold; fill: "+data[29].rgb+";'>"+data[29].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-202,40)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[30].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(13,-37)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[31].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(104,81)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[32].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,-53)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[33].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-45,-90)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[34].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,55)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[35].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-38,40)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[36].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-90,-22)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[37].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-157,9)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[38].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(212,49)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[39].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(128,-75)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[40].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(11,26)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[41].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(62,118)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[42].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-174,77)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[43].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-73,-38)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[44].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,75)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[45].keyword+"</text>";
-																//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(163,9)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[46].keyword+"</text>";													
-																}else{
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-118,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text>";	
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-99,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-28,-30)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(103,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,40)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(180,-79)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,50)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(81,59)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(130,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-132,-82)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-25)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text>";
-																	listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(5,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(141,76)rotate(0)scale(0.9)' style='font-size: "+(data[25].fsize)+"px; font-weight: bold; fill: "+data[25].rgb+";'>"+data[25].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(19,48)rotate(0)scale(0.9)' style='font-size: "+(data[26].fsize)+"px; font-weight: bold; fill: "+data[26].rgb+";'>"+data[26].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,80)rotate(0)scale(0.9)' style='font-size: "+(data[27].fsize)+"px; font-weight: bold; fill: "+data[27].rgb+";'>"+data[27].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-175,-33)rotate(0)scale(0.9)' style='font-size: "+(data[28].fsize)+"px; font-weight: bold; fill: "+data[28].rgb+";'>"+data[28].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-35,103)rotate(0)scale(0.9)' style='font-size: "+(data[29].fsize)+"px; font-weight: bold; fill: "+data[29].rgb+";'>"+data[29].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-202,40)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[30].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(13,-37)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[31].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(104,81)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[32].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,-53)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[33].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-45,-90)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[34].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,55)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[35].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-38,40)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[36].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-90,-22)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[37].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-157,9)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[38].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(212,49)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[39].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(128,-75)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[40].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(11,26)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[41].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(62,118)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[42].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-174,77)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[43].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-73,-38)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[44].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,75)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[45].keyword+"</text>";
-																	//listHtml += "<text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(163,9)rotate(0)scale(0.9)' style='font-size: 28px; font-weight: bold; fill: rgb(35, 196, 174);'>"+data[46].keyword+"</text>";
-																	
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[0].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-60)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[1].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[2].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-119,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[3].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[4].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-20,-40)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[5].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[6].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(8,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[7].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[8].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[9].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[10].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[11].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,60)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[12].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-60)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[13].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[14].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[15].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,80)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[16].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(75,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[17].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-74,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[18].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(200,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[19].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-110,-30)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[20].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-150,-100)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[21].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[22].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[23].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-35)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text></a>";
+																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[24].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text></a>";
+																	}else{
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[0].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-118,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[1].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-41,10)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword+"</text></a>";	
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[2].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-99,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[3].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(54,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[4].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-28,-30)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[5].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[6].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[7].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(77,-11)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[8].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[9].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[10].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(103,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[11].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,40)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[12].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(180,-79)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[13].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[14].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(63,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[15].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-155,50)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[16].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(81,59)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[17].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[18].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(130,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[19].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-101,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[20].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-132,-82)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[21].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[22].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[23].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(124,-25)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword+"</text></a>";
+																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[24].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(5,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword+"</text></a>";
 																}
 																if(data[0].category === '전체'){
 																	$("#keywordlist1").html(listHtml);
