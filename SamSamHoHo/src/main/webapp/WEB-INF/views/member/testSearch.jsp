@@ -32,19 +32,7 @@
                     <img width="100" height="26" src="resources/images/logo.png">
                 </a>
                 <div class="header_right_area">
-                    <nav class="header_nav">
-                        <ul class="nav sm_hidden md_hidden">
-							<li class="nav_item"><a href="#"
-								 id="wjdcl" class="nav_btn">정치</a></li>
-							<li class="nav_item"><a href="#"
-								 id="tkghl" class="nav_btn">사회</a></li>
-							<li class="nav_item"><a href="#"
-								 id="rudwp" class="nav_btn">경제</a></li>
-							<li class="nav_item"><a href="#"
-								 id="rnrwp" class="nav_btn">국제</a></li>
-
-                        </ul>
-                    </nav>
+                    
                     <ul class="logout sm_hidden">
                         <li><a href="">로그인</a>
                         </li>
@@ -56,7 +44,7 @@
                         <button type="button" class="btn_search" onclick=""><i class="ico_search"></i></button>
                     </div>
                                         <div class="Ngnb_search _search_content is_hidden">
-                        <form action="testSearch.do" class="search_form"
+                        <form action="" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
@@ -76,7 +64,8 @@
                                         
 	                                        <script type="text/javascript">
 	                                        	
- 											$(document).ready(function(){
+	                                       /*  	
+	                                        $(document).ready(function(){
 									  			
 									  			makeKSearch();
 										  	});   
@@ -92,22 +81,21 @@
 														  alert('error'); }
 													  });
 	                                        
-											  };
-											  
+											  }
 											  function makeKSList(data){
 												  
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
 													
 													  listHtml += "<div class='item33'>";
-													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
-													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
+													  listHtml += "<span class='icon'>"+obj.+"</span>";
+													  listHtml += "<span class='itemsname'>Apple</span>";
 													  listHtml += "</div>";
 													  
 												  });
 												  $(".container55").html(listHtml);
-											  };
-	                                        
+											  }
+	                                         */
 	                                        
 	                                        </script>
 
@@ -171,7 +159,7 @@
         <main role="main" id="container">
             <section class="contents">
                 <header id="sticky" class="section_header_wrap m_unsticky">
-                    <strong class="section_title">정치</strong>
+                    <strong class="section_title">${query}</strong>
                 </header>
                 <div class="row">
                     <section class="chain_wrap col_lg9">
@@ -192,49 +180,32 @@
                                     
                                     	
                                     		<script type="text/javascript">
+                                    		
+                                    	
+                                    			var query = query;
+                                    			console.log(query);
   
 										  	  var csrfHeaderName = "${_csrf.headerName}";
 										  	  var csrfTokenValue = "${_csrf.token}";
 										  
 										  	 $(document).ready(function(){
-										  		  // HTML이 다 로딩되고 작동하는 함수
-										  		
-										  	var category = "정치";
-										   
-										    
-										  	 $(".nav_btn").on('click',function(e){
-									  		  if(e.target.id === 'wjdcl'){
-									  			category = "정치";
-									  			$(".section_title").text('정치');
-									  		  }else if(e.target.id === 'tkghl'){
-									  			category = "사회";
-									  			$(".section_title").text('사회');
-									  		  }else if(e.target.id === 'rudwp'){
-									  			category = "경제";
-									  			$(".section_title").text('경제');
-									  		  }else {
-									  			category = "국제";
-									  			$(".section_title").text('국제');
-									  		  }
-									  		  
-									  			//JList(start, end, category);
-									  			cntCt(category);
-									  			makeKey(category);
+										  		 
+										  		searchCt(query);
+									  			makeiii(query);
 										  	});   
 										  	
-										  	//JList(start, end, category); 
-										  	cntCt(category);
-										  	makeKey(category);
-										  	  });
+										  	searchCt(query);
+										  	makeiii(query);
+										  	
 										  	
 											  
 											  
-											  function cntCt(category){
+											  function searchCt(query){
 											  var ttt;
 												  $.ajax({
-													  url : "board/cntCt",
+													  url : "board/searchCt",
 													  data : {
-														  category : category
+														  query : query
 													  },						  
 													  type : "get",
 													  dataType : "json",
@@ -337,7 +308,7 @@
 																				  }, 
 																				  type : "get",
 																				  dataType : "json",
-																				  success :makeJ, 
+																				  success :makeiii, 
 																				  error : function(){ alert("error"); }
 																			  });
 																			});
@@ -351,7 +322,7 @@
 																				  }, 
 																				  type : "get",
 																				  dataType : "json",
-																				  success :makeJ, 
+																				  success :makeiii, 
 																				  error : function(){ alert("error"); }
 																			  });
 										                        	}
@@ -413,7 +384,7 @@
 													 
 											  };
 											  
-											  function makeJ(data){ 
+											  function makeiii(data){ 
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
 													    listHtml += "<li class='card'>";
@@ -435,7 +406,7 @@
 											
 					                       
 					                        
-					                        function makeKey(category){
+					                     /*    function makeKey(category){
 												
 												 $.ajax({
 													  url : "board/keyword",
@@ -545,7 +516,7 @@
 			                            	
 												
 											}
-		                            	
+		                            	 */
 											
 											  
 										  </script>

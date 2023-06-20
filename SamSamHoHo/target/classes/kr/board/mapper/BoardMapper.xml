@@ -69,6 +69,17 @@
 		select * from tbl_keywords where category = #{category} and date = (select max(date) from tbl_keywords where category = #{category}) limit 30
 	</select>
 	
+	<select id="keySearch" resultType="kr.board.entity.Keywords">
+		select distinct keyword from tbl_keywords
+	</select>
+	
+	<select id="search" resultType="kr.board.entity.News">
+		select * from tbl_news where keyword like CONCAT('%', #{keyword}, '%') order by date desc;	
+	</select>
+	
+	<select id="searchCt" resultType="kr.board.entity.News">
+		select count(*) from tbl_news where keyword like CONCAT('%', #{keyword}, '%') order by date desc;	
+	</select>
 </mapper>
 
 

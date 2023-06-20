@@ -61,6 +61,15 @@ public interface BoardMapper {
 	
 	// 카테고리별 키워드 30개
 	public List<Keywords> keywords_fifty(String category);
+	
+	// 검색에 쓸 키워드
+	public List<Keywords> keySearch();
+	
+	// 검색했을때 뜰거에요~
+	public List<News> search(String query);
+	
+	// 검색했을때 리스트 총 개수~~
+	public int searchCt(String query);
 
 
 

@@ -143,14 +143,14 @@
 	
 					</div>
 					                    <div class="Ngnb_search _search_content is_hidden">
-                        <form action="" class="search_form"
+                        <form action="testSearch.do" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">
                                 <div class="u_hsw">
                                     <div class="u_itw">
                                         <input name="query" title="검색어 입력" class="u_it _search_input"
                                             placeholder="뉴스 검색" maxlength="255" autocomplete="off"  onkeyup="filter()" type="text" id="u_it">
-                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick=""><span
+                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick="" ><span
                                                 class="u_vc">뉴스검색</span></button>
                                     </div>
                                 </div>
@@ -160,8 +160,51 @@
                                 <div class="u_sggt_wrap2 _search_history">
                                     <div class="sggt_fixer">
                                         <div class="container55">
+                                        
+                                        	<script type="text/javascript">
+                                         	
+	                                        $(document).ready(function(){
+									  			
+	                                        	
+	                                        	
+									  			makeKSearch();
+									  			
+									  		
+									  			})
+										  
+											  
+											  function makeKSearch(){
+												  $.ajax({
+													  url : "board/keySearch",
+													  type : "get",
+													  dataType : "json",
+													  success : makeKSList,
+													  error : function(data){
+														  alert('error'); }
+													  });
+	                                        
+											  };
+											  
+											  function makeKSList(data){
+												  
+												  var listHtml = "";
+												  $.each(data, function(index, obj){
+													
+													  listHtml += "<div class='item33'>";
+													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
+													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
+													  listHtml += "</div>";
+													  
+												  });
+												  $(".container55").html(listHtml);
+											  };
+	                                        
+                                        		
+                                        	
+                                        	
+                                        	</script>
 
-                                            <div class="item33">
+                                            <!-- <div class="item33">
                                                 <span class="icon">A</span>
                                                 <span class="itemsname">Apple</span>
                                             </div>
@@ -199,7 +242,7 @@
                                             <div class="item33">
                                                 <span class="icon">C</span>
                                                 <span class="itemsname">Cherry</span>
-                                            </div>
+                                            </div> -->
                                         </div>
                                       
                                     </div>

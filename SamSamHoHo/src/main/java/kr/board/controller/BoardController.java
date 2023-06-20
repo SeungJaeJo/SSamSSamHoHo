@@ -29,6 +29,8 @@ public class BoardController {
 	public String main() {
 		return "board/test";
 	}
+	
+	
 
 }
 
