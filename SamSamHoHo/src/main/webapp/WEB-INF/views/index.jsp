@@ -204,45 +204,7 @@
                                         	
                                         	</script>
 
-                                            <!-- <div class="item33">
-                                                <span class="icon">A</span>
-                                                <span class="itemsname">Apple</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">O</span>
-                                                <span class="itemsname">Orange</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">M</span>
-                                                <span class="itemsname">Mandarin</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">S</span>
-                                                <span class="itemsname">Strawberry</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">W</span>
-                                                <span class="itemsname">Watermelon</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">G</span>
-                                                <span class="itemsname">Grape</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">P</span>
-                                                <span class="itemsname">Pear</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">C</span>
-                                                <span class="itemsname">Cherry</span>
-                                            </div> -->
+                                        
                                         </div>
                                       
                                     </div>

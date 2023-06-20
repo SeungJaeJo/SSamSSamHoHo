@@ -341,34 +341,7 @@ $(document).ready(function(){
                             </ul>
                         </nav>
                     </section>
-                    <div class="col_lg3">
-                        <!-- <section class="search_tag_wrap">
-                            <header class="title_wrap">
-                                <strong class="title">주요 키워드</strong>
-                            </header>
-                            <ul class="tag_nav" id="keyList">
-                       
-                              
-                            </ul>
-                            
-                        </section>
-                        <section class="chain_wrap">
-                            <header class="title_wrap">
-                                <strong class="title">키워드 관련 기사</strong>
-                            </header>
-                            <ul class="card_right_list" id="viewkeyList">
-                            	
-                            	<script type="text/javascript">
-									
-                            	
-                            	</script>
-                         
-                                
-                                
-                             
-                            </ul>
-                        </section> -->
-                    </div>
+                    
                 </div>
             </section>
         </main>
