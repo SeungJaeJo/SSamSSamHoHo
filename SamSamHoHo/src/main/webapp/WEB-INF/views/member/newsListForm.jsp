@@ -19,6 +19,7 @@
   	<link rel="stylesheet" href="resources/assets/css/newsroom1.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom2.css">
 <link rel="stylesheet" href="resources/assets/css/newsroom3.css">
+<link rel="stylesheet" href="resources/assets/css/search1.css">
 
 </head>
 
@@ -53,7 +54,73 @@
                  
                     <div class="header_option_area">
                         <button type="button" class="btn_search" onclick=""><i class="ico_search"></i></button>
-                        <button type="button" class="btn_navbar" onclick=""><i class="ico_ham"></i></button>
+                    </div>
+                                        <div class="Ngnb_search _search_content is_hidden">
+                        <form action="" class="search_form"
+                          accept-charset="utf-8">
+                            <div id="u_hs" class="u_hs ">
+                                <div class="u_hsw">
+                                    <div class="u_itw">
+                                        <input name="query" title="검색어 입력" class="u_it _search_input"
+                                            placeholder="뉴스 검색" maxlength="255" autocomplete="off"  onkeyup="filter()" type="text" id="u_it">
+                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick=""><span
+                                                class="u_vc">뉴스검색</span></button>
+                                    </div>
+                                </div>
+                                <button type="button" class="u_hssbt_close _close_btn " onclick="">닫기</button>
+                            </div>
+                            <div class="u_atcp_wrap">
+                                <div class="u_sggt_wrap2 _search_history">
+                                    <div class="sggt_fixer">
+                                        <div class="container55">
+
+                                            <div class="item33">
+                                                <span class="icon">A</span>
+                                                <span class="itemsname">Apple</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">O</span>
+                                                <span class="itemsname">Orange</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">M</span>
+                                                <span class="itemsname">Mandarin</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">S</span>
+                                                <span class="itemsname">Strawberry</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">W</span>
+                                                <span class="itemsname">Watermelon</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">G</span>
+                                                <span class="itemsname">Grape</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">P</span>
+                                                <span class="itemsname">Pear</span>
+                                            </div>
+                    
+                                            <div class="item33">
+                                                <span class="icon">C</span>
+                                                <span class="itemsname">Cherry</span>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+
+            
+                            </div>
+                        </form>
                     </div>
 
                 </div>
@@ -509,8 +576,78 @@
             </section>
         </main>
         
-          <script>
-          
+     <script>
+
+
+
+
+
+
+   
+
+
+
+            $(document).ready(function () {
+                $('.btn_sub').on('click', function () {
+                    $('.modal-wrapper').toggleClass('open');
+                    $('.ct_wrap').toggleClass('blur-it');
+                    console.log("헤헤");
+
+                    return false;
+                });
+            });
+
+            $(document).ready(function () {
+                $('.btn_sub2').on('click', function () {
+                    $('.modal-wrapper2').toggleClass('open2');
+                    $('.ct_wrap').toggleClass('blur-it');
+
+                    console.log("헤헤");
+
+                    return false;
+                });
+            });
+
+
+            $(document).ready(function () {
+            $('._close_btn ').on('click', function () {
+                $('._search_content').toggleClass('is_hidden');
+
+                console.log("헤헤");
+
+                return false;
+            });
+        });
+
+        $(document).ready(function () {
+                $('.ico_search').on('click', function () {
+                    $('._search_content').toggleClass('is_hidden');
+                    console.log("호호헤");
+
+                    return true;
+                });
+            });
+
+
+        function filter() {
+
+            var value, name, item, i, aa;
+
+            value = document.getElementById("u_it").value.toUpperCase();
+            item = document.getElementsByClassName("item33");
+            for (i = 0; i < item.length; i++) {
+                name = item[i].getElementsByClassName("itemsname");
+                if (name[0].innerHTML.toUpperCase().indexOf(value) > -1) {
+                    aa = name[0].innerHTML.toUpperCase().indexOf(value)
+                    console.log(aa)
+                    item[i].style.display = "flex";
+                } else {
+                    item[i].style.display = "none";
+                }
+            }
+        }
+
+
         </script>
         <div id="footer" class="footer footer22">
 
