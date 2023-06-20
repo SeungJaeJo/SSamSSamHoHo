@@ -797,16 +797,52 @@
 
                     </div>
                     <div class="media_end_head_title">
-                        <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인
-                                가능해진다</span></h3>
+                        					          <div class="typing-txt"> 
+								  <ul>
+								    <li>오늘의 키워드 입니다 ^</li>
+								    <li>우하하 </l>
+								    <li>우하하하</li>
+								    <li>아하하하 </l>
+								    <li>헤헤헤헤</li>
+								</ul>
+								
+								</div> 
+								<div class="typing">
+								   <ul>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								  </ul>
+								</div> 
+								        
                     </div>
                     <div id="contents" class="newsct_body">
                         <div id="newsct_article" class="newsct_article _article_body">
                             <div id="dic_area" class="go_trans _article_content"
                                 style="-webkit-tap-highlight-color: rgba(0,0,0,0)">
-                                <p class="typing-txt">해당 뉴스의 키워드 입니다.</p>
-                                                                <p class="typing"></p>
-                                                                
+                                
+					          <div class="typing-txt"> 
+								  <ul>
+								    <li>오늘의 키워드 입니다 ^</li>
+								    <li>우하하 </l>
+								    <li>우하하하</li>
+								    <li>아하하하 </l>
+								    <li>헤헤헤헤</li>
+								</ul>
+								
+								</div> 
+								<div class="typing">
+								   <ul>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								     <li></li>
+								  </ul>
+								</div> 
+								                                                                
                                 
                             </div>
                         </div>
@@ -1122,7 +1158,16 @@
                     data2['message'] = '아라써잇';
                     resive3(data, data2);
                 }
-                else if (data['message'] === '원문보여줘') {
+                else if (data['message'] === '원문보여줘'||
+                		data['message'] ==='원문'||
+                		data['message'] ==='본문'||
+                		data['message'] ==='긴거'||
+                		data['message'] ==='원문 보여줘'||
+                		data['message'] ==='원문보여저'||
+                		data['message'] ==='원문 보여저'||
+                		data['message'] ==='원문보여주세요'||
+                		data['message'] ==='원문주삼'||
+                		data['message'] ==='원문 주삼') {
 
                     $(document).ready(function () {
                         $('.modal-wrapper').toggleClass('open');
@@ -1157,7 +1202,8 @@
 
 
 
-                }else if (data['message'] === '키워드보여줘') {
+                }else if (data['message'] === '키워드보여줘'||
+                		data['message'] ==='키워드 보여줘'||data['message'] ==='키워드'||data['message'] ==='키워드보여주세요'||data['message'] ==='키워드줘') {
 
                     $(document).ready(function () {
                         $('.modal-wrapper').toggleClass('open');
@@ -1267,35 +1313,67 @@
 
 
     </script>
-    <script type="text/javascript">
-    
-    var typingBool = false; 
-    var typingIdx=0; 
+  
+<script type="text/javascript">
 
-    // 타이핑될 텍스트를 가져온다 
-    var typingTxt = $(".typing-txt").text(); 
+		
+		var typingBool = false; 
+		var typingIdx=0; 
+		var liIndex = 0;
+		var liLength = $(".typing-txt>ul>li").length;
+		
+		// 타이핑될 텍스트를 가져온다 
+		var typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+		typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+		if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+		    typingBool=true; 
+		    var tyInt = setInterval(typing,100); // 반복동작 
+		} 
+		
 
-    typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
 
-    if(typingBool==false){ 
-      // 타이핑이 진행되지 않았다면 
-       typingBool=true;     
-       var tyInt = setInterval(typing,100); // 반복동작 
-    } 
-         
-    function typing(){ 
-      if(typingIdx<typingTxt.length){ 
-        // 타이핑될 텍스트 길이만큼 반복 
-        $(".typing").append(typingTxt[typingIdx]);
-        // 한글자씩 이어준다. 
-        typingIdx++; 
-       } else{ 
-         //끝나면 반복종료 
-        clearInterval(tyInt); 
-       } 
-    }  
-    </script>
+		     
+		function typing(){
+			
 
+            setTimeout(function () {
+      		  $(".typing ul li").removeClass("on");
+   		   $(".typing ul li").eq(liIndex).addClass("on");
+   		  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+   		     $(".typing ul li").eq(liIndex).append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+   		     typingIdx++; 
+   		   } else{ if(liIndex<liLength-1){
+   		     //다음문장으로  가기위해 인덱스를 1증가
+   		       liIndex++; 
+   		     //다음문장을 타이핑하기위한 셋팅
+   		        typingIdx=0;
+   		        typingBool = false; 
+   		        typingTxt = $(".typing-txt>ul>li").eq(liIndex).text(); 
+   		       
+   		     //다음문장 타이핑전 1초 쉰다
+   		         clearInterval(tyInt);
+   		          //타이핑종료
+   		     
+   		         setTimeout(function(){
+   		           //1초후에 다시 타이핑 반복 시작
+   		           tyInt = setInterval(typing,100);
+   		         },1000);
+   		        } else if(liIndex==liLength-1){
+   		          
+   		         //마지막 문장까지 써지면 반복종료
+   		           clearInterval(tyInt);
+   		        }
+   		    } 
+              
+
+            }, 5000);
+			
+			
+
+		}  
+
+
+</script>
 
 
 
