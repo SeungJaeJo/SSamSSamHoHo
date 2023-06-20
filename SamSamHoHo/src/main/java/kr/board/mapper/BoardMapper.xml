@@ -69,6 +69,15 @@
 		select * from tbl_keywords where category = #{category} and date = (select max(date) from tbl_keywords where category = #{category}) limit 30
 	</select>
 	
+	<!-- 뉴스 상세 페이지 -->
+	<select id="getNewsFull" parameterType="int" resultType="kr.board.entity.News">
+		select * from tbl_news where idx=#{idx}
+	</select>
+	
+	<!-- 뉴스 상세 페이지 속 리스트 -->
+	<select id="getPressList" parameterType="kr.board.entity.News" resultType="kr.board.entity.News">
+		select * from tbl_news where press=#{press} and date=#{date} order by idx desc
+	</select>
 </mapper>
 
 
