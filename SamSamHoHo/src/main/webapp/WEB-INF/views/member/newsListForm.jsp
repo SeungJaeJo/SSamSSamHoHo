@@ -531,7 +531,7 @@
 													$.each(data, function(index, obj){
 														listHtml += "<li class='card'>";
 														listHtml += "<h4 class='headline'>";
-														listHtml += "<a>"+obj.title+"</a></h4>";
+														listHtml +="<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a></h4>";
 														listHtml += "<div class='meta'>";
 														listHtml += "<p class='date'>"+obj.date+"</p>";
 														listHtml += "</div></div></li>";
