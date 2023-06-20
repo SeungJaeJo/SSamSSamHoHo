@@ -71,7 +71,10 @@ public interface BoardMapper {
 	// 검색했을때 리스트 총 개수~~
 	public int searchCt(String query);
 
-
+	// 뉴스 상세 페이지
+	public List<News> getNewsFull(int idx);
+	// 뉴스 상세 페이지 내 기사 목록
+	public List<News> getPressList(News newsdata);
 
 }
 

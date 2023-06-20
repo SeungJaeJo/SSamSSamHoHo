@@ -419,7 +419,8 @@
 													    listHtml += "<li class='card'>";
 													    listHtml += "<div class='card_body'>";
 													  	listHtml += "<h2 class='headline'>";
-													  	listHtml += "<a href=''>"+obj.title+"</a></h2>";
+													  	//listHtml += "<a href=''>"+obj.title+"</a></h2>";
+													  	listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a></h2>";
 													  	listHtml += "<p class='description sm_hidden'>"+obj.summ_content+"</p>";
 													  	listHtml += "<div class='meta'>";
 														listHtml += "<p class='source'>"+obj.press+"</p>";

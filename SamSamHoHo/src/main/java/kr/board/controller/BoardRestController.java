@@ -148,6 +148,19 @@ public class BoardRestController {
 		return list;
 	}
 	
+	// 뉴스 상세 페이지
+	@GetMapping("/getNewsFull")
+	public List<News> getNewsFull(@RequestParam("idx") int idx){
+		List<News> news = boardMapper.getNewsFull(idx);
+		return news;
+}
+	
+	// 뉴스 상세 페이지 내 기사 목록
+	@GetMapping("/getPressList")
+	public List<News> getPressList(News newsdata){
+		List<News> news = boardMapper.getPressList(newsdata);
+		return news;
+	}
 	
 	
 	
