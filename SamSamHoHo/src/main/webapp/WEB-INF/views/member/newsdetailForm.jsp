@@ -277,35 +277,21 @@
                                 </h3>
                                 <ul class="media_end_linked_list">
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061310312563527?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;4132d520a8bdab60&quot;}}">"싱하이밍,
-                                            1박 1000만원 울릉도서 접대 받아"</a></li>
+                                        
+                                           class="media_end_linked_item_inner" 
+                                         >싱하이밍</a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061310315169765?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;42ad620364fb76dd&quot;}}">'데뷔
-                                            14년차' 30대 여배우 음주운전…면허 취소 수준</a></li>
+                                           class="media_end_linked_item_inner" >데뷔
+                                          </a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061307441515621?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;b2bf479712b705c9&quot;}}">'대전판
-                                            돌려차기 사건' 20대 女…"윗입술 15방 꿰매고 머리에 멍"</a></li>
+                                      class="media_end_linked_item_inner">대전판
+                                         </a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061309015507212?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;0fff095be75e1305&quot;}}">"비행기
-                                            못 뜨게 해"…국토부 직원 딸 채용 탈락에 항공사 '발칵'</a></li>
+                                            class="media_end_linked_item_inner">"비행기
+                                          </a></li>
                                     <li class="media_end_linked_item"><a
-                                            href="https://view.asiae.co.kr/article/2023061308071506755?utm_source=news.naver.com&amp;utm_medium=referral&amp;utm_campaign=2023061409433318595"
-                                            target="_blank" class="media_end_linked_item_inner" data-clk="are.link"
-                                            data-gdid="277"
-                                            data-extra="{&quot;lk&quot;:{&quot;oid&quot;:&quot;277&quot;,&quot;aid&quot;:&quot;055763df73807101&quot;}}">[단독]예산
-                                            빠듯한데…장관 취임 1년 만에 해외 출장비 '3억'</a></li>
+                                          class="media_end_linked_item_inner" >예산
+                                           </a></li>
                                 </ul>
                             </div>
                             
@@ -1209,16 +1195,6 @@
             });
         });
 
-        $(document).ready(function () {
-            $('.btn_sub2').on('click', function () {
-                $('.modal-wrapper2').toggleClass('open2');
-                $('.ct_wrap').toggleClass('blur-it');
-
-                console.log("헤헤");
-
-                return false;
-            });
-        });
 
 
 
@@ -1236,30 +1212,7 @@
 
 
 
-   
 
-
-
-            $(document).ready(function () {
-                $('.btn_sub').on('click', function () {
-                    $('.modal-wrapper').toggleClass('open');
-                    $('.ct_wrap').toggleClass('blur-it');
-                    console.log("헤헤");
-
-                    return false;
-                });
-            });
-
-            $(document).ready(function () {
-                $('.btn_sub2').on('click', function () {
-                    $('.modal-wrapper2').toggleClass('open2');
-                    $('.ct_wrap').toggleClass('blur-it');
-
-                    console.log("헤헤");
-
-                    return false;
-                });
-            });
 
 
             $(document).ready(function () {
@@ -1303,6 +1256,32 @@
 
         </script>
 
+<script>
+
+
+
+
+$(document).ready(function () {
+    $('.btn_sub').on('click', function () {
+        $('.modal-wrapper').toggleClass('open');
+        $('.ct_wrap').toggleClass('blur-it');
+        console.log("wwww");
+
+        return false;
+    });
+});
+
+$(document).ready(function () {
+    $('.btn_sub2').on('click', function () {
+        $('.modal-wrapper2').toggleClass('open2');
+        $('.ct_wrap').toggleClass('blur-it');
+
+        console.log("dadad");
+
+        return false;
+    });
+});
+</script>
    
 
 
