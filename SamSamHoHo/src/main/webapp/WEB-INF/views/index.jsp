@@ -139,9 +139,7 @@
 							aria-label="검색">
 							<i class="ico_search"></i>
 						</button>
-						<button type="button" class="btn_navbar" onclick="">
-							<i class="ico_ham"></i>
-						</button>
+					
 					</div>
 
 
