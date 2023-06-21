@@ -221,6 +221,9 @@ section.chain:last-of-type {
 .mt12 {
     margin-top: 12px
 }
+.mt13 {
+    margin-top: 12px
+}
 
 .text_left {
     text-align: left!important
@@ -1092,6 +1095,19 @@ input[type=checkbox]:checked+label:before,input[type=radio]:checked+label:before
     justify-content: space-between;
     position: relative
 }
+.form_check2 {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    position: relative
+}
+
 
 .form_check input[type=checkbox] {
     left: 3px;
