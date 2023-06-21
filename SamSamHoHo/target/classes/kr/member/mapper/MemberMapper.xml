@@ -8,17 +8,18 @@
    
    
    <insert id="join" parameterType="kr.board.entity.Member">
-      insert into member(memIdx,memID, memPassword, memName, memAge, 
-      memGender, memEmail, memProfile)
-      values((select IFNULL(MAX(memIdx)+1, 1) from member mem),
-      #{memID}, #{memPassword}, #{memName}, #{memAge}, 
-      #{memGender}, #{memEmail}, #{memProfile})
+      insert into tbl_member(mem_id, mem_pw, mem_preference)
+      values(#{mem_id},#{mem_pw},#{mem_preference})
    </insert>
    
    
+
+   <!-- <select id="login" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
+      select * from member where mem_id= #{mem_id} and mem_pw=#{mem_pw} -->
    <select id="login" parameterType="kr.board.entity.Member" resultMap="memberMap">
       select * from tbl_member mem LEFT OUTER JOIN auth auth on 
       mem.mem_id = auth.mem_id where mem.mem_id = #{mem_id}
+
    </select>
    
    <update id="update" parameterType="kr.board.entity.Member">
@@ -26,8 +27,7 @@
       memAge = #{memAge}, memGender = #{memGender}, memEmail = #{memEmail}
       where memID = #{memID}
    </update>
-   
-   
+ 
    <delete id="authDelete">
    	  delete from auth where mem_id = #{mem_id}
    </delete>

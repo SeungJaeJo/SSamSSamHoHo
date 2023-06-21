@@ -24,6 +24,8 @@
 	<link rel="stylesheet" href="resources/assets/css/sidemenu2.css">
 	<link rel="stylesheet" href="resources/assets/css/search1.css">
 	<link rel="stylesheet" href="resources/assets/css/loading.css">
+
+	
 </head>
 
 <script type="text/javascript">
@@ -565,7 +567,7 @@
             <div class="modal2">
                 <div class="content2" id="zz2">
 				<!-- 기사원문 -->
-                <div class="media_end_head_top">
+                        <div class="media_end_head_top">
                     <a href="" class="media_end_head_top_logo" id = "pressName">
                         <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"
                             class="media_end_head_top_logo_img light_type">
@@ -599,6 +601,8 @@
                         </button>
 
                     </div>
+
+                   <!-- 콘텐츠 -->
                 </div>
             </div>
         </div>
