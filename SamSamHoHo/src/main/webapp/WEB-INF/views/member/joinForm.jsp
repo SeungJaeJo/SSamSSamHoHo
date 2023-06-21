@@ -41,7 +41,6 @@ function passwordCheck(){
 
 <body>
 
-
     <div id="wrapper">
 
 
@@ -78,8 +77,51 @@ function passwordCheck(){
                             placeholder="비밀번호를 확인하세요" title="비밀번호" maxlength="20">
                     </div>
                     <div class="form_check mt12">
-                        <span id="passMessage" style="color: rgb(20, 20, 20);"></span>
+                        <span id="passMessage" style="color: rgb(20, 20, 20);      padding-top: 10px;
+    padding-bottom: 20px;
+                         "></span>
                     </div>
+                    
+                                    <div class="form_check2 mt123">
+                    <span style="    margin-left: 90px;
+    margin-bottom: 10px;">관심있는 언론사를 선택해주세요!</span>
+                    
+                                     </div>
+                    
+                    
+                    
+                <div class="form_check mt12">
+           
+         
+		         	<label for="agree1" class="radio_box">
+						<input type="checkbox" id="agree1" name="agree" value="동의"  />
+						<span class="on"></span>
+						동의
+					</label>
+					<label for="agree2" class="radio_box">
+						<input type="checkbox" id="agree2" name="agree" value="미동의" />
+						<span class="on"></span>
+						미동의
+					</label>
+					<label for="agree3" class="radio_box">
+						<input type="checkbox" id="agree3" name="agree" value="미동의" />
+						<span class="on"></span>
+						미동의
+					</label>		
+					<label for="agree4" class="radio_box">
+						<input type="checkbox" id="agree4" name="agree" value="미동의" />
+						<span class="on"></span>
+						미동의
+					</label>		
+					<label for="agree5" class="radio_box">
+						<input type="checkbox" id="agree5" name="agree" value="미동의" />
+						<span class="on"></span>
+						미동의
+					</label>
+              
+                    
+                    </div>
+     
                     <div class="btn_group mt28">
                         <button type="submit" class="btn btn_black" onclick="">회원가입</button>
                     </div>
