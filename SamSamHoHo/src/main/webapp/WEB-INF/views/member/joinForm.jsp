@@ -71,6 +71,7 @@ function passwordCheck(){
 
 
                 <form class="form" action="${contextPath}/join.do" method="post">
+                  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     <div class="input_group">
                         <input class="form_control" type="text" name="memID" id="memID" value=""
                             placeholder="아이디를 입력하세요" title="아이디">

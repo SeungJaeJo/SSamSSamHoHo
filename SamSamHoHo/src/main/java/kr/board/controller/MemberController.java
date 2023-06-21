@@ -141,20 +141,20 @@ public class MemberController {
 //		System.out.println(m.toString());
 		
 		if(m.getMem_id() == null 	|| m.getMem_id().equals("")|| 
-			m.getMem_pw() == null 	|| m.getMem_pw().equals("") ) {
+			m.getMem_pw() == null 	|| m.getMem_pw().equals("")
+				 ) {
 			
 			rttr.addFlashAttribute("msgType", "실패 메세지");
 			rttr.addFlashAttribute("msg", "모든 정보를 입력하세요.");
+			System.out.println(m.getMem_preference());
 			
-			return "redirect:/joinForm.do";
+			return "redirect:/";
 		} else {
 			// 회원가입 가능
 			
 			
 			// 비밀번호 암호화 하여 회원가입
 			// 비밀번호를 암호화하여 저장
-			 String encyPw = pwEncoder.encode(m.getMem_pw());
-			 m.setMem_pw(encyPw);
 			
 			int cnt = memberMapper.join(m);
 			
@@ -175,15 +175,11 @@ public class MemberController {
 				
 				session.setAttribute("mvo", mvo);
 				
-				rttr.addFlashAttribute("msgType", "성공 메세지");
-				rttr.addFlashAttribute("msg", "환영합니다."+mvo.getMem_id()+"님");
 				
 				return "redirect:/";
 			} else {
 				// 회원가입 실패
 				
-				rttr.addFlashAttribute("msgType", "실패 메세지");
-				rttr.addFlashAttribute("msg", "회원가입에 실패했습니다.");
 				
 				return "redirect:/joinForm.do";
 			}
