@@ -105,8 +105,8 @@
 				keys.push(data[0].keyword.split(','))
 				
 				for(let i = 0; i<5; i++){
-					$('#contents > div.media_end_linked > ul > li:nth-child('+(i+1)+') > a').text(keys[0][i])
-					$('.keyword_'+(i+1)).text(keys[0][i])
+					$('#contents > div.media_end_linked > ul > li:nth-child('+(i+1)+') > a').text(keys[0][i].toUpperCase())
+					$('.keyword_'+(i+1)).text(keys[0][i].toUpperCase())
 					//#zz3 > div.media_end_head_title > div.typing > ul > li:nth-child(5)
 					//#zz3 > div.media_end_head_title > div.typing > ul > li.on
 				}
