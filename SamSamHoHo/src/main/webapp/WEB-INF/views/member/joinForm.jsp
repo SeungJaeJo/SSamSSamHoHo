@@ -15,6 +15,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="resources/assets/css/login.css">
     <link rel="stylesheet" href="resources/assets/css/login2.css">
+        <link rel="stylesheet" href="resources/assets/css/main8.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 <script>
@@ -90,33 +92,57 @@ function passwordCheck(){
                     
                     
                     
-                <div class="form_check mt12">
+                <div class="form_check mt12" style="margin-left: -20px;">
            
          
 		         	<label for="agree1" class="radio_box">
 						<input type="checkbox" id="agree1" name="agree" value="동의"  />
 						<span class="on"></span>
-						동의
+						<span class="ico_1" style="
+    width: 45px;
+    height: 45px;
+						"></span>
+						중앙일보
 					</label>
 					<label for="agree2" class="radio_box">
 						<input type="checkbox" id="agree2" name="agree" value="미동의" />
 						<span class="on"></span>
-						미동의
+												<span class="ico_2" style="
+    width: 45px;
+    height: 45px;
+						"></span>
+						중앙일보
 					</label>
 					<label for="agree3" class="radio_box">
 						<input type="checkbox" id="agree3" name="agree" value="미동의" />
-						<span class="on"></span>
-						미동의
+												<span class="on"></span>
+						
+												<span class="ico_3" style="
+    width: 45px;
+    height: 45px;
+						"></span>
+						중앙일보
 					</label>		
 					<label for="agree4" class="radio_box">
 						<input type="checkbox" id="agree4" name="agree" value="미동의" />
-						<span class="on"></span>
-						미동의
+												<span class="on"></span>
+						
+												<span class="ico_4" style="
+    width: 45px;
+    height: 45px;
+    background-size: 45px auto!important;
+    "></span>
+						중앙일보
 					</label>		
 					<label for="agree5" class="radio_box">
 						<input type="checkbox" id="agree5" name="agree" value="미동의" />
-						<span class="on"></span>
-						미동의
+												<span class="on"></span>
+						
+												<span class="ico_5" style="
+    width: 45px;
+    height: 45px;
+						"></span>
+						중앙일보
 					</label>
               
                     

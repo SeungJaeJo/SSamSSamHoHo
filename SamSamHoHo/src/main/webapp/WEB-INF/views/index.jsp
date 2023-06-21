@@ -107,7 +107,9 @@
 
 
 	<div id="wrapper">
+	
 
+      
 
 		<header id="header" class="header">
 			<div class="uh">
@@ -131,10 +133,23 @@
 						</ul>
 
 					</nav>
-					<ul class="logout sm_hidden">
+					       <c:if test="${empty mvo}">
+							<ul class="logout sm_hidden">
 						<li><a href="${contextPath}/loginForm.do">로그인</a></li>
 						<li><a href="${contextPath}/joinForm.do">회원가입</a></li>
-					</ul>
+									</ul>
+    					  </c:if>				
+            <c:if test="${not empty mvo}">
+                        	<ul class="logout sm_hidden">
+						<li><a> ${mvo.mem_id }님</a></li>
+						<li><a href="${contextPath}/logout.do">로그아웃</a></li>
+									</ul>
+                        
+      
+      
+			      </c:if>
+			      
+			
 					<div class="header_option_area">
 						<button type="button" class="btn_search" onclick=""
 							aria-label="검색">
@@ -142,7 +157,7 @@
 						</button>
 	
 					</div>
-					                 <div class="Ngnb_search _search_content is_hidden">
+					           <div class="Ngnb_search _search_content is_hidden">
                                          <form action="testSearch.do" class="search_form"
                           accept-charset="utf-8">
                             <div id="u_hs" class="u_hs ">

@@ -5132,7 +5132,7 @@ footer {
 .radio_box input[type="checkbox"] { display: none; }
 
 /* 선택되지 않은 라디오 버튼 스타일 꾸미기 */
-.on { width: 20px; height: 20px; background: #ddd; border-radius: 50%; position: absolute; top: 0; left: 0; }
+.on { width: 20px; height: 20px; background: #ddd; border-radius: 50%; position: absolute; top: 0; left: 0;  margin-top: 30px;}
 
 /* 선택된 라디오 버튼 스타일 꾸미기 */
 .radio_box input[type="checkbox"]:checked + .on { background: #f86480; }
