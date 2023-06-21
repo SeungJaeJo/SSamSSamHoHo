@@ -459,12 +459,12 @@
 													
 													if(index==0){
 														listHtml += "<li class='nav_item is_on2'>";
-														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword.toUpperCase()+"</a>";
 														listHtml += "</li>";
 														
 													}else{
 														listHtml += "<li class='nav_item'>";
-														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword+"</a>";
+														listHtml += "<a class='nav_link i"+(index+1)+"' id='key"+(index+1)+"'>"+(index+1)+". "+obj.keyword.toUpperCase()+"</a>";
 														listHtml += "</li>";
 													}
 															
