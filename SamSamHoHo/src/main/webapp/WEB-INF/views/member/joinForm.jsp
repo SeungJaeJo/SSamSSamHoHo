@@ -84,6 +84,8 @@ function passwordCheck(){
                         <input onkeyup="passwordCheck()" class="form_control" type="password" name="memPassword2" id="memPassword2"
                             placeholder="비밀번호를 확인하세요" title="비밀번호" maxlength="20">
                     </div>
+                
+					
                     <div class="form_check mt12">
                         <span id="passMessage" style="color: rgb(20, 20, 20);"></span>
                     </div>

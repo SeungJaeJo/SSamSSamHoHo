@@ -527,7 +527,7 @@
                     <div class="media_end_head_title">
                         <div class="typing-txt"> 
 								  <ul>
-								    <li>이 기사의 주요 키워드 입니다^</li>
+								    <li>이 기사의 주요 키워드 입니다 ^^</li>
 								    <li class="keyword_1">1. 우하하 </li>
 								    <li class="keyword_2">2. 우하하하</li>
 								    <li class="keyword_3">3. 아하하하 </li>

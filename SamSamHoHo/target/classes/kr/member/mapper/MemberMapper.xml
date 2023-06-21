@@ -3,18 +3,23 @@
 <mapper namespace="kr.member.mapper.MemberMapper">
    
    <select id="registerCheck" parameterType="String" resultType="kr.board.entity.Member">
-      select * from member where memID = #{memID}
+      select * from tbl_member where mem_id = #{mem_id}
    </select>
    
    
    <insert id="join" parameterType="kr.board.entity.Member">
-      insert into member(mem_id, mem_pw)
-      values(#{mem_id},#{mem_pw})
+      insert into tbl_member(mem_id, mem_pw, mem_preference)
+      values(#{mem_id},#{mem_pw},#{mem_preference})
    </insert>
    
    
-   <select id="login" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
-      select * from member where mem_id= #{mem_id} and mem_pw=#{mem_pw}
+
+   <!-- <select id="login" parameterType="kr.board.entity.Member" resultType="kr.board.entity.Member">
+      select * from member where mem_id= #{mem_id} and mem_pw=#{mem_pw} -->
+   <select id="login" parameterType="kr.board.entity.Member" resultMap="memberMap">
+      select * from tbl_member mem LEFT OUTER JOIN auth auth on 
+      mem.mem_id = auth.mem_id where mem.mem_id = #{mem_id}
+
    </select>
    
    <update id="update" parameterType="kr.board.entity.Member">
@@ -24,32 +29,25 @@
    </update>
  
    <delete id="authDelete">
-   	  delete from auth where memID = #{memID}
+   	  delete from auth where mem_id = #{mem_id}
    </delete>
    
    
    
    <resultMap type="kr.board.entity.Member" id="memberMap">
-      <id property="memIdx" column="memIdx" />
-      <result property="memID" column="memID" />
-      <result property="memPassword" column="memPassword" />
-      <result property="memName" column="memName" />
-      <result property="memAge" column="memAge" />
-      <result property="memGender" column="memGender" />
-      <result property="memEmail" column="memEmail" />
-      <result property="memProfile" column="memProfile" />
+      <result property="mem_id" column="mem_id" />
+      <result property="mem_pw" column="mem_pw" />
       <collection property="authList" resultMap="authMap"/>
    </resultMap>
    
    <resultMap type="kr.board.entity.Auth" id="authMap">
-      <id property="no" column="no" />
-      <result property="memID" column="memID" />
+      <result property="mem_id" column="mem_id" />
       <result property="auth" column="auth" />
    </resultMap>
    
    <select id="getMember" parameterType="kr.board.entity.Member" resultMap="memberMap">
-      select * from member mem LEFT OUTER JOIN auth auth on 
-      mem.memID = auth.memID where mem.memID = #{memID}
+      select * from tbl_member mem LEFT OUTER JOIN auth auth on 
+      mem.mem_id = auth.mem_id where mem.mem_id = #{mem_id}
    </select>
    
    
