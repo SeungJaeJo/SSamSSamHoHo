@@ -470,7 +470,8 @@
 								listHtml += "</h2>"
 								listHtml += "</div>";
 								listHtml += "<p class='description short'>";
-								listHtml += "<a href='${contextPath}/newsdetailForm.do' class='gogo'>"+obj.summ_content+"</a></p>";
+								listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.summ_content+"</a></p>";
+								
 								  	
 						  });
 						  console.log(data[0].category);
