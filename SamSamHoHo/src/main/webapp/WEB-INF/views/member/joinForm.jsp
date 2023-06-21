@@ -105,16 +105,16 @@ function passwordCheck(){
            
          
 		         	<label for="agree1" class="radio_box">
-						<input type="checkbox" id="agree1" name="agree" value="동의"  />
+						<input type="checkbox" id="agree1" name="pick" value="조선일보"  />
 						<span class="on"></span>
 						<span class="ico_1" style="
     width: 45px;
     height: 45px;
 						"></span>
-						중앙일보
+						조선일보
 					</label>
 					<label for="agree2" class="radio_box">
-						<input type="checkbox" id="agree2" name="agree" value="미동의" />
+						<input type="checkbox" id="agree2" name="pick" value="중앙일보" />
 						<span class="on"></span>
 												<span class="ico_2" style="
     width: 45px;
@@ -123,17 +123,17 @@ function passwordCheck(){
 						중앙일보
 					</label>
 					<label for="agree3" class="radio_box">
-						<input type="checkbox" id="agree3" name="agree" value="미동의" />
+						<input type="checkbox" id="agree3" name="pick" value="동아일보" />
 												<span class="on"></span>
 						
 												<span class="ico_3" style="
     width: 45px;
     height: 45px;
 						"></span>
-						중앙일보
+						동아일보
 					</label>		
 					<label for="agree4" class="radio_box">
-						<input type="checkbox" id="agree4" name="agree" value="미동의" />
+						<input type="checkbox" id="agree4" name="pick" value="경향신문" />
 												<span class="on"></span>
 						
 												<span class="ico_4" style="
@@ -141,17 +141,17 @@ function passwordCheck(){
     height: 45px;
     background-size: 45px auto!important;
     "></span>
-						중앙일보
+						경향신문
 					</label>		
 					<label for="agree5" class="radio_box">
-						<input type="checkbox" id="agree5" name="agree" value="미동의" />
+						<input type="checkbox" id="agree5" name="pick" value="한겨례" />
 												<span class="on"></span>
 						
 												<span class="ico_5" style="
     width: 45px;
     height: 45px;
 						"></span>
-						중앙일보
+						한겨례
 					</label>
               
                     
