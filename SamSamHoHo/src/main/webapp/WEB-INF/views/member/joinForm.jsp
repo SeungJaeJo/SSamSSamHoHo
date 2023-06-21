@@ -19,9 +19,16 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-<script>
+<script type="text/javascript">
 
-
+$(document).ready(function(){
+    if(${not empty msgType}){
+       if(${msgType eq "실패 메세지"}){
+          $("#messageType").attr("class", "modal-content panel-warning");
+       }
+       $("#myMessage").modal("show");
+    }
+ });
 
 
 function passwordCheck(){
@@ -63,7 +70,7 @@ function passwordCheck(){
 
 
 
-                <form class="form"method="">
+                <form class="form" action="${contextPath}/join.do" method="post">
                     <div class="input_group">
                         <input class="form_control" type="text" name="memID" id="memID" value=""
                             placeholder="아이디를 입력하세요" title="아이디">
@@ -78,6 +85,8 @@ function passwordCheck(){
                         <input onkeyup="passwordCheck()" class="form_control" type="password" name="memPassword2" id="memPassword2"
                             placeholder="비밀번호를 확인하세요" title="비밀번호" maxlength="20">
                     </div>
+                
+					
                     <div class="form_check mt12">
                         <span id="passMessage" style="color: rgb(20, 20, 20);      padding-top: 10px;
     padding-bottom: 20px;
