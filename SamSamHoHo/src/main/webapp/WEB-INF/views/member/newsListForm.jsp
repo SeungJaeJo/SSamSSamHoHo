@@ -45,11 +45,22 @@
 
                         </ul>
                     </nav>
-                    <ul class="logout sm_hidden">
-                        <li><a href="">로그인</a>
-                        </li>
-                        <li><a href="">회원가입</a></li>
-                    </ul>
+                   <c:if test="${empty mvo}">
+							<ul class="logout sm_hidden">
+						<li><a href="${contextPath}/loginForm.do">로그인</a></li>
+						<li><a href="${contextPath}/joinForm.do">회원가입</a></li>
+									</ul>
+    					  </c:if>				
+            <c:if test="${not empty mvo}">
+                        	<ul class="logout sm_hidden">
+						<li><a> ${mvo.mem_id }님</a></li>
+						<li><a href="${contextPath}/logout.do">로그아웃</a></li>
+									</ul>
+                        
+      
+      
+			      </c:if>
+			      
                   
                  
                     <div class="header_option_area">

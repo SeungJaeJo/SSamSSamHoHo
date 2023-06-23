@@ -164,10 +164,22 @@
 						</ul>
 
 					</nav>
-					<ul class="logout sm_hidden">
+ <c:if test="${empty mvo}">
+							<ul class="logout sm_hidden">
 						<li><a href="${contextPath}/loginForm.do">로그인</a></li>
 						<li><a href="${contextPath}/joinForm.do">회원가입</a></li>
-					</ul>
+									</ul>
+    					  </c:if>				
+            <c:if test="${not empty mvo}">
+                        	<ul class="logout sm_hidden">
+						<li><a> ${mvo.mem_id }님</a></li>
+						<li><a href="${contextPath}/logout.do">로그아웃</a></li>
+									</ul>
+                        
+      
+      
+			      </c:if>
+			      
 					<div class="header_option_area">
 						<button type="button" class="btn_search" onclick="">
 							<i class="ico_search"></i>
@@ -488,7 +500,7 @@
                             </ul>
                         </div>
                         <div class="input-div">
-                            <textarea placeholder="명령어를 입력해보세요 .^^ ex) 원문보여줘 ,이 뉴스의 키워드 보여줘, 홈화면으로 돌아가줘. ^^ "></textarea>
+                            <textarea placeholder="명령어를 입력해보세요 .^^ ex) 원문보여줘 ,이 뉴스의 키워드 보여줘. ^^ "></textarea>
                         </div>
 
                         <!-- format -->
