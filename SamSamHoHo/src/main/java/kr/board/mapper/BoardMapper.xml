@@ -2,29 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.board.mapper.BoardMapper">
 
-	<select id="boardList" resultType="kr.board.entity.Board">
-		select * from board order by indate desc
-	</select>
-	
-	<insert id="boardInsert" parameterType="kr.board.entity.Board">
-		insert into board(memID,title,content,writer)
-		values(#{memID},#{title},#{content},#{writer})
-	</insert>
-	
-	<select id="boardContent" parameterType="int" resultType="kr.board.entity.Board">
-		select * from board where idx = #{idx}	
-	</select>
-	
-	<delete id="boardDelete" parameterType="int">
-		delete from board where idx = #{idx}
-	</delete>
-	
-	<update id="boardUpdate" parameterType="kr.board.entity.Board">
-		update board
-		set title = #{title}, content = #{content}
-		where idx = #{idx}
-	</update>
-	
 	<select id="newsList" resultType="kr.board.entity.News">
 		select * from tbl_news where category = #{category} order by date desc limit 1
 	</select>
@@ -73,12 +50,13 @@
 		select distinct keyword from tbl_keywords
 	</select>
 	
-	<select id="search" resultType="kr.board.entity.News">
-		select * from tbl_news where keyword like CONCAT('%', #{keyword}, '%') order by date desc;	
-	</select>
-	
 	<select id="searchCt" resultType="kr.board.entity.News">
 		select count(*) from tbl_news where keyword like CONCAT('%', #{keyword}, '%') order by date desc;	
+	</select>
+	
+	<!-- 키워드 검색 -->
+	<select id="search" resultType="kr.board.entity.News">
+		select * from tbl_news where keyword like CONCAT('%', #{keyword}, '%') order by date desc;	
 	</select>
 	
 	<!-- 뉴스 상세 페이지 -->

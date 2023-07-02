@@ -14,15 +14,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <link rel="stylesheet" href="resources/assets/css/main.css">
 <link rel="stylesheet" href="resources/assets/css/main2.css">
 <link rel="stylesheet" href="resources/assets/css/main2_1.css">
-
 <link rel="stylesheet" href="resources/assets/css/main3.css">
 <link rel="stylesheet" href="resources/assets/css/main4.css">
 <link rel="stylesheet" href="resources/assets/css/main5.css">
@@ -30,10 +26,8 @@
 <link rel="stylesheet" href="resources/assets/css/main7.css">
 <link rel="stylesheet" href="resources/assets/css/main8.css">
 <link rel="stylesheet" href="resources/assets/css/main8_1.css">
-
 <link rel="stylesheet" href="resources/assets/css/main9.css">
 <link rel="stylesheet" href="resources/assets/css/search1.css">
-
 
 <style>
 .rolling_box {
@@ -105,85 +99,72 @@
 
 <body class="body" style="transform: none;">
 
-
 	<div id="wrapper">
-	
-
-      
 
 		<header id="header" class="header">
 			<div class="uh">
-				<a href = "${contextPath}" class="logo"> <img width="100" height="30"
-					src="resources/images/logo.png">
+				<a href="${contextPath}" class="logo"> <img width="100"
+					height="30" src="resources/images/logo.png">
 				</a>
 
 				<div class="header_right_area">
 					<nav class="header_nav">
 						<ul class="nav sm_hidden md_hidden">
-
-							<li class="nav_item"><a 
-								href="${contextPath}/newsListForm.do">정치</a></li>
-							<li class="nav_item"><a 
-								href="${contextPath}/newsListForm.do">사회</a></li>
-							<li class="nav_item"><a 
-								href="${contextPath}/newsListForm.do">경제</a></li>
-							<li class="nav_item"><a 
-								href="${contextPath}/newsListForm.do">국제</a></li>
-							
+							<li class="nav_item"><a href="${contextPath}/newsListForm.do">정치</a></li>
+							<li class="nav_item"><a href="${contextPath}/newsListForm.do">사회</a></li>
+							<li class="nav_item"><a href="${contextPath}/newsListForm.do">경제</a></li>
+							<li class="nav_item"><a href="${contextPath}/newsListForm.do">국제</a></li>
 						</ul>
 
 					</nav>
-					       <c:if test="${empty mvo}">
-							<ul class="logout sm_hidden">
-						<li><a href="${contextPath}/loginForm.do">로그인</a></li>
-						<li><a href="${contextPath}/joinForm.do">회원가입</a></li>
-									</ul>
-    					  </c:if>				
-            <c:if test="${not empty mvo}">
-                        	<ul class="logout sm_hidden">
-						<li><a> ${mvo.mem_id }님</a></li>
-						<li><a href="${contextPath}/logout.do">로그아웃</a></li>
-									</ul>
-                        
-      
-      
-			      </c:if>
-			      
-			
+					<c:if test="${empty mvo}">
+						<ul class="logout sm_hidden">
+							<li><a href="${contextPath}/loginForm.do">로그인</a></li>
+							<li><a href="${contextPath}/joinForm.do">회원가입</a></li>
+						</ul>
+					</c:if>
+					<c:if test="${not empty mvo}">
+						<ul class="logout sm_hidden">
+							<li><a> ${mvo.mem_id }님</a></li>
+							<li><a href="${contextPath}/logout.do">로그아웃</a></li>
+						</ul>
+					</c:if>
+
 					<div class="header_option_area">
 						<button type="button" class="btn_search" onclick=""
 							aria-label="검색">
 							<i class="ico_search"></i>
 						</button>
-	
-					</div>
-					           <div class="Ngnb_search _search_content is_hidden">
-                                         <form action="testSearch.do" class="search_form"
-                          accept-charset="utf-8">
-                            <div id="u_hs" class="u_hs ">
-                                <div class="u_hsw">
-                                    <div class="u_itw">
-                                        <input name="query" title="검색어 입력" class="u_it _search_input"
-                                            placeholder="뉴스 검색" maxlength="255" autocomplete="off"  onkeyup="filter()" type="text" id="u_it">
-                                        <button type="submit" class="u_hssbt u_hssbt_ss _submit_btn " onclick=""><span
-                                                class="u_vc">뉴스검색</span></button>
-                                    </div>
-                                </div>
-                                <button type="button" class="u_hssbt_close _close_btn " onclick="">닫기</button>
-                            </div>
-                            <div class="u_atcp_wrap">
-                                <div class="u_sggt_wrap2 _search_history">
-                                    <div class="sggt_fixer">
-                                        <div class="container55">
 
-                                                  <script type="text/javascript">
+					</div>
+					<div class="Ngnb_search _search_content is_hidden">
+						<form action="testSearch.do" class="search_form"
+							accept-charset="utf-8">
+							<div id="u_hs" class="u_hs ">
+								<div class="u_hsw">
+									<div class="u_itw">
+										<input name="query" title="검색어 입력" class="u_it _search_input"
+											placeholder="뉴스 검색" maxlength="255" autocomplete="off"
+											onkeyup="filter()" type="text" id="u_it">
+										<button type="submit" class="u_hssbt u_hssbt_ss _submit_btn "
+											onclick="">
+											<span class="u_vc">뉴스검색</span>
+										</button>
+									</div>
+								</div>
+								<button type="button" class="u_hssbt_close _close_btn "
+									onclick="">닫기</button>
+							</div>
+							<div class="u_atcp_wrap">
+								<div class="u_sggt_wrap2 _search_history">
+									<div class="sggt_fixer">
+										<div class="container55">
+
+											<script type="text/javascript">
 	                                        	
  											$(document).ready(function(){
-									  			
 									  			makeKSearch();
 										  	});   
-										  	
-											  
 											  function makeKSearch(){
 												  $.ajax({
 													  url : "board/keySearch",
@@ -193,48 +174,28 @@
 													  error : function(data){
 														  alert('error'); }
 													  });
-	                                        
 											  };
 											  
 											  function makeKSList(data){
-												  
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
-													
 													  listHtml += "<div class='item33'>";
 													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
 													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
 													  listHtml += "</div>";
-													  
 												  });
 												  $(".container55").html(listHtml);
 											  };
-	                                        
-	                                        
 	                                        </script>
-                                        </div>
-                                      
-                                    </div>
-                                </div>
+										</div>
 
-            
-                            </div>
-                        </form>
-                    </div>
-					
-
-
-
-
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-
 			</div>
-
-
-
-
-
-
 
 		</header>
 
@@ -247,205 +208,155 @@
 </style>
 		<style>
 </style>
-		<main role="main" id="container">
-			<section class="contents">
-
-				<section class="myfeed_top_wrap"></section>
-
-				<div class="row nologin">
-					<div class="col_lg3">
-						<section class="myfeed_local_news">
-							<header class="title_wrap">
-								<strong class="title">실시간 뉴스</strong>
-							</header>
-							<div class="subscribe_box2">
-								<div class="rolling_box">
-									<ul id="rolling_box">
-
-										<li class="card_sliding" id="first"><a href='' ></a></li>
-										<li class="" id="second"><a href=''></a></li>
-										<li class="" id="third"><a href=''></a></li>
-									</ul>
-								</div>
-
-
+<main role="main" id="container">
+	<section class="contents">
+		<section class="myfeed_top_wrap"></section>
+			<div class="row nologin">
+				<div class="col_lg3">
+					<section class="myfeed_local_news">
+						<header class="title_wrap">
+							<strong class="title">실시간 뉴스</strong>
+						</header>
+						<div class="subscribe_box2">
+							<div class="rolling_box">
+								<ul id="rolling_box">
+									<li class="card_sliding" id="first"><a href=''></a></li>
+									<li class="" id="second"><a href=''></a></li>
+									<li class="" id="third"><a href=''></a></li>
+								</ul>
 							</div>
+						</div>
 
 
-							<header class="title_wrap">
-								<strong class="title">언론사 별 뉴스</strong>
-							</header>
-							<div class="wrap2">
-								<div class="tab_menu">
-									<ul class="list">
-										<li class="is_on"><span href="#tab1" class="ico_1 btn_cate" id="whtjs">&nbsp;</span>
-											<a class="btn2">조선일보</a></li>
-										<li><span href="#tab2" class="ico_2 btn_cate" id="wnddkd">&nbsp;</span> <a
-											class="btn2">중앙일보</a></li>
-										<li><span href="#tab3" class="ico_3 btn_cate" id="ehddk">&nbsp;</span> <a
-											class="btn2" id="ehddk">동아일보</a></li>
-										<li><span href="#tab4" class="ico_4 btn_cate" id="rudgid">&nbsp;</span> <a
-											class="btn2" id="rudgid">경향신문</a></li>
-										<li><span href="#tab5" class="ico_5 btn_cate" id="gks">&nbsp;</span> <a
-											class="btn2" id="gks">한겨례</a></li>
-									</ul>
+						<header class="title_wrap">
+							<strong class="title">언론사 별 뉴스</strong>
+						</header>
+						<div class="wrap2">
+							<div class="tab_menu">
+								<ul class="list">
+									<li class="is_on"><span href="#tab1"
+										class="ico_1 btn_cate" id="whtjs">&nbsp;</span> <a
+										class="btn2">조선일보</a></li>
+									<li><span href="#tab2" class="ico_2 btn_cate" id="wnddkd">&nbsp;</span>
+										<a class="btn2">중앙일보</a></li>
+									<li><span href="#tab3" class="ico_3 btn_cate" id="ehddk">&nbsp;</span>
+										<a class="btn2" id="ehddk">동아일보</a></li>
+									<li><span href="#tab4" class="ico_4 btn_cate" id="rudgid">&nbsp;</span>
+										<a class="btn2" id="rudgid">경향신문</a></li>
+									<li><span href="#tab5" class="ico_5 btn_cate" id="gks">&nbsp;</span>
+										<a class="btn2" id="gks">한겨례</a></li>
+								</ul>
 
-									<div class="cont_area">
-                                        <div id="tab1" class="cont" style="display:block;">
-                                            <div class="list_item">
-                                                <div class="flex_area">
-                                                    <span href="#tab1" class="ico_1"
-                                                        style="width: 55px; height: 55px;">&nbsp;</span>
-                                                    <span style="font-weight: bold;">조선일보</span>
-                                                </div>
-										
-											
-												<div class="Pnews">
-											
-												
-												<script type="text/javascript">
-  
-									  	  var csrfHeaderName = "${_csrf.headerName}";
-									  	  var csrfTokenValue = "${_csrf.token}";
-									  
-									  	  $(document).ready(function(){
-									  		  // HTML이 다 로딩되고 작동하는 함수
-									  		
-									  	var press = "조선일보";
-									  	$(".btn_cate").on('click',function(e){
-								  		  if(e.target.id === 'whtjs'){
-								  			  press = "조선일보";
-								  		  }else if(e.target.id === 'wnddkd'){
-								  			  press = "중앙일보";
-								  		  }else if(e.target.id === 'ehddk'){
-								  			  press = "동아일보";
-								  		  }else if(e.target.id === 'rudgid'){
-								  			  press = "경향신문";
-								  		  }else{
-								  			  press = "한겨레";
-								  		  }
-									  		  PList(press);
-									  	})
-									  	PList(press)
-									  	
-									  	  });
-										  function PList(press){
-											  
-											  $.ajax({
-												  url : "board/Pnews",
-												  data : {
-													  press : press
-												  },
-												  type : "get",
-												  dataType : "json",
-												  success : makeP,
-												  error : function(){ alert("error"); }
-											  });
-										  }
-											  	
-										                        
-										  function makeP(data){ 
-											  console.log(data);
-											  var listHtml = "";
-											
-											  $.each(data, function(index, obj){
-											
-												  	listHtml += "<p class='description short'>";
-													listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a>";
-													listHtml += "</p>"
-												  	
-											  });
-											  
-											  $(".Pnews").html(listHtml);
-											  
-											 	/* $("#press_name").text(press); */
-											  /* $("#cng_icon").attr('class','ico_2'); */
-											  
-										
-										  }
-									  </script>
-												
+								<div class="cont_area">
+									<div id="tab1" class="cont" style="display: block;">
+										<div class="list_item">
+											<div class="flex_area">
+												<span href="#tab1" class="ico_1" style="width: 55px; height: 55px;">&nbsp;</span> 
+												<span style="font-weight: bold;">조선일보</span>
 											</div>
-
-
-											</div>
-
-
-										</div> 
-										 <div id="tab2" class="cont">
-											<div class="list_item">
-												<div class="flex_area">
-													<span href="#tab1" class="ico_2"
-														style="width: 55px; height: 55px;">&nbsp;</span> <span
-														style="font-weight: bold;">중앙일보</span>
-												</div>
-												
-												
-												<div class="Pnews">
-												
-											
-											</div>
-
-
-											</div>
-										</div>
-										<div id="tab3" class="cont">
-											<div class="list_item">
-												<div class="flex_area">
-													<span href="#tab1" class="ico_3"
-														style="width: 55px; height: 55px;">&nbsp;</span> <span
-														style="font-weight: bold;">동아일보</span>
-												</div>
 											<div class="Pnews">
-											
-											</div>
-
+												<script type="text/javascript">
+													 
+											  	  var csrfHeaderName = "${_csrf.headerName}";
+											  	  var csrfTokenValue = "${_csrf.token}";
+											  
+											  	  $(document).ready(function(){
+											  		  // HTML이 다 로딩되고 작동하는 함수
+								  		
+												  	var press = "조선일보";
+												  	$(".btn_cate").on('click',function(e){
+											  		  if(e.target.id === 'whtjs'){
+											  			  press = "조선일보";
+											  		  }else if(e.target.id === 'wnddkd'){
+											  			  press = "중앙일보";
+											  		  }else if(e.target.id === 'ehddk'){
+											  			  press = "동아일보";
+											  		  }else if(e.target.id === 'rudgid'){
+											  			  press = "경향신문";
+											  		  }else{
+											  			  press = "한겨레";
+											  		  }
+												  		  PList(press);
+												  	})
+												  	PList(press)
+								  			  	  });
+												  function PList(press){
+													  
+													  $.ajax({
+														  url : "board/Pnews",
+														  data : {
+															  press : press
+														  },
+														  type : "get",
+														  dataType : "json",
+														  success : makeP,
+														  error : function(){ alert("error"); }
+													  });
+												  }
+													 	
+												                        
+												  function makeP(data){ 
+													  console.log(data);
+													  var listHtml = "";
+													
+													  $.each(data, function(index, obj){
+														  	listHtml += "<p class='description short'>";
+															listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.title+"</a>";
+															listHtml += "</p>"
+													  });
+													  
+													  $(".Pnews").html(listHtml);
+												  }
+								  				</script>
 											</div>
 										</div>
-										<div id="tab4" class="cont">
-											<div class="list_item">
-												<div class="flex_area">
-													<span href="#tab1" class="ico_4"
-														style="width: 55px; height: 55px;">&nbsp;</span> <span
-														style="font-weight: bold;">경향신문</span>
-												</div>
-												
-												<div class="Pnews">
-											
+									</div>
+									<div id="tab2" class="cont">
+										<div class="list_item">
+											<div class="flex_area">
+												<span href="#tab1" class="ico_2" style="width: 55px; height: 55px;">&nbsp;</span> 
+												<span style="font-weight: bold;">중앙일보</span>
 											</div>
-
-
-											</div>
+											<div class="Pnews"></div>
 										</div>
-										<div id="tab5" class="cont">
-											<div class="list_item">
-												<div class="flex_area">
-													<span href="#tab1" class="ico_5"
-														style="width: 55px; height: 55px;">&nbsp;</span> <span
-														style="font-weight: bold;">한겨례</span>
-												</div>
-												
-												<div class="Pnews">
-											
+									</div>
+									<div id="tab3" class="cont">
+										<div class="list_item">
+											<div class="flex_area">
+												<span href="#tab1" class="ico_3"
+													style="width: 55px; height: 55px;">&nbsp;</span> <span
+													style="font-weight: bold;">동아일보</span>
 											</div>
-
-
+											<div class="Pnews"></div>
+										</div>
+									</div>
+									<div id="tab4" class="cont">
+										<div class="list_item">
+											<div class="flex_area">
+												<span href="#tab1" class="ico_4"
+													style="width: 55px; height: 55px;">&nbsp;</span> <span
+													style="font-weight: bold;">경향신문</span>
 											</div>
+											<div class="Pnews"></div>
+										</div>
+									</div>
+									<div id="tab5" class="cont">
+										<div class="list_item">
+											<div class="flex_area">
+												<span href="#tab1" class="ico_5"
+													style="width: 55px; height: 55px;">&nbsp;</span> <span
+													style="font-weight: bold;">한겨례</span>
+											</div>
+											<div class="Pnews"></div>
 										</div>
 									</div>
 								</div>
 							</div>
-
-
-
-
-
-
-						</section>
-						
+						</div>
+					</section>
 					</div>
-					
-					
+
+
 					<script type="text/javascript">
   
 				  	  var csrfHeaderName = "${_csrf.headerName}";
@@ -486,8 +397,6 @@
 								listHtml += "</div>";
 								listHtml += "<p class='description short'>";
 								listHtml += "<a href='${contextPath}/newsdetailForm.do?idx=" + obj.idx + "'>"+obj.summ_content+"</a></p>";
-								
-								  	
 						  });
 						  console.log(data[0].category);
 						  if(data[0].category == "정치"){
@@ -499,8 +408,6 @@
 						  }else if(data[0].category == "국제"){
 						  	$("#view4").html(listHtml);
 						  } 
-						  
-						 
 					
 					  }
 				  </script>
@@ -518,161 +425,133 @@
 												<div class='list_item view' id="view1">
 													<ul class="row card_list">
 														<li class='col_lg4 color_set1'>
-															<div class='list_item'>
-
-																
-															</div> 
-
+															<div class='list_item'></div>
 														</li>
 												</div>
 										</ul>
 									</div>
 									<header class="title_wrap">
-                                        <strong class="title"><a href="">경제</a></strong>
-                                    </header>
-                              
-                                    <div class="swiper-slide"> 
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item view" id="view3">
-                                                
-                                                </div>
-                                            </li>
-                                       
-                                          
-                                        </ul>
-                                    </div><!-- 정치 부분 DIV 끝-->
-                                 
-       
-                                </div><!-- swiper-wrapper 끝 -->
-                            </div><!--swiper-container 끝 -->
-                        </section> <!--myfeed_popular_subscribe 끝 -->
+										<strong class="title"><a href="">경제</a></strong>
+									</header>
 
-                    </div> <!-- col_lg9끝 -->
-                    <div class="col_lg9">
-                        <section class="myfeed_popular_subscribe">
-                            <header class="title_wrap">
-                                <strong class="title"><a href="">사회</a></strong>
-                            </header>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item view" id="view2">
-                                                   
-
-                                                </div>
-                                            </li>
-                                       
-                                         
-                                      
-                                        </ul>
-                                       
-                                    </div>
-                                    <header class="title_wrap">
-                                        <strong class="title"><a href="">국제</a></strong>
-                                    </header>
-                                    <div class="swiper-slide">
-                                        <ul class="row card_list">
-                                            <li class="col_lg4 color_set1">
-                                                <div class="list_item view" id="view4">
-                                                    
-                                                      
-
-                                                </div>
-                                            </li>
-                                            
-                                        
-                                         
-                                        </ul>
-                                    </div>
-       
-                                </div>
-                            </div>
-                        </section>
-
-                    </div>
-                    <div class="col_lg4455">
-                    </div>
+									<div class="swiper-slide">
+										<ul class="row card_list">
+											<li class="col_lg4 color_set1">
+												<div class="list_item view" id="view3"></div>
+											</li>
+										</ul>
+									</div>
+									<!-- 정치 부분 DIV 끝-->
 
 
+								</div>
+								<!-- swiper-wrapper 끝 -->
+							</div>
+							<!--swiper-container 끝 -->
+						</section>
+						<!--myfeed_popular_subscribe 끝 -->
 
-                   
-                    <header id="sticky" class="section_header_wrap m_unsticky">
-                        <h1 class="section_title">삼삼한&nbsp;분석</h1>
-                    </header>
+					</div>
+					<!-- col_lg9끝 -->
+					<div class="col_lg9">
+						<section class="myfeed_popular_subscribe">
+							<header class="title_wrap">
+								<strong class="title"><a href="">사회</a></strong>
+							</header>
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<ul class="row card_list">
+											<li class="col_lg4 color_set1">
+												<div class="list_item view" id="view2"></div>
+											</li>
+										</ul>
 
-                    <div class="col_lg3355">
-                        <section class="myfeed_local_news">
-                            <header class="title_wrap2">
-                                <strong class="title">오늘의 키워드</strong>
-                            </header>
-                            <div class="wrap3">
-                                <div class="tab_menu2">
-                                    <ul class="list2">
-                                    
-                                         <li class="is_on2">
-                                            <span href="#tab_1" class="ico1">&nbsp;</span>
-                                            <a class="btn3" id="all">전체</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab_2" class="ico2">&nbsp;</span>
-                                            <a class="btn3" id="pol">정치</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab_3" class="ico3">&nbsp;</span>
-                                            <a class="btn3" id="soc">사회</a>
-                                        </li>
-                                        <li>
-                                            <span href="#tab_4" class="ico4">&nbsp;</span>
-                                            <a class="btn3" id="eco">경제</a>
-                                        </li>
-                                        <li> 
-                                            <span href="#tab_5" class="ico5">&nbsp;</span>
-                                            <a class="btn3" id="inter">국제</a>
-                                        </li>
-                                     
-                                    </ul>
-																
-									
-                                    <div class="cont_area2">
-                                        <div id="tab_1" class="cont2" style="display:block;">
-                                                <svg href="#tab_1" width="700" height="300">                              
-                                                	<g transform= "translate(260,155)" id="keywordlist1">
+									</div>
+									<header class="title_wrap">
+										<strong class="title"><a href="">국제</a></strong>
+									</header>
+									<div class="swiper-slide">
+										<ul class="row card_list">
+											<li class="col_lg4 color_set1">
+												<div class="list_item view" id="view4"></div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+
+					</div>
+					<div class="col_lg4455"></div>
+
+
+					<header id="sticky" class="section_header_wrap m_unsticky">
+						<h1 class="section_title">삼삼한&nbsp;분석</h1>
+					</header>
+
+					<div class="col_lg3355">
+						<section class="myfeed_local_news">
+							<header class="title_wrap2">
+								<strong class="title">오늘의 키워드</strong>
+							</header>
+							<div class="wrap3">
+								<div class="tab_menu2">
+									<ul class="list2">
+
+										<li class="is_on2"><span href="#tab_1" class="ico1">&nbsp;</span>
+											<a class="btn3" id="all">전체</a></li>
+										<li><span href="#tab_2" class="ico2">&nbsp;</span> <a
+											class="btn3" id="pol">정치</a></li>
+										<li><span href="#tab_3" class="ico3">&nbsp;</span> <a
+											class="btn3" id="soc">사회</a></li>
+										<li><span href="#tab_4" class="ico4">&nbsp;</span> <a
+											class="btn3" id="eco">경제</a></li>
+										<li><span href="#tab_5" class="ico5">&nbsp;</span> <a
+											class="btn3" id="inter">국제</a></li>
+									</ul>
+
+									<div class="cont_area2">
+										<div id="tab_1" class="cont2" style="display: block;">
+											<svg href="#tab_1" width="700" height="300">                              
+                                                	<g
+													transform="translate(260,155)" id="keywordlist1">
 	                                       				
                                                     </g>
                                                 </svg>
 
-                                        </div>
-                                        <div id="tab_2" class="cont2">
-                                            <svg href="#tab_1" width="700" height="300">
-                                                <g transform="translate(260,155)" id="keywordlist2">
-                                               
+										</div>
+										<div id="tab_2" class="cont2">
+											<svg href="#tab_1" width="700" height="300">
+                                                <g
+													transform="translate(260,155)" id="keywordlist2">
                                                 </g>
                                             </svg>
-                                        </div>
-                                        <div id="tab_3" class="cont2">
-                                            <svg href="#tab_1" width="700" height="300">
-                                                <g transform="translate(260,155)" id="keywordlist3">
+										</div>
+										<div id="tab_3" class="cont2">
+											<svg href="#tab_1" width="700" height="300">
+                                                <g
+													transform="translate(260,155)" id="keywordlist3">
                                                 </g>
                                             </svg>
-                                        </div>
-                                        <div id="tab_4" class="cont2">
-                                            <svg href="#tab_1" width="700" height="300">
-                                                <g transform="translate(260,155)" id="keywordlist4">
+										</div>
+										<div id="tab_4" class="cont2">
+											<svg href="#tab_1" width="700" height="300">
+                                                <g
+													transform="translate(260,155)" id="keywordlist4">
                                                 </g>
                                             </svg>
-                                        </div>
-                                      
-                                       <div id="tab_5" class="cont2">
-                    <svg href="#tab_1" width="700" height="300">
-                                                <g transform="translate(260,155)" id="keywordlist5">
+										</div>
+
+										<div id="tab_5" class="cont2">
+											<svg href="#tab_1" width="700" height="300">
+                                                <g
+													transform="translate(260,155)" id="keywordlist5">
                                                 </g>
                                             </svg>
-                                        </div>
-                                        
-                                      <script> 
+										</div>
+
+										<script> 
                                     /*     	var tab_5 = document.querySelectorAll('#tab_5 text');
                                         	console.log("-------------------------");
                                         	
@@ -682,171 +561,134 @@
                                         		tab_5[0].innerHTML = data[]DB에서가지고온값
                                         	} */
                                         </script>
-                                    </div>
-                                </div>
-                            </div>
+									</div>
+								</div>
+							</div>
 
-                        </section>
+						</section>
 
-                    </div>
-                    <div class="col_lg9915">
-                        <section class="myfeed_popular_subscribe">
-                            <header class="title_wrap2">
-                                <strong class="title"><a href="">오늘의 뉴스 현황</a></strong>
-                            </header>
+					</div>
+					<div class="col_lg9915">
+						<section class="myfeed_popular_subscribe">
+							<header class="title_wrap2">
+								<strong class="title"><a href="">오늘의 뉴스 현황</a></strong>
+							</header>
 
-                 
-                            <div class="graph-status">
-                        
-                        
-                        
-                        
-        
-                                    <div class="info" id="barView">
-                                       
-                                    </div>
-                                    <div style="width: 300px; height: 300px;">
-    
-    
-                                        <canvas id="myChart" width="300" height="300"></canvas>
-    
-                                    </div>
-                         </div>
-                                    <script type="text/javascript">
-                                    
-                                    
-                                    
-                                    BarList();
-                                    function BarList(){
-                                   
-                                    	$.ajax({
-              							  url : "board/BarPress",
-              							  type : "get",
-              							  dataType : "json",
-              							  success : makeBar,
-              							  error : function(){ alert("error"); }
-              						  });
-                                    	
-                                    	
-                                    } 
-                                   
-                                    function makeBar(data){
-                                    	 var num_cnt2 = [];
-                                         var cate_cnt = [];
-                                    	 var date;
-                                       	 var total;
-      								 for(var i = 0; i < data.length; i++){
-      									 num_cnt2 += data[i].count+",";
-      									cate_cnt += data[i].category+","; 
-      									date = data[0].date;
-      									total = data[0].total_count;
-      								 }
-      								 	
-      									var nu2 = num_cnt2.split(",");
-      									var pr2 = cate_cnt.split(",");
-      									pr2.pop();
-      									nu2.pop();
-                                       	console.log(pr2);
-                                       	console.log(nu2);
-      									
-                                       	listHtml = "";
-                                       	listHtml += "<p class='date'>"+date+"</p>";
-                                       	listHtml += "<p class='total'><b id='news-issue-count'>"+total+"</b>건</p>";
-                                        
-                                    	$("#barView").html(listHtml);
-                                   	 
-                                   	
-                                        var context = document
-                                            .getElementById('myChart')
-                                            .getContext('2d'); 
-                                        var myChart = new Chart(context, {
-                                            type: 'bar', // 차트의 형태
-                                            data: { // 차트에 들어갈 데이터
-                                                labels: pr2,
-                                                datasets: [
-                                                    { //데이터
-                                                         labels : '경제', 
-            
-                                                        fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                                                        data: nu2,
-                                                        backgroundColor: [
-                                                            //색상
-                                                            'rgba(255, 99, 132, 0.2)',
-                                                            'rgba(54, 162, 235, 0.2)',
-                                                            'rgba(255, 206, 86, 0.2)',
-                                                            'rgba(75, 192, 192, 0.2)', 
-                                                           
-   
-                                                        ],
-                                                        borderColor: [
-                                                            //경계선 색상
-                                                            'rgba(255, 99, 132, 1)',
-                                                            'rgba(54, 162, 235, 1)',
-                                                            'rgba(255, 206, 86, 1)',
-                                                            'rgba(75, 192, 192, 1)', 
-                                                            
-  
-                                                        ],
-                                                        borderWidth: 1 //경계선 굵기
-                                                    },
-            
-                                                ]
-                                            },
-                                            options: {
-                                            	
-                                                legend: {
-                                                    display: false
-                                                },
-                                                scales: {
-                                                    yAxes: [
-                                                        {
-                                                            gridLines: {
-									                            display: false,
-									                        },
-                                                            ticks: {
-                                                                beginAtZero: true
-                                                            }
-                                                        }
-                                                    ]
-                                                }
-                                            }
-                                        });
-                                    }
-                                    
-                                    
-                                    </script>
+							<div class="graph-status">
+
+								<div class="info" id="barView"></div>
+								<div style="width: 300px; height: 300px;">
+									<canvas id="myChart" width="300" height="300"></canvas>
+								</div>
+							</div>
+							<script type="text/javascript">
+                              BarList();
+                              function BarList(){
+                              	$.ajax({
+        							  url : "board/BarPress",
+        							  type : "get",
+        							  dataType : "json",
+        							  success : makeBar,
+        							  error : function(){ alert("error"); }
+        						  });
+                              } 
+                             
+                              function makeBar(data){
+                              	 var num_cnt2 = [];
+                                   var cate_cnt = [];
+                              	 var date;
+                                 	 var total;
+								 for(var i = 0; i < data.length; i++){
+									 num_cnt2 += data[i].count+",";
+									cate_cnt += data[i].category+","; 
+									date = data[0].date;
+									total = data[0].total_count;
+								 }
+								 	
+									var nu2 = num_cnt2.split(",");
+									var pr2 = cate_cnt.split(",");
+									pr2.pop();
+									nu2.pop();
+                                 	console.log(pr2);
+                                 	console.log(nu2);
+									
+                                 	listHtml = "";
+                                 	listHtml += "<p class='date'>"+date+"</p>";
+                                 	listHtml += "<p class='total'><b id='news-issue-count'>"+total+"</b>건</p>";
+                                  
+                              	$("#barView").html(listHtml);
+                             	 
+                             	
+                                  var context = document
+                                      .getElementById('myChart')
+                                      .getContext('2d'); 
+                                  var myChart = new Chart(context, {
+                                      type: 'bar', // 차트의 형태
+                                      data: { // 차트에 들어갈 데이터
+                                          labels: pr2,
+                                          datasets: [
+                                              { //데이터
+                                                   labels : '경제', 
+      
+                                                  fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                                                  data: nu2,
+                                                  backgroundColor: [
+                                                      //색상
+                                                      'rgba(255, 99, 132, 0.2)',
+                                                      'rgba(54, 162, 235, 0.2)',
+                                                      'rgba(255, 206, 86, 0.2)',
+                                                      'rgba(75, 192, 192, 0.2)', 
+                                                  ],
+                                                  borderColor: [
+                                                      //경계선 색상
+                                                      'rgba(255, 99, 132, 1)',
+                                                      'rgba(54, 162, 235, 1)',
+                                                      'rgba(255, 206, 86, 1)',
+                                                      'rgba(75, 192, 192, 1)', 
+                                                  ],
+                                                  borderWidth: 1 //경계선 굵기
+                                              },
+                                          ]
+                                      },
+                                      options: {
+                                          legend: {
+                                              display: false
+                                          },
+                                          scales: {yAxes: [{
+                                                      gridLines: {display: false,},
+                                                      ticks: {beginAtZero: true}
+                                                  	 }]}
+                                      	  }	
+                                  });
+                              }
+                              
+                              </script>
+
+						</section>
+					</div>
+
+					<div class="col_lg9915">
+						<section class="myfeed_popular_subscribe">
+							<header class="title_wrap2">
+								<strong class="title"><a href="">언론사 등록 현황</a></strong>
+							</header>
+
+							<div class="graph-status">
 
 
+								<div class="info">
+									<p class="date"></p>
+									<p class="total">
+										<b id="news-issue-count"></b>
+									</p>
+								</div>
+								<div style="width: 300px; height: 300px;">
 
-                            </section>
-                            </div>
+									<canvas id="myChart2" width="300" height="300"></canvas>
 
-                            <div class="col_lg9915">
-                                <section class="myfeed_popular_subscribe">
-                                    <header class="title_wrap2">
-                                        <strong class="title"><a href="">언론사 등록 현황</a></strong>
-                                    </header>
-        
-                         
-                                    <div class="graph-status">
-                                
-                                
-                                
-                                
-                
-                                            <div class="info">
-                                                <p class="date">
-                                                </p>
-                                                <p class="total"><b id="news-issue-count"></b></p>
-                                            </div>
-                                            <div style="width: 300px; height: 300px;">
-            
-            
-                                                <canvas id="myChart2" width="300" height="300"></canvas>
-            
-                                            </div>
-                                 </div>
-                                            <script type="text/javascript">
+								</div>
+							</div>
+							<script type="text/javascript">
                                             cntList();
                                             function cntList(){
                                            
@@ -858,13 +700,11 @@
                       							  error : function(){ alert("error"); }
                       						  });
                                             	
-                                            	
                                             } 
                                            
                                             function makeChart(data){
                                             	 var num_cnt = [];
                                                  var press_cnt= [];
-                                            	
 	                                           	
 	          								 for(var i = 0; i < data.length; i++){
 	          									 num_cnt += data[i].count+",";
@@ -889,45 +729,22 @@
                                                                 "rgb(255, 205, 86)",
                                                                  "rgb(0,0 , 56)",
                                                              "rgb(0, 205, 0)"
-
                                                             ]
-                                                            
                                                         }]
                                                     }
-                                                 
-                                                    
                                                 });
-	          									
-	                                           	 
-	                                           	 
-                                           	 
-                                           	
                                             }
-												
-												
-												  
-                                            
                                             </script>
-        
-        
-        
-                                    </section>
-                                    </div>
+						</section>
+					</div>
+				</div>
+		</main>
 
-
-
-
-
-
-
-                </div>
-        </main>
-        
-         <script>
+		<script>
 		    const tabList2 = document.querySelectorAll('.tab_menu2 .list2 li');
 		    const contents2 = document.querySelectorAll('.tab_menu2 .cont_area2 .cont2');
 		    let activeCont2 = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
-		    
+		   
 		
 		    for (var i = 0; i < tabList2.length; i++) {
 		        tabList2[i].querySelector('.ico' + (i + 1)).addEventListener('click', function (e) {
@@ -952,259 +769,257 @@
 		        });
 		    }
 	</script>
-        
-        
-        
-                 	<script type="text/javascript">                                                		
-															//makeKey(category);
-																
-																var liElement = $('.list2 li');
-																liElement.click(function(e) {
-  																var idValue = $(this).find('.btn3').attr('id');
-																//btn3.addEventListener('click',function(e){
-																// console.log(e.target.id)
-																console.log(this.id)
-																console.log("88888888")
-																console.log(idValue)
-														  		  if(idValue === 'all'){
-														  			category = "전체";
-														  		  }else if(idValue === 'pol'){
-														  			category = "정치";
-														  		  }else if(idValue === 'soc'){
-														  			category = "사회";
-														  		  }else if(idValue === 'eco'){
-														  			category = "경제";
-														  		  }else{
-														  			category = "국제"; 
-														  		  }
-														  		  makeKey(category);
-														  		 
-															  	}); 
-															function makeKey(category){
-																//console.log("카테고리 : "+category)
-																 $.ajax({
-																	  url : "board/keyword_fifty",
-																	  data : {
-																		  category : category
-																	  },
-																	  type : "get",
-																	  dataType : "json",
-																	  success :function(data){makeKList(data)},
-																		  
-																	  error : function(){ alert("error"); }
-																  });
-																																														
-															}	
-															function makeKList(data){
-																console.log("mkList함수 실행");
-																console.log(data)
-																console.log(data[0].category)
-																// 순위별 RGB 값을 정의
-																var colors = [
-
-																  { rank: 1, rgb: 'rgb(255, 99, 72)', fsize:40 },    // blue
-																  { rank: 2, rgb: 'rgb(255, 99, 72)', fsize:39 },    
-																  { rank: 3, rgb: 'rgb(255, 99, 72)', fsize:38 },    
-																  { rank: 4, rgb: 'rgb(255, 99, 72)', fsize:37 },
-																  
-																  { rank: 5, rgb: 'rgb(83, 82, 237)', fsize:36 },    // red
-																  { rank: 6, rgb: 'rgb(83, 82, 237)', fsize:35 },    
-																  { rank: 7, rgb: 'rgb(83, 82, 237)', fsize:34 },   
-																  { rank: 8, rgb: 'rgb(83, 82, 237)', fsize:33 },
-																  
-																  { rank: 9, rgb: 'rgb(120, 224, 143)', fsize:32 },   // em
-																  { rank: 10, rgb: 'rgb(120, 224, 143)', fsize:31 },   
-																  { rank: 11, rgb: 'rgb(120, 224, 143)', fsize:30 },   
-																  { rank: 12, rgb: 'rgb(120, 224, 143)', fsize:29 },
-																  
-																  { rank: 13, rgb: 'rgb(255, 165, 2)', fsize:28 },   // y
-																  { rank: 14, rgb: 'rgb(255, 165, 2)', fsize:27 },   
-																  { rank: 15, rgb: 'rgb(255, 165, 2)', fsize:26 },   
-																  { rank: 16, rgb: 'rgb(255, 165, 2)', fsize:25 },   
-																  { rank: 17, rgb: 'rgb(247, 142, 0)', fsize:24 },
-																  
-																  { rank: 18, rgb: 'rgb(123, 237, 159)', fsize:23 },   // 에메랄드
-																  { rank: 19, rgb: 'rgb(123, 237, 159)', fsize:22 },   // 에메랄드
-																  { rank: 20, rgb: 'rgb(123, 237, 159)', fsize:21 },   // 에메랄드
-																  { rank: 21, rgb: 'rgb(123, 237, 159)', fsize:20 },   // 에메랄드
-																  
-																  { rank: 22, rgb: 'rgb(30, 144, 255)', fsize:19 },   // 에메랄드
-																  { rank: 23, rgb: 'rgb(30, 144, 255)', fsize:18 },   // 에메랄드
-																  { rank: 24, rgb: 'rgb(30, 144, 255)', fsize:17 },   // 에메랄드
-																  { rank: 25, rgb: 'rgb(30, 144, 255)', fsize:16 },   // 에메랄드
-																  
-																  { rank: 26, rgb: 'rgb(116, 125, 140)', fsize:15 },   // 보라색
-																  { rank: 27, rgb: 'rgb(116, 125, 140)', fsize:14 },   // 보라색
-																  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
-																  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
-																  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
 
 
-																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
-																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
-																  
-																  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
-																  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
-																  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
-																  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
-																  
-																  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
-																  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
-																  
-																  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
-																  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
-																  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
-																  
-																  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  
-																  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  
-																  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
+
+		<script type="text/javascript">                                                		
+			//makeKey(category);
+				
+				var liElement = $('.list2 li');
+				liElement.click(function(e) {
+						var idValue = $(this).find('.btn3').attr('id');
+				//btn3.addEventListener('click',function(e){
+				// console.log(e.target.id)
+				console.log(this.id)
+				console.log("88888888")
+				console.log(idValue)
+		  		  if(idValue === 'all'){
+		  			category = "전체";
+		  		  }else if(idValue === 'pol'){
+		  			category = "정치";
+		  		  }else if(idValue === 'soc'){
+		  			category = "사회";
+		  		  }else if(idValue === 'eco'){
+		  			category = "경제";
+		  		  }else{
+		  			category = "국제"; 
+		  		  }
+		  		  makeKey(category);
+		  		 
+			  	}); 
+			function makeKey(category){
+				//console.log("카테고리 : "+category)
+				 $.ajax({
+					  url : "board/keyword_fifty",
+					  data : {
+						  category : category
+					  },
+					  type : "get",
+					  dataType : "json",
+					  success :function(data){makeKList(data)},
+						  
+					  error : function(){ alert("error"); }
+				  });
+																																		
+			}	
+			function makeKList(data){
+				console.log("mkList함수 실행");
+				console.log(data)
+				console.log(data[0].category)
+				// 순위별 RGB 값을 정의
+				var colors = [
+
+				  { rank: 1, rgb: 'rgb(255, 99, 72)', fsize:40 },    // blue
+				  { rank: 2, rgb: 'rgb(255, 99, 72)', fsize:39 },    
+				  { rank: 3, rgb: 'rgb(255, 99, 72)', fsize:38 },    
+				  { rank: 4, rgb: 'rgb(255, 99, 72)', fsize:37 },
+				  
+				  { rank: 5, rgb: 'rgb(83, 82, 237)', fsize:36 },    // red
+				  { rank: 6, rgb: 'rgb(83, 82, 237)', fsize:35 },    
+				  { rank: 7, rgb: 'rgb(83, 82, 237)', fsize:34 },   
+				  { rank: 8, rgb: 'rgb(83, 82, 237)', fsize:33 },
+				  
+				  { rank: 9, rgb: 'rgb(120, 224, 143)', fsize:32 },   // em
+				  { rank: 10, rgb: 'rgb(120, 224, 143)', fsize:31 },   
+				  { rank: 11, rgb: 'rgb(120, 224, 143)', fsize:30 },   
+				  { rank: 12, rgb: 'rgb(120, 224, 143)', fsize:29 },
+				  
+				  { rank: 13, rgb: 'rgb(255, 165, 2)', fsize:28 },   // y
+				  { rank: 14, rgb: 'rgb(255, 165, 2)', fsize:27 },   
+				  { rank: 15, rgb: 'rgb(255, 165, 2)', fsize:26 },   
+				  { rank: 16, rgb: 'rgb(255, 165, 2)', fsize:25 },   
+				  { rank: 17, rgb: 'rgb(247, 142, 0)', fsize:24 },
+				  
+				  { rank: 18, rgb: 'rgb(123, 237, 159)', fsize:23 },   // 에메랄드
+				  { rank: 19, rgb: 'rgb(123, 237, 159)', fsize:22 },   // 에메랄드
+				  { rank: 20, rgb: 'rgb(123, 237, 159)', fsize:21 },   // 에메랄드
+				  { rank: 21, rgb: 'rgb(123, 237, 159)', fsize:20 },   // 에메랄드
+				  
+				  { rank: 22, rgb: 'rgb(30, 144, 255)', fsize:19 },   // 에메랄드
+				  { rank: 23, rgb: 'rgb(30, 144, 255)', fsize:18 },   // 에메랄드
+				  { rank: 24, rgb: 'rgb(30, 144, 255)', fsize:17 },   // 에메랄드
+				  { rank: 25, rgb: 'rgb(30, 144, 255)', fsize:16 },   // 에메랄드
+				  
+				  { rank: 26, rgb: 'rgb(116, 125, 140)', fsize:15 },   // 보라색
+				  { rank: 27, rgb: 'rgb(116, 125, 140)', fsize:14 },   // 보라색
+				  { rank: 28, rgb: 'rgb(116, 125, 140)', fsize:13 },   // 보라색
+				  { rank: 29, rgb: 'rgb(116, 125, 140)', fsize:12 },   // 보라색
+				  { rank: 30, rgb: 'rgb(116, 125, 140)', fsize:11 },   // 보라색
 
 
-																  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
-																  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
-																  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
-																  
-																  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
-																  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
-																  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
-																  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
-																  
-																  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
-																  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
-																  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
-																  
-																  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
-																  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
-																  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
-																  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
-																  
-																  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
-																  
-																  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
-																  
-																  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
-																  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
-
-																  
-																];
-																
-																
-																// 정렬된 데이터에 순위과 RGB 값을 할당
-																var rank = 1;
-																var prevValue = data[0].count;
-																for (var i = 0; i < data.length; i++) {
-																  var currentData = data[i]
-																  if (currentData.count !== prevValue) {
-																	rank++;
-																  }
-																  currentData.rank = rank;
-																  currentData.rgb = colors[rank - 1].rgb;
-																  currentData.fsize = colors[rank - 1].fsize;
-																  prevValue = currentData.count;
-																}
-																
-																var listHtml = "";
-																if(data[0].category === "전체"){
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[0].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-140,-60)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[1].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-60,40)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[2].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-140,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[3].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(24,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[4].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-60,-36)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[5].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-70,-5)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[6].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(0,-75)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[7].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(34,-08)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[8].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[9].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[10].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[11].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,60)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[12].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(40,-45)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[13].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,17)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[14].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(93,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[15].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-125,70)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[16].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(45,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[17].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-74,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[18].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(150,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[19].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-20)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[20].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-150,-100)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[21].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(105,45)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[22].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[23].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(135,-40)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword.toUpperCase()+"</text></a>";
-																	listHtml += "<a href='${contextPath}/testSearch.do?query="+data[24].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword.toUpperCase()+"</text></a>";
-																	}else{
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[0].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-170,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[1].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-65,0)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword.toUpperCase()+"</text></a>";	
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[2].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-109,41)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[3].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(35,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[4].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-60,-40)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[5].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[6].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[7].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(57,-41)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[8].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(191,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[9].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[10].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(80,-100)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[11].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-25,50)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[12].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(190,-89)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[13].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[14].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(73,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[15].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-160,80)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[16].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(48,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[17].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[18].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(130,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[19].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[20].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-160,-90)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[21].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[22].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(152,75)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[23].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(114,-16)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword.toUpperCase()+"</text></a>";
-																		listHtml += "<a href='${contextPath}/testSearch.do?query="+data[24].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword.toUpperCase()+"</text></a>";
-																}
-																if(data[0].category === '전체'){
-																	$("#keywordlist1").html(listHtml);
-																}else if(data[0].category === '정치'){
-																	$("#keywordlist2").html(listHtml);
-																}else if(data[0].category === '사회'){
-																	$("#keywordlist3").html(listHtml);
-																}else if(data[0].category === '경제'){
-																	$("#keywordlist4").html(listHtml);
-																}else{
-																	$("#keywordlist5").html(listHtml);
-																}
-																
-																
-															}									
-	                            						</script>
+				  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
+				  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
+				  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
+				  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
+				  
+				  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
+				  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
+				  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
+				  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
+				  
+				  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
+				  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
+				  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
+				  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
+				  
+				  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
+				  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
+				  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
+				  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
+				  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
+				  
+				  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  
+				  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  
+				  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
 
 
-	
+				  { rank: 1, rgb: 'rgb(255, 99, 72)' },    // blue
+				  { rank: 2, rgb: 'rgb(255, 99, 72)' },    
+				  { rank: 3, rgb: 'rgb(255, 99, 72)' },    
+				  { rank: 4, rgb: 'rgb(255, 99, 72)' },    
+				  
+				  { rank: 5, rgb: 'rgb(83, 82, 237)' },    // red
+				  { rank: 6, rgb: 'rgb(83, 82, 237)' },    
+				  { rank: 7, rgb: 'rgb(83, 82, 237)' },   
+				  { rank: 8, rgb: 'rgb(83, 82, 237)' },   
+				  
+				  { rank: 9, rgb: 'rgb(120, 224, 143)' },   // em
+				  { rank: 10, rgb: 'rgb(120, 224, 143)' },   
+				  { rank: 11, rgb: 'rgb(120, 224, 143)' },   
+				  { rank: 12, rgb: 'rgb(120, 224, 143)' },   
+				  
+				  { rank: 13, rgb: 'rgb(255, 165, 2)' },   // y
+				  { rank: 14, rgb: 'rgb(255, 165, 2)' },   
+				  { rank: 15, rgb: 'rgb(255, 165, 2)' },  
+				  { rank: 16, rgb: 'rgb(255, 165, 2)' },   
+				  { rank: 17, rgb: 'rgb(255, 165, 2)' },   
+				  
+				  { rank: 18, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  { rank: 19, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  { rank: 20, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  { rank: 21, rgb: 'rgb(123, 237, 159)' },   // 에메랄드
+				  
+				  { rank: 22, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  { rank: 23, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  { rank: 24, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  { rank: 25, rgb: 'rgb(30, 144, 255)' },   // 에메랄드
+				  
+				  { rank: 26, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 27, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 28, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 29, rgb: 'rgb(116, 125, 140)' },   // 보라색
+				  { rank: 30, rgb: 'rgb(116, 125, 140)' },   // 보라색
+
+				  
+				];
+				
+				
+				// 정렬된 데이터에 순위과 RGB 값을 할당
+				var rank = 1;
+				var prevValue = data[0].count;
+				for (var i = 0; i < data.length; i++) {
+				  var currentData = data[i]
+				  if (currentData.count !== prevValue) {
+					rank++;
+				  }
+				  currentData.rank = rank;
+				  currentData.rgb = colors[rank - 1].rgb;
+				  currentData.fsize = colors[rank - 1].fsize;
+				  prevValue = currentData.count;
+				}
+				
+				var listHtml = "";
+				if(data[0].category === "전체"){
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[0].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-140,-60)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[1].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-60,40)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[2].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-140,31)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[3].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(24,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[4].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-60,-36)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[5].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-70,-5)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[6].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(0,-75)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[7].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(34,-08)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[8].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(171,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[9].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[10].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(100,-90)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[11].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-15,60)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[12].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(40,-45)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[13].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,17)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[14].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(93,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[15].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-125,70)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[16].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(45,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[17].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-74,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[18].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(150,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[19].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-20)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[20].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-150,-100)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[21].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(105,45)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[22].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(162,59)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[23].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(135,-40)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword.toUpperCase()+"</text></a>";
+					listHtml += "<a href='${contextPath}/testSearch.do?query="+data[24].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword.toUpperCase()+"</text></a>";
+					}else{
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[0].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-170,-37)rotate(0)scale(0.9)' style='font-size: "+(data[0].fsize)+"px; font-weight: bold; fill: "+data[0].rgb+";'>"+data[0].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[1].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-65,0)rotate(0)scale(0.9)' style='font-size: "+(data[1].fsize)+"px; font-weight: bold; fill: "+data[1].rgb+";'>"+data[1].keyword.toUpperCase()+"</text></a>";	
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[2].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-109,41)rotate(0)scale(0.9)' style='font-size: "+(data[2].fsize)+"px; font-weight: bold; fill: "+data[2].rgb+";'>"+data[2].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[3].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(35,29)rotate(0)scale(0.9)' style='font-size: "+(data[3].fsize)+"px; font-weight: bold; fill: "+data[3].rgb+";'>"+data[3].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[4].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-60,-40)rotate(0)scale(0.9)' style='font-size: "+(data[4].fsize)+"px; font-weight: bold; fill: "+data[4].rgb+";'>"+data[4].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[5].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(23,-8)rotate(0)scale(0.9)' style='font-size: "+(data[5].fsize)+"px; font-weight: bold; fill: "+data[5].rgb+";'>"+data[5].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[6].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(28,-71)rotate(0)scale(0.9)' style='font-size: "+(data[6].fsize)+"px; font-weight: bold; fill: "+data[6].rgb+";'>"+data[6].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[7].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(57,-41)rotate(0)scale(0.9)' style='font-size: "+(data[7].fsize)+"px; font-weight: bold; fill: "+data[7].rgb+";'>"+data[7].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[8].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(191,-10)rotate(0)scale(0.9)' style='font-size: "+(data[8].fsize)+"px; font-weight: bold; fill: "+data[8].rgb+";'>"+data[8].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[9].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(188,-42)rotate(0)scale(0.9)' style='font-size: "+(data[9].fsize)+"px; font-weight: bold; fill: "+data[9].rgb+";'>"+data[9].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[10].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(80,-100)rotate(0)scale(0.9)' style='font-size: "+(data[10].fsize)+"px; font-weight: bold; fill: "+data[10].rgb+";'>"+data[10].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[11].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-25,50)rotate(0)scale(0.9)' style='font-size: "+(data[11].fsize)+"px; font-weight: bold; fill: "+data[11].rgb+";'>"+data[11].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[12].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(190,-89)rotate(0)scale(0.9)' style='font-size: "+(data[12].fsize)+"px; font-weight: bold; fill: "+data[12].rgb+";'>"+data[12].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[13].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,13)rotate(0)scale(0.9)' style='font-size: "+(data[13].fsize)+"px; font-weight: bold; fill: "+data[13].rgb+";'>"+data[13].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[14].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(73,104)rotate(0)scale(0.9)' style='font-size: "+(data[14].fsize)+"px; font-weight: bold; fill: "+data[14].rgb+";'>"+data[14].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[15].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-160,80)rotate(0)scale(0.9)' style='font-size: "+(data[15].fsize)+"px; font-weight: bold; fill: "+data[15].rgb+";'>"+data[15].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[16].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(48,70)rotate(0)scale(0.9)' style='font-size: "+(data[16].fsize)+"px; font-weight: bold; fill: "+data[16].rgb+";'>"+data[16].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[17].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-44,-69)rotate(0)scale(0.9)' style='font-size: "+(data[17].fsize)+"px; font-weight: bold; fill: "+data[17].rgb+";'>"+data[17].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[18].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(130,-69)rotate(0)scale(0.9)' style='font-size: "+(data[18].fsize)+"px; font-weight: bold; fill: "+data[18].rgb+";'>"+data[18].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[19].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-130,-1)rotate(0)scale(0.9)' style='font-size: "+(data[19].fsize)+"px; font-weight: bold; fill: "+data[19].rgb+";'>"+data[19].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[20].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-160,-90)rotate(0)scale(0.9)' style='font-size: "+(data[20].fsize)+"px; font-weight: bold; fill: "+data[20].rgb+";'>"+data[20].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[21].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(109,41)rotate(0)scale(0.9)' style='font-size: "+(data[21].fsize)+"px; font-weight: bold; fill: "+data[21].rgb+";'>"+data[21].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[22].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(152,75)rotate(0)scale(0.9)' style='font-size: "+(data[22].fsize)+"px; font-weight: bold; fill: "+data[22].rgb+";'>"+data[22].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[23].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(114,-16)rotate(0)scale(0.9)' style='font-size: "+(data[23].fsize)+"px; font-weight: bold; fill: "+data[23].rgb+";'>"+data[23].keyword.toUpperCase()+"</text></a>";
+						listHtml += "<a href='${contextPath}/testSearch.do?query="+data[24].keyword+"'><text class='category-keyword-text 전체_LC' text-anchor='middle' transform='translate(-50,98)rotate(0)scale(0.9)' style='font-size: "+(data[24].fsize)+"px; font-weight: bold; fill: "+data[24].rgb+";'>"+data[24].keyword.toUpperCase()+"</text></a>";
+				}
+				if(data[0].category === '전체'){
+					$("#keywordlist1").html(listHtml);
+				}else if(data[0].category === '정치'){
+					$("#keywordlist2").html(listHtml);
+				}else if(data[0].category === '사회'){
+					$("#keywordlist3").html(listHtml);
+				}else if(data[0].category === '경제'){
+					$("#keywordlist4").html(listHtml);
+				}else{
+					$("#keywordlist5").html(listHtml);
+				}
+				
+				
+			}									
+		</script>
+
 		<script>
 	      const tabList = document.querySelectorAll('.tab_menu .list li')
             const contents = document.querySelectorAll('.tab_menu .cont_area .cont')
@@ -1230,9 +1045,8 @@
                 });
             }
         </script>
-        
-        
-      <script>
+
+		<script>
     const tabList2 = document.querySelectorAll('.tab_menu2 .list2 li');
     const contents2 = document.querySelectorAll('.tab_menu2 .cont_area2 .cont2')
     let activeCont2 = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
@@ -1262,9 +1076,6 @@
     }
 </script>
 
-
-
-
 		<script>
         $(document).ready(function(){
     		  // HTML이 다 로딩되고 작동하는 함수
@@ -1292,17 +1103,10 @@
   			  
   			   title += obj.title+":";
   		  });
-  			   	 
   			 title = title.split(":");
-  			 
   			   	 for(var i = 0; i < 6; i++){
 		  			 $("#"+name[i]+"").html(title[i]);
-  			   		 
   			   	 }
-  			 
-  			 
-  		 
-  		   
   	  }
 		  
 	        let rollingData = [
@@ -1377,17 +1181,9 @@
             }, timer);
 
         </script>
-        
-        
-        <script>
 
 
-
-
-
-
-   
-
+		<script>
 
 
             $(document).ready(function () {
@@ -1498,13 +1294,6 @@
 				</div>
 			</footer>
 		</div>
-
-
-
-
-
-
-
 
 
 		<script src="resources/assets/js/main.js"></script>

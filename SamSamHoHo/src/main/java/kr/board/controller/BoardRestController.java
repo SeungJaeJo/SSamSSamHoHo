@@ -28,8 +28,6 @@ import kr.board.entity.NewsCount;
 import kr.board.entity.Paging;
 import kr.board.mapper.BoardMapper;
 
-// 비동기통신 전용 controller >> 페이지이동x, 객체반환 only
-// 그래서 굳이 responsebody 명시할 필요 x
 @RequestMapping("/board")
 @RestController
 public class BoardRestController {
@@ -37,13 +35,6 @@ public class BoardRestController {
 	@Autowired
 	private BoardMapper boardMapper;
 
-	// 게시글 전체보기 /boardList.do
-	//@GetMapping("/all")
-	//public List<Board> boardList(){
-	//	List<Board> list = boardMapper.boardList();
-	//	return list;
-	//}
-	
 	// 메인화면 카테고리별 최신기사 1개
 	@GetMapping("/all")
 	public List<News> newsList(@RequestParam("category")String category){
@@ -96,9 +87,6 @@ public class BoardRestController {
 		return vo;
 	}
 	
-	
-	 
-	 
 	 
 	// 검색에 쓸 키워드목록
 	@GetMapping("/keySearch")
@@ -107,7 +95,7 @@ public class BoardRestController {
 		return list;
 	}
 	
-	// 검색해서 보여줄 리스트
+	// 검색결과 보여줄 리스트
 	@GetMapping("/search")
 	public List<News> search(@RequestParam("query")String query) {
 		List<News> list = boardMapper.search(query);
@@ -162,48 +150,5 @@ public class BoardRestController {
 		return news;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	// 게시글 등록하기
-	@PostMapping("/new")
-	public void boardInsert(Board board){
-		boardMapper.boardInsert(board);
-	}
-	
-	
-
-	
-	// 게시글 삭제하기
-	@DeleteMapping("/{idx}")
-	public void boardDelete(@PathVariable("idx")int idx) {
-		boardMapper.boardDelete(idx);
-	}
-	
-	// 게시글 수정하기
-	@PutMapping("/update")
-	public void boardUpdate(@RequestBody Board vo) {
-//		System.out.println(vo.toString());
-		boardMapper.boardUpdate(vo);
-	}
-	
-	// 게시글 상세보기
-	@GetMapping("/{idx}")
-	public Board boardContent(@PathVariable("idx")int idx) {
-		Board vo = boardMapper.boardContent(idx);
-		return vo;
-	}
-	
-	// 조회수 올리기
-	@PutMapping("/count/{idx}")
-	public void boardCount(@PathVariable("idx")int idx) {
-		boardMapper.boardCount(idx);
-	}
 	
 }

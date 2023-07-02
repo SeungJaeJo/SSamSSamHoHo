@@ -16,19 +16,6 @@ import kr.board.entity.Paging;
 @Mapper
 public interface BoardMapper {
 
-	public List<Board> boardList();
-
-	public void boardInsert(Board board);
-
-	public Board boardContent(int idx);
-
-	public void boardDelete(int idx);
-
-	public void boardUpdate(Board vo);
-	
-	@Update("update board set count = count + 1 where idx = #{idx}")
-	public void boardCount(int idx);
-	
 	// 메인화면 카테고리별 뉴스기사 1개
 	public List<News> newsList(String category);
 	

@@ -24,8 +24,6 @@
 	<link rel="stylesheet" href="resources/assets/css/sidemenu2.css">
 	<link rel="stylesheet" href="resources/assets/css/search1.css">
 	<link rel="stylesheet" href="resources/assets/css/loading.css">
-
-	
 </head>
 
 <script type="text/javascript">
@@ -37,8 +35,9 @@
 			};
 	 		  	
 			var newsID = searchParam("idx")
-			console.log("akwdk???",newsID)
+			console.log("idx",newsID)
 			
+			// 뉴스 데이터 받아오는 함수
 			function getNewsFull(newsID){
 				$.ajax({
 					url : "board/getNewsFull",
@@ -49,10 +48,10 @@
 					error : function(){ alert("error"); }
 				});
 			 }
-			getNewsFull(newsID)
-			 
 			
-			 
+			getNewsFull(newsID)
+			
+			// 뉴스 데이터 출력하는 함수
 			function setNewsFull(data){
 				console.log("set",data)
 				
@@ -69,16 +68,16 @@
 				$('#zz2 .media_end_head_info_datestamp_bunch span').text(data[0].date)
 				// 원문 기자
 				$('#zz2 .media_end_head_journalist em').text(data[0].reporter)
-				// 원문 내용+
+				// 원문 내용 
+				// 원문 문단별로 나누기
 				let arr = data[0].content.split("\n");
-				
+				// 문단 뒤에 br태그 추가
 				for(let i=0;i<arr.length;i++){
 					let p_tag = $('<p><br>');
 					p_tag.text(arr[i]);
 					$('#zz2 #contents #newsct_article #dic_area').append(p_tag)
 					$('#zz2 #contents #newsct_article #dic_area').append("<br>")
 				}
-				
 				 
 				console.log(data[0].content.split("\n"))
 				 
@@ -100,15 +99,13 @@
 				 
 				// 언론사 이름 띄우기
 				$('#ct_wrap > div > div.outside_area._OUTSIDE_AREA > div > div > div.ra_head > strong > em').text(pressName)
-				// 키워드 표시하기, a 태그 걸려있는데 갈 곳은 없음
+				// 키워드 5개 표시하기
 				var keys = []
 				keys.push(data[0].keyword.split(','))
 				
 				for(let i = 0; i<5; i++){
 					$('#contents > div.media_end_linked > ul > li:nth-child('+(i+1)+') > a').text(keys[0][i].toUpperCase())
 					$('.keyword_'+(i+1)).text(keys[0][i].toUpperCase())
-					//#zz3 > div.media_end_head_title > div.typing > ul > li:nth-child(5)
-					//#zz3 > div.media_end_head_title > div.typing > ul > li.on
 				}
 				
 				// 같은 언론사 기사 받아오기 위해서 데이터 보내기
@@ -164,21 +161,18 @@
 						</ul>
 
 					</nav>
- <c:if test="${empty mvo}">
-							<ul class="logout sm_hidden">
+ 			<c:if test="${empty mvo}">
+						<ul class="logout sm_hidden">
 						<li><a href="${contextPath}/loginForm.do">로그인</a></li>
 						<li><a href="${contextPath}/joinForm.do">회원가입</a></li>
-									</ul>
-    					  </c:if>				
+						</ul>
+			</c:if>				
             <c:if test="${not empty mvo}">
-                        	<ul class="logout sm_hidden">
+                       	<ul class="logout sm_hidden">
 						<li><a> ${mvo.mem_id }님</a></li>
 						<li><a href="${contextPath}/logout.do">로그아웃</a></li>
-									</ul>
-                        
-      
-      
-			      </c:if>
+						</ul>
+			</c:if>
 			      
 					<div class="header_option_area">
 						<button type="button" class="btn_search" onclick="">
@@ -205,15 +199,10 @@
                                     <div class="sggt_fixer">
                                         <div class="container55">
                                         
-                                        
 	                                        <script type="text/javascript">
-	                                        	
  											$(document).ready(function(){
-									  			
 									  			makeKSearch();
 										  	});   
-										  	
-											  
 											  function makeKSearch(){
 												  $.ajax({
 													  url : "board/keySearch",
@@ -223,65 +212,20 @@
 													  error : function(data){
 														  alert('error'); }
 													  });
-	                                        
 											  };
 											  
 											  function makeKSList(data){
-												  
 												  var listHtml = "";
 												  $.each(data, function(index, obj){
-													
 													  listHtml += "<div class='item33'>";
 													  listHtml += "<span class='icon'>"+obj.keyword[0]+"</span>";
 													  listHtml += "<span class='itemsname'>"+obj.keyword+"</span>";
 													  listHtml += "</div>";
-													  
 												  });
 												  $(".container55").html(listHtml);
 											  };
 	                                        
-	                                        
 	                                        </script>
-
-                                            <!-- <div class="item33">
-                                                <span class="icon">A</span>
-                                                <span class="itemsname">Apple</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">O</span>
-                                                <span class="itemsname">Orange</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">M</span>
-                                                <span class="itemsname">Mandarin</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">S</span>
-                                                <span class="itemsname">Strawberry</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">W</span>
-                                                <span class="itemsname">Watermelon</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">G</span>
-                                                <span class="itemsname">Grape</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">P</span>
-                                                <span class="itemsname">Pear</span>
-                                            </div>
-                    
-                                            <div class="item33">
-                                                <span class="icon">C</span>
-                                                <span class="itemsname">Cherry</span>
-                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +291,6 @@
                                 </div>
                             </div>
 
-                     
                             <div class="media_end_linked">
                                 <h3 class="media_end_linked_title">
                                     <a href="https://www.asiae.co.kr/ " class="media_end_linked_title_inner" id="pressName">
@@ -520,9 +463,6 @@
                          <button class="btn_sub22" type="submit" style="text-align: center;">종료하기
                         </button>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -605,15 +545,10 @@
                     </div>
                 </div>
 
-
                     <div class="center_star2">
-
-
                         <button class="btn_sub2" type="submit" style="text-align: center;">종료하기
                         </button>
-
                     </div>
-
                    <!-- 콘텐츠 -->
                 </div>
             </div>
@@ -653,17 +588,11 @@
                 </div>
             </footer>
         </div>
-       
-      
-       
-
-      
-
+  
     </div>
       <script>
         const Chat = (function () {
             const myName = "user";
-
             // init 함수
             function init() {
                 // enter 키 이벤트
@@ -671,14 +600,11 @@
                     if (e.keyCode == 13 && !e.shiftKey) {
                         e.preventDefault();
                         const message = $(this).val();
-
                         // 메시지 전송
                         sendMessage(message);
                         // 입력창 clear
                         clearTextarea();
                     }
-
-
                 });
             }
 
@@ -686,13 +612,10 @@
             function createMessageTag(LR_className, senderName, message) {
                 // 형식 가져오기
                 let chatLi = $('div.chat.format ul li').clone();
-
                 // 값 채우기
                 chatLi.addClass(LR_className);
                 chatLi.find('.sender span').text(senderName);
                 chatLi.find('.message span').text(message);
-
-
 
                 return chatLi;
             }
@@ -705,8 +628,6 @@
                 chatLi2.addClass(LR_className);
                 chatLi2.find('.sender span').text(senderName);
                 chatLi2.find('.message span').html(message1);
-
-
 
                 return chatLi2;
             }
@@ -721,8 +642,6 @@
                 chatLi3.find('.sender span').text(senderName);
                 chatLi3.find('.message span').html(message2);
 
-
-
                 return chatLi3;
             }
 
@@ -731,23 +650,9 @@
                 let chatLi4 = $('.dlrpehla').clone();
                 var message3 = '<div class="modal-wrapper"><div class="modal"><div class="content" id="zz"> <div class="media_end_head_top">   <a href="" class="media_end_head_top_logo"> <img src="https://mimgnews.pstatic.net/image/upload/office_logo/023/2020/09/03/logo_023_6_20200903164340.png" width="" height="32" alt="조선일보" title="조선일보"       class="media_end_head_top_logo_img light_type"></a></div><div class="media_end_head_title"> <h3 id="title_area" class="media_end_head_headline"><span>이사할 집에 먼저 전입신고한 외국인 있는지 확인 가능해진다</span></h3></div> <div id="contents" class="newsct_body">  <div id="newsct_article" class="newsct_article _article_body"><div id="dic_area" class="go_trans _article_content"\style="-webkit-tap-highlight-color: rgba(0,0,0,0)"> 앞으로 주택을 매입 또는 임차하거나 근저당권을 설정할 때 먼저 전입신고한 외국인이 있는지 확인할 수 있게 된다.<br><br>법무부는 14일부터 특정 주소지에 주택임대차 대항력이 있는 외국인 유무를 사전에 파악할 수 있도록 하는 "외국인체류확인서          열람·교부" 제도를 시행한다고 밝혔다.<br><br>그동안은 특정 건물에 선순위 대항력을 가진 외국인이 전입해 있어도 그 여부를 확인할 수 없어서        주택을 매입·임차할 때 \n 예상치 못한 권리행사 제한이 발생할 우려가 있었다. <br><br>이제는 임대차계약서, 매매계약서 등 신청 요건을 증명할 수 있는서류를 첨부해 출입국·외국인관서나 읍·면·동사무소에 신청하면 외국인체류확인서를 볼 수 있다.법무부 관계자는 "실생활에 불편을 초래하거나부족한 부분을 계속 발굴하고 개선하겠다"고 밝혔다.</div></div></div><div class="center_star"><button class="btn_sub" type="submit" style="text-align: center;">등록하기</button></div></div></div></div>';
 
-
-
-
-
-
-
-
-
-
-
-
-
                 // 값 채우기
                 chatLi4.addClass(LR_className);
                 chatLi4.html(message3);
-
-
 
                 return chatLi4;
             }
@@ -852,33 +757,18 @@
                     });
                     
 
-
-                    
-                    
-
-                    
-
                     setTimeout(function () {
-
                         $(document).ready(function () {
-
                             $('.modal-wrapper2').toggleClass('open2');
                             $('.ct_wrap').toggleClass('blur-it');
-
                             console.log("ㅋㅋㅋ");
-
                             return true;
                             ;
                         });
-
-
                     }, 1000);
-
-
 
                 }else if (data['message'] === '키워드보여줘'||
                 		data['message'] ==='키워드 보여줘'||data['message'] ==='키워드'||data['message'] ==='키워드보여주세요'||data['message'] ==='키워드줘') {
-
                     $(document).ready(function () {
                         $('.modal-wrapper').toggleClass('open');
                         $('.ct_wrap').toggleClass('blur-it');
@@ -888,46 +778,22 @@
                     });
                     
 
-
-                    
-                    
-
-                    
-
                     setTimeout(function () {
-
                         $(document).ready(function () {
-
                             $('.modal-wrapper3').toggleClass('open');
                             $('.ct_wrap').toggleClass('blur-it');
-
                             console.log("ㅋㅋㅋ");
-
                             return true;
                             ;
                         });
-
-
                     }, 1000);
-
-
-
                 }
-
-
-
-
-
-
-
-
 
                 else {
                     resive(data, data2);
                 }
 
                 // 통신하는 기능이 없으므로 여기서 receive
-
             }
 
             // 메세지 입력박스 내용 지우기
@@ -962,14 +828,9 @@
                 appendMessageTag4("right", data2.senderName, data2.message);
 
             }
-
             return {
                 'init': init
             };
-
-
-
-
 
         })();
 
@@ -977,13 +838,6 @@
             Chat.init();
 
         });
-
-
-
-
-
-
-
 
 
     </script>
@@ -1004,12 +858,7 @@
 		    var tyInt = setInterval(typing,100); // 반복동작 
 		} 
 		
-
-
-		     
 		function typing(){
-			
-
             setTimeout(function () {
       		  $(".typing ul li").removeClass("on");
    		   $(".typing ul li").eq(liIndex).addClass("on");
@@ -1038,19 +887,10 @@
    		           clearInterval(tyInt);
    		        }
    		    } 
-              
-
             }, 5000);
-			
-			
-
 		}  
 
-
 </script>
-
-
-
     <script>
 
     $(document).ready(function () {
@@ -1058,78 +898,47 @@
             $('.modal-wrapper2').toggleClass('open2');
             $('.ct_wrap').toggleClass('blur-it');
             console.log("호호헤");
-
             return true;
         });
     });
-
-
-
-
 
         $(document).ready(function () {
             $('.btn_bookmark').on('click', function () {
                 $('.modal-wrapper').toggleClass('open');
                 $('.ct_wrap').toggleClass('blur-it');
                 console.log("호호헤");
-
                 return true;
             });
         });
-
-
-
 
         $(document).ready(function () {
             $('.btn_sub').on('click', function () {
                 $('.modal-wrapper').toggleClass('open');
                 $('.ct_wrap').toggleClass('blur-it');
                 console.log("헤헤");
-
                 return false;
             });
         });
-
-
-
-
-
-
-
 
 
     </script>
     
      <script>
 
-
-
-
-
-
-
-
-
             $(document).ready(function () {
             $('._close_btn ').on('click', function () {
                 $('._search_content').toggleClass('is_hidden');
-
                 console.log("헤헤");
-
                 return false;
             });
         });
-
         $(document).ready(function () {
                 $('.ico_search').on('click', function () {
                     $('._search_content').toggleClass('is_hidden');
                     console.log("호호헤");
-
                     return true;
                 });
             });
-
-
         function filter() {
 
             var value, name, item, i, aa;
@@ -1147,21 +956,15 @@
                 }
             }
         }
-
-
         </script>
 
 <script>
-
-
-
 
 $(document).ready(function () {
     $('.btn_sub').on('click', function () {
         $('.modal-wrapper').toggleClass('open');
         $('.ct_wrap').toggleClass('blur-it');
         console.log("wwww");
-
         return false;
     });
 });
@@ -1170,25 +973,19 @@ $(document).ready(function () {
     $('.btn_sub2').on('click', function () {
         $('.modal-wrapper2').toggleClass('open2');
         $('.ct_wrap').toggleClass('blur-it');
-
         console.log("dadad");
-
         return false;
     });
 });
-
 
 $(document).ready(function () {
     $('.btn_sub22').on('click', function () {
         $('.modal-wrapper').toggleClass('open');
         $('.ct_wrap').toggleClass('blur-it');
-
         console.log("이얍");
-
         return false;
     });
 });
-
 
 $(document).ready(function () {
     $('.btn_sub33').on('click', function () {
@@ -1201,8 +998,6 @@ $(document).ready(function () {
     });
 });
 </script>
-   
-
 
 
 </body>
